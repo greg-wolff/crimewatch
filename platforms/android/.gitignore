@@ -12,9 +12,3 @@ gen
 out
 # Gradle builds
 /build
-## Ignore Mac OS Files
-.DS_Store
-.AppleDouble
-.LSOverride
-# Thumbnails
-._*
