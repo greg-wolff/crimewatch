@@ -31,12 +31,15 @@ body {
     width:100%;
 }
 
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+
 /* Portrait layout (default) */
 .app {
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    text-align:center;
 }
 
 /* Landscape layout (with min-width) */
