@@ -8,7 +8,7 @@ Json-> object
 
 Array -> photo/video
 
-Map
+Map:
 	can add points
 	adjustable point making
 	points
