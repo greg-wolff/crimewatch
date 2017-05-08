@@ -1,0 +1,37 @@
+Json-> object
+
+Array -> photo/video
+
+
+
+
+Map
+	can add points
+	adjustable point making
+	points
+		event
+			name
+				dependant on category?
+				just incident
+		category
+			super-category (only one)
+				automotive
+				sexual
+				race
+				police
+			
+			sub-category			
+				assault
+				harassment			
+				vandalism			
+				ect...
+
+		details
+			photos
+				user gen
+				saved on cloud
+			comments
+
+
+	searchable activity based on tag?
+	searchable activity based location? 
