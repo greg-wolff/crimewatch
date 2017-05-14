@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_72cde1126fb643117ba7a3fb81e3aeb32afc4f8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9d65cb516bb863cf1233573dfecad124cae7b50a">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_9d18385adce149cc4b6bbeae2767343f2ada3cb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_47cec09589ab34be8db430107fba986b3ea82616.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-9.8.0_982788593b025171e6409edf0cf1cc8bd1ae7da5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_9e4f713e1a53dec951d3d7a42a5ba1a4b9e218f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.8.0_3df3d1df7c59370f4b5e181b4706fb7189a20a12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.8.0_d04b90628926963920f4c9544e31ae4ee447c088.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.8.0_59bd5c8bfa7a90fbd74e2d89768a7fa2ae4066bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/home/gwolff/Documents/mobile-dev/crimewatch/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-9.8.0_1591431b1da00358e6c298fd9722fa3f953e2044.jar" />
+    </item>
+
+</items>
