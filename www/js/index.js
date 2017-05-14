@@ -46,8 +46,14 @@ var app = {
       });
     },
     initMap: () => {
-      StoreMarker();
-      var uluru = {lat: -25.363, lng: 131.044};
+      //a manual test of adding a marker.
+      StoreMarker(-25.363,131.044);
+      StoreMarker(-26.45,132.144);
+      StoreMarker(-27.0,133);
+      //a manual test of loading nearby markers.
+      console.log(Nearby(-26.45,132.144,1000));
+      // in the second index [0] is lat [1] is longitude
+      var uluru = {lat: Nearby(-26.45,132.144,1000)[0][0], lng: Nearby(-26.45,132.144,1000)[0][1]};
       var map = new google.maps.Map(document.getElementById('map'), {
        zoom: 4,
        center: uluru

@@ -9,8 +9,31 @@
     messagingSenderId: "901121598403"
   };
   firebase.initializeApp(config);
-function StoreMarker() {
-    var usersRef = firebase.database().ref();
-    var i = 5;
-    console.log(i);
+
+//stores location a,b
+function StoreMarker(a,b) {
+  var name = a.toString().replace(/\./g,' ')+" and "+ b.toString().replace(/\./g,' ')
+  var firebaseRef = firebase.database().ref("locations");
+  var geoFire = new GeoFire(firebaseRef);
+  geoFire.set(name, [a, b]).then(function() {
+    console.log("Provided key has been added to GeoFire");
+  }, function(error) {
+    console.log("Error: " + error);
+  });
+  }
+
+  //returns a list of locations with dist km of a,b
+  function Nearby(a,b,dist){
+    var firebaseRef = firebase.database().ref("locations");
+    var markers = [];
+    var geoFire = new GeoFire(firebaseRef);
+    var geoQuery = geoFire.query({
+      center: [a,b],
+      radius: dist
+    });
+    geoQuery.on("key_entered", function(key, location, distance) {
+      console.log(key + " entered query at " + location + " (" + distance + " km from center)");
+      markers.push(location);
+    });
+    return markers;
   }
