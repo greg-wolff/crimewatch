@@ -24,10 +24,12 @@
                 default-src 'self' data: gap:
                     https://*.google.com
                     https://*.googleapis.com
-                    wss://*.firebaseio.com/
                     https://*.firebaseio.com
                     https://*.gstatic.com
                     https://*.googleusercontent.com
+                'unsafe-eval';
+                connect-src 'self' 
+                   wss://*.firebaseio.com
                 'unsafe-eval';
                 style-src 'self'
                     https://cdnjs.cloudflare.com/
@@ -39,7 +41,7 @@
                     https://*.fontawesome.com/ 
                     https://*.gstatic.com/ data:;
                 media-src *;
-                script-src 'self' 'unsafe-eval'
+                script-src 'self' 
                     https://www.gstatic.com/firebasejs/3.9.0/firebase.js
                     https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js
                     https://unpkg.com/
@@ -47,8 +49,10 @@
                     https://crimewatch-8f003.firebaseio.com
                     https://*.fontawesome.com/
                     https://*.firebaseio.com/
+                    https://maps.googleapis.com/
                     https://*.googleapis.com/
                     https://*.gstatic.com/
+                'unsafe-eval'
         ;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
