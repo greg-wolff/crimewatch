@@ -12,7 +12,7 @@
         }
     },
     "dependencies": {
-        "cordova-android": "~6.1.2",
+        "cordova-android": "^6.2.3",
         "cordova-browser": "~4.1.0",
         "cordova-plugin-whitelist": "1"
     }
