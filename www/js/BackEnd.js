@@ -49,6 +49,14 @@
           return String(hash);
   }
 
+  function loadInfo(a,b,infoJSON)
+  {
+      StoreMarker(a,b);
+      var hash = getHash(a,b);
+      var firebaseRef = firebase.database().ref("Info"); //top level <info>
+      var infoRef = firebaseRef.child(hash);
+      infoRef.set(infoJSON);
+  }
 
   //returns a list of locations with dist km of a,b
   function Nearby(a,b,dist){
