@@ -48,8 +48,12 @@ var app = {
     initMap: () => {
       //a manual test of adding a marker.
       StoreMarker(-25.363,131.044);
-      StoreMarker(-26.45,132.144);
+      console.log("should work: " + getHash(-25.363,131.044));
       StoreMarker(-27.0,133);
+      console.log("should work: " +getHash(-27.0,133));
+      StoreMarker(-29.45,132.14);
+      StoreMarker(-28.0,136);
+      console.log("no work: " + getHash(-9999,9999));
       //a manual test of loading nearby markers.
       console.log(Nearby(-26.45,132.144,1000));
       // in the second index [0] is lat [1] is longitude
