@@ -28,7 +28,7 @@
                     https://*.gstatic.com
                     https://*.googleusercontent.com
                 'unsafe-eval';
-                connect-src 'self' 
+                connect-src 'self'
                    wss://*.firebaseio.com
                 'unsafe-eval';
                 style-src 'self'
@@ -38,10 +38,10 @@
                     'unsafe-inline';
                 font-src 'self'
                     https://cdnjs.cloudflare.com/
-                    https://*.fontawesome.com/ 
+                    https://*.fontawesome.com/
                     https://*.gstatic.com/ data:;
                 media-src *;
-                script-src 'self' 
+                script-src 'self'
                     https://www.gstatic.com/firebasejs/3.9.0/firebase.js
                     https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js
                     https://unpkg.com/
@@ -59,23 +59,44 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+
+        <script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
         <title>Crimewatch</title>
     </head>
     <body>
+
       <div id="vue-instance" class="app">
 
         {{msg}}
-        <button><i class="fa fa-stop-circle"> </i>Using Font Awesome</button>
 
         <div id="map"></div>
       </div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg"></script>
+
+
+      <!-- TestingCameraAPI -->
+      <div id="camara">
+      <a href="#" id="cameraAccess">camera</a>
+      <a href="#" id="GalImage">GetImage</a>
+      <a href="#" id="GalImageEdit">Edit image</a>
+      </div>
+      <!-- ImageWillDisplayHereForNow -->
+      <div id="CameraOutput">-----------Pic--------------</div>
+
+
+
+
+        <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg"></script>
         <script src="https://use.fontawesome.com/f8addf7004.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js"></script>
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/vue"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/BackEnd.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="cordova.js"></script>

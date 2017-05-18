@@ -9,7 +9,14 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        }
+    }
 }
