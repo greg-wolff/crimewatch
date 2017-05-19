@@ -22,6 +22,9 @@
 						<f7-list>
 							<f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
 						</f7-list>
+						<f7-list>
+							<f7-list-item link="/map/" title="Map" link-view="#main-view" link-close-panel></f7-list-item>
+						</f7-list>
 					</f7-page>
 				</f7-pages>
 			</f7-view>
@@ -38,6 +41,7 @@
 					</f7-nav-right>
 				</f7-navbar>
 				<!-- Pages -->
+				<!--
 				<f7-pages>
 					<f7-page>
 						<f7-block-title>Welcome to my App</f7-block-title>
@@ -46,11 +50,28 @@
 						</f7-block>
 					</f7-page>
 				</f7-pages>
+				-->
+				<f7-pages>
+					<f7-page>
+						<GmapMap
+						:center="center"
+						:zoom="7"
+						style="width: 100%; height:100%"
+						@drag="resize()"
+						></GmapMap>
+					</f7-page>
+				</f7-pages>
 			</f7-view>
 		</f7-views>
 	</div>
 </template>
 
 <script>
-	export default {}
+export default {
+	data () {
+		return {
+			center: {lat: 10.0, lng: 10.0},
+		}
+	}
+}
 </script>
