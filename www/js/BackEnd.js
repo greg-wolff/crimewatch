@@ -22,6 +22,7 @@
     });
     }
 
+  //returns hash when given long and lat
   function getHash(a,b)
   {
       var hash = "noHash";
@@ -40,22 +41,51 @@
                   // console.log("Previous Post ID: " + prevChildKey);
               }else{
                   // console.log("null!");
-
               }
-
           });
           console.log('lon: ' + id);
           console.log('hash: ' + hash);
           return String(hash);
   }
 
+  //Stores the marker AND creates new info dump in info
   function loadInfo(a,b,infoJSON)
   {
       StoreMarker(a,b);
       var hash = getHash(a,b);
-      var firebaseRef = firebase.database().ref("Info"); //top level <info>
+      var firebaseRef = firebase.database().ref("info"); //top level <info>
       var infoRef = firebaseRef.child(hash);
       infoRef.set(infoJSON);
+  }
+
+  //currently not working
+  function getGeo(hash)
+  {
+      //searches through g children to find match
+      return [a,b];
+  }
+
+  //currently not working
+  function getJSON(hash)
+  {
+
+      // var infoJSON="{}";
+      //
+      // var firebaseRef = firebase.database().ref("info/");
+      //
+      // firebaseRef.on("value", function(snapshot) {
+      //     var newPost = snapshot.val();
+      //     if(newPost !== null) //does this data exist?
+      //     {
+      //         // console.log("hash: " + newPost.g);
+      //         infoJSON = newPost[hash];
+      //         // console.log("Previous Post ID: " + prevChildKey);
+      //     }else{
+      //         // console.log("null!");
+      //     }
+      // });
+      // console.log(infoJSON);
+      // return infoJSON;
   }
 
   //returns a list of locations with dist km of a,b
