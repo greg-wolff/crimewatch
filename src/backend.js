@@ -1,3 +1,4 @@
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
@@ -11,7 +12,7 @@ firebase.initializeApp(config);
 //a = long, b = lat
 //stores location a,b
 function StoreMarker(a,b) {
-  var name = a.toString().replace(/\./g,' ')+" and "+ b.toString().replace(/\./g,' ')
+  var name = a.toString().replace(/\./g,' ')+" and "+ b.toString().replace(/\./g,' ');
   var firebaseRef = firebase.database().ref("locations"); //top level <locations>
   var geoFire = new GeoFire(firebaseRef);
   geoFire.set(name, [a, b]).then(function() { //geofire is for hash
@@ -98,8 +99,9 @@ function Nearby(a,b,dist){
   });
   geoQuery.on("key_entered", function(key, location, distance) {
     console.log(key + " entered query at " + location + " (" + distance + " km from center)");
-    markers.push(location);
+    markers.push(location.concat(getHash(location[0],location[1])));
   });
 
   return markers;
 }
+export {StoreMarker,Nearby,loadInfo};
