@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy"
+              content="
+                default-src 'self' data: gap:
+                    https://*.google.com
+                    https://*.googleapis.com
+                    https://*.firebaseio.com
+                    https://*.gstatic.com
+                    https://*.googleusercontent.com
+                'unsafe-eval';
+                connect-src 'self'
+                   wss://*.firebaseio.com
+                'unsafe-eval';
+                style-src 'self'
+                    https://cdnjs.cloudflare.com/
+                    https://*.googleapis.com/
+                    https://*.fontawesome.com/
+                    'unsafe-inline';
+                font-src 'self'
+                    https://cdnjs.cloudflare.com/
+                    https://*.fontawesome.com/
+                    https://*.gstatic.com/ data:;
+                media-src *;
+                script-src 'self'
+                    https://www.gstatic.com/firebasejs/3.9.0/firebase.js
+                    https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js
+                    https://unpkg.com/
+                    https://cdnjs.cloudflare.com/
+                    https://crimewatch-8f003.firebaseio.com
+                    https://*.fontawesome.com/
+                    https://*.firebaseio.com/
+                    https://maps.googleapis.com/
+                    https://*.googleapis.com/
+                    https://*.gstatic.com/
+                'unsafe-eval'
+        ;">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Crimewatch</title>
+	<!-- built style files will be auto injected -->
+</head>
+<body>
+<div id="app"></div>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg"></script>-->
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js"></script>
+<!-- built script files will be auto injected -->
+</body>
+</html>
