@@ -51,7 +51,7 @@ function getHash(a,b)
 function returnInfo(hash){
   var comment = null;
   var firebaseRef = firebase.database().ref("info/"+ hash);
-  firebaseRef.once('once').then(function(snapshot){
+  firebaseRef.once('value').then(function(snapshot){
     comment = snapshot.val().comment;
   });
   return comment;
