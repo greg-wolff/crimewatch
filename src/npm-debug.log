@@ -1,0 +1,482 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   '-g',
+1 verbose cli   'add-local-binaries-to-path' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.3
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData add-local-binaries-to-path
+8 silly fetchNamedPackageData add-local-binaries-to-path
+9 silly mapToRegistry name add-local-binaries-to-path
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'add-local-binaries-to-path',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'add-local-binaries-to-path',
+12 silly mapToRegistry   name: 'add-local-binaries-to-path',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/add-local-binaries-to-path
+14 verbose request uri https://registry.npmjs.org/add-local-binaries-to-path
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 5:32:52 PM
+17 verbose request id ec7e08af393b31dd
+18 verbose etag W/"5749d8f4-26ba"
+19 verbose lastModified Sat, 28 May 2016 17:44:20 GMT
+20 http request GET https://registry.npmjs.org/add-local-binaries-to-path
+21 http 304 https://registry.npmjs.org/add-local-binaries-to-path
+22 verbose headers { date: 'Tue, 23 May 2017 00:32:47 GMT',
+22 verbose headers   via: '1.1 varnish',
+22 verbose headers   'cache-control': 'max-age=300',
+22 verbose headers   etag: 'W/"5749d8f4-26ba"',
+22 verbose headers   age: '83',
+22 verbose headers   connection: 'keep-alive',
+22 verbose headers   'x-served-by': 'cache-sjc3621-SJC',
+22 verbose headers   'x-cache': 'HIT',
+22 verbose headers   'x-cache-hits': '1',
+22 verbose headers   'x-timer': 'S1495499567.427007,VS0,VE1',
+22 verbose headers   vary: 'Accept-Encoding' }
+23 silly get cb [ 304,
+23 silly get   { date: 'Tue, 23 May 2017 00:32:47 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     'cache-control': 'max-age=300',
+23 silly get     etag: 'W/"5749d8f4-26ba"',
+23 silly get     age: '83',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-sjc3621-SJC',
+23 silly get     'x-cache': 'HIT',
+23 silly get     'x-cache-hits': '1',
+23 silly get     'x-timer': 'S1495499567.427007,VS0,VE1',
+23 silly get     vary: 'Accept-Encoding' } ]
+24 verbose etag https://registry.npmjs.org/add-local-binaries-to-path from cache
+25 verbose get saving add-local-binaries-to-path to C:\Users\tobyi\AppData\Roaming\npm-cache\registry.npmjs.org\add-local-binaries-to-path\.cache.json
+26 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+27 silly install normalizeTree
+28 silly loadCurrentTree Finishing
+29 silly loadIdealTree Starting
+30 silly install loadIdealTree
+31 silly cloneCurrentTree Starting
+32 silly install cloneCurrentTreeToIdealTree
+33 silly cloneCurrentTree Finishing
+34 silly loadShrinkwrap Starting
+35 silly install loadShrinkwrap
+36 silly loadShrinkwrap Finishing
+37 silly loadAllDepsIntoIdealTree Starting
+38 silly install loadAllDepsIntoIdealTree
+39 silly resolveWithNewModule add-local-binaries-to-path@1.1.3 checking installable status
+40 silly cache add args [ 'add-local-binaries-to-path', null ]
+41 verbose cache add spec add-local-binaries-to-path
+42 silly cache add parsed spec Result {
+42 silly cache add   raw: 'add-local-binaries-to-path',
+42 silly cache add   scope: null,
+42 silly cache add   escapedName: 'add-local-binaries-to-path',
+42 silly cache add   name: 'add-local-binaries-to-path',
+42 silly cache add   rawSpec: '',
+42 silly cache add   spec: 'latest',
+42 silly cache add   type: 'tag' }
+43 silly addNamed add-local-binaries-to-path@latest
+44 verbose addNamed "latest" is being treated as a dist-tag for add-local-binaries-to-path
+45 info addNameTag [ 'add-local-binaries-to-path', 'latest' ]
+46 silly mapToRegistry name add-local-binaries-to-path
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry data Result {
+49 silly mapToRegistry   raw: 'add-local-binaries-to-path',
+49 silly mapToRegistry   scope: null,
+49 silly mapToRegistry   escapedName: 'add-local-binaries-to-path',
+49 silly mapToRegistry   name: 'add-local-binaries-to-path',
+49 silly mapToRegistry   rawSpec: '',
+49 silly mapToRegistry   spec: 'latest',
+49 silly mapToRegistry   type: 'tag' }
+50 silly mapToRegistry uri https://registry.npmjs.org/add-local-binaries-to-path
+51 verbose addNameTag registry:https://registry.npmjs.org/add-local-binaries-to-path not in flight; fetching
+52 verbose get https://registry.npmjs.org/add-local-binaries-to-path not expired, no request
+53 silly addNameTag next cb for add-local-binaries-to-path with tag latest
+54 silly addNamed add-local-binaries-to-path@1.1.3
+55 verbose addNamed "1.1.3" is a plain semver version for add-local-binaries-to-path
+56 silly cache afterAdd add-local-binaries-to-path@1.1.3
+57 verbose afterAdd C:\Users\tobyi\AppData\Roaming\npm-cache\add-local-binaries-to-path\1.1.3\package\package.json not in flight; writing
+58 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+59 verbose afterAdd C:\Users\tobyi\AppData\Roaming\npm-cache\add-local-binaries-to-path\1.1.3\package\package.json written
+60 silly fetchNamedPackageData shells
+61 silly mapToRegistry name shells
+62 silly mapToRegistry using default registry
+63 silly mapToRegistry registry https://registry.npmjs.org/
+64 silly mapToRegistry data Result {
+64 silly mapToRegistry   raw: 'shells',
+64 silly mapToRegistry   scope: null,
+64 silly mapToRegistry   escapedName: 'shells',
+64 silly mapToRegistry   name: 'shells',
+64 silly mapToRegistry   rawSpec: '',
+64 silly mapToRegistry   spec: 'latest',
+64 silly mapToRegistry   type: 'tag' }
+65 silly mapToRegistry uri https://registry.npmjs.org/shells
+66 verbose request uri https://registry.npmjs.org/shells
+67 verbose request no auth needed
+68 info attempt registry request try #1 at 5:32:53 PM
+69 verbose etag W/"57492070-1384"
+70 verbose lastModified Sat, 28 May 2016 04:37:04 GMT
+71 http request GET https://registry.npmjs.org/shells
+72 http 304 https://registry.npmjs.org/shells
+73 verbose headers { date: 'Tue, 23 May 2017 00:32:47 GMT',
+73 verbose headers   via: '1.1 varnish',
+73 verbose headers   'cache-control': 'max-age=300',
+73 verbose headers   etag: 'W/"57492070-1384"',
+73 verbose headers   age: '82',
+73 verbose headers   connection: 'keep-alive',
+73 verbose headers   'x-served-by': 'cache-sjc3621-SJC',
+73 verbose headers   'x-cache': 'HIT',
+73 verbose headers   'x-cache-hits': '1',
+73 verbose headers   'x-timer': 'S1495499568.597321,VS0,VE1',
+73 verbose headers   vary: 'Accept-Encoding' }
+74 silly get cb [ 304,
+74 silly get   { date: 'Tue, 23 May 2017 00:32:47 GMT',
+74 silly get     via: '1.1 varnish',
+74 silly get     'cache-control': 'max-age=300',
+74 silly get     etag: 'W/"57492070-1384"',
+74 silly get     age: '82',
+74 silly get     connection: 'keep-alive',
+74 silly get     'x-served-by': 'cache-sjc3621-SJC',
+74 silly get     'x-cache': 'HIT',
+74 silly get     'x-cache-hits': '1',
+74 silly get     'x-timer': 'S1495499568.597321,VS0,VE1',
+74 silly get     vary: 'Accept-Encoding' } ]
+75 verbose etag https://registry.npmjs.org/shells from cache
+76 verbose get saving shells to C:\Users\tobyi\AppData\Roaming\npm-cache\registry.npmjs.org\shells\.cache.json
+77 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+78 silly resolveWithNewModule shells@2.0.0 checking installable status
+79 silly cache add args [ 'shells@^2.0.0', null ]
+80 verbose cache add spec shells@^2.0.0
+81 silly cache add parsed spec Result {
+81 silly cache add   raw: 'shells@^2.0.0',
+81 silly cache add   scope: null,
+81 silly cache add   escapedName: 'shells',
+81 silly cache add   name: 'shells',
+81 silly cache add   rawSpec: '^2.0.0',
+81 silly cache add   spec: '>=2.0.0 <3.0.0',
+81 silly cache add   type: 'range' }
+82 silly addNamed shells@>=2.0.0 <3.0.0
+83 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for shells
+84 silly addNameRange { name: 'shells', range: '>=2.0.0 <3.0.0', hasData: false }
+85 silly mapToRegistry name shells
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry data Result {
+88 silly mapToRegistry   raw: 'shells',
+88 silly mapToRegistry   scope: null,
+88 silly mapToRegistry   escapedName: 'shells',
+88 silly mapToRegistry   name: 'shells',
+88 silly mapToRegistry   rawSpec: '',
+88 silly mapToRegistry   spec: 'latest',
+88 silly mapToRegistry   type: 'tag' }
+89 silly mapToRegistry uri https://registry.npmjs.org/shells
+90 verbose addNameRange registry:https://registry.npmjs.org/shells not in flight; fetching
+91 verbose get https://registry.npmjs.org/shells not expired, no request
+92 silly addNameRange number 2 { name: 'shells', range: '>=2.0.0 <3.0.0', hasData: true }
+93 silly addNameRange versions [ 'shells', [ '1.0.0', '2.0.0' ] ]
+94 silly addNamed shells@2.0.0
+95 verbose addNamed "2.0.0" is a plain semver version for shells
+96 silly cache afterAdd shells@2.0.0
+97 verbose afterAdd C:\Users\tobyi\AppData\Roaming\npm-cache\shells\2.0.0\package\package.json not in flight; writing
+98 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+99 verbose afterAdd C:\Users\tobyi\AppData\Roaming\npm-cache\shells\2.0.0\package\package.json written
+100 silly fetchNamedPackageData path-exists
+101 silly mapToRegistry name path-exists
+102 silly mapToRegistry using default registry
+103 silly mapToRegistry registry https://registry.npmjs.org/
+104 silly mapToRegistry data Result {
+104 silly mapToRegistry   raw: 'path-exists',
+104 silly mapToRegistry   scope: null,
+104 silly mapToRegistry   escapedName: 'path-exists',
+104 silly mapToRegistry   name: 'path-exists',
+104 silly mapToRegistry   rawSpec: '',
+104 silly mapToRegistry   spec: 'latest',
+104 silly mapToRegistry   type: 'tag' }
+105 silly mapToRegistry uri https://registry.npmjs.org/path-exists
+106 verbose request uri https://registry.npmjs.org/path-exists
+107 verbose request no auth needed
+108 info attempt registry request try #1 at 5:32:53 PM
+109 verbose etag W/"5902ec72-1c2f"
+110 verbose lastModified Fri, 28 Apr 2017 07:17:06 GMT
+111 http request GET https://registry.npmjs.org/path-exists
+112 http 304 https://registry.npmjs.org/path-exists
+113 verbose headers { date: 'Tue, 23 May 2017 00:32:47 GMT',
+113 verbose headers   via: '1.1 varnish',
+113 verbose headers   'cache-control': 'max-age=300',
+113 verbose headers   etag: 'W/"5902ec72-1c2f"',
+113 verbose headers   age: '254',
+113 verbose headers   connection: 'keep-alive',
+113 verbose headers   'x-served-by': 'cache-sjc3621-SJC',
+113 verbose headers   'x-cache': 'HIT',
+113 verbose headers   'x-cache-hits': '5',
+113 verbose headers   'x-timer': 'S1495499568.718348,VS0,VE0',
+113 verbose headers   vary: 'Accept-Encoding' }
+114 silly get cb [ 304,
+114 silly get   { date: 'Tue, 23 May 2017 00:32:47 GMT',
+114 silly get     via: '1.1 varnish',
+114 silly get     'cache-control': 'max-age=300',
+114 silly get     etag: 'W/"5902ec72-1c2f"',
+114 silly get     age: '254',
+114 silly get     connection: 'keep-alive',
+114 silly get     'x-served-by': 'cache-sjc3621-SJC',
+114 silly get     'x-cache': 'HIT',
+114 silly get     'x-cache-hits': '5',
+114 silly get     'x-timer': 'S1495499568.718348,VS0,VE0',
+114 silly get     vary: 'Accept-Encoding' } ]
+115 verbose etag https://registry.npmjs.org/path-exists from cache
+116 verbose get saving path-exists to C:\Users\tobyi\AppData\Roaming\npm-cache\registry.npmjs.org\path-exists\.cache.json
+117 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+118 silly resolveWithNewModule path-exists@3.0.0 checking installable status
+119 silly cache add args [ 'path-exists@^3.0.0', null ]
+120 verbose cache add spec path-exists@^3.0.0
+121 silly cache add parsed spec Result {
+121 silly cache add   raw: 'path-exists@^3.0.0',
+121 silly cache add   scope: null,
+121 silly cache add   escapedName: 'path-exists',
+121 silly cache add   name: 'path-exists',
+121 silly cache add   rawSpec: '^3.0.0',
+121 silly cache add   spec: '>=3.0.0 <4.0.0',
+121 silly cache add   type: 'range' }
+122 silly addNamed path-exists@>=3.0.0 <4.0.0
+123 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for path-exists
+124 silly addNameRange { name: 'path-exists', range: '>=3.0.0 <4.0.0', hasData: false }
+125 silly mapToRegistry name path-exists
+126 silly mapToRegistry using default registry
+127 silly mapToRegistry registry https://registry.npmjs.org/
+128 silly mapToRegistry data Result {
+128 silly mapToRegistry   raw: 'path-exists',
+128 silly mapToRegistry   scope: null,
+128 silly mapToRegistry   escapedName: 'path-exists',
+128 silly mapToRegistry   name: 'path-exists',
+128 silly mapToRegistry   rawSpec: '',
+128 silly mapToRegistry   spec: 'latest',
+128 silly mapToRegistry   type: 'tag' }
+129 silly mapToRegistry uri https://registry.npmjs.org/path-exists
+130 verbose addNameRange registry:https://registry.npmjs.org/path-exists not in flight; fetching
+131 verbose get https://registry.npmjs.org/path-exists not expired, no request
+132 silly addNameRange number 2 { name: 'path-exists', range: '>=3.0.0 <4.0.0', hasData: true }
+133 silly addNameRange versions [ 'path-exists', [ '1.0.0', '2.0.0', '2.1.0', '3.0.0' ] ]
+134 silly addNamed path-exists@3.0.0
+135 verbose addNamed "3.0.0" is a plain semver version for path-exists
+136 silly cache afterAdd path-exists@3.0.0
+137 verbose afterAdd C:\Users\tobyi\AppData\Roaming\npm-cache\path-exists\3.0.0\package\package.json not in flight; writing
+138 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+139 verbose afterAdd C:\Users\tobyi\AppData\Roaming\npm-cache\path-exists\3.0.0\package\package.json written
+140 silly loadAllDepsIntoIdealTree Finishing
+141 silly loadIdealTree Finishing
+142 silly currentTree npm
+143 silly idealTree npm
+143 silly idealTree `-- add-local-binaries-to-path@1.1.3
+143 silly idealTree   +-- path-exists@3.0.0
+143 silly idealTree   `-- shells@2.0.0
+144 silly generateActionsToTake Starting
+145 silly install generateActionsToTake
+146 silly generateActionsToTake Finishing
+147 silly diffTrees action count 3
+148 silly diffTrees add path-exists@3.0.0
+149 silly diffTrees add shells@2.0.0
+150 silly diffTrees add add-local-binaries-to-path@1.1.3
+151 silly decomposeActions action count 24
+152 silly decomposeActions fetch path-exists@3.0.0
+153 silly decomposeActions extract path-exists@3.0.0
+154 silly decomposeActions test path-exists@3.0.0
+155 silly decomposeActions preinstall path-exists@3.0.0
+156 silly decomposeActions build path-exists@3.0.0
+157 silly decomposeActions install path-exists@3.0.0
+158 silly decomposeActions postinstall path-exists@3.0.0
+159 silly decomposeActions finalize path-exists@3.0.0
+160 silly decomposeActions fetch shells@2.0.0
+161 silly decomposeActions extract shells@2.0.0
+162 silly decomposeActions test shells@2.0.0
+163 silly decomposeActions preinstall shells@2.0.0
+164 silly decomposeActions build shells@2.0.0
+165 silly decomposeActions install shells@2.0.0
+166 silly decomposeActions postinstall shells@2.0.0
+167 silly decomposeActions finalize shells@2.0.0
+168 silly decomposeActions fetch add-local-binaries-to-path@1.1.3
+169 silly decomposeActions extract add-local-binaries-to-path@1.1.3
+170 silly decomposeActions test add-local-binaries-to-path@1.1.3
+171 silly decomposeActions preinstall add-local-binaries-to-path@1.1.3
+172 silly decomposeActions build add-local-binaries-to-path@1.1.3
+173 silly decomposeActions install add-local-binaries-to-path@1.1.3
+174 silly decomposeActions postinstall add-local-binaries-to-path@1.1.3
+175 silly decomposeActions finalize add-local-binaries-to-path@1.1.3
+176 silly runTopLevelLifecycles Starting
+177 silly executeActions Starting
+178 silly install executeActions
+179 silly doSerial global-install 0
+180 silly doParallel fetch 3
+181 verbose correctMkdir C:\Users\tobyi\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+182 verbose lock using C:\Users\tobyi\AppData\Roaming\npm-cache\_locks\staging-75a9f2d484c57a32.lock for C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging
+183 silly doParallel extract 3
+184 silly extract path-exists@3.0.0
+185 silly extract shells@2.0.0
+186 silly extract add-local-binaries-to-path@1.1.3
+187 verbose unbuild node_modules\.staging\path-exists-a66a289f
+188 verbose unbuild node_modules\.staging\add-local-binaries-to-path-4161ba18
+189 verbose unbuild node_modules\.staging\shells-2673816c
+190 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f is being purged from base C:\Users\tobyi\AppData\Roaming\npm
+191 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f
+192 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18 is being purged from base C:\Users\tobyi\AppData\Roaming\npm
+193 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18
+194 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c is being purged from base C:\Users\tobyi\AppData\Roaming\npm
+195 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c
+196 verbose tar unpack C:\Users\tobyi\AppData\Roaming\npm-cache\path-exists\3.0.0\package.tgz
+197 verbose tar unpacking to C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f
+198 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f is being purged
+199 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f
+200 verbose tar unpack C:\Users\tobyi\AppData\Roaming\npm-cache\add-local-binaries-to-path\1.1.3\package.tgz
+201 verbose tar unpacking to C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18
+202 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18 is being purged
+203 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18
+204 verbose tar unpack C:\Users\tobyi\AppData\Roaming\npm-cache\shells\2.0.0\package.tgz
+205 verbose tar unpacking to C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c
+206 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c is being purged
+207 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c
+208 silly gunzTarPerm modes [ '777', '666' ]
+209 silly gunzTarPerm modes [ '777', '666' ]
+210 silly gunzTarPerm modes [ '777', '666' ]
+211 silly gunzTarPerm extractEntry package.json
+212 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+213 silly gunzTarPerm extractEntry package.json
+214 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+215 silly gunzTarPerm extractEntry package.json
+216 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+217 silly gunzTarPerm extractEntry README.md
+218 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+219 silly gunzTarPerm extractEntry index.js
+220 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+221 silly gunzTarPerm extractEntry index.js
+222 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+223 silly gunzTarPerm extractEntry license
+224 silly gunzTarPerm modified mode [ 'license', 420, 438 ]
+225 silly gunzTarPerm extractEntry README.md
+226 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+227 silly gunzTarPerm extractEntry index.js
+228 silly gunzTarPerm modified mode [ 'index.js', 493, 511 ]
+229 silly gunzTarPerm extractEntry test/index.js
+230 silly gunzTarPerm modified mode [ 'test/index.js', 420, 438 ]
+231 silly gunzTarPerm extractEntry test/fixtures/.bash_profile
+232 silly gunzTarPerm modified mode [ 'test/fixtures/.bash_profile', 420, 438 ]
+233 silly gunzTarPerm extractEntry readme.md
+234 silly gunzTarPerm modified mode [ 'readme.md', 420, 438 ]
+235 silly gunzTarPerm extractEntry test/fixtures/.bashrc
+236 silly gunzTarPerm modified mode [ 'test/fixtures/.bashrc', 420, 438 ]
+237 silly gunzTarPerm extractEntry test/fixtures/.config/fish/config.fish
+238 silly gunzTarPerm modified mode [ 'test/fixtures/.config/fish/config.fish', 420, 438 ]
+239 silly gunzTarPerm extractEntry test/fixtures/.zshrc
+240 silly gunzTarPerm modified mode [ 'test/fixtures/.zshrc', 420, 438 ]
+241 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18\node_modules is being purged
+242 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18\node_modules
+243 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f\node_modules is being purged
+244 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f\node_modules
+245 silly gentlyRm C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c\node_modules is being purged
+246 verbose gentlyRm don't care about contents; nuking C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c\node_modules
+247 silly doParallel preinstall 3
+248 silly preinstall path-exists@3.0.0 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f
+249 info lifecycle path-exists@3.0.0~preinstall: path-exists@3.0.0
+250 silly preinstall shells@2.0.0 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c
+251 info lifecycle shells@2.0.0~preinstall: shells@2.0.0
+252 silly preinstall add-local-binaries-to-path@1.1.3 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18
+253 info lifecycle add-local-binaries-to-path@1.1.3~preinstall: add-local-binaries-to-path@1.1.3
+254 silly lifecycle path-exists@3.0.0~preinstall: no script for preinstall, continuing
+255 silly lifecycle shells@2.0.0~preinstall: no script for preinstall, continuing
+256 silly lifecycle add-local-binaries-to-path@1.1.3~preinstall: no script for preinstall, continuing
+257 silly doReverseSerial remove 0
+258 silly doSerial move 0
+259 silly doSerial finalize 3
+260 silly finalize C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path\node_modules\path-exists
+261 silly finalize C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path\node_modules\shells
+262 silly finalize C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path
+263 silly doSerial build 3
+264 silly build path-exists@3.0.0
+265 info linkStuff path-exists@3.0.0
+266 silly linkStuff path-exists@3.0.0 has C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path\node_modules as its parent node_modules
+267 silly linkStuff path-exists@3.0.0 is part of a global install
+268 silly linkStuff path-exists@3.0.0 is installed into a global node_modules
+269 verbose linkBins path-exists@3.0.0
+270 verbose linkMans path-exists@3.0.0
+271 silly build shells@2.0.0
+272 info linkStuff shells@2.0.0
+273 silly linkStuff shells@2.0.0 has C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path\node_modules as its parent node_modules
+274 silly linkStuff shells@2.0.0 is part of a global install
+275 silly linkStuff shells@2.0.0 is installed into a global node_modules
+276 verbose linkBins shells@2.0.0
+277 verbose linkMans shells@2.0.0
+278 silly build add-local-binaries-to-path@1.1.3
+279 info linkStuff add-local-binaries-to-path@1.1.3
+280 silly linkStuff add-local-binaries-to-path@1.1.3 has C:\Users\tobyi\AppData\Roaming\npm\node_modules as its parent node_modules
+281 silly linkStuff add-local-binaries-to-path@1.1.3 is part of a global install
+282 silly linkStuff add-local-binaries-to-path@1.1.3 is installed into a global node_modules
+283 silly linkStuff add-local-binaries-to-path@1.1.3 is installed into the top-level global node_modules
+284 verbose linkBins add-local-binaries-to-path@1.1.3
+285 verbose linkMans add-local-binaries-to-path@1.1.3
+286 silly doSerial global-link 0
+287 silly doParallel update-linked 0
+288 silly doSerial install 3
+289 silly install path-exists@3.0.0 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f
+290 info lifecycle path-exists@3.0.0~install: path-exists@3.0.0
+291 silly lifecycle path-exists@3.0.0~install: no script for install, continuing
+292 silly install shells@2.0.0 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c
+293 info lifecycle shells@2.0.0~install: shells@2.0.0
+294 silly lifecycle shells@2.0.0~install: no script for install, continuing
+295 silly install add-local-binaries-to-path@1.1.3 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18
+296 info lifecycle add-local-binaries-to-path@1.1.3~install: add-local-binaries-to-path@1.1.3
+297 silly lifecycle add-local-binaries-to-path@1.1.3~install: no script for install, continuing
+298 silly doSerial postinstall 3
+299 silly postinstall path-exists@3.0.0 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\path-exists-a66a289f
+300 info lifecycle path-exists@3.0.0~postinstall: path-exists@3.0.0
+301 silly lifecycle path-exists@3.0.0~postinstall: no script for postinstall, continuing
+302 silly postinstall shells@2.0.0 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\shells-2673816c
+303 info lifecycle shells@2.0.0~postinstall: shells@2.0.0
+304 silly lifecycle shells@2.0.0~postinstall: no script for postinstall, continuing
+305 silly postinstall add-local-binaries-to-path@1.1.3 C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging\add-local-binaries-to-path-4161ba18
+306 info lifecycle add-local-binaries-to-path@1.1.3~postinstall: add-local-binaries-to-path@1.1.3
+307 verbose lifecycle add-local-binaries-to-path@1.1.3~postinstall: unsafe-perm in lifecycle true
+308 verbose lifecycle add-local-binaries-to-path@1.1.3~postinstall: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path\node_modules\.bin;C:\Users\tobyi\AppData\Roaming\npm\node_modules\.bin;C:\Users\tobyi\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\tobyi\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64;C:\Program Files\nodejs;C:\Users\tobyi\AppData\Local\Microsoft\WindowsApps;C:\Users\tobyi\AppData\Roaming\npm;C:\Users\tobyi\AppData\Local\atom\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+309 verbose lifecycle add-local-binaries-to-path@1.1.3~postinstall: CWD: C:\Users\tobyi\AppData\Roaming\npm\node_modules\add-local-binaries-to-path
+310 silly lifecycle add-local-binaries-to-path@1.1.3~postinstall: Args: [ '/d /s /c', 'node index.js' ]
+311 silly lifecycle add-local-binaries-to-path@1.1.3~postinstall: Returned: code: 1  signal: null
+312 info lifecycle add-local-binaries-to-path@1.1.3~postinstall: Failed to exec postinstall script
+313 verbose unlock done using C:\Users\tobyi\AppData\Roaming\npm-cache\_locks\staging-75a9f2d484c57a32.lock for C:\Users\tobyi\AppData\Roaming\npm\node_modules\.staging
+314 silly rollbackFailedOptional Starting
+315 silly rollbackFailedOptional Finishing
+316 silly runTopLevelLifecycles Finishing
+317 silly install printInstalled
+318 verbose stack Error: add-local-binaries-to-path@1.1.3 postinstall: `node index.js`
+318 verbose stack Exit status 1
+318 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:255:16)
+318 verbose stack     at emitTwo (events.js:106:13)
+318 verbose stack     at EventEmitter.emit (events.js:191:7)
+318 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:40:14)
+318 verbose stack     at emitTwo (events.js:106:13)
+318 verbose stack     at ChildProcess.emit (events.js:191:7)
+318 verbose stack     at maybeClose (internal/child_process.js:886:16)
+318 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+319 verbose pkgid add-local-binaries-to-path@1.1.3
+320 verbose cwd C:\Users\tobyi\new\src
+321 error Windows_NT 10.0.14393
+322 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i" "-g" "add-local-binaries-to-path"
+323 error node v6.10.3
+324 error npm  v3.10.10
+325 error code ELIFECYCLE
+326 error add-local-binaries-to-path@1.1.3 postinstall: `node index.js`
+326 error Exit status 1
+327 error Failed at the add-local-binaries-to-path@1.1.3 postinstall script 'node index.js'.
+327 error Make sure you have the latest version of node.js and npm installed.
+327 error If you do, this is most likely a problem with the add-local-binaries-to-path package,
+327 error not with npm itself.
+327 error Tell the author that this fails on your system:
+327 error     node index.js
+327 error You can get information on how to open an issue for this project with:
+327 error     npm bugs add-local-binaries-to-path
+327 error Or if that isn't available, you can get their info via:
+327 error     npm owner ls add-local-binaries-to-path
+327 error There is likely additional logging output above.
+328 verbose exit [ 1, true ]
