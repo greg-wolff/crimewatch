@@ -73,9 +73,11 @@ var app = {
         });
         marker.addListener('click', function() {
           console.log(index[2]);
+          while(returnInfo(index[2]) === null){
+            console.log("waiting for response");
+          }
           console.log(returnInfo(index[2]));
         });
-        console.log(index);
       });
     }
 };
