@@ -65,11 +65,11 @@ var app = {
        center: uluru
       });
       locations.forEach(function pop(index,locations){
-        var pos = {lat: locations[index][0], lng:location[index][1]};
+        var pos = {lat: locations[0][0], lng:location[0][1]};
         new google.maps.Marker({
           map: map,
           position: pos,
-          info: locations[index][3]
+          info: locations[0][3]
         });
       });
     }
