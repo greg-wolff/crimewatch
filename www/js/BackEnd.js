@@ -60,7 +60,7 @@ function returnInfo(hash){
           console.log("null!");
       }
   });
-  return String(comment);
+  return comment;
 }
 //Stores the marker AND creates new info dump in info
 function loadInfo(a,b,infoJSON)
