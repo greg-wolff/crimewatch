@@ -56,16 +56,21 @@ var app = {
       loadInfo(-28.0,136,Test);
 
       //a manual test of loading nearby markers.
-      console.log(Nearby(-26.45,132.144,1000));
+      var locations = Nearby(-26.45,132.144,1000);
+      console.log(locations);
       // in the second index [0] is lat [1] is longitude
       var uluru = {lat: -26.45, lng: 132.144};
       var map = new google.maps.Map(document.getElementById('map'), {
        zoom: 4,
        center: uluru
       });
-      var marker = new google.maps.Marker({
-       position: uluru,
-       map: map
+      locations.forEach(function pop(index,locations){
+        var pos = {lat: locations[index][0], lng:location[index][1]};
+        new google.maps.Marker({
+          map: map,
+          position: pos,
+          info: locations[index][3]
+        });
       });
     }
 };
