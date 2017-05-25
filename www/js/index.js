@@ -64,12 +64,12 @@ var app = {
        zoom: 4,
        center: uluru
       });
-      Nearby(-26.45,132.144,1000).forEach(function pop(index,locations){
-        var pos = {lat: Nearby(-26.45,132.144,1000)[index][0], lng:Nearby(-26.45,132.144,1000)[index][1]};
+      Nearby(-26.45,132.144,1000).forEach(function pop(index){
+        var pos = {lat: Nearby(-26.45,132.144,1000)[0], lng:Nearby(-26.45,132.144,1000)[1]};
         new google.maps.Marker({
           map: map,
           position: pos,
-          info: Nearby(-26.45,132.144,1000)[index][3]
+          info: Nearby(-26.45,132.144,1000)[3]
         });
       });
     }
