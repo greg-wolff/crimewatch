@@ -58,7 +58,7 @@ var app = {
       //a manual test of loading nearby markers.
       console.log(Nearby(-26.45,132.144,1000));
       // in the second index [0] is lat [1] is longitude
-      var uluru = {lat: Nearby(-26.45,132.144,1000)[0][0], lng: Nearby(-26.45,132.144,1000)[0][1]};
+      var uluru = {lat: -26.45, lng: 132.144};
       var map = new google.maps.Map(document.getElementById('map'), {
        zoom: 4,
        center: uluru
