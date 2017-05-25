@@ -71,7 +71,7 @@ var app = {
           position: pos,
           info: Nearby(-26.45,132.144,1000)[index][2]
         });*/
-        console.log(locations[index]);
+        console.log(index);
       });
     }
 };
