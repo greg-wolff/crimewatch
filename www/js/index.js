@@ -69,10 +69,11 @@ var app = {
         var marker = new google.maps.Marker({
           map: map,
           position: pos,
-          info: [index][2]
+          info: index[2]
         });
         marker.addListener('click', function() {
           console.log(index[2]);
+          console.log(returnInfo(index[2]));
         });
         console.log(index);
       });

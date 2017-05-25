@@ -48,6 +48,20 @@ function getHash(a,b)
         return String(hash);
 }
 
+function returnInfo(hash){
+  var comment = null;
+  var firebaseRef = firebase.database().ref("info/"+ hash);
+  firebaseRef.on("value", function(snapshot) {
+      var newPost = snapshot.val();
+      if(newPost !== null) //does this data exist?
+      {
+          comment = newPost.comment;
+      }else{
+          // console.log("null!");
+      }
+  });
+  return String(comment);
+}
 //Stores the marker AND creates new info dump in info
 function loadInfo(a,b,infoJSON)
 {
