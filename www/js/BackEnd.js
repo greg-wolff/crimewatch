@@ -52,7 +52,7 @@ function returnInfo(hash){
   var comment = null;
   var firebaseRef = firebase.database().ref("info/"+ hash);
   firebaseRef.once('value').then(function(snapshot){
-    comment = snapshot.val().comment;
+    comment = snapshot.val();
   });
   return comment;
 }
