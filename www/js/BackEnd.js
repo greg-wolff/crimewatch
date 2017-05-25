@@ -51,14 +51,8 @@ function getHash(a,b)
 function returnInfo(hash){
   var comment = null;
   var firebaseRef = firebase.database().ref("info/"+ hash);
-  firebaseRef.on("value", function(snapshot) {
-      var newPost = snapshot.val();
-      if(newPost !== null) //does this data exist?
-      {
-          comment = newPost.comment;
-      }else{
-          console.log("null!");
-      }
+  firebaseRef.once('once').then(function(snapshot)){
+    comment = snapshot.val().comment;
   });
   return comment;
 }
