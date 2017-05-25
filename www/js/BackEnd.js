@@ -99,7 +99,12 @@ function Nearby(a,b,dist){
   });
   geoQuery.on("key_entered", function(key, location, distance) {
     console.log(key + " entered query at " + location + " (" + distance + " km from center)");
-    markers.push(location.concat(getHash(location[0],location[1])));
+    var marker = {
+     position: {lat:location[0],lng:location[1]},
+     info : getHash(location[0],location[1]),
+     map: map
+   };
+    markers.push(marker);
   });
 
   return markers;
