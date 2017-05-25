@@ -55,9 +55,9 @@ function returnInfo(hash){
       var newPost = snapshot.val();
       if(newPost !== null) //does this data exist?
       {
-          comment = newPost;
+          comment = newPost.comment;
       }else{
-          // console.log("null!");
+          console.log("null!");
       }
   });
   return String(comment);
