@@ -47,10 +47,13 @@ var app = {
     },
     initMap: () => {
       //a manual test of adding a marker.
-      loadInfo(-25.363,131.044,Test:ex);
-      loadInfo(-27.0,133,Test:ex);
-      loadInfo(-29.45,132.14,Test:ex);
-      loadInfo(-28.0,136,Test:ex);
+      var Test = {
+        comment: "ex"
+      };
+      loadInfo(-25.363,131.044,Test);
+      loadInfo(-27.0,133,Test);
+      loadInfo(-29.45,132.14,Test);
+      loadInfo(-28.0,136,Test);
 
       //a manual test of loading nearby markers.
       console.log(Nearby(-26.45,132.144,1000));

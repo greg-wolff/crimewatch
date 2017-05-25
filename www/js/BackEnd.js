@@ -104,4 +104,4 @@ function Nearby(a,b,dist){
 
   return markers;
 }
-export {StoreMarker,Nearby,loadInfo};
+//export {StoreMarker,Nearby,loadInfo};
