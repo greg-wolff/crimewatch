@@ -47,9 +47,7 @@ var app = {
     },
     initMap: () => {
       //a manual test of adding a marker.
-      var Test = {
-        comment: "ex"
-      };
+      var Test = {comment: "ex"};
       loadInfo(-25.363,131.044,Test);
       loadInfo(-27.0,133,Test);
       loadInfo(-29.45,132.14,Test);
@@ -69,13 +67,15 @@ var app = {
         var marker = new google.maps.Marker({
           map: map,
           position: pos,
-          info: index[2]
+          info: returnInfo(index[2])
         });
         marker.addListener('click', function() {
           console.log(index[2]);
+          //to interate over the null row
           console.log(returnInfo(index[2]));
         });
       });
+
     }
 };
 

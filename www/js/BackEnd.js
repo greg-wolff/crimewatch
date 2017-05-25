@@ -49,10 +49,12 @@ function getHash(a,b)
 }
 
 function returnInfo(hash){
-  var comment = null;
-  var firebaseRef = firebase.database().ref("info/"+ hash);
-  firebaseRef.once('value').then(function(snapshot){
-    comment = snapshot.val();
+  var comment = "first click always return null?";
+  var firebaseRef = firebase.database().ref("info/"+ hash );
+  firebaseRef.on("value", function(snapshot) {
+      snapshot.forEach(function(data){
+          comment = data.val();
+      });
   });
   return comment;
 }
