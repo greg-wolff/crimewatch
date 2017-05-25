@@ -72,7 +72,7 @@ var app = {
           info: [index][2]
         });
         marker.addListener('click', function() {
-          console.log(this.info);
+          console.log(this);
         });
         console.log(index);
       });
