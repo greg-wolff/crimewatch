@@ -53,7 +53,9 @@
 				-->
       <f7-pages>
         <f7-page>
-          <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%"></GmapMap>
+          <GmapMap :center="center" :zoom="zoom" style="width: 100%; height:100%">
+            <GmapMarker :position="center" :icon="curr"></GmapMarker>
+          </GmapMap>
         </f7-page>
       </f7-pages>
     </f7-view>
@@ -63,13 +65,53 @@
 
 <script>
 export default {
-  data() {
+  data: function() {
     return {
       center: {
-        lat: 10.0,
-        lng: 10.0
+        lat: 10,
+        lng: 10
       },
+      zoom: 2,
+      curr: 'http://i.imgur.com/VnDEIQt.png'
     }
+  },
+  methods: {
+    setCenter: function() {
+      console.log('setcenter')
+      // Request Location Services
+      var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+        onError, {
+          timeout: 30000
+        })
+      var that = this
+      console.log(this)
+
+      function onSuccess(pos) {
+        console.log(pos)
+        console.log(this)
+        that.$data.center = {
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+        }
+        that.$data.zoom = 15
+        /* console.log(App.$data.center)
+        App.setCenter({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+        }) */
+      }
+
+      function onError(err) {
+        console.log(err)
+        console.log(err.code)
+        console.log(erro.message)
+      }
+    }
+  },
+  mounted: function() {
+    console.log(this)
+    this.setCenter()
   }
+
 }
 </script>

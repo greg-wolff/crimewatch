@@ -22,7 +22,10 @@ import AppStyles from './assets/sass/main.scss'
 
 //Import backend.js
 //import StoreMarker(),Nearby() from './backend.js'
-import {Nearby,loadInfo} from './backend.js'
+import {
+  Nearby,
+  loadInfo
+} from './backend.js'
 // Import Routes
 import Routes from './routes.js'
 
@@ -32,24 +35,24 @@ import App from './main.vue'
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 Vue.use(VueGoogleMaps, {
-   load: {
-     key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
-   }
- });
-//Testing
+  load: {
+    key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
+  }
+});
+
 var test = {
-"timestamp":"3:14",
-"comment":"It works!",
-"photo-url":"ex.url",
-"category":"test"
+  "timestamp": "3:14",
+  "comment": "It works!",
+  "photo-url": "ex.url",
+  "category": "test"
 }
-loadInfo(10,10,test);
-loadInfo(10.02,10,test);
-loadInfo(10.03,10,test);
+loadInfo(10, 10, test);
+loadInfo(10.02, 10, test);
+loadInfo(10.03, 10, test);
 //Nearby(10,10,100);
-console.log(Nearby(10,10,100));
+console.log(Nearby(10, 10, 100));
 // Init App
-new Vue({
+var vm = new Vue({
   el: '#app',
   template: '<app/>',
   // Init Framework7 by passing parameters here
@@ -62,8 +65,4 @@ new Vue({
   components: {
     app: App
   },
-  data: {
-    center: {lat: 10.0, lng: 10.0}
-
-  }
 })
