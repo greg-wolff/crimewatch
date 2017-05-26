@@ -26,6 +26,9 @@ import Routes from './routes.js'
 // Import App Component
 import App from './main.vue'
 
+import cameraAPI from './camera.js'
+
+
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 Vue.use(VueGoogleMaps, {
