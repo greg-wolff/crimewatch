@@ -53,7 +53,17 @@
 				-->
       <f7-pages>
         <f7-page>
-          <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%"></GmapMap>
+          <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
+          <GmapMarker
+              v-for="m in markers"
+              :position="m.position"
+              :info = "m.info"
+              :clickable="true"
+              @click = "getInfo(m)"
+              v-el:current
+              >
+          </GmapMarker>
+          </GmapMap>
         </f7-page>
       </f7-pages>
     </f7-view>
@@ -62,13 +72,27 @@
 </template>
 
 <script>
+import {Nearby,loadInfo,returnInfo,getHash} from './backend.js'
 export default {
-  data() {
+  data(a,b) {
+    var locs = [];
+    var locations = Nearby(10,10,100);
+    locations.forEach(function pop(index){
+      var pos = {lat: index[0],lng:index[1]};
+      //info is set just to open up a connection
+      locs.push({position:pos},{info:returnInfo(index[2])});
+    });
+    console.log(locs);
     return {
-      center: {
-        lat: 10.0,
-        lng: 10.0
-      },
+      center: {lat: 10.0,lng: 10.0},
+      markers: locs
+    }
+  },
+  methods: {
+    getInfo: function(m){
+        console.log(m.position.lat);
+        var Infohash = getHash(m.position.lat,m.position.lng);
+        console.log(returnInfo(Infohash));
     }
   }
 }

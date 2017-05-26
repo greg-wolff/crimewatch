@@ -104,4 +104,14 @@ function Nearby(a,b,dist){
 
   return markers;
 }
-export {StoreMarker,Nearby,loadInfo};
+
+function returnInfo(hash){
+  var comment = "first click always return null?";
+  var firebaseRef = firebase.database().ref("info/"+ hash );
+  firebaseRef.on("value", function(snapshot) {
+      comment = snapshot.val();
+  });
+  return comment;
+}
+
+export {StoreMarker,Nearby,loadInfo,returnInfo,getHash};
