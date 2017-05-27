@@ -49,12 +49,6 @@ loadInfo(10.03,10,test);
 //Nearby(10,10,100);
 console.log(Nearby(10,10,100));
 // Init App
-var locs = [];
-var locations = Nearby(10,10,100);
-locations.forEach(function pop(index){
-  var pos = {lat: index[0],lng:index[1]};
-  locs.push({position:pos});
-});
 var vm = new Vue({
   el: '#app',
   template: '<app/>',
@@ -68,10 +62,6 @@ var vm = new Vue({
   components: {
     app: App
   },
-  data: {
-    center: {lat: 10.0, lng: 10.0},
-    markers: locs
-  }
-})
+});
 console.log(vm.center);
 console.log(vm.markers);
