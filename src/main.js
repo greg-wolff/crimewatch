@@ -43,11 +43,11 @@ var test = {
 "photo-url":"ex.url",
 "category":"test"
 }
-loadInfo(10,10,test);
-loadInfo(10.02,10,test);
-loadInfo(10.03,10,test);
-//Nearby(10,10,100);
-console.log(Nearby(10,10,100));
+//loadInfo(10,10,test);
+//loadInfo(10.02,10,test);
+//loadInfo(10.03,10,test);
+Nearby(10,10,100);
+//console.log(Nearby(10,10,100));
 // Init App
 var vm = new Vue({
   el: '#app',

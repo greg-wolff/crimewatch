@@ -75,32 +75,68 @@
 import {Nearby,loadInfo,returnInfo,getHash} from './backend.js'
 export default {
   data() {
+    Nearby(10,10,100);
+    console.log(Nearby(10,10,100));
     return {
       center: {lat: 10.0,lng: 10.0},
       markers: []
     }
+  },
+  mounted: function(){
+    this.setCenter();
+    this.interval = setInterval(this.setMarkers(),1000);
+    console.log("In mounted");
   },
   methods: {
     getInfo: function(m){
         console.log(m.position.lat);
         var Infohash = getHash(m.position.lat,m.position.lng);
         console.log(returnInfo(Infohash));
-    }
-  },
-  computed:{
+    },
+    setCenter: function() {
+        console.log('setcenter')
+        // Request Location Services
+        var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+          onError, {
+            timeout: 30000
+            })
+      var that = this
+      console.log(this)
+      function onSuccess(pos) {
+        console.log(pos)
+        console.log(this)
+        that.$data.center = {
+          //lat: pos.coords.latitude,
+          //lng: pos.coords.longitude
+          lat: 10.0,
+          lng: 10.0
+        }
+        that.$data.zoom = 15
+        /* console.log(App.$data.center)
+        App.setCenter({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+        }) */
+      }
+      function onError(err) {
+        console.log(err)
+        console.log(err.code)
+        console.log(erro.message)
+      }
+    },
     setMarkers: function(){
         var locs = [];
         var locations = Nearby(10,10,100);
-        locations.forEach(function pop(index){
+        /*locations.forEach(function pop(index){
           var pos = {lat: index[0],lng:index[1]};
           //info is set just to open up a connection
           locs.push({position:pos},{info:returnInfo(index[2])});
-          });
-        this.$data.markers = locs;
+          });*/
+        this.$data.markers = locations;
+        console.log("In set markers");
+        console.log(locations);
+        console.log(this.$data.markers);
     }
-  },
-  mounted: function(){
-    this.interval = setInterval(this.setMarkers,5000);
   }
 }
 </script>
