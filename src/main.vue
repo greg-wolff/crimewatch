@@ -75,16 +75,14 @@
 import {Nearby,loadInfo,returnInfo,getHash} from './backend.js'
 export default {
   data() {
-    Nearby(10,10,100);
-    console.log(Nearby(10,10,100));
     return {
       center: {lat: 10.0,lng: 10.0},
       markers: []
     }
   },
   mounted: function(){
-    this.setCenter();
-    this.interval = setInterval(this.setMarkers(),1000);
+    this.interval = setInterval(this.setCenter(),1000);
+    this.interval = setInterval(this.setMarkers(),5000);
     console.log("In mounted");
   },
   methods: {
@@ -106,34 +104,31 @@ export default {
         console.log(pos)
         console.log(this)
         that.$data.center = {
-          //lat: pos.coords.latitude,
-          //lng: pos.coords.longitude
-          lat: 10.0,
-          lng: 10.0
-        }
-        that.$data.zoom = 15
-        /* console.log(App.$data.center)
-        App.setCenter({
           lat: pos.coords.latitude,
           lng: pos.coords.longitude
-        }) */
+        }
+        that.$data.zoom = 15
+        that.$nextTick(function () {
+          that.setMarkers();
+        });
       }
       function onError(err) {
         console.log(err)
         console.log(err.code)
-        console.log(erro.message)
+        console.log(err.message)
       }
     },
     setMarkers: function(){
         var locs = [];
-        var locations = Nearby(10,10,100);
+        var locations = Nearby(this.$data.center.lat,this.$data.center.lng,100);
         /*locations.forEach(function pop(index){
           var pos = {lat: index[0],lng:index[1]};
           //info is set just to open up a connection
           locs.push({position:pos},{info:returnInfo(index[2])});
           });*/
-        this.$data.markers = locations;
+        this.$data.markers=locations;
         console.log("In set markers");
+        console.log(this.setCenter());;
         console.log(locations);
         console.log(this.$data.markers);
     }
