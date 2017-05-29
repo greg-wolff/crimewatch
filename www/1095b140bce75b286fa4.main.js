@@ -68,7 +68,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************!*\
   !*** ./~/lodash/lodash.js ***!
@@ -17165,15 +17165,15 @@
 
 /***/ }),
 /* 1 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.wks.js ***!
   \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var store  = __webpack_require__(/*! ./$.shared */ 39)('wks')
-  , uid    = __webpack_require__(/*! ./$.uid */ 41)
+var store  = __webpack_require__(/*! ./$.shared */ 40)('wks')
+  , uid    = __webpack_require__(/*! ./$.uid */ 42)
   , Symbol = __webpack_require__(/*! ./$.global */ 6).Symbol;
 module.exports = function(name){
   return store[name] || (store[name] =
@@ -17182,7 +17182,7 @@ module.exports = function(name){
 
 /***/ }),
 /* 2 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.js ***!
@@ -17205,7 +17205,7 @@ module.exports = {
 
 /***/ }),
 /* 3 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/propsBinder.js ***!
@@ -17307,7 +17307,7 @@ exports.default = function (vueElement, googleMapsElement, props, options) {
 
 /***/ }),
 /* 4 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.core.js ***!
@@ -17319,7 +17319,7 @@ if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ }),
 /* 5 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/getPropsValuesMixin.js ***!
@@ -17353,7 +17353,7 @@ exports.default = {
 
 /***/ }),
 /* 6 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.global.js ***!
@@ -17367,7 +17367,7 @@ if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ }),
 /* 7 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/vue-loader/lib/component-normalizer.js ***!
@@ -17429,7 +17429,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 8 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/eventsBinder.js ***!
@@ -17460,7 +17460,7 @@ exports.default = function (vueElement, googleMapObject, events) {
 
 /***/ }),
 /* 9 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/mapElementMixin.js ***!
@@ -17540,7 +17540,7 @@ exports.default = {
 
 /***/ }),
 /* 10 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.an-object.js ***!
@@ -17555,7 +17555,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 11 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iterators.js ***!
@@ -17566,7 +17566,7 @@ module.exports = {};
 
 /***/ }),
 /* 12 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.cof.js ***!
@@ -17581,7 +17581,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 13 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.ctx.js ***!
@@ -17611,7 +17611,7 @@ module.exports = function(fn, that, length){
 
 /***/ }),
 /* 14 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************!*\
   !*** ./~/vue2-google-maps/dist/manager.js ***!
@@ -17626,11 +17626,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.load = exports.loaded = undefined;
 
-var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 59);
+var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 60);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _typeof2 = __webpack_require__(/*! babel-runtime/helpers/typeof */ 61);
+var _typeof2 = __webpack_require__(/*! babel-runtime/helpers/typeof */ 62);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -17740,7 +17740,7 @@ var load = exports.load = function load(apiKey, version, libraries, loadCn) {
 
 /***/ }),
 /* 15 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -17772,18 +17772,18 @@ module.exports = g;
 
 /***/ }),
 /* 16 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************!*\
   !*** ./~/babel-runtime/core-js/promise.js ***!
   \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/promise */ 65), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/promise */ 66), __esModule: true };
 
 /***/ }),
 /* 17 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.descriptors.js ***!
@@ -17797,7 +17797,7 @@ module.exports = !__webpack_require__(/*! ./$.fails */ 27)(function(){
 
 /***/ }),
 /* 18 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.export.js ***!
@@ -17853,7 +17853,7 @@ module.exports = $export;
 
 /***/ }),
 /* 19 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.is-object.js ***!
@@ -17866,7 +17866,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 20 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.set-to-string-tag.js ***!
@@ -17883,7 +17883,7 @@ module.exports = function(it, tag, stat){
 
 /***/ }),
 /* 21 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.to-iobject.js ***!
@@ -17891,7 +17891,7 @@ module.exports = function(it, tag, stat){
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(/*! ./$.iobject */ 74)
+var IObject = __webpack_require__(/*! ./$.iobject */ 75)
   , defined = __webpack_require__(/*! ./$.defined */ 26);
 module.exports = function(it){
   return IObject(defined(it));
@@ -17899,7 +17899,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 22 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/deferredReady.js ***!
@@ -18023,7 +18023,7 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 
 /***/ }),
 /* 23 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************!*\
   !*** ./~/assert/assert.js ***!
@@ -18099,7 +18099,7 @@ function isBuffer(b) {
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var util = __webpack_require__(/*! util/ */ 111);
+var util = __webpack_require__(/*! util/ */ 112);
 var hasOwn = Object.prototype.hasOwnProperty;
 var pSlice = Array.prototype.slice;
 var functionsHaveNames = (function () {
@@ -18526,7 +18526,7 @@ var objectKeys = Object.keys || function (obj) {
 
 /***/ }),
 /* 24 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.a-function.js ***!
@@ -18540,7 +18540,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 25 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.classof.js ***!
@@ -18566,7 +18566,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 26 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.defined.js ***!
@@ -18581,7 +18581,7 @@ module.exports = function(it){
 
 /***/ }),
 /* 27 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.fails.js ***!
@@ -18598,7 +18598,7 @@ module.exports = function(exec){
 
 /***/ }),
 /* 28 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.has.js ***!
@@ -18612,7 +18612,7 @@ module.exports = function(it, key){
 
 /***/ }),
 /* 29 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.hide.js ***!
@@ -18630,7 +18630,7 @@ module.exports = __webpack_require__(/*! ./$.descriptors */ 17) ? function(objec
 
 /***/ }),
 /* 30 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.library.js ***!
@@ -18641,7 +18641,7 @@ module.exports = true;
 
 /***/ }),
 /* 31 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.property-desc.js ***!
@@ -18659,7 +18659,7 @@ module.exports = function(bitmap, value){
 
 /***/ }),
 /* 32 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.redefine.js ***!
@@ -18670,7 +18670,7 @@ module.exports = __webpack_require__(/*! ./$.hide */ 29);
 
 /***/ }),
 /* 33 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/es6.string.iterator.js ***!
@@ -18679,10 +18679,10 @@ module.exports = __webpack_require__(/*! ./$.hide */ 29);
 
 "use strict";
 
-var $at  = __webpack_require__(/*! ./$.string-at */ 90)(true);
+var $at  = __webpack_require__(/*! ./$.string-at */ 91)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(/*! ./$.iter-define */ 38)(String, 'String', function(iterated){
+__webpack_require__(/*! ./$.iter-define */ 39)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -18698,20 +18698,20 @@ __webpack_require__(/*! ./$.iter-define */ 38)(String, 'String', function(iterat
 
 /***/ }),
 /* 34 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/web.dom.iterable.js ***!
   \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./es6.array.iterator */ 96);
+__webpack_require__(/*! ./es6.array.iterator */ 97);
 var Iterators = __webpack_require__(/*! ./$.iterators */ 11);
 Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
 
 /***/ }),
 /* 35 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
@@ -18794,11 +18794,11 @@ function toComment(sourceMap) {
   return '/*# ' + data + ' */';
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../buffer/index.js */ 101).Buffer))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../buffer/index.js */ 102).Buffer))
 
 /***/ }),
 /* 36 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/mountableMixin.js ***!
@@ -18876,7 +18876,46 @@ exports.default = {
 
 /***/ }),
 /* 37 */
-/* unknown exports provided */
+/* no static exports found */
+/* all exports used */
+/*!****************************************!*\
+  !*** ./src/assets/vue/pages/form3.vue ***!
+  \****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-normalizer */ 7)(
+  /* script */
+  __webpack_require__(/*! !!../../../../~/vue-loader/lib/selector?type=script&index=0!./form3.vue */ 122),
+  /* template */
+  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7682646e"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./form3.vue */ 131),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/src/assets/vue/pages/form3.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] form3.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7682646e", Component.options)
+  } else {
+    hotAPI.reload("data-v-7682646e", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 38 */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/babel-runtime/helpers/slicedToArray.js ***!
@@ -18888,11 +18927,11 @@ exports.default = {
 
 exports.__esModule = true;
 
-var _isIterable2 = __webpack_require__(/*! ../core-js/is-iterable */ 58);
+var _isIterable2 = __webpack_require__(/*! ../core-js/is-iterable */ 59);
 
 var _isIterable3 = _interopRequireDefault(_isIterable2);
 
-var _getIterator2 = __webpack_require__(/*! ../core-js/get-iterator */ 57);
+var _getIterator2 = __webpack_require__(/*! ../core-js/get-iterator */ 58);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 
@@ -18937,8 +18976,8 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 38 */
-/* unknown exports provided */
+/* 39 */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iter-define.js ***!
@@ -18953,7 +18992,7 @@ var LIBRARY        = __webpack_require__(/*! ./$.library */ 30)
   , hide           = __webpack_require__(/*! ./$.hide */ 29)
   , has            = __webpack_require__(/*! ./$.has */ 28)
   , Iterators      = __webpack_require__(/*! ./$.iterators */ 11)
-  , $iterCreate    = __webpack_require__(/*! ./$.iter-create */ 78)
+  , $iterCreate    = __webpack_require__(/*! ./$.iter-create */ 79)
   , setToStringTag = __webpack_require__(/*! ./$.set-to-string-tag */ 20)
   , getProto       = __webpack_require__(/*! ./$ */ 2).getProto
   , ITERATOR       = __webpack_require__(/*! ./$.wks */ 1)('iterator')
@@ -19014,8 +19053,8 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 39 */
-/* unknown exports provided */
+/* 40 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.shared.js ***!
@@ -19030,8 +19069,8 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 40 */
-/* unknown exports provided */
+/* 41 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.to-integer.js ***!
@@ -19046,8 +19085,8 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 41 */
-/* unknown exports provided */
+/* 42 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.uid.js ***!
@@ -19061,8 +19100,8 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 42 */
-/* unknown exports provided */
+/* 43 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/core.get-iterator-method.js ***!
@@ -19079,8 +19118,8 @@ module.exports = __webpack_require__(/*! ./$.core */ 4).getIteratorMethod = func
 };
 
 /***/ }),
-/* 43 */
-/* unknown exports provided */
+/* 44 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/es6.object.to-string.js ***!
@@ -19090,8 +19129,8 @@ module.exports = __webpack_require__(/*! ./$.core */ 4).getIteratorMethod = func
 
 
 /***/ }),
-/* 44 */
-/* unknown exports provided */
+/* 45 */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/vue-loader/~/vue-style-loader/lib/addStylesClient.js ***!
@@ -19316,8 +19355,8 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 45 */
-/* unknown exports provided */
+/* 46 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/latlngChangedHandler.js ***!
@@ -19350,8 +19389,8 @@ function handler(action) {
 }
 
 /***/ }),
-/* 46 */
-/* unknown exports provided */
+/* 47 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
   !*** ./~/vue2-google-maps/dist/utils/simulateArrowDown.js ***!
@@ -19395,8 +19434,8 @@ exports.default = function (input) {
 };
 
 /***/ }),
-/* 47 */
-/* unknown exports provided */
+/* 48 */
+/* no static exports found */
 /*!******************************************************************!*\
   !*** ./~/framework7/dist/css/framework7.material.colors.min.css ***!
   \******************************************************************/
@@ -19405,8 +19444,8 @@ exports.default = function (input) {
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 48 */
-/* unknown exports provided */
+/* 49 */
+/* no static exports found */
 /*!***********************************************************!*\
   !*** ./~/framework7/dist/css/framework7.material.min.css ***!
   \***********************************************************/
@@ -19415,8 +19454,8 @@ exports.default = function (input) {
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 49 */
-/* unknown exports provided */
+/* 50 */
+/* no static exports found */
 /* exports used: default */
 /*!*****************************************************!*\
   !*** ./~/framework7-vue/dist/framework7-vue.min.js ***!
@@ -19443,8 +19482,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
 
 
 /***/ }),
-/* 50 */
-/* unknown exports provided */
+/* 51 */
+/* no static exports found */
 /*!********************************************!*\
   !*** ./~/framework7/dist/js/framework7.js ***!
   \********************************************/
@@ -37645,8 +37684,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
 
 
 /***/ }),
-/* 51 */
-/* unknown exports provided */
+/* 52 */
+/* no static exports found */
 /* exports used: default */
 /*!**********************!*\
   !*** ./src/main.vue ***!
@@ -37663,7 +37702,7 @@ var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/src/main.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/src/main.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] main.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -37684,8 +37723,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
-/* unknown exports provided */
+/* 53 */
+/* no static exports found */
 /*!***********************************!*\
   !*** ./src/assets/sass/main.scss ***!
   \***********************************/
@@ -37694,7 +37733,7 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader!../../../~/sass-loader/lib/loader.js!./main.scss */ 102);
+var content = __webpack_require__(/*! !../../../~/css-loader!../../../~/sass-loader/lib/loader.js!./main.scss */ 103);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -37714,8 +37753,8 @@ if(false) {
 }
 
 /***/ }),
-/* 53 */
-/* unknown exports provided */
+/* 54 */
+/* no static exports found */
 /* exports used: default */
 /*!**********************************!*\
   !*** ./~/vue/dist/vue.common.js ***!
@@ -47417,8 +47456,8 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 15)))
 
 /***/ }),
-/* 54 */
-/* unknown exports provided */
+/* 55 */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************!*\
   !*** ./~/vue2-google-maps/dist/main.js ***!
@@ -47464,23 +47503,23 @@ var _lodash = __webpack_require__(/*! lodash */ 0);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 113);
+var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 114);
 
 var _infoWindow2 = _interopRequireDefault(_infoWindow);
 
-var _map = __webpack_require__(/*! ./components/map.vue */ 114);
+var _map = __webpack_require__(/*! ./components/map.vue */ 115);
 
 var _map2 = _interopRequireDefault(_map);
 
-var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 116);
+var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 117);
 
 var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
 
-var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 115);
+var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 116);
 
 var _placeInput2 = _interopRequireDefault(_placeInput);
 
-var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 112);
+var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 113);
 
 var _autocomplete2 = _interopRequireDefault(_autocomplete);
 
@@ -47549,109 +47588,25 @@ function install(Vue, options) {
 }
 
 /***/ }),
-/* 55 */
-/* unknown exports provided */
+/* 56 */
+/* exports provided: Camera */
 /*!***********************!*\
   !*** ./src/camera.js ***!
   \***********************/
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-document.addEventListener("deviceready", cameraAPI, false);
-var $$ = Dom7;
-
-function cameraAPI() {
-  console.log("whatttttttttttttttttttttt");
-  console.log(navigator.camera);
-  $$(function() {
-
-    function camSuccess(imageData) {
-      console.log(imageData);
-      var img = '<img src ="' + imageData + '"style=" display:block; padding: 0px 15px 15px 15px; box-sizing:border-box; width:100%; margin:0 auto"/>';
-
-
-      $$('#CameraOutput').html(img);
-
-    }
-
-    function camError(errorMessage) {
-      alert('Error: ' + errorMessage);
-      console.log("error accessing camera!!");
-    }
-
-    $$('#cameraAccess').on('click', function() {
-      console.log("touched camara");
-      var options = {
-        'quality': 50,
-        'targetWidth': 1280,
-        'targetHeight': 720,
-        'popoverOptions': CameraPopoverOptions,
-        'saveToPhotoAlbum': true,
-        'correctOrientation': true,
-        'allowEdit': false,
-
-        'destinationType': navigator.camera.DestinationType.FILE_URI,
-        /*
-        0: DATA_URL image as based64-encoded
-        */
-        'sourceType': navigator.camera.PictureSourceType.CAMERA,
-        /*
-        0: PHOTOLIBRARY
-        1:CAMARA
-        2:SAVEDPHOTOALBUM
-        */
-        'encodingType': navigator.camera.EncodingType.JPEG,
-        /*
-        0:JPEG
-        1: PNG
-        */
-        'Direction': navigator.camera.Direction.BACK,
-
-        /*
-        0:BACK //use the back-facing camara
-        */
-
-
-      }
-      navigator.camera.getPicture(camSuccess, camError, options);
-
-    });
-
-    $$('#GalImage').on('click', function() {
-      var options = {
-        'destinationType': 1,
-        //DATA_URL:0, FILE_URI:1, NATIVE_URI:2
-        'sourceType': 0,
-        //PHOTOLIBRARY: 0,CAMARA:1, SAVEDPHOTOALBUM: 2
-        'mediaType': 0,
-        //PICTURE:0, VIDEO:1, ALLMEDIA:2
-      }
-      navigator.camera.getPicture(camSuccess, camError, options);
-
-    });
-
-    $$('#GalImageEdit').on('click', function() {
-      var options = {
-        'allowEdit': true,
-        'saveToPhotoAlbum': true,
-
-        'destinationType': 1,
-        //DATA_URL:0, FILE_URI:1, NATIVE_URI:2
-        'sourceType': 0,
-        //PHOTOLIBRARY:0,CAMARA:1, SAVEDPHOTOALBUM:2
-        'mediaType': 0,
-        //PICTURE:0, VIDEO:1, ALLMEDIA:2
-      }
-      navigator.camera.getPicture(camSuccess, camError, options);
-
-    });
-
-  });
+"use strict";
+/* unused harmony export Camera */
+function Camera(n) {
+  var result = n * n;
+  return result;
+  console.log("testing");
 }
-//export {cameraAPI};
+
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /* exports provided: default */
 /* exports used: default */
 /*!***********************!*\
@@ -47663,66 +47618,66 @@ function cameraAPI() {
 /* harmony default export */ __webpack_exports__["a"] = ([
   {
     path: '/form/',
-    component: __webpack_require__(/*! ./assets/vue/pages/form.vue */ 117),
+    component: __webpack_require__(/*! ./assets/vue/pages/form.vue */ 118),
   },
    {
       path: '/form2/',
-      component: __webpack_require__(/*! ./assets/vue/pages/form2.vue */ 118),
+      component: __webpack_require__(/*! ./assets/vue/pages/form2.vue */ 119),
     },
     {
        path: '/form3/',
-       component: __webpack_require__(/*! ./assets/vue/pages/form3.vue */ 119),
+       component: __webpack_require__(/*! ./assets/vue/pages/form3.vue */ 37),
      },
 ]);
 
 
 /***/ }),
-/* 57 */
-/* unknown exports provided */
+/* 58 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
   !*** ./~/babel-runtime/core-js/get-iterator.js ***!
   \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/get-iterator */ 62), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/get-iterator */ 63), __esModule: true };
 
 /***/ }),
-/* 58 */
-/* unknown exports provided */
+/* 59 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/babel-runtime/core-js/is-iterable.js ***!
   \************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/is-iterable */ 63), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/is-iterable */ 64), __esModule: true };
 
 /***/ }),
-/* 59 */
-/* unknown exports provided */
+/* 60 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/babel-runtime/core-js/object/keys.js ***!
   \************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/keys */ 64), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/keys */ 65), __esModule: true };
 
 /***/ }),
-/* 60 */
-/* unknown exports provided */
+/* 61 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/babel-runtime/core-js/symbol.js ***!
   \*******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol */ 66), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol */ 67), __esModule: true };
 
 /***/ }),
-/* 61 */
-/* unknown exports provided */
+/* 62 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/babel-runtime/helpers/typeof.js ***!
@@ -47732,7 +47687,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol 
 "use strict";
 
 
-var _Symbol = __webpack_require__(/*! babel-runtime/core-js/symbol */ 60)["default"];
+var _Symbol = __webpack_require__(/*! babel-runtime/core-js/symbol */ 61)["default"];
 
 exports["default"] = function (obj) {
   return obj && obj.constructor === _Symbol ? "symbol" : typeof obj;
@@ -47741,8 +47696,8 @@ exports["default"] = function (obj) {
 exports.__esModule = true;
 
 /***/ }),
-/* 62 */
-/* unknown exports provided */
+/* 63 */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/fn/get-iterator.js ***!
@@ -47751,11 +47706,11 @@ exports.__esModule = true;
 
 __webpack_require__(/*! ../modules/web.dom.iterable */ 34);
 __webpack_require__(/*! ../modules/es6.string.iterator */ 33);
-module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ 94);
+module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ 95);
 
 /***/ }),
-/* 63 */
-/* unknown exports provided */
+/* 64 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/fn/is-iterable.js ***!
@@ -47764,51 +47719,51 @@ module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ 94);
 
 __webpack_require__(/*! ../modules/web.dom.iterable */ 34);
 __webpack_require__(/*! ../modules/es6.string.iterator */ 33);
-module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ 95);
+module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ 96);
 
 /***/ }),
-/* 64 */
-/* unknown exports provided */
+/* 65 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/fn/object/keys.js ***!
   \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.keys */ 97);
+__webpack_require__(/*! ../../modules/es6.object.keys */ 98);
 module.exports = __webpack_require__(/*! ../../modules/$.core */ 4).Object.keys;
 
 /***/ }),
-/* 65 */
-/* unknown exports provided */
+/* 66 */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/fn/promise.js ***!
   \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../modules/es6.object.to-string */ 43);
+__webpack_require__(/*! ../modules/es6.object.to-string */ 44);
 __webpack_require__(/*! ../modules/es6.string.iterator */ 33);
 __webpack_require__(/*! ../modules/web.dom.iterable */ 34);
-__webpack_require__(/*! ../modules/es6.promise */ 98);
+__webpack_require__(/*! ../modules/es6.promise */ 99);
 module.exports = __webpack_require__(/*! ../modules/$.core */ 4).Promise;
 
 /***/ }),
-/* 66 */
-/* unknown exports provided */
+/* 67 */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/fn/symbol/index.js ***!
   \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.symbol */ 99);
-__webpack_require__(/*! ../../modules/es6.object.to-string */ 43);
+__webpack_require__(/*! ../../modules/es6.symbol */ 100);
+__webpack_require__(/*! ../../modules/es6.object.to-string */ 44);
 module.exports = __webpack_require__(/*! ../../modules/$.core */ 4).Symbol;
 
 /***/ }),
-/* 67 */
-/* unknown exports provided */
+/* 68 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.add-to-unscopables.js ***!
@@ -47818,8 +47773,8 @@ module.exports = __webpack_require__(/*! ../../modules/$.core */ 4).Symbol;
 module.exports = function(){ /* empty */ };
 
 /***/ }),
-/* 68 */
-/* unknown exports provided */
+/* 69 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.dom-create.js ***!
@@ -47835,8 +47790,8 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 69 */
-/* unknown exports provided */
+/* 70 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.enum-keys.js ***!
@@ -47859,8 +47814,8 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 70 */
-/* unknown exports provided */
+/* 71 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.for-of.js ***!
@@ -47868,11 +47823,11 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(/*! ./$.ctx */ 13)
-  , call        = __webpack_require__(/*! ./$.iter-call */ 77)
-  , isArrayIter = __webpack_require__(/*! ./$.is-array-iter */ 75)
+  , call        = __webpack_require__(/*! ./$.iter-call */ 78)
+  , isArrayIter = __webpack_require__(/*! ./$.is-array-iter */ 76)
   , anObject    = __webpack_require__(/*! ./$.an-object */ 10)
-  , toLength    = __webpack_require__(/*! ./$.to-length */ 92)
-  , getIterFn   = __webpack_require__(/*! ./core.get-iterator-method */ 42);
+  , toLength    = __webpack_require__(/*! ./$.to-length */ 93)
+  , getIterFn   = __webpack_require__(/*! ./core.get-iterator-method */ 43);
 module.exports = function(iterable, entries, fn, that){
   var iterFn = getIterFn(iterable)
     , f      = ctx(fn, that, entries ? 2 : 1)
@@ -47888,8 +47843,8 @@ module.exports = function(iterable, entries, fn, that){
 };
 
 /***/ }),
-/* 71 */
-/* unknown exports provided */
+/* 72 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.get-names.js ***!
@@ -47918,8 +47873,8 @@ module.exports.get = function getOwnPropertyNames(it){
 };
 
 /***/ }),
-/* 72 */
-/* unknown exports provided */
+/* 73 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.html.js ***!
@@ -47929,8 +47884,8 @@ module.exports.get = function getOwnPropertyNames(it){
 module.exports = __webpack_require__(/*! ./$.global */ 6).document && document.documentElement;
 
 /***/ }),
-/* 73 */
-/* unknown exports provided */
+/* 74 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.invoke.js ***!
@@ -47955,8 +47910,8 @@ module.exports = function(fn, args, that){
 };
 
 /***/ }),
-/* 74 */
-/* unknown exports provided */
+/* 75 */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iobject.js ***!
@@ -47970,8 +47925,8 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 };
 
 /***/ }),
-/* 75 */
-/* unknown exports provided */
+/* 76 */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.is-array-iter.js ***!
@@ -47988,8 +47943,8 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 76 */
-/* unknown exports provided */
+/* 77 */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.is-array.js ***!
@@ -48003,8 +47958,8 @@ module.exports = Array.isArray || function(arg){
 };
 
 /***/ }),
-/* 77 */
-/* unknown exports provided */
+/* 78 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iter-call.js ***!
@@ -48025,8 +47980,8 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
-/* 78 */
-/* unknown exports provided */
+/* 79 */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iter-create.js ***!
@@ -48049,8 +48004,8 @@ module.exports = function(Constructor, NAME, next){
 };
 
 /***/ }),
-/* 79 */
-/* unknown exports provided */
+/* 80 */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iter-detect.js ***!
@@ -48080,8 +48035,8 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ }),
-/* 80 */
-/* unknown exports provided */
+/* 81 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.iter-step.js ***!
@@ -48093,8 +48048,8 @@ module.exports = function(done, value){
 };
 
 /***/ }),
-/* 81 */
-/* unknown exports provided */
+/* 82 */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.keyof.js ***!
@@ -48113,8 +48068,8 @@ module.exports = function(object, el){
 };
 
 /***/ }),
-/* 82 */
-/* unknown exports provided */
+/* 83 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.microtask.js ***!
@@ -48122,7 +48077,7 @@ module.exports = function(object, el){
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(/*! ./$.global */ 6)
-  , macrotask = __webpack_require__(/*! ./$.task */ 91).set
+  , macrotask = __webpack_require__(/*! ./$.task */ 92).set
   , Observer  = global.MutationObserver || global.WebKitMutationObserver
   , process   = global.process
   , Promise   = global.Promise
@@ -48187,8 +48142,8 @@ module.exports = function asap(fn){
 };
 
 /***/ }),
-/* 83 */
-/* unknown exports provided */
+/* 84 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.object-sap.js ***!
@@ -48207,8 +48162,8 @@ module.exports = function(KEY, exec){
 };
 
 /***/ }),
-/* 84 */
-/* unknown exports provided */
+/* 85 */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.redefine-all.js ***!
@@ -48222,8 +48177,8 @@ module.exports = function(target, src){
 };
 
 /***/ }),
-/* 85 */
-/* unknown exports provided */
+/* 86 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.same-value.js ***!
@@ -48236,8 +48191,8 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ }),
-/* 86 */
-/* unknown exports provided */
+/* 87 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.set-proto.js ***!
@@ -48272,8 +48227,8 @@ module.exports = {
 };
 
 /***/ }),
-/* 87 */
-/* unknown exports provided */
+/* 88 */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.set-species.js ***!
@@ -48296,8 +48251,8 @@ module.exports = function(KEY){
 };
 
 /***/ }),
-/* 88 */
-/* unknown exports provided */
+/* 89 */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.species-constructor.js ***!
@@ -48314,8 +48269,8 @@ module.exports = function(O, D){
 };
 
 /***/ }),
-/* 89 */
-/* unknown exports provided */
+/* 90 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.strict-new.js ***!
@@ -48328,15 +48283,15 @@ module.exports = function(it, Constructor, name){
 };
 
 /***/ }),
-/* 90 */
-/* unknown exports provided */
+/* 91 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.string-at.js ***!
   \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(/*! ./$.to-integer */ 40)
+var toInteger = __webpack_require__(/*! ./$.to-integer */ 41)
   , defined   = __webpack_require__(/*! ./$.defined */ 26);
 // true  -> String#at
 // false -> String#codePointAt
@@ -48355,8 +48310,8 @@ module.exports = function(TO_STRING){
 };
 
 /***/ }),
-/* 91 */
-/* unknown exports provided */
+/* 92 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.task.js ***!
@@ -48364,9 +48319,9 @@ module.exports = function(TO_STRING){
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx                = __webpack_require__(/*! ./$.ctx */ 13)
-  , invoke             = __webpack_require__(/*! ./$.invoke */ 73)
-  , html               = __webpack_require__(/*! ./$.html */ 72)
-  , cel                = __webpack_require__(/*! ./$.dom-create */ 68)
+  , invoke             = __webpack_require__(/*! ./$.invoke */ 74)
+  , html               = __webpack_require__(/*! ./$.html */ 73)
+  , cel                = __webpack_require__(/*! ./$.dom-create */ 69)
   , global             = __webpack_require__(/*! ./$.global */ 6)
   , process            = global.process
   , setTask            = global.setImmediate
@@ -48440,8 +48395,8 @@ module.exports = {
 };
 
 /***/ }),
-/* 92 */
-/* unknown exports provided */
+/* 93 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.to-length.js ***!
@@ -48449,15 +48404,15 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(/*! ./$.to-integer */ 40)
+var toInteger = __webpack_require__(/*! ./$.to-integer */ 41)
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
 
 /***/ }),
-/* 93 */
-/* unknown exports provided */
+/* 94 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/$.to-object.js ***!
@@ -48471,8 +48426,8 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 94 */
-/* unknown exports provided */
+/* 95 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/core.get-iterator.js ***!
@@ -48480,7 +48435,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./$.an-object */ 10)
-  , get      = __webpack_require__(/*! ./core.get-iterator-method */ 42);
+  , get      = __webpack_require__(/*! ./core.get-iterator-method */ 43);
 module.exports = __webpack_require__(/*! ./$.core */ 4).getIterator = function(it){
   var iterFn = get(it);
   if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
@@ -48488,8 +48443,8 @@ module.exports = __webpack_require__(/*! ./$.core */ 4).getIterator = function(i
 };
 
 /***/ }),
-/* 95 */
-/* unknown exports provided */
+/* 96 */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/core.is-iterable.js ***!
@@ -48507,8 +48462,8 @@ module.exports = __webpack_require__(/*! ./$.core */ 4).isIterable = function(it
 };
 
 /***/ }),
-/* 96 */
-/* unknown exports provided */
+/* 97 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/es6.array.iterator.js ***!
@@ -48517,8 +48472,8 @@ module.exports = __webpack_require__(/*! ./$.core */ 4).isIterable = function(it
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(/*! ./$.add-to-unscopables */ 67)
-  , step             = __webpack_require__(/*! ./$.iter-step */ 80)
+var addToUnscopables = __webpack_require__(/*! ./$.add-to-unscopables */ 68)
+  , step             = __webpack_require__(/*! ./$.iter-step */ 81)
   , Iterators        = __webpack_require__(/*! ./$.iterators */ 11)
   , toIObject        = __webpack_require__(/*! ./$.to-iobject */ 21);
 
@@ -48526,7 +48481,7 @@ var addToUnscopables = __webpack_require__(/*! ./$.add-to-unscopables */ 67)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(/*! ./$.iter-define */ 38)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(/*! ./$.iter-define */ 39)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -48552,8 +48507,8 @@ addToUnscopables('values');
 addToUnscopables('entries');
 
 /***/ }),
-/* 97 */
-/* unknown exports provided */
+/* 98 */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/es6.object.keys.js ***!
@@ -48561,17 +48516,17 @@ addToUnscopables('entries');
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(/*! ./$.to-object */ 93);
+var toObject = __webpack_require__(/*! ./$.to-object */ 94);
 
-__webpack_require__(/*! ./$.object-sap */ 83)('keys', function($keys){
+__webpack_require__(/*! ./$.object-sap */ 84)('keys', function($keys){
   return function keys(it){
     return $keys(toObject(it));
   };
 });
 
 /***/ }),
-/* 98 */
-/* unknown exports provided */
+/* 99 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/es6.promise.js ***!
@@ -48589,13 +48544,13 @@ var $          = __webpack_require__(/*! ./$ */ 2)
   , isObject   = __webpack_require__(/*! ./$.is-object */ 19)
   , anObject   = __webpack_require__(/*! ./$.an-object */ 10)
   , aFunction  = __webpack_require__(/*! ./$.a-function */ 24)
-  , strictNew  = __webpack_require__(/*! ./$.strict-new */ 89)
-  , forOf      = __webpack_require__(/*! ./$.for-of */ 70)
-  , setProto   = __webpack_require__(/*! ./$.set-proto */ 86).set
-  , same       = __webpack_require__(/*! ./$.same-value */ 85)
+  , strictNew  = __webpack_require__(/*! ./$.strict-new */ 90)
+  , forOf      = __webpack_require__(/*! ./$.for-of */ 71)
+  , setProto   = __webpack_require__(/*! ./$.set-proto */ 87).set
+  , same       = __webpack_require__(/*! ./$.same-value */ 86)
   , SPECIES    = __webpack_require__(/*! ./$.wks */ 1)('species')
-  , speciesConstructor = __webpack_require__(/*! ./$.species-constructor */ 88)
-  , asap       = __webpack_require__(/*! ./$.microtask */ 82)
+  , speciesConstructor = __webpack_require__(/*! ./$.species-constructor */ 89)
+  , asap       = __webpack_require__(/*! ./$.microtask */ 83)
   , PROMISE    = 'Promise'
   , process    = global.process
   , isNode     = classof(process) == 'process'
@@ -48784,7 +48739,7 @@ if(!USE_NATIVE){
       $reject.call(record, err);
     }
   };
-  __webpack_require__(/*! ./$.redefine-all */ 84)(P.prototype, {
+  __webpack_require__(/*! ./$.redefine-all */ 85)(P.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected){
       var reaction = new PromiseCapability(speciesConstructor(this, P))
@@ -48806,7 +48761,7 @@ if(!USE_NATIVE){
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: P});
 __webpack_require__(/*! ./$.set-to-string-tag */ 20)(P, PROMISE);
-__webpack_require__(/*! ./$.set-species */ 87)(PROMISE);
+__webpack_require__(/*! ./$.set-species */ 88)(PROMISE);
 Wrapper = __webpack_require__(/*! ./$.core */ 4)[PROMISE];
 
 // statics
@@ -48830,7 +48785,7 @@ $export($export.S + $export.F * (!USE_NATIVE || testResolve(true)), PROMISE, {
     return capability.promise;
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(/*! ./$.iter-detect */ 79)(function(iter){
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(/*! ./$.iter-detect */ 80)(function(iter){
   P.all(iter)['catch'](function(){});
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -48874,8 +48829,8 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(/*! ./$.iter
 });
 
 /***/ }),
-/* 99 */
-/* unknown exports provided */
+/* 100 */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************************!*\
   !*** ./~/babel-runtime/~/core-js/library/modules/es6.symbol.js ***!
@@ -48892,14 +48847,14 @@ var $              = __webpack_require__(/*! ./$ */ 2)
   , $export        = __webpack_require__(/*! ./$.export */ 18)
   , redefine       = __webpack_require__(/*! ./$.redefine */ 32)
   , $fails         = __webpack_require__(/*! ./$.fails */ 27)
-  , shared         = __webpack_require__(/*! ./$.shared */ 39)
+  , shared         = __webpack_require__(/*! ./$.shared */ 40)
   , setToStringTag = __webpack_require__(/*! ./$.set-to-string-tag */ 20)
-  , uid            = __webpack_require__(/*! ./$.uid */ 41)
+  , uid            = __webpack_require__(/*! ./$.uid */ 42)
   , wks            = __webpack_require__(/*! ./$.wks */ 1)
-  , keyOf          = __webpack_require__(/*! ./$.keyof */ 81)
-  , $names         = __webpack_require__(/*! ./$.get-names */ 71)
-  , enumKeys       = __webpack_require__(/*! ./$.enum-keys */ 69)
-  , isArray        = __webpack_require__(/*! ./$.is-array */ 76)
+  , keyOf          = __webpack_require__(/*! ./$.keyof */ 82)
+  , $names         = __webpack_require__(/*! ./$.get-names */ 72)
+  , enumKeys       = __webpack_require__(/*! ./$.enum-keys */ 70)
+  , isArray        = __webpack_require__(/*! ./$.is-array */ 77)
   , anObject       = __webpack_require__(/*! ./$.an-object */ 10)
   , toIObject      = __webpack_require__(/*! ./$.to-iobject */ 21)
   , createDesc     = __webpack_require__(/*! ./$.property-desc */ 31)
@@ -49112,8 +49067,8 @@ setToStringTag(Math, 'Math', true);
 setToStringTag(global.JSON, 'JSON', true);
 
 /***/ }),
-/* 100 */
-/* unknown exports provided */
+/* 101 */
+/* no static exports found */
 /* all exports used */
 /*!******************************!*\
   !*** ./~/base64-js/index.js ***!
@@ -49238,8 +49193,8 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 101 */
-/* unknown exports provided */
+/* 102 */
+/* no static exports found */
 /* all exports used */
 /*!***************************!*\
   !*** ./~/buffer/index.js ***!
@@ -49257,9 +49212,9 @@ function fromByteArray (uint8) {
 
 
 
-var base64 = __webpack_require__(/*! base64-js */ 100)
-var ieee754 = __webpack_require__(/*! ieee754 */ 105)
-var isArray = __webpack_require__(/*! isarray */ 106)
+var base64 = __webpack_require__(/*! base64-js */ 101)
+var ieee754 = __webpack_require__(/*! ieee754 */ 106)
+var isArray = __webpack_require__(/*! isarray */ 107)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -51040,8 +50995,8 @@ function isnan (val) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 15)))
 
 /***/ }),
-/* 102 */
-/* unknown exports provided */
+/* 103 */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader/lib/loader.js!./src/assets/sass/main.scss ***!
@@ -51059,8 +51014,8 @@ exports.push([module.i, "* {\n  user-select: none; }\n\ninput {\n  user-select: 
 
 
 /***/ }),
-/* 103 */
-/* unknown exports provided */
+/* 104 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
@@ -51078,8 +51033,8 @@ exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relati
 
 
 /***/ }),
-/* 104 */
-/* unknown exports provided */
+/* 105 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
@@ -51097,8 +51052,8 @@ exports.push([module.i, "\n.vue-map-container {\n  position: relative;\n}\n.vue-
 
 
 /***/ }),
-/* 105 */
-/* unknown exports provided */
+/* 106 */
+/* no static exports found */
 /* all exports used */
 /*!****************************!*\
   !*** ./~/ieee754/index.js ***!
@@ -51192,8 +51147,8 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 106 */
-/* unknown exports provided */
+/* 107 */
+/* no static exports found */
 /* all exports used */
 /*!****************************!*\
   !*** ./~/isarray/index.js ***!
@@ -51208,8 +51163,8 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 107 */
-/* unknown exports provided */
+/* 108 */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/marker-clusterer-plus/src/markerclusterer.js ***!
@@ -52853,8 +52808,8 @@ module.exports = MarkerClusterer
 
 
 /***/ }),
-/* 108 */
-/* unknown exports provided */
+/* 109 */
+/* no static exports found */
 /* all exports used */
 /*!******************************!*\
   !*** ./~/process/browser.js ***!
@@ -53048,8 +53003,8 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 109 */
-/* unknown exports provided */
+/* 110 */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/util/~/inherits/inherits_browser.js ***!
@@ -53082,8 +53037,8 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 110 */
-/* unknown exports provided */
+/* 111 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/util/support/isBufferBrowser.js ***!
@@ -53098,8 +53053,8 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 111 */
-/* unknown exports provided */
+/* 112 */
+/* no static exports found */
 /* all exports used */
 /*!************************!*\
   !*** ./~/util/util.js ***!
@@ -53631,7 +53586,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(/*! ./support/isBuffer */ 110);
+exports.isBuffer = __webpack_require__(/*! ./support/isBuffer */ 111);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -53675,7 +53630,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(/*! inherits */ 109);
+exports.inherits = __webpack_require__(/*! inherits */ 110);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -53693,11 +53648,11 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 15), __webpack_require__(/*! ./../process/browser.js */ 108)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 15), __webpack_require__(/*! ./../process/browser.js */ 109)))
 
 /***/ }),
-/* 112 */
-/* unknown exports provided */
+/* 113 */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/autocomplete.vue ***!
@@ -53714,7 +53669,7 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] autocomplete.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53735,8 +53690,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 113 */
-/* unknown exports provided */
+/* 114 */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/infoWindow.vue ***!
@@ -53753,7 +53708,7 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] infoWindow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53774,8 +53729,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 114 */
-/* unknown exports provided */
+/* 115 */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/map.vue ***!
@@ -53796,7 +53751,7 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/node_modules/vue2-google-maps/dist/components/map.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/node_modules/vue2-google-maps/dist/components/map.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] map.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53817,8 +53772,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 115 */
-/* unknown exports provided */
+/* 116 */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/placeInput.vue ***!
@@ -53835,7 +53790,7 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/node_modules/vue2-google-maps/dist/components/placeInput.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/node_modules/vue2-google-maps/dist/components/placeInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] placeInput.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53856,8 +53811,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 116 */
-/* unknown exports provided */
+/* 117 */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
@@ -53878,7 +53833,7 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] streetViewPanorama.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53899,8 +53854,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 117 */
-/* unknown exports provided */
+/* 118 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************!*\
   !*** ./src/assets/vue/pages/form.vue ***!
@@ -53917,7 +53872,7 @@ var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-n
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/src/assets/vue/pages/form.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/src/assets/vue/pages/form.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] form.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53938,8 +53893,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 118 */
-/* unknown exports provided */
+/* 119 */
+/* no static exports found */
 /* all exports used */
 /*!****************************************!*\
   !*** ./src/assets/vue/pages/form2.vue ***!
@@ -53956,7 +53911,7 @@ var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-n
   /* cssModules */
   null
 )
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/src/assets/vue/pages/form2.vue"
+Component.options.__file = "/home/romiz_2/Desktop/crimewatch/src/assets/vue/pages/form2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] form2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53970,45 +53925,6 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-76744ced", Component.options)
   } else {
     hotAPI.reload("data-v-76744ced", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 119 */
-/* unknown exports provided */
-/* all exports used */
-/*!****************************************!*\
-  !*** ./src/assets/vue/pages/form3.vue ***!
-  \****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-normalizer */ 7)(
-  /* script */
-  __webpack_require__(/*! !!../../../../~/vue-loader/lib/selector?type=script&index=0!./form3.vue */ 122),
-  /* template */
-  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7682646e"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./form3.vue */ 131),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/romiz_2/Desktop/github/crimewatch/src/assets/vue/pages/form3.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] form3.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7682646e", Component.options)
-  } else {
-    hotAPI.reload("data-v-7682646e", Component.options)
   }
 })()}
 
@@ -54057,7 +53973,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 121 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************************************!*\
   !*** ./~/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/form2.vue ***!
@@ -54109,20 +54025,15 @@ function testload() {
 
 /***/ }),
 /* 122 */
-/* unknown exports provided */
+/* exports provided: default */
 /* all exports used */
 /*!*******************************************************************************************!*\
   !*** ./~/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/form3.vue ***!
   \*******************************************************************************************/
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-//
-//
-//
-//
-//
-//
-//
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -54132,8 +54043,14 @@ function testload() {
 //
 //
 
-//import {cameraAPI} from './camera.js' 
-
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods:{
+		Testing: function() {
+			console.log("ok");
+			console.log(Camera(3));
+			}
+	}
+});
 
 
 /***/ }),
@@ -54214,12 +54131,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			center: {lat: 10.0, lng: 10.0},
 		}
 	}
+
 });
 
 
 /***/ }),
 /* 124 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0ed116d0"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/main.vue ***!
@@ -54318,7 +54236,7 @@ if (false) {
 
 /***/ }),
 /* 125 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-29e981d6"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/form.vue ***!
@@ -54377,7 +54295,7 @@ if (false) {
 
 /***/ }),
 /* 126 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3d7de83c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/infoWindow.vue ***!
@@ -54403,7 +54321,7 @@ if (false) {
 
 /***/ }),
 /* 127 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3dd66e01"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
@@ -54428,7 +54346,7 @@ if (false) {
 
 /***/ }),
 /* 128 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5408ed30"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
@@ -54455,7 +54373,7 @@ if (false) {
 
 /***/ }),
 /* 129 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-686eca27"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/placeInput.vue ***!
@@ -54486,7 +54404,7 @@ if (false) {
 
 /***/ }),
 /* 130 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-76744ced"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/form2.vue ***!
@@ -54545,7 +54463,7 @@ if (false) {
 
 /***/ }),
 /* 131 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-7682646e"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/form3.vue ***!
@@ -54553,33 +54471,13 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('f7-page', [_c('div', {
-    attrs: {
-      "id": "BackButton"
+  return _c('f7-page', [_c('f7-button', {
+    on: {
+      "click": function($event) {
+        _vm.Testing()
+      }
     }
-  }, [_c('f7-navbar', {
-    attrs: {
-      "back-link": "Back",
-      "sliding": ""
-    }
-  })], 1), _vm._v(" "), _c('div', {
-    attrs: {
-      "id": "camera"
-    }
-  }, [_c('button', {
-    attrs: {
-      "id": "cameraCheck"
-    }
-  }, [_vm._v("camera")]), _vm._v(" "), _c('button', {
-    attrs: {
-      "href": "#",
-      "id": "GalImage"
-    }
-  }, [_vm._v("GetImage")]), _vm._v(" "), _c('div', {
-    attrs: {
-      "id": "CameraOutput"
-    }
-  }, [_vm._v("-----------Display image here--------------")])])])
+  }, [_vm._v("Testing")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -54591,7 +54489,7 @@ if (false) {
 
 /***/ }),
 /* 132 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-92295ce8"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/autocomplete.vue ***!
@@ -54620,7 +54518,7 @@ if (false) {
 
 /***/ }),
 /* 133 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
@@ -54630,11 +54528,11 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue */ 103);
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue */ 104);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 44)("4a719143", content, false);
+var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 45)("4a719143", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -54651,7 +54549,7 @@ if(false) {
 
 /***/ }),
 /* 134 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
@@ -54661,11 +54559,11 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue */ 104);
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue */ 105);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 44)("c11036b0", content, false);
+var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 45)("c11036b0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -54682,7 +54580,7 @@ if(false) {
 
 /***/ }),
 /* 135 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/vue-loader/~/vue-style-loader/lib/listToStyles.js ***!
@@ -54720,7 +54618,7 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 136 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/vue-style-loader/lib/addStylesClient.js ***!
@@ -54946,7 +54844,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 /* 137 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/vue-style-loader/lib/listToStyles.js ***!
@@ -54984,7 +54882,7 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 138 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/autocompleteImpl.js ***!
@@ -55006,7 +54904,7 @@ var _propsBinder = __webpack_require__(/*! ../utils/propsBinder.js */ 3);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 46);
+var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 47);
 
 var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
 
@@ -55093,7 +54991,7 @@ exports.default = {
 
 /***/ }),
 /* 139 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/circle.js ***!
@@ -55202,7 +55100,7 @@ exports.default = {
 
 /***/ }),
 /* 140 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/cluster.js ***!
@@ -55236,7 +55134,7 @@ var _getPropsValuesMixin = __webpack_require__(/*! ../utils/getPropsValuesMixin.
 
 var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
 
-var _markerClustererPlus = __webpack_require__(/*! marker-clusterer-plus */ 107);
+var _markerClustererPlus = __webpack_require__(/*! marker-clusterer-plus */ 108);
 
 var _markerClustererPlus2 = _interopRequireDefault(_markerClustererPlus);
 
@@ -55310,7 +55208,7 @@ exports.default = {
 
 /***/ }),
 /* 141 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/infoWindowImpl.js ***!
@@ -55437,7 +55335,7 @@ exports.default = {
 
 /***/ }),
 /* 142 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/mapImpl.js ***!
@@ -55479,7 +55377,7 @@ var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ 36);
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
-var _latlngChangedHandler = __webpack_require__(/*! ../utils/latlngChangedHandler.js */ 45);
+var _latlngChangedHandler = __webpack_require__(/*! ../utils/latlngChangedHandler.js */ 46);
 
 var _latlngChangedHandler2 = _interopRequireDefault(_latlngChangedHandler);
 
@@ -55631,7 +55529,7 @@ exports.default = {
 
 /***/ }),
 /* 143 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/marker.js ***!
@@ -55792,7 +55690,7 @@ exports.default = {
 
 /***/ }),
 /* 144 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/placeInputImpl.js ***!
@@ -55814,7 +55712,7 @@ var _propsBinder = __webpack_require__(/*! ../utils/propsBinder.js */ 3);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 46);
+var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 47);
 
 var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
 
@@ -55907,7 +55805,7 @@ exports.default = {
 
 /***/ }),
 /* 145 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/polygon.js ***!
@@ -55921,7 +55819,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 37);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 38);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -56090,7 +55988,7 @@ exports.default = {
 
 /***/ }),
 /* 146 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/polyline.js ***!
@@ -56104,7 +56002,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 37);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 38);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -56221,7 +56119,7 @@ exports.default = {
 
 /***/ }),
 /* 147 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/rectangle.js ***!
@@ -56309,7 +56207,7 @@ exports.default = {
 
 /***/ }),
 /* 148 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************!*\
   !*** ./~/vue2-google-maps/dist/components/streetViewPanoramaImpl.js ***!
@@ -56351,7 +56249,7 @@ var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ 36);
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
-var _latlngChangedHandler = __webpack_require__(/*! ../utils/latlngChangedHandler.js */ 45);
+var _latlngChangedHandler = __webpack_require__(/*! ../utils/latlngChangedHandler.js */ 46);
 
 var _latlngChangedHandler2 = _interopRequireDefault(_latlngChangedHandler);
 
@@ -56468,7 +56366,7 @@ exports.default = {
 
 /***/ }),
 /* 149 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************!*\
   !*** (webpack)/buildin/module.js ***!
@@ -56501,7 +56399,7 @@ module.exports = function(module) {
 
 /***/ }),
 /* 150 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************!*\
   !*** ./src/main.js ***!
@@ -56510,25 +56408,26 @@ module.exports = function(module) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(/*! vue */ 53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(/*! vue */ 54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7__ = __webpack_require__(/*! framework7 */ 50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7__ = __webpack_require__(/*! framework7 */ 51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_framework7__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue__ = __webpack_require__(/*! framework7-vue */ 49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue__ = __webpack_require__(/*! framework7-vue */ 50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_framework7_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__ = __webpack_require__(/*! vue2-google-maps */ 54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__ = __webpack_require__(/*! vue2-google-maps */ 55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__ = __webpack_require__(/*! framework7/dist/css/framework7.material.min.css */ 48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__ = __webpack_require__(/*! framework7/dist/css/framework7.material.min.css */ 49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_framework7_dist_css_framework7_material_colors_min_css__ = __webpack_require__(/*! framework7/dist/css/framework7.material.colors.min.css */ 47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_framework7_dist_css_framework7_material_colors_min_css__ = __webpack_require__(/*! framework7/dist/css/framework7.material.colors.min.css */ 48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_framework7_dist_css_framework7_material_colors_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_framework7_dist_css_framework7_material_colors_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss__ = __webpack_require__(/*! ./assets/sass/main.scss */ 52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss__ = __webpack_require__(/*! ./assets/sass/main.scss */ 53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes_js__ = __webpack_require__(/*! ./routes.js */ 56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__main_vue__ = __webpack_require__(/*! ./main.vue */ 51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes_js__ = __webpack_require__(/*! ./routes.js */ 57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__main_vue__ = __webpack_require__(/*! ./main.vue */ 52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__main_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__camera_js__ = __webpack_require__(/*! ./camera.js */ 55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__camera_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__camera_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__assets_vue_pages_form3_vue__ = __webpack_require__(/*! ./assets/vue/pages/form3.vue */ 37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__assets_vue_pages_form3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__assets_vue_pages_form3_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__camera_js__ = __webpack_require__(/*! ./camera.js */ 56);
 // Import Vue
 
 
@@ -56555,6 +56454,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Import App Component
+
+
+
+
 
 
 
@@ -56691,7 +56594,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     app: __WEBPACK_IMPORTED_MODULE_8__main_vue___default.a
   },
   data: {
-    center: {lat: 10.0, lng: 10.0}
+    center: {lat: 10.0, lng: 10.0},
   }
 })
 

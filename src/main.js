@@ -26,7 +26,11 @@ import Routes from './routes.js'
 // Import App Component
 import App from './main.vue'
 
-import cameraAPI from './camera.js'
+import cameraAPI from './assets/vue/pages/form3.vue'
+
+import {Camera} from './camera.js'
+
+
 
 
 // Init F7 Vue Plugin
@@ -160,6 +164,6 @@ new Vue({
     app: App
   },
   data: {
-    center: {lat: 10.0, lng: 10.0}
+    center: {lat: 10.0, lng: 10.0},
   }
 })
