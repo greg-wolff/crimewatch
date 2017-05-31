@@ -20,7 +20,7 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.material.color
 import VueRouter from 'vue-router'
 import firebase from 'firebase'
 import firebaseui from 'firebaseui'
-import router from './router'
+import router from './routes.js'
 import {config} from './firebaseConfig.js'
 // Import App Custom Styles
 import AppStyles from './assets/sass/main.scss'
@@ -66,7 +66,7 @@ var vm = new Vue({
         this.$router.push('/auth');
       }
     });
-  }
+  },
   el: '#app',
   template: '<app/>',
   // Init Framework7 by passing parameters here

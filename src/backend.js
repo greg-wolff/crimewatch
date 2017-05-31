@@ -1,6 +1,6 @@
 
 // Initialize Firebase
-/*var config = {
+var config = {
   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
   authDomain: "crimewatch-8f003.firebaseapp.com",
   databaseURL: "https://crimewatch-8f003.firebaseio.com",
@@ -8,7 +8,7 @@
   storageBucket: "crimewatch-8f003.appspot.com",
   messagingSenderId: "901121598403"
 };
-firebase.initializeApp(config);*/
+firebase.initializeApp(config);
 //a = long, b = lat
 //stores location a,b
 function StoreMarker(a,b) {
