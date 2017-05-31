@@ -1,6 +1,19 @@
-export default [
+import VueRouter from 'vue-router';
+import Auth from './Auth.vue';
+import AuthSuccess from '/AuthSuccess.vue'
+/*export default [
   {
     path: '/form/',
     component: require('./assets/vue/pages/form.vue')
   }
-]
+]*/
+const router = new VueRouter({
+  mode:'history',
+  routes: [
+    {path: '/form/',component: require('./assets/vue/pages/form.vue')},
+    {path: '/',component: Auth},
+    {path:'/auth',component: Auth},
+    {path:'/success',component: AuthSuccess}
+  ]
+});
+export default router;
