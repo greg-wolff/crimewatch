@@ -1,66 +1,69 @@
 {
-    "name": "com.cmps.crimewatch",
-    "version": "1.0.0",
-    "description": "Brand new cordova project with framework7 - vue - webpack!",
-    "start": "cross-env NODE_ENV=development node server.dev.js",
-    "serve": "cross-env NODE_ENV=production node server.prod.js",
-    "scripts": {
-        "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"
+  "name": "com.cmps.crimewatch",
+  "version": "1.0.0",
+  "description": "Brand new cordova project with framework7 - vue - webpack!",
+  "start": "cross-env NODE_ENV=development node server.dev.js",
+  "serve": "cross-env NODE_ENV=production node server.prod.js",
+  "scripts": {
+    "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "chokidar": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.15",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.27.3",
+    "device.js": "git+https://github.com/matthewhudson/device.js.git",
+    "epipebomb": "^1.0.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.0",
+    "path": "^0.12.7",
+    "required-loader": "^1.2.11",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.13.2",
+    "svg-url-loader": "^2.0.2",
+    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony-v2.8.22",
+    "uglifyjs-webpack-plugin": "^0.3.0",
+    "url-loader": "^0.5.8",
+    "vue-hot-reload-api": "^2.0.11",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^11.1.4",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.2.4",
+    "vue2-google-maps": "^0.7.5",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "cordova-android": "^6.2.3",
+    "cordova-browser": "^4.1.0",
+    "cordova-plugin-compat": "^1.0.0",
+    "cordova-plugin-geolocation": "^2.4.3",
+    "cordova-plugin-whitelist": "1",
+    "cross-env": "^5.0.0",
+    "firebase": "^4.1.1",
+    "firebaseui": "^2.0.0",
+    "framework7": "^1.5.4",
+    "framework7-vue": "^0.8.5",
+    "vue": "^2.2.4",
+    "vue-router": "^2.5.3"
+  },
+  "displayName": "crimewatch",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-geolocation": {}
     },
-    "keywords": [
-        "ecosystem:cordova"
-    ],
-    "license": "ISC",
-    "devDependencies": {
-        "cheerio": "^0.22.0",
-        "chokidar": "^1.6.1",
-        "clean-webpack-plugin": "^0.1.15",
-        "cross-env": "^5.0.0",
-        "css-loader": "^0.27.3",
-        "device.js": "git+https://github.com/matthewhudson/device.js.git",
-        "epipebomb": "^1.0.0",
-        "extract-text-webpack-plugin": "^2.1.0",
-        "file-loader": "^0.10.1",
-        "html-loader": "^0.4.5",
-        "html-webpack-plugin": "^2.28.0",
-        "node-sass": "^4.5.0",
-        "path": "^0.12.7",
-        "required-loader": "^1.2.11",
-        "sass-loader": "^6.0.3",
-        "style-loader": "^0.13.2",
-        "svg-url-loader": "^2.0.2",
-        "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony-v2.8.22",
-        "uglifyjs-webpack-plugin": "^0.3.0",
-        "url-loader": "^0.5.8",
-        "vue-hot-reload-api": "^2.0.11",
-        "vue-html-loader": "^1.2.4",
-        "vue-loader": "^11.1.4",
-        "vue-style-loader": "^3.0.1",
-        "vue-template-compiler": "^2.2.4",
-        "vue2-google-maps": "^0.7.5",
-        "webpack": "^2.2.1",
-        "webpack-dev-server": "^2.4.1"
-    },
-    "dependencies": {
-        "cordova-android": "^6.2.3",
-        "cordova-browser": "^4.1.0",
-        "cordova-plugin-compat": "^1.0.0",
-        "cordova-plugin-geolocation": "^2.4.3",
-        "cordova-plugin-whitelist": "1",
-        "cross-env": "^5.0.0",
-        "framework7": "^1.5.4",
-        "framework7-vue": "^0.8.5",
-        "vue": "^2.2.4"
-    },
-    "displayName": "crimewatch",
-    "cordova": {
-        "plugins": {
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-geolocation": {}
-        },
-        "platforms": [
-            "android",
-            "browser"
-        ]
-    }
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  }
 }

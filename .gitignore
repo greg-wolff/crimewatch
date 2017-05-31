@@ -2,6 +2,7 @@ Ignore Mac OS Files
 .DS_Store
 .AppleDouble
 .LSOverride
+src./main.vue
 # Thumbnails
 ._*
 

@@ -84,6 +84,7 @@ export default {
     this.interval = setInterval(this.setCenter(),1000);
     this.interval = setInterval(this.setMarkers(),5000);
     console.log("In mounted");
+    console.log(this.$data);
   },
   methods: {
     getInfo: function(m){

@@ -101,7 +101,7 @@ function Nearby(a,b,dist){
     console.log(key + " entered query at " + location + " (" + distance + " km from center)");
     var pos = {lat: location[0],lng:location[1]};
     var hash = getHash(location[0],location[1]);
-    markers.push({position:pos},{info:returnInfo(hash)});
+    markers.push({position:pos,info:returnInfo(hash)});
     //markers.push(location.concat(getHash(location[0],location[1])));
   });
 

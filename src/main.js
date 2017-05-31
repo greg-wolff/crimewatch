@@ -17,6 +17,11 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.material.color
  import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
  */
 
+import VueRouter from 'vue-router'
+import firebase from 'firebase'
+import firebaseui from 'firebaseui'
+import router from './router'
+import {config} from './helpers/firebaseConfig'
 // Import App Custom Styles
 import AppStyles from './assets/sass/main.scss'
 
@@ -30,6 +35,7 @@ import Routes from './routes.js'
 import App from './main.vue'
 
 // Init F7 Vue Plugin
+Vue.use(VueRouter)
 Vue.use(Framework7Vue)
 Vue.use(VueGoogleMaps, {
    load: {
@@ -50,6 +56,15 @@ Nearby(10,10,100);
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new Vue({
+  router,
+  created(){
+    firebase.initializeApp(config)
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        this.$router.push('')
+      }
+    })
+  }
   el: '#app',
   template: '<app/>',
   // Init Framework7 by passing parameters here
