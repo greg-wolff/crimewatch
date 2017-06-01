@@ -40,6 +40,7 @@
           <f7-link icon="icon-bars" open-panel="right"></f7-link>
         </f7-nav-right>
       </f7-navbar>
+      <!-- login -->
       <!-- Pages -->
       <!--
 				<f7-pages>
@@ -53,6 +54,12 @@
 				-->
       <f7-pages>
         <f7-page>
+          <f7-login-screen>
+              <f7-page login-screen :open="true">
+                <f7-login-screen-title>CrimeWatch</f7-login-screen-title>
+                <p><f7-button @click='login'>Login</f7-button></p>
+              </f7-page>
+          </f7-login-screen>
           <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
           <GmapMarker
               v-for="m in markers"
@@ -74,6 +81,7 @@
 <script>
 import VueRouter from 'vue-router'
 import {Nearby,loadInfo,returnInfo,getHash,SignIn} from './backend.js'
+import {config} from './firebaseConfig';
 export default {
   data() {
     return {
@@ -82,9 +90,19 @@ export default {
     }
   },
   created() {
-    firebase.initializeApp(config);
+    //firebase.initializeApp(config);
   },
   mounted: function(){
+    var self = this ;
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        console.log("logged in")
+        //self.$f7.loginScreen();
+        //router.push('/success')
+      } else {
+        self.$f7.loginScreen();
+      }
+     });
     this.interval = setInterval(this.setCenter(),1000);
     this.interval = setInterval(this.setMarkers(),5000);
     console.log("In mounted");
@@ -93,31 +111,6 @@ export default {
   methods: {
     getInfo: function(m){
         console.log(m.position.lat);
-        firebase.auth().onAuthStateChanged((user) => {
-          if(user) {
-            console.log("Logged in")
-            //router.push('/success')
-          } else {
-            console.log("need to log in")
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithRedirect(provider).then(function() {
-            firebase.auth().getRedirectResult().then(function(result) {
-              // This gives you a Google Access Token.
-              // You can use it to access the Google API.
-              var token = result.credential.accessToken;
-              console.log(token);
-              // The signed-in user info.
-              var user = result.user;
-              // ...
-              }).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-              });
-            });
-
-          }
-         });
         var Infohash = getHash(m.position.lat,m.position.lng);
         console.log(returnInfo(Infohash));
     },
@@ -161,6 +154,24 @@ export default {
         console.log(this.setCenter());;
         console.log(locations);
         console.log(this.$data.markers);
+    },
+    login: function(){
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithRedirect(provider).then(function() {
+      firebase.auth().getRedirectResult().then(function(result) {
+        // This gives you a Google Access Token.
+        // You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        console.log(token);
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
+      });
     }
   }
 }
