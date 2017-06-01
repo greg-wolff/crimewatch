@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import Auth from './Auth.vue';
+import App from './main.vue'
 /*export default [
   {
     path: '/form/',
@@ -10,8 +10,7 @@ const router = new VueRouter({
   mode:'history',
   routes: [
     {path: '/form/',component: require('./assets/vue/pages/form.vue')},
-    {path: '/',component: Auth},
-    {path:'/auth',component: Auth},
+    {path:'/success',component: App}
   ]
 });
 export default router;

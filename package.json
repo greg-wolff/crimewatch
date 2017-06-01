@@ -44,9 +44,13 @@
     "dependencies": {
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
+        "cordova-plugin-browsertab": "^0.2.0",
+        "cordova-plugin-buildinfo": "^1.1.0",
         "cordova-plugin-compat": "^1.0.0",
         "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-inappbrowser": "^1.7.1",
         "cordova-plugin-whitelist": "1",
+        "cordova-universal-links-plugin": "^1.2.1",
         "cross-env": "^5.0.0",
         "firebase": "^4.1.1",
         "firebaseui": "^2.0.0",
@@ -59,7 +63,11 @@
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-geolocation": {}
+            "cordova-plugin-geolocation": {},
+            "cordova-plugin-buildinfo": {},
+            "cordova-universal-links-plugin": {},
+            "cordova-plugin-browsertab": {},
+            "cordova-plugin-inappbrowser": {}
         },
         "platforms": [
             "android",

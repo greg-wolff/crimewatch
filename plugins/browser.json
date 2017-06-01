@@ -12,6 +12,18 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-buildinfo": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-universal-links-plugin": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-browsertab": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
         }
     },
     "dependent_plugins": {

@@ -24,7 +24,7 @@ import AppStyles from './assets/sass/main.scss'
 //import StoreMarker(),Nearby() from './backend.js'
 import {Nearby,loadInfo,returnInfo} from './backend.js'
 // Import Routes
-import Routes from './routes.js'
+import router from './routes.js'
 
 // Import App Component
 import App from './main.vue'
@@ -56,7 +56,7 @@ var vm = new Vue({
   framework7: {
     root: '#app',
     material: true,
-    routes: Routes
+    routes: router
   },
   // Register App Component
   components: {
