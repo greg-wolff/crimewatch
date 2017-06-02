@@ -18916,7 +18916,7 @@ module.exports = Component.exports
 /***/ }),
 /* 38 */
 /* exports provided: StoreMarker, Nearby, loadInfo, returnInfo, getHash */
-/* exports used: getHash, returnInfo, Nearby */
+/* exports used: Nearby, getHash, returnInfo */
 /*!************************!*\
   !*** ./src/backend.js ***!
   \************************/
@@ -18924,10 +18924,10 @@ module.exports = Component.exports
 
 "use strict";
 /* unused harmony export StoreMarker */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Nearby; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Nearby; });
 /* unused harmony export loadInfo */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return returnInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getHash; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return returnInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getHash; });
 
 // Initialize Firebase
 var config = {
@@ -56566,14 +56566,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.interval = setInterval(this.setCenter(), 1000);
             this.interval = setInterval(this.setMarkers(), 5000);
             //this.setCenter();
+            console.log("Manual Call:"+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["a" /* Nearby */])(36.99558,-120,10000));
             console.log("In mounted");
             console.log(this.$data);
         },
         methods: {
             getInfo: function(m) {
                 console.log(m.position.lat);
-                var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["a" /* getHash */])(m.position.lat, m.position.lng);
-                console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["b" /* returnInfo */])(Infohash));
+                var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["b" /* getHash */])(m.position.lat, m.position.lng);
+                console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["c" /* returnInfo */])(Infohash));
             },
             setCenter: function() {
                 console.log('setcenter')
@@ -56581,7 +56582,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
                         timeout: 30000,
-                        enableHighAccuracy: true
+                        //enableHighAccuracy: true
                     })
                 var that = this
                 console.log(this)
@@ -56607,7 +56608,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             setMarkers: function() {
                 var locs = [];
-                var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["c" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, 100);
+                var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["a" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, 100);
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};
                   //info is set just to open up a connection

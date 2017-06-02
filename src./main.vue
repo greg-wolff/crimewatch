@@ -118,6 +118,7 @@ export default {
             this.interval = setInterval(this.setCenter(), 1000);
             this.interval = setInterval(this.setMarkers(), 5000);
             //this.setCenter();
+            console.log("Manual Call:"+Nearby(36.99558,-120,10000));
             console.log("In mounted");
             console.log(this.$data);
         },
@@ -133,7 +134,7 @@ export default {
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
                         timeout: 30000,
-                        enableHighAccuracy: true
+                        //enableHighAccuracy: true
                     })
                 var that = this
                 console.log(this)
