@@ -56690,103 +56690,112 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data() {
-    return {
-      center: {lat: 10.0,lng: 10.0},
-      markers: []
-    }
-  },
-  created() {
-    //firebase.initializeApp(config);
-  },
-  mounted: function(){
-    var self = this ;
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user) {
-        console.log("logged in")
-        //self.$f7.loginScreen();
-        //router.push('/success')
-      } else {
-        self.$f7.loginScreen();
-      }
-     });
-    this.interval = setInterval(this.setCenter(),1000);
-    this.interval = setInterval(this.setMarkers(),5000);
-    console.log("In mounted");
-    console.log(this.$data);
-  },
-  methods: {
-    getInfo: function(m){
-        console.log(m.position.lat);
-        var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["a" /* getHash */])(m.position.lat,m.position.lng);
-        console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["b" /* returnInfo */])(Infohash));
-    },
-    setCenter: function() {
-        console.log('setcenter')
-        // Request Location Services
-        var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
-          onError, {
-            timeout: 30000
-            })
-      var that = this
-      console.log(this)
-      function onSuccess(pos) {
-        console.log(pos)
-        console.log(this)
-        that.$data.center = {
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude
+    data() {
+            return {
+                center: {
+                    lat: 10.0,
+                    lng: 10.0
+                },
+                markers: []
+            }
+        },
+        created() {
+            var self = this;
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    console.log("logged in")
+                        //self.$f7.loginScreen();
+                        //router.push('/success')
+                } else {
+                    self.$f7.loginScreen();
+                }
+            });
+            this.setCenter();
+            //firebase.initializeApp(config);
+        },
+        mounted: function() {
+            this.interval = setInterval(this.setCenter(), 5000);
+            //this.interval = setInterval(this.setMarkers(), 5000);
+            console.log("In mounted");
+            console.log(this.$data);
+        },
+        methods: {
+            getInfo: function(m) {
+                console.log(m.position.lat);
+                var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["a" /* getHash */])(m.position.lat, m.position.lng);
+                console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["b" /* returnInfo */])(Infohash));
+            },
+            setCenter: function() {
+                console.log('setcenter')
+                    // Request Location Services
+                var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+                    onError, {
+                        timeout: 30000
+                    })
+                var that = this
+                console.log(this)
+
+                function onSuccess(pos) {
+                    console.log(pos)
+                    console.log(this)
+                    that.$data.center = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                    that.$data.zoom = 15
+                    that.$nextTick(function() {
+                        that.setMarkers();
+                    });
+                }
+
+                function onError(err) {
+                    console.log(err)
+                    console.log(err.code)
+                    console.log(err.message)
+                }
+            },
+            setMarkers: function() {
+                var locs = [];
+                var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["c" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, 100);
+                /*locations.forEach(function pop(index){
+                  var pos = {lat: index[0],lng:index[1]};
+                  //info is set just to open up a connection
+                  locs.push({position:pos},{info:returnInfo(index[2])});
+                  });*/
+                this.$data.markers = locations;
+                console.log("In set markers");
+                console.log(this.setCenter());;
+                console.log(locations);
+                console.log(this.$data.markers);
+            },
+            login: function() {
+                var provider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithRedirect(provider).then(function() {
+                    firebase.auth().getRedirectResult().then(function(result) {
+                        // This gives you a Google Access Token.
+                        // You can use it to access the Google API.
+                        var token = result.credential.accessToken;
+                        console.log(token);
+                        // The signed-in user info.
+                        var user = result.user;
+                        // ...
+                    }).catch(function(error) {
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                    });
+                });
+            }
         }
-        that.$data.zoom = 15
-        that.$nextTick(function () {
-          that.setMarkers();
-        });
-      }
-      function onError(err) {
-        console.log(err)
-        console.log(err.code)
-        console.log(err.message)
-      }
-    },
-    setMarkers: function(){
-        var locs = [];
-        var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__backend_js__["c" /* Nearby */])(this.$data.center.lat,this.$data.center.lng,100);
-        /*locations.forEach(function pop(index){
-          var pos = {lat: index[0],lng:index[1]};
-          //info is set just to open up a connection
-          locs.push({position:pos},{info:returnInfo(index[2])});
-          });*/
-        this.$data.markers=locations;
-        console.log("In set markers");
-        console.log(this.setCenter());;
-        console.log(locations);
-        console.log(this.$data.markers);
-    },
-    login: function(){
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithRedirect(provider).then(function() {
-      firebase.auth().getRedirectResult().then(function(result) {
-        // This gives you a Google Access Token.
-        // You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        console.log(token);
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-        }).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-        });
-      });
-    }
-  }
 });
+
 
 
 /***/ }),
@@ -57187,16 +57196,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "icon": "icon-bars",
       "open-panel": "right"
     }
-  })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('f7-login-screen', [_c('f7-page', {
+  })], 1)], 1), _vm._v(" "), _c('f7-login-screen', [_c('f7-view', [_c('f7-pages', [_c('f7-page', [_c('f7-login-screen-title', [_vm._v("Crimewatch")]), _vm._v(" "), _c('f7-button', {
     attrs: {
-      "login-screen": "",
-      "open": true
-    }
-  }, [_c('f7-login-screen-title', [_vm._v("CrimeWatch")]), _vm._v(" "), _c('p', [_c('f7-button', {
+      "active": ""
+    },
     on: {
       "click": _vm.login
     }
-  }, [_vm._v("Login")])], 1)], 1)], 1), _vm._v(" "), _c('GmapMap', {
+  }, [_vm._v("Log in")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('GmapMap', {
     staticStyle: {
       "width": "100%",
       "height": "100%"

@@ -1,48 +1,61 @@
+
+
 <template>
+
 <!-- App -->
 <div id="app">
 
-  <!-- Statusbar -->
-  <f7-statusbar></f7-statusbar>
+    <!-- Statusbar -->
+    <f7-statusbar></f7-statusbar>
 
-  <!-- Right Panel -->
-  <f7-panel right cover layout="dark">
-    <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
-      <f7-navbar title="Right Panel" sliding></f7-navbar>
-      <f7-pages>
-        <f7-page>
-          <f7-block>
-            <p>Right panel content goes here</p>
-          </f7-block>
-          <f7-block-title>Load page in panel</f7-block-title>
-          <f7-list>
-            <f7-list-item link="/form/" title="Form"></f7-list-item>
-          </f7-list>
-          <f7-block-title>Load page in main view</f7-block-title>
-          <f7-list>
-            <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
-          </f7-list>
-          <f7-list>
-            <f7-list-item link="/map/" title="Map" link-view="#main-view" link-close-panel></f7-list-item>
-          </f7-list>
-        </f7-page>
-      </f7-pages>
-    </f7-view>
-  </f7-panel>
+    <!-- Right Panel -->
+    <f7-panel right cover layout="dark">
+        <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
+            <f7-navbar title="Right Panel" sliding></f7-navbar>
+            <f7-pages>
+                <f7-page>
+                    <f7-block>
+                        <p>Right panel content goes here</p>
+                    </f7-block>
+                    <f7-block-title>Load page in panel</f7-block-title>
+                    <f7-list>
+                        <f7-list-item link="/form/" title="Form"></f7-list-item>
+                    </f7-list>
+                    <f7-block-title>Load page in main view</f7-block-title>
+                    <f7-list>
+                        <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+                    </f7-list>
+                    <f7-list>
+                        <f7-list-item link="/map/" title="Map" link-view="#main-view" link-close-panel></f7-list-item>
+                    </f7-list>
+                </f7-page>
+            </f7-pages>
+        </f7-view>
+    </f7-panel>
 
-  <!-- Main Views -->
-  <f7-views>
-    <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
-      <!-- Navbar -->
-      <f7-navbar>
-        <f7-nav-center sliding>Crimewatch</f7-nav-center>
-        <f7-nav-right>
-          <f7-link icon="icon-bars" open-panel="right"></f7-link>
-        </f7-nav-right>
-      </f7-navbar>
-      <!-- login -->
-      <!-- Pages -->
-      <!--
+    <!-- Main Views -->
+    <f7-views>
+        <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+            <!-- Navbar -->
+            <f7-navbar>
+                <f7-nav-center sliding>Crimewatch</f7-nav-center>
+                <f7-nav-right>
+                    <f7-link icon="icon-bars" open-panel="right"></f7-link>
+                </f7-nav-right>
+            </f7-navbar>
+            <!-- login -->
+            <f7-login-screen>
+                <f7-view>
+                    <f7-pages>
+                        <f7-page>
+                            <f7-login-screen-title>Crimewatch</f7-login-screen-title>
+                                <f7-button active @click='login'>Log in</f7-button>
+                        </f7-page>
+                    </f7-pages>
+                </f7-view>
+            </f7-login-screen>
+            <!-- Pages -->
+            <!--
 				<f7-pages>
 					<f7-page>
 						<f7-block-title>Welcome to my App</f7-block-title>
@@ -52,127 +65,129 @@
 					</f7-page>
 				</f7-pages>
 				-->
-      <f7-pages>
-        <f7-page>
-          <f7-login-screen>
-              <f7-page login-screen :open="true">
-                <f7-login-screen-title>CrimeWatch</f7-login-screen-title>
-                <p><f7-button @click='login'>Login</f7-button></p>
-              </f7-page>
-          </f7-login-screen>
-          <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
-          <GmapMarker
-              v-for="m in markers"
-              :position="m.position"
-              :info = "m.info"
-              :clickable="true"
-              @click = "getInfo(m)"
-              v-el:current
-              >
-          </GmapMarker>
-          </GmapMap>
-        </f7-page>
-      </f7-pages>
-    </f7-view>
-  </f7-views>
+            <f7-pages>
+                <f7-page>
+                    <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
+                        <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
+                        </GmapMarker>
+                    </GmapMap>
+                </f7-page>
+            </f7-pages>
+        </f7-view>
+    </f7-views>
 </div>
+
 </template>
 
 <script>
+
 import VueRouter from 'vue-router'
-import {Nearby,loadInfo,returnInfo,getHash,SignIn} from './backend.js'
-import {config} from './firebaseConfig';
-export default {
-  data() {
-    return {
-      center: {lat: 10.0,lng: 10.0},
-      markers: []
-    }
-  },
-  created() {
-    //firebase.initializeApp(config);
-  },
-  mounted: function(){
-    var self = this ;
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user) {
-        console.log("logged in")
-        //self.$f7.loginScreen();
-        //router.push('/success')
-      } else {
-        self.$f7.loginScreen();
-      }
-     });
-    this.interval = setInterval(this.setCenter(),1000);
-    this.interval = setInterval(this.setMarkers(),5000);
-    console.log("In mounted");
-    console.log(this.$data);
-  },
-  methods: {
-    getInfo: function(m){
-        console.log(m.position.lat);
-        var Infohash = getHash(m.position.lat,m.position.lng);
-        console.log(returnInfo(Infohash));
-    },
-    setCenter: function() {
-        console.log('setcenter')
-        // Request Location Services
-        var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
-          onError, {
-            timeout: 30000
-            })
-      var that = this
-      console.log(this)
-      function onSuccess(pos) {
-        console.log(pos)
-        console.log(this)
-        that.$data.center = {
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude
-        }
-        that.$data.zoom = 15
-        that.$nextTick(function () {
-          that.setMarkers();
-        });
-      }
-      function onError(err) {
-        console.log(err)
-        console.log(err.code)
-        console.log(err.message)
-      }
-    },
-    setMarkers: function(){
-        var locs = [];
-        var locations = Nearby(this.$data.center.lat,this.$data.center.lng,100);
-        /*locations.forEach(function pop(index){
-          var pos = {lat: index[0],lng:index[1]};
-          //info is set just to open up a connection
-          locs.push({position:pos},{info:returnInfo(index[2])});
-          });*/
-        this.$data.markers=locations;
-        console.log("In set markers");
-        console.log(this.setCenter());;
-        console.log(locations);
-        console.log(this.$data.markers);
-    },
-    login: function(){
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithRedirect(provider).then(function() {
-      firebase.auth().getRedirectResult().then(function(result) {
-        // This gives you a Google Access Token.
-        // You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        console.log(token);
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-        }).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-        });
-      });
-    }
-  }
+import {
+    Nearby, loadInfo, returnInfo, getHash, SignIn
 }
+from './backend.js'
+import {
+    config
+}
+from './firebaseConfig';
+export default {
+    data() {
+            return {
+                center: {
+                    lat: 10.0,
+                    lng: 10.0
+                },
+                markers: []
+            }
+        },
+        created() {
+            var self = this;
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    console.log("logged in")
+                        //self.$f7.loginScreen();
+                        //router.push('/success')
+                } else {
+                    self.$f7.loginScreen();
+                }
+            });
+            this.setCenter();
+            //firebase.initializeApp(config);
+        },
+        mounted: function() {
+            this.interval = setInterval(this.setCenter(), 5000);
+            //this.interval = setInterval(this.setMarkers(), 5000);
+            console.log("In mounted");
+            console.log(this.$data);
+        },
+        methods: {
+            getInfo: function(m) {
+                console.log(m.position.lat);
+                var Infohash = getHash(m.position.lat, m.position.lng);
+                console.log(returnInfo(Infohash));
+            },
+            setCenter: function() {
+                console.log('setcenter')
+                    // Request Location Services
+                var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+                    onError, {
+                        timeout: 30000
+                    })
+                var that = this
+                console.log(this)
+
+                function onSuccess(pos) {
+                    console.log(pos)
+                    console.log(this)
+                    that.$data.center = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                    that.$data.zoom = 15
+                    that.$nextTick(function() {
+                        that.setMarkers();
+                    });
+                }
+
+                function onError(err) {
+                    console.log(err)
+                    console.log(err.code)
+                    console.log(err.message)
+                }
+            },
+            setMarkers: function() {
+                var locs = [];
+                var locations = Nearby(this.$data.center.lat, this.$data.center.lng, 100);
+                /*locations.forEach(function pop(index){
+                  var pos = {lat: index[0],lng:index[1]};
+                  //info is set just to open up a connection
+                  locs.push({position:pos},{info:returnInfo(index[2])});
+                  });*/
+                this.$data.markers = locations;
+                console.log("In set markers");
+                console.log(this.setCenter());;
+                console.log(locations);
+                console.log(this.$data.markers);
+            },
+            login: function() {
+                var provider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithRedirect(provider).then(function() {
+                    firebase.auth().getRedirectResult().then(function(result) {
+                        // This gives you a Google Access Token.
+                        // You can use it to access the Google API.
+                        var token = result.credential.accessToken;
+                        console.log(token);
+                        // The signed-in user info.
+                        var user = result.user;
+                        // ...
+                    }).catch(function(error) {
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                    });
+                });
+            }
+        }
+}
+
 </script>
