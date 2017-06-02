@@ -111,12 +111,13 @@ export default {
                     self.$f7.loginScreen();
                 }
             });
-            this.setCenter();
+            //this.setCenter();
             //firebase.initializeApp(config);
         },
         mounted: function() {
-            this.interval = setInterval(this.setCenter(), 5000);
-            //this.interval = setInterval(this.setMarkers(), 5000);
+            this.interval = setInterval(this.setCenter(), 1000);
+            this.interval = setInterval(this.setMarkers(), 5000);
+            //this.setCenter();
             console.log("In mounted");
             console.log(this.$data);
         },
@@ -131,7 +132,8 @@ export default {
                     // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
-                        timeout: 30000
+                        timeout: 30000,
+                        enableHighAccuracy: true
                     })
                 var that = this
                 console.log(this)
@@ -165,7 +167,6 @@ export default {
                   });*/
                 this.$data.markers = locations;
                 console.log("In set markers");
-                console.log(this.setCenter());;
                 console.log(locations);
                 console.log(this.$data.markers);
             },
