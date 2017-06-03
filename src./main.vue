@@ -1,47 +1,50 @@
+
+
 <template>
+
 <!-- App -->
 <div id="app">
 
-  <!-- Statusbar -->
-  <f7-statusbar></f7-statusbar>
+    <!-- Statusbar -->
+    <f7-statusbar></f7-statusbar>
 
-  <!-- Right Panel -->
-  <f7-panel right cover layout="dark">
-    <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
-      <f7-navbar title="Right Panel" sliding></f7-navbar>
-      <f7-pages>
-        <f7-page>
-          <f7-block>
-            <p>Right panel content goes here</p>
-          </f7-block>
-          <f7-block-title>Load page in panel</f7-block-title>
-          <f7-list>
-            <f7-list-item link="/form/" title="Form"></f7-list-item>
-          </f7-list>
-          <f7-block-title>Load page in main view</f7-block-title>
-          <f7-list>
-            <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
-          </f7-list>
-          <f7-list>
-            <f7-list-item link="/map/" title="Map" link-view="#main-view" link-close-panel></f7-list-item>
-          </f7-list>
-        </f7-page>
-      </f7-pages>
-    </f7-view>
-  </f7-panel>
+    <!-- Right Panel -->
+    <f7-panel right cover layout="dark">
+        <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
+            <f7-navbar title="Right Panel" sliding></f7-navbar>
+            <f7-pages>
+                <f7-page>
+                    <f7-block>
+                        <p>Right panel content goes here</p>
+                    </f7-block>
+                    <f7-block-title>Load page in panel</f7-block-title>
+                    <f7-list>
+                        <f7-list-item link="/form/" title="Form"></f7-list-item>
+                    </f7-list>
+                    <f7-block-title>Load page in main view</f7-block-title>
+                    <f7-list>
+                        <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+                    </f7-list>
+                    <f7-list>
+                        <f7-list-item link="/map/" title="Map" link-view="#main-view" link-close-panel></f7-list-item>
+                    </f7-list>
+                </f7-page>
+            </f7-pages>
+        </f7-view>
+    </f7-panel>
 
-  <!-- Main Views -->
-  <f7-views>
-    <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
-      <!-- Navbar -->
-      <f7-navbar>
-        <f7-nav-center sliding>Crimewatch</f7-nav-center>
-        <f7-nav-right>
-          <f7-link icon="icon-bars" open-panel="right"></f7-link>
-        </f7-nav-right>
-      </f7-navbar>
-      <!-- Pages -->
-      <!--
+    <!-- Main Views -->
+    <f7-views>
+        <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+            <!-- Navbar -->
+            <f7-navbar>
+                <f7-nav-center sliding>Crimewatch</f7-nav-center>
+                <f7-nav-right>
+                    <f7-link icon="icon-bars" open-panel="right"></f7-link>
+                </f7-nav-right>
+            </f7-navbar>
+            <!-- Pages -->
+            <!--
 				<f7-pages>
 					<f7-page>
 						<f7-block-title>Welcome to my App</f7-block-title>
@@ -50,88 +53,215 @@
 						</f7-block>
 					</f7-page>
 				</f7-pages>
-				-->
-      <f7-pages>
-        <f7-page>
-          <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
-          <GmapMarker
-              v-for="m in markers"
-              :position="m.position"
-              :info = "m.info"
-              :clickable="true"
-              @click = "getInfo(m)"
-              v-el:current
-              >
-          </GmapMarker>
-          </GmapMap>
-        </f7-page>
-      </f7-pages>
-    </f7-view>
-  </f7-views>
+      -->
+            <f7-pages>
+                <f7-page>
+                    <div class="popup popup-addcrime">
+                            <f7-list form>
+
+                                <f7-list-item>
+                                    <div class="list-block accordion-list">
+
+                                        <li class="accordion-item">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title">Categories</div>
+                                                </div>
+                                            </a>
+                                            <div class="accordion-item-content">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <!-- Single chekbox item -->
+                                                        <li>
+                                                            <label class="label-checkbox item-content">
+                                                                <!-- Checked by default -->
+                                                                <input type="checkbox" name="my-checkbox" value="Murder" v-model="Category" lazy>
+                                                                <div class="item-media">
+                                                                    <i class="icon icon-form-checkbox"></i>
+                                                                </div>
+                                                                <div class="item-inner">
+                                                                    <div class="item-title">Murder</div>
+                                                                </div>
+                                                            </label>
+                                                        </li>
+                                                        <!-- Another chekbox item -->
+                                                        <li>
+                                                            <label class="label-checkbox item-content">
+                                                                <input type="checkbox" name="my-checkbox" value="Theft" v-model="Category" lazy>
+                                                                <div class="item-media">
+                                                                    <i class="icon icon-form-checkbox"></i>
+                                                                </div>
+                                                                <div class="item-inner">
+                                                                    <div class="item-title">Theft</div>
+                                                                </div>
+                                                            </label>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                    </div>
+                                </f7-list-item>
+                                <f7-list-item>
+                                    <f7-label> Comments</f7-label>
+                                    <f7-input type="textarea" placeholder="" v-model="comment" lazy />
+                                </f7-list-item>
+
+
+                            <p>{{Category}}</p>
+                            </f7-list>
+
+                            <f7-button fill color="blue" @click="submit">Send</f7-button>
+                            <!-- Popup content goes here -->
+                    </div>
+                    <div class="popup popup-marker">
+                      <div class="content-block">
+                        <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
+                        <h1> {{viewComment}} </h1>
+                        <div class="chip" v-for="type in viewTypes">
+                          <div class="chip-label" > {{type}} </div></div>
+                    </div>
+                    </div>
+                    <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue open-popup">
+                        <i class="icon icon-plus"></i>
+                    </a>
+                    <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
+                        <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
+                        </GmapMarker>
+                    </GmapMap>
+                </f7-page>
+            </f7-pages>
+        </f7-view>
+    </f7-views>
 </div>
+
 </template>
 
 <script>
-import {Nearby,loadInfo,returnInfo,getHash} from './backend.js'
-export default {
-  data() {
-    return {
-      center: {lat: 10.0,lng: 10.0},
-      markers: []
-    }
-  },
-  mounted: function(){
-    this.interval = setInterval(this.setCenter(),1000);
-    this.interval = setInterval(this.setMarkers(),5000);
-    console.log("In mounted");
-  },
-  methods: {
-    getInfo: function(m){
-        console.log(m.position.lat);
-        var Infohash = getHash(m.position.lat,m.position.lng);
-        console.log(returnInfo(Infohash));
-    },
-    setCenter: function() {
-        console.log('setcenter')
-        // Request Location Services
-        var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
-          onError, {
-            timeout: 30000
-            })
-      var that = this
-      console.log(this)
-      function onSuccess(pos) {
-        console.log(pos)
-        console.log(this)
-        that.$data.center = {
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude
-        }
-        that.$data.zoom = 15
-        that.$nextTick(function () {
-          that.setMarkers();
-        });
-      }
-      function onError(err) {
-        console.log(err)
-        console.log(err.code)
-        console.log(err.message)
-      }
-    },
-    setMarkers: function(){
-        var locs = [];
-        var locations = Nearby(this.$data.center.lat,this.$data.center.lng,100);
-        /*locations.forEach(function pop(index){
-          var pos = {lat: index[0],lng:index[1]};
-          //info is set just to open up a connection
-          locs.push({position:pos},{info:returnInfo(index[2])});
-          });*/
-        this.$data.markers=locations;
-        console.log("In set markers");
-        console.log(this.setCenter());;
-        console.log(locations);
-        console.log(this.$data.markers);
-    }
-  }
+
+import {
+    Nearby,
+    loadInfo,
+    returnInfo,
+    getHash
 }
+from './backend.js'
+export default {
+    data() {
+            return {
+                center: {
+                    lat: 10.0,
+                    lng: 10.0
+                },
+                markers: [],
+                comment: null,
+                Category:["Murder","Theft"],
+                viewTypes:[],
+                viewComment:null
+            }
+        },
+        mounted: function() {
+            this.setCenter();
+            console.log("In mounted");
+            console.log(this.$data);
+        },
+        methods: {
+            crime: function(){
+              this.$f7.popup('.popup-addcrime');
+            },
+            close: function(){
+              this.$f7.closeModal()
+            },
+            submit: function(){
+              var currentTime = new Date();
+              var year = currentTime.getFullYear();
+              var month = currentTime.getMonth();
+              var day = currentTime.getDay();
+              var hour = currentTime.getHours();
+              var minute = currentTime.getMinutes();
+              var types = this.$data.Category;
+              var comment = this.$data.comment;
+              var data = {
+                "time": year +"/"+month+"/"+day+" "+hour+":"+minute ,
+                "category": types,
+                "comment": comment
+              }
+              loadInfo(this.$data.center.lat,this.$data.center.lng,data);
+              console.log(this.$data);
+              this.$f7.closeModal()
+            },
+            getInfo: function(m) {
+                console.log(m.position.lat);
+                var Infohash = getHash(m.position.lat, m.position.lng);
+                var json = returnInfo(Infohash);
+                console.log(this.$f7);
+                /*console.log(json)*/
+                //push category data to vue.$data so we can use v-for
+                this.$data.viewTypes = json.category;
+                this.$data.viewComment = json.comment;
+                /*var popupHTML =
+                    '<div class="popup">' +
+                    '<div class="content-block">' +
+                    '<p><a href="#" class="close-popup"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>' +
+                    '<h1>' + json.comment + '</h2>' +
+                    '<div class="chip" v-repeat="5">' +
+                    '<div class="chip-label" >' + json.category + '</div></div>' +
+                    '</div>' +
+                    '</div>'
+                    */
+                this.$f7.popup('.popup-marker');
+            },
+            setCenter: function() {
+                console.log('setcenter')
+                    // Request Location Services
+                var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+                    onError, {
+                        timeout: 30000,
+                        enableHighAccuracy: true
+                    })
+                var that = this
+                console.log(this)
+
+                function onSuccess(pos) {
+                    console.log(pos)
+                    console.log(this)
+                    that.$data.center = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                    that.$data.zoom = 15
+                    that.$nextTick(function() {
+                        that.setMarkers();
+                    });
+                }
+
+                function onError(err) {
+                    console.log(err)
+                    console.log(err.code)
+                    console.log(err.message)
+                    that.$nextTick(function() {
+                        that.setMarkers();
+                    });
+                }
+            },
+            setMarkers: function() {
+                var locs = [];
+                var locations = Nearby(this.$data.center.lat, this.$data.center.lng, 100);
+                /*locations.forEach(function pop(index){
+                  var pos = {lat: index[0],lng:index[1]};
+                  //info is set just to open up a connection
+                  locs.push({position:pos},{info:returnInfo(index[2])});
+                  });*/
+                this.$data.markers = locations;
+                console.log("In set markers");
+                setTimeout(this.setCenter(), 5000)
+                console.log(locations);
+                console.log(this.$data.markers);
+            }
+        }
+}
+
 </script>
