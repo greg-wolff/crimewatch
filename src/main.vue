@@ -50,19 +50,15 @@
 						</f7-block>
 					</f7-page>
 				</f7-pages>
-				-->
+      -->
       <f7-pages>
         <f7-page>
+          <a href="#" class="floating-button color-pink">
+            <i class="icon icon-plus"></i>
+          </a>
           <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
-          <GmapMarker
-              v-for="m in markers"
-              :position="m.position"
-              :info = "m.info"
-              :clickable="true"
-              @click = "getInfo(m)"
-              v-el:current
-              >
-          </GmapMarker>
+            <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
+            </GmapMarker>
           </GmapMap>
         </f7-page>
       </f7-pages>
@@ -72,35 +68,51 @@
 </template>
 
 <script>
-import {Nearby,loadInfo,returnInfo,getHash} from './backend.js'
+import {
+  Nearby,
+  loadInfo,
+  returnInfo,
+  getHash
+} from './backend.js'
 export default {
   data() {
     return {
-      center: {lat: 10.0,lng: 10.0},
+      center: {
+        lat: 10.0,
+        lng: 10.0
+      },
       markers: []
     }
   },
-  mounted: function(){
-    this.interval = setInterval(this.setCenter(),1000);
-    this.interval = setInterval(this.setMarkers(),5000);
+  mounted: function() {
+    this.setCenter();
     console.log("In mounted");
     console.log(this.$data);
   },
   methods: {
-    getInfo: function(m){
-        console.log(m.position.lat);
-        var Infohash = getHash(m.position.lat,m.position.lng);
-        console.log(returnInfo(Infohash));
+    getInfo: function(m) {
+      console.log(m.position.lat);
+      var Infohash = getHash(m.position.lat, m.position.lng);
+      console.log(returnInfo(Infohash));
+      console.log(this.$f7);
+      var popupHTML = '<div class="popup">' +
+        '<div class="content-block">' +
+        '<p>Popup created dynamically.</p>' +
+        '<p><a href="#" class="close-popup">Close me</a></p>' +
+        '</div>' +
+        '</div>'
+      this.$f7.popup(popupHTML);
     },
     setCenter: function() {
-        console.log('setcenter')
-        // Request Location Services
-        var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
-          onError, {
-            timeout: 30000
-            })
+      console.log('setcenter')
+      // Request Location Services
+      var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+        onError, {
+          timeout: 30000
+        })
       var that = this
       console.log(this)
+
       function onSuccess(pos) {
         console.log(pos)
         console.log(this)
@@ -109,29 +121,33 @@ export default {
           lng: pos.coords.longitude
         }
         that.$data.zoom = 15
-        that.$nextTick(function () {
+        that.$nextTick(function() {
           that.setMarkers();
         });
       }
+
       function onError(err) {
         console.log(err)
         console.log(err.code)
         console.log(err.message)
+        that.$nextTick(function() {
+          that.setMarkers();
+        });
       }
     },
-    setMarkers: function(){
-        var locs = [];
-        var locations = Nearby(this.$data.center.lat,this.$data.center.lng,100);
-        /*locations.forEach(function pop(index){
-          var pos = {lat: index[0],lng:index[1]};
-          //info is set just to open up a connection
-          locs.push({position:pos},{info:returnInfo(index[2])});
-          });*/
-        this.$data.markers=locations;
-        console.log("In set markers");
-        console.log(this.setCenter());;
-        console.log(locations);
-        console.log(this.$data.markers);
+    setMarkers: function() {
+      var locs = [];
+      var locations = Nearby(this.$data.center.lat, this.$data.center.lng, 100);
+      /*locations.forEach(function pop(index){
+        var pos = {lat: index[0],lng:index[1]};
+        //info is set just to open up a connection
+        locs.push({position:pos},{info:returnInfo(index[2])});
+        });*/
+      this.$data.markers = locations;
+      console.log("In set markers");
+      setTimeout(this.setCenter(), 5000)
+      console.log(locations);
+      console.log(this.$data.markers);
     }
   }
 }
