@@ -22,7 +22,11 @@ import AppStyles from './assets/sass/main.scss'
 
 //Import backend.js
 //import StoreMarker(),Nearby() from './backend.js'
-import {Nearby,loadInfo,returnInfo} from './backend.js'
+import {
+  Nearby,
+  loadInfo,
+  returnInfo
+} from './backend.js'
 // Import Routes
 import Routes from './routes.js'
 
@@ -32,21 +36,30 @@ import App from './main.vue'
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 Vue.use(VueGoogleMaps, {
-   load: {
-     key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
-   }
- });
+  load: {
+    key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
+  }
+});
 //Testing
-var test = {
-"timestamp":"3:14",
-"comment":"It works!",
-"photo-url":"ex.url",
-"category":"test"
-}
-//loadInfo(10,10,test);
-//loadInfo(10.02,10,test);
-//loadInfo(10.03,10,test);
-Nearby(10,10,100);
+loadInfo(10, 10, {
+  "timestamp": "3:14",
+  "comment": "foo",
+  "photo-url": "ex.url",
+  "category": "murder"
+});
+loadInfo(10.02, 10, {
+  "timestamp": "3:14",
+  "comment": "bar",
+  "photo-url": "ex.url",
+  "category": "theft"
+});
+loadInfo(10.03, 10, {
+  "timestamp": "3:14",
+  "comment": "baz",
+  "photo-url": "ex.url",
+  "category": "blah"
+});
+Nearby(10, 10, 100);
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new Vue({

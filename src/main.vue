@@ -53,7 +53,7 @@
       -->
       <f7-pages>
         <f7-page>
-          <a href="#" class="floating-button color-pink">
+          <a href="#" class="floating-button color-blue">
             <i class="icon icon-plus"></i>
           </a>
           <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
@@ -93,12 +93,16 @@ export default {
     getInfo: function(m) {
       console.log(m.position.lat);
       var Infohash = getHash(m.position.lat, m.position.lng);
-      console.log(returnInfo(Infohash));
+      var json = returnInfo(Infohash);
       console.log(this.$f7);
-      var popupHTML = '<div class="popup">' +
+      console.log(json)
+      var popupHTML =
+        '<div class="popup">' +
         '<div class="content-block">' +
-        '<p>Popup created dynamically.</p>' +
-        '<p><a href="#" class="close-popup">Close me</a></p>' +
+        '<p><a href="#" class="close-popup"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>' +
+        '<h1>' + json.comment + '</h2>' +
+        '<div class="chip">' +
+        '<div class="chip-label">' + json.category + '</div></div>' +
         '</div>' +
         '</div>'
       this.$f7.popup(popupHTML);
@@ -108,7 +112,8 @@ export default {
       // Request Location Services
       var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
         onError, {
-          timeout: 30000
+          timeout: 30000,
+          enableHighAccuracy: true
         })
       var that = this
       console.log(this)

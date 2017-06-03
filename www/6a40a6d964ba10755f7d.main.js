@@ -18877,7 +18877,7 @@ exports.default = {
 /***/ }),
 /* 37 */
 /* exports provided: StoreMarker, Nearby, loadInfo, returnInfo, getHash */
-/* exports used: Nearby, getHash, returnInfo */
+/* exports used: loadInfo, Nearby, getHash, returnInfo */
 /*!************************!*\
   !*** ./src/backend.js ***!
   \************************/
@@ -18885,10 +18885,10 @@ exports.default = {
 
 "use strict";
 /* unused harmony export StoreMarker */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Nearby; });
-/* unused harmony export loadInfo */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return returnInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getHash; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Nearby; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loadInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return returnInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getHash; });
 
 // Initialize Firebase
 var config = {
@@ -54280,13 +54280,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     getInfo: function(m) {
       console.log(m.position.lat);
-      var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* getHash */])(m.position.lat, m.position.lng);
-      console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* returnInfo */])(Infohash));
+      var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* getHash */])(m.position.lat, m.position.lng);
+      var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* returnInfo */])(Infohash);
       console.log(this.$f7);
-      var popupHTML = '<div class="popup">' +
+      console.log(json)
+      var popupHTML =
+        '<div class="popup">' +
         '<div class="content-block">' +
-        '<p>Popup created dynamically.</p>' +
-        '<p><a href="#" class="close-popup">Close me</a></p>' +
+        '<p><a href="#" class="close-popup"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>' +
+        '<h1>' + json.comment + '</h2>' +
+        '<div class="chip">' +
+        '<div class="chip-label">' + json.category + '</div></div>' +
         '</div>' +
         '</div>'
       this.$f7.popup(popupHTML);
@@ -54296,7 +54300,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // Request Location Services
       var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
         onError, {
-          timeout: 30000
+          timeout: 30000,
+          enableHighAccuracy: true
         })
       var that = this
       console.log(this)
@@ -54325,7 +54330,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     setMarkers: function() {
       var locs = [];
-      var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, 100);
+      var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, 100);
       /*locations.forEach(function pop(index){
         var pos = {lat: index[0],lng:index[1]};
         //info is set just to open up a connection
@@ -54408,7 +54413,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "open-panel": "right"
     }
   })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('a', {
-    staticClass: "floating-button color-pink",
+    staticClass: "floating-button color-blue",
     attrs: {
       "href": "#"
     }
@@ -56814,21 +56819,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Init F7 Vue Plugin
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_framework7_vue___default.a)
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__, {
-   load: {
-     key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
-   }
- });
+  load: {
+    key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
+  }
+});
 //Testing
-var test = {
-"timestamp":"3:14",
-"comment":"It works!",
-"photo-url":"ex.url",
-"category":"test"
-}
-//loadInfo(10,10,test);
-//loadInfo(10.02,10,test);
-//loadInfo(10.03,10,test);
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* Nearby */])(10,10,100);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10, 10, {
+  "timestamp": "3:14",
+  "comment": "foo",
+  "photo-url": "ex.url",
+  "category": "murder"
+});
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10.02, 10, {
+  "timestamp": "3:14",
+  "comment": "bar",
+  "photo-url": "ex.url",
+  "category": "theft"
+});
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10.03, 10, {
+  "timestamp": "3:14",
+  "comment": "baz",
+  "photo-url": "ex.url",
+  "category": "blah"
+});
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["b" /* Nearby */])(10, 10, 100);
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
