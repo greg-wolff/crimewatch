@@ -4,6 +4,6 @@ Ignore Mac OS Files
 .LSOverride
 # Thumbnails
 ._*
-
+src./main.vue
 # Platform
 platforms/
