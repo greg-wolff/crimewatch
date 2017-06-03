@@ -15,12 +15,20 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/apache/cordova-plugin-camera.git"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-compat": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-compat@^1.0.0"
+            "id": "cordova-plugin-compat"
         },
-        "is_top_level": false,
+        "is_top_level": true,
         "variables": {}
     }
 }

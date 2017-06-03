@@ -26,6 +26,8 @@
     </platform>
     <engine name="android" spec="^6.2.3" />
     <engine name="browser" spec="^4.1.0" />
+    <plugin name="cordova-plugin-camera" spec="git+https://github.com/apache/cordova-plugin-camera.git" />
+    <plugin name="cordova-plugin-compat" spec="^1.1.0" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
 </widget>
