@@ -1,5 +1,3 @@
-
-
 <template>
 
 <!-- App -->
@@ -56,21 +54,84 @@
       -->
             <f7-pages>
                 <f7-page>
+                    <div class="popup popup-addcrime">
+                            <f7-list form>
 
-                    <f7-list-item @click="crime()" class="floating-button color-blue">
-                        <i class="icon icon-plus"></i>
-                    </f7-list-item>
-                    <div class="popup popup-marker">
-                        <div class="content-block">
-                            <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
-                            <h1> {{viewComment}} </h1>
-                            <div class="chip" v-for="type in viewTypes">
-                                <div class="chip-label"> {{type}} </div>
-                            </div>
-                        </div>
+                                <f7-list-item>
+                                    <div class="list-block accordion-list">
+
+                                        <li class="accordion-item">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title">Categories</div>
+                                                </div>
+                                            </a>
+                                            <div class="accordion-item-content">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <!-- Single chekbox item -->
+                                                        <li>
+                                                            <label class="label-checkbox item-content">
+                                                                <!-- Checked by default -->
+                                                                <input type="checkbox" name="my-checkbox" value="Murder" v-model="Category" lazy>
+                                                                <div class="item-media">
+                                                                    <i class="icon icon-form-checkbox"></i>
+                                                                </div>
+                                                                <div class="item-inner">
+                                                                    <div class="item-title">Murder</div>
+                                                                </div>
+                                                            </label>
+                                                        </li>
+                                                        <!-- Another chekbox item -->
+                                                        <li>
+                                                            <label class="label-checkbox item-content">
+                                                                <input type="checkbox" name="my-checkbox" value="Theft" v-model="Category" lazy>
+                                                                <div class="item-media">
+                                                                    <i class="icon icon-form-checkbox"></i>
+                                                                </div>
+                                                                <div class="item-inner">
+                                                                    <div class="item-title">Theft</div>
+                                                                </div>
+                                                            </label>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                    </div>
+                                </f7-list-item>
+                                <f7-list-item>
+                                    <f7-label> Comments</f7-label>
+                                    <f7-input type="textarea" placeholder="" v-model="comment" lazy />
+                                </f7-list-item>
+
+
+                            <p>{{Category}}</p>
+                            </f7-list>
+
+                            <f7-button fill color="blue" @click="submit">Send</f7-button>
+                            <f7-button @click='campturePhoto()'>Take a Picture</f7-button>
+                            <f7-button @click="getPhoto()">PHOTOLIBRARY</f7-button>
+                            <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+                            <img style="display:none;" id="largeImage" src="" />
+                            <!-- Popup content goes here -->
                     </div>
+                    <div class="popup popup-marker">
+                      <div class="content-block">
+                        <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
+                        <h1> {{viewComment}} </h1>
+                        <div class="chip" v-for="type in viewTypes">
+                          <div class="chip-label" > {{type}} </div></div>
+                    </div>
+                    </div>
+                    <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue open-popup">
+                        <i class="icon icon-plus"></i>
+                    </a>
                     <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
-                        <GmapMarker v-for="m in markers" :key="1" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
+                        <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
                         </GmapMarker>
                     </GmapMap>
                 </f7-page>
@@ -94,15 +155,15 @@ import {capturePhoto,getPhoto} from './camera.js'
 export default {
     data() {
             return {
-              center: {
-                  lat: 10.0,
-                  lng: 10.0
-              },
-              markers: [],
-              comment: null,
-              Category:["Murder","Theft"],
-              viewTypes:[],
-              viewComment:null
+                center: {
+                    lat: 10.0,
+                    lng: 10.0
+                },
+                markers: [],
+                comment: null,
+                Category:["Murder","Theft"],
+                viewTypes:[],
+                viewComment:null
             }
         },
         mounted: function() {
@@ -117,7 +178,13 @@ export default {
           getPhoto: function(){
             getPhoto();
           },
-          submit: function(){
+            crime: function(){
+              this.$f7.popup('.popup-addcrime');
+            },
+            close: function(){
+              this.$f7.closeModal()
+            },
+            submit: function(){
               var currentTime = new Date();
               var year = currentTime.getFullYear();
               var month = currentTime.getMonth();
@@ -134,30 +201,6 @@ export default {
               loadInfo(this.$data.center.lat,this.$data.center.lng,data);
               console.log(this.$data);
               this.$f7.closeModal()
-            },
-            crime: function() {
-                this.$f7.popup('.popup-addcrime');
-            },
-            close: function() {
-                this.$f7.closeModal()
-            },
-            submit: function() {
-                var currentTime = new Date();
-                var year = currentTime.getFullYear();
-                var month = currentTime.getMonth();
-                var day = currentTime.getDay();
-                var hour = currentTime.getHours();
-                var minute = currentTime.getMinutes();
-                var types = this.$data.Category;
-                var comment = this.$data.comment;
-                var data = {
-                    "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
-                    "category": types,
-                    "comment": comment
-                }
-                loadInfo(this.$data.center.lat, this.$data.center.lng, data);
-                console.log(this.$data);
-                this.$f7.closeModal()
             },
             getInfo: function(m) {
                 console.log(m.position.lat);
