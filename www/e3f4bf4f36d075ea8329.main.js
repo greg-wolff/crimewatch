@@ -64451,79 +64451,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -64958,181 +64885,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "icon": "icon-bars",
       "open-panel": "right"
     }
-  })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
-    staticClass: "popup popup-addcrime"
-  }, [_c('f7-link', {
-    staticClass: "floating-button color-blue",
-    on: {
-      "click": function($event) {
-        _vm.close - _vm.popup
-      }
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-arrow-left",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })]), _vm._v(" "), _c('f7-list', {
-    attrs: {
-      "form": ""
-    }
-  }, [_c('f7-list-item', [_c('f7-label', [_vm._v("Set Time")]), _vm._v(" "), _c('f7-input', {
-    attrs: {
-      "type": "datetime-local"
-    }
-  })], 1), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_vm._v("Comments")]), _vm._v(" "), _c('f7-input', {
-    attrs: {
-      "type": "textarea",
-      "placeholder": "Textarea"
-    }
-  })], 1), _vm._v(" "), _c('f7-list-item', [_c('div', {
-    staticClass: "list-block accordion-list"
-  }, [_c('li', {
-    staticClass: "accordion-item"
-  }, [_c('a', {
-    staticClass: "item-content item-link",
-    attrs: {
-      "href": "#"
-    }
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("Categories")])])]), _vm._v(" "), _c('div', {
-    staticClass: "accordion-item-content"
-  }, [_c('div', {
-    staticClass: "list-block"
-  }, [_c('ul', [_c('li', [_c('label', {
-    staticClass: "label-checkbox item-content"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.Category),
-      expression: "Category"
-    }],
-    attrs: {
-      "type": "checkbox",
-      "name": "my-checkbox",
-      "value": "Murder",
-      "lazy": ""
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Murder") > -1 : (_vm.Category)
-    },
-    on: {
-      "__c": function($event) {
-        var $$a = _vm.Category,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = "Murder",
-            $$i = _vm._i($$a, $$v);
-          if ($$c) {
-            $$i < 0 && (_vm.Category = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.Category = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.Category = $$c
-        }
-      }
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "item-media"
-  }, [_c('i', {
-    staticClass: "icon icon-form-checkbox"
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("Murder")])])])]), _vm._v(" "), _c('li', [_c('label', {
-    staticClass: "label-checkbox item-content"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.Category),
-      expression: "Category"
-    }],
-    attrs: {
-      "type": "checkbox",
-      "name": "my-checkbox",
-      "value": "Theft",
-      "lazy": ""
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Theft") > -1 : (_vm.Category)
-    },
-    on: {
-      "__c": function($event) {
-        var $$a = _vm.Category,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = "Theft",
-            $$i = _vm._i($$a, $$v);
-          if ($$c) {
-            $$i < 0 && (_vm.Category = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.Category = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.Category = $$c
-        }
-      }
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "item-media"
-  }, [_c('i', {
-    staticClass: "icon icon-form-checkbox"
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("Theft")])])])])])])])])])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.Category))])], 1), _vm._v(" "), _c('div', [_c('f7-button', {
-    attrs: {
-      "fill": "",
-      "color": "blue"
-    },
-    on: {
-      "click": _vm.submit
-    }
-  }, [_vm._v("Send")])], 1), _vm._v(" "), _c('div', {
-    attrs: {
-      "id": "camera"
-    }
-  }, [_c('f7-button', {
-    on: {
-      "click": function($event) {
-        _vm.campturePhoto()
-      }
-    }
-  }, [_vm._v("Take a Picture")]), _vm._v(" "), _c('f7-button', {
-    on: {
-      "click": function($event) {
-        _vm.getPhoto()
-      }
-    }
-  }, [_vm._v("PHOTOLIBRARY")]), _vm._v(" "), _c('img', {
-    staticStyle: {
-      "display": "none",
-      "width": "60px",
-      "height": "60px"
-    },
-    attrs: {
-      "id": "smallImage",
-      "src": ""
-    }
-  }), _vm._v(" "), _c('img', {
-    staticStyle: {
-      "display": "none"
-    },
-    attrs: {
-      "id": "largeImage",
-      "src": ""
-    }
-  })], 1)], 1), _vm._v(" "), _c('f7-list-item', {
+  })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('f7-list-item', {
     staticClass: "floating-button color-blue",
     on: {
       "click": function($event) {
@@ -65179,6 +64932,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         rawName: "v-el:current",
         arg: "current"
       }],
+      key: 1,
       attrs: {
         "position": m.position,
         "info": m.info,
@@ -67286,7 +67040,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_framework7_vue___default.a)
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__, {
   load: {
-    key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
+    key: 'AIzaSyAahrq97Y4diRkkbXM6_7uxSVs-7S59AtQ'
   }
 });
 //Testing
