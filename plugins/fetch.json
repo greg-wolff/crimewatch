@@ -7,10 +7,10 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-geolocation": {
+    "cordova-plugin-compat": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-geolocation"
+            "id": "cordova-plugin-compat"
         },
         "is_top_level": true,
         "variables": {}
@@ -18,15 +18,15 @@
     "cordova-plugin-camera": {
         "source": {
             "type": "registry",
-            "id": "https://github.com/apache/cordova-plugin-camera.git"
+            "id": "cordova-plugin-camera"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-compat": {
+    "cordova-plugin-geolocation": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-compat"
+            "id": "cordova-plugin-geolocation"
         },
         "is_top_level": true,
         "variables": {}

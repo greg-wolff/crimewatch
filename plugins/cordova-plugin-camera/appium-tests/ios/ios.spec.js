@@ -183,7 +183,7 @@ describe('Camera tests iOS.', function () {
         return driver
             .context(webviewContext)
             .setAsyncScriptTimeout(MINUTE / 2)
-            .executeAsync(cameraHelper.checkPicture, [getCurrentPromiseId(), options, false])
+            .executeAsync(cameraHelper.checkPicture, [getCurrentPromiseId(), options])
             .then(function (result) {
                 if (shouldLoad) {
                     if (result !== 'OK') {

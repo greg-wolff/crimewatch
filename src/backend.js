@@ -1,4 +1,5 @@
-
+import * as firebase from 'firebase';
+import * as GeoFire from 'geofire';
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",

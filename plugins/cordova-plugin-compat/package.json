@@ -1,19 +1,41 @@
 {
-  "_from": "cordova-plugin-compat",
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-compat",
+        "scope": null,
+        "escapedName": "cordova-plugin-compat",
+        "name": "cordova-plugin-compat",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\tobyi\\newclone\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-compat@latest",
   "_id": "cordova-plugin-compat@1.1.0",
-  "_inBundle": false,
-  "_integrity": "sha1-kr3xaf62EgUyPcyWo/+DSON+h/w=",
+  "_inCache": true,
   "_location": "/cordova-plugin-compat",
+  "_nodeVersion": "6.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-compat-1.1.0.tgz_1478304539989_0.23511901660822332"
+  },
+  "_npmUser": {
+    "name": "stevegill",
+    "email": "stevengill97@gmail.com"
+  },
+  "_npmVersion": "4.0.0",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
     "raw": "cordova-plugin-compat",
-    "name": "cordova-plugin-compat",
+    "scope": null,
     "escapedName": "cordova-plugin-compat",
+    "name": "cordova-plugin-compat",
     "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
     "#USER",
@@ -21,23 +43,29 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.1.0.tgz",
   "_shasum": "92bdf169feb61205323dcc96a3ff8348e37e87fc",
+  "_shrinkwrap": null,
   "_spec": "cordova-plugin-compat",
-  "_where": "/home/romiz_2/Desktop/masters2/crimewatch/node_modules",
+  "_where": "C:\\Users\\tobyi\\newclone\\node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },
   "bugs": {
     "url": "https://github.com/apache/cordova-plugin-compat/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-compat",
     "platforms": [
       "android"
     ]
   },
-  "deprecated": false,
+  "dependencies": {},
   "description": "This repo is for remaining backwards compatible with previous versions of Cordova.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "92bdf169feb61205323dcc96a3ff8348e37e87fc",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.1.0.tgz"
+  },
   "engines": [
     {
       "name": "cordova",
@@ -51,10 +79,23 @@
     "cordova-android"
   ],
   "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "name": "macdonst",
+      "email": "simon.macdonald@gmail.com"
+    },
+    {
+      "name": "stevegill",
+      "email": "stevengill97@gmail.com"
+    }
+  ],
   "name": "cordova-plugin-compat",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git://github.com/apache/cordova-plugin-compat.git"
   },
+  "scripts": {},
   "version": "1.1.0"
 }

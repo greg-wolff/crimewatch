@@ -44,25 +44,26 @@
     "dependencies": {
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
-        "cordova-plugin-camera": "git+https://github.com/apache/cordova-plugin-camera.git",
+        "cordova-plugin-camera": "^2.4.1",
         "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-geolocation": "^2.4.3",
         "cordova-plugin-whitelist": "1",
         "cross-env": "^5.0.0",
+        "firebase": "^4.1.1",
         "framework7": "^1.5.4",
         "framework7-vue": "^0.8.5",
+        "geofire": "^4.1.2",
         "vue": "^2.2.4"
     },
     "displayName": "crimewatch",
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-geolocation": {},
             "cordova-plugin-compat": {},
-            "cordova-plugin-camera": {}
+            "cordova-plugin-camera": {},
+            "cordova-plugin-geolocation": {}
         },
         "platforms": [
-            "android",
             "browser"
         ]
     }

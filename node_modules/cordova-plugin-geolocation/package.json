@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "C:\\Users\\tobyi\\new\\node_modules"
+      "C:\\Users\\tobyi\\newclone\\node_modules"
     ]
   ],
   "_from": "cordova-plugin-geolocation@latest",
@@ -45,7 +45,7 @@
   "_shasum": "1dd00023d1f1a2ce330f8767ed08f7b738fe7184",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-geolocation",
-  "_where": "C:\\Users\\tobyi\\new\\node_modules",
+  "_where": "C:\\Users\\tobyi\\newclone\\node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },

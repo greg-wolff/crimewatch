@@ -1,6 +1,6 @@
 <template>
 <f7-page>
-  <f7-link @click="$router.back()" class="floating-button color-blue">
+  <f7-link @click="close-popup" class="floating-button color-blue">
     <i class="fa fa-arrow-left" aria-hidden="true"></i>
   </f7-link>
 
