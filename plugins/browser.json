@@ -7,16 +7,18 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-geolocation": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.cmps.crimewatch"
         },
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.cmps.crimewatch"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.cmps.crimewatch"
-        }
-    }
+    "dependent_plugins": {}
 }

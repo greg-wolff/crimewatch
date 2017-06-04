@@ -37,7 +37,7 @@ import App from './main.vue'
 Vue.use(Framework7Vue)
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyD5zzz0IQbC5di1z8uMV9HiGU4eZcdEdfg'
+    key: 'AIzaSyAahrq97Y4diRkkbXM6_7uxSVs-7S59AtQ'
   }
 });
 //Testing
