@@ -155,8 +155,8 @@ export default {
         },
         mounted: function() {
             this.setCenter();
-            console.log("In mounted");
-            console.log(this.$data);
+            //console.log("In mounted");
+            //console.log(this.$data);
         },
         methods: {
             zoomUpdate: function(event){
@@ -165,7 +165,7 @@ export default {
               this.setMarkers();
             },
             campturePhoto: function() {
-                capturePhoto();
+                console.log(capturePhoto());
             },
             getPhoto: function() {
                 getPhoto();
@@ -216,7 +216,7 @@ export default {
                 this.$f7.popup('.popup-marker');
             },
             setCenter: function() {
-                console.log('setcenter')
+                //console.log('setcenter')
                     // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
@@ -224,7 +224,7 @@ export default {
                         enableHighAccuracy: true
                     })
                 var that = this
-                console.log(this)
+                //console.log(this)
 
                 function onSuccess(pos) {
                     console.log(pos)
@@ -239,9 +239,9 @@ export default {
                 }
 
                 function onError(err) {
-                    console.log(err)
-                    console.log(err.code)
-                    console.log(err.message)
+                    //console.log(err)
+                    //console.log(err.code)
+                    //console.log(err.message)
                     that.$nextTick(function() {
                         that.setMarkers();
                     });
@@ -249,13 +249,13 @@ export default {
             },
             setMarkers: function() {
                 var locs = [];
-                console.log(this.$data.zoom);
+                //console.log(this.$data.zoom);
                 var radius = Math.pow(2,(17-this.$data.zoom));
                 this.$nextTick(function() {
-                  console.log(radius)
+                  //console.log(radius)
                   var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);
                   this.$data.markers = locations;
-                  console.log("In set markers");
+                  //console.log("In set markers");
                   this.setCenter()
                 });
                 /*locations.forEach(function pop(index){

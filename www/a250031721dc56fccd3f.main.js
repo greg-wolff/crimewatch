@@ -20893,8 +20893,8 @@ function getHash(a,b)
                 // console.log("null!");
             }
         });
-        console.log('lon: ' + id);
-        console.log('hash: ' + hash);
+        //console.log('lon: ' + id);
+        //console.log('hash: ' + hash);
         return String(hash);
 }
 
@@ -20948,10 +20948,10 @@ function Nearby(a,b,dist){
     radius: dist
   });
   geoQuery.on("key_entered", function(key, location, distance) {
-    console.log(key + " entered query at " + location + " (" + distance + " km from center)");
+//console.log(key + " entered query at " + location + " (" + distance + " km from center)");
     var pos = {lat: location[0],lng:location[1]};
     var hash = getHash(location[0],location[1]);
-    markers.push({position:pos},{info:returnInfo(hash)});
+    markers.push({position:pos,info:returnInfo(hash)});
     //markers.push(location.concat(getHash(location[0],location[1])));
   });
 
@@ -64516,8 +64516,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         mounted: function() {
             this.setCenter();
-            console.log("In mounted");
-            console.log(this.$data);
+            //console.log("In mounted");
+            //console.log(this.$data);
         },
         methods: {
             zoomUpdate: function(event){
@@ -64526,7 +64526,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
               this.setMarkers();
             },
             campturePhoto: function() {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])();
+                console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])());
             },
             getPhoto: function() {
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
@@ -64577,7 +64577,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.$f7.popup('.popup-marker');
             },
             setCenter: function() {
-                console.log('setcenter')
+                //console.log('setcenter')
                     // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
@@ -64585,7 +64585,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         enableHighAccuracy: true
                     })
                 var that = this
-                console.log(this)
+                //console.log(this)
 
                 function onSuccess(pos) {
                     console.log(pos)
@@ -64600,9 +64600,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
 
                 function onError(err) {
-                    console.log(err)
-                    console.log(err.code)
-                    console.log(err.message)
+                    //console.log(err)
+                    //console.log(err.code)
+                    //console.log(err.message)
                     that.$nextTick(function() {
                         that.setMarkers();
                     });
@@ -64610,13 +64610,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             setMarkers: function() {
                 var locs = [];
-                console.log(this.$data.zoom);
+                //console.log(this.$data.zoom);
                 var radius = Math.pow(2,(17-this.$data.zoom));
                 this.$nextTick(function() {
-                  console.log(radius)
+                  //console.log(radius)
                   var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
                   this.$data.markers = locations;
-                  console.log("In set markers");
+                  //console.log("In set markers");
                   this.setCenter()
                 });
                 /*locations.forEach(function pop(index){

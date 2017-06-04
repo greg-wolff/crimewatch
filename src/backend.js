@@ -44,8 +44,8 @@ function getHash(a,b)
                 // console.log("null!");
             }
         });
-        console.log('lon: ' + id);
-        console.log('hash: ' + hash);
+        //console.log('lon: ' + id);
+        //console.log('hash: ' + hash);
         return String(hash);
 }
 
@@ -99,10 +99,10 @@ function Nearby(a,b,dist){
     radius: dist
   });
   geoQuery.on("key_entered", function(key, location, distance) {
-    console.log(key + " entered query at " + location + " (" + distance + " km from center)");
+//console.log(key + " entered query at " + location + " (" + distance + " km from center)");
     var pos = {lat: location[0],lng:location[1]};
     var hash = getHash(location[0],location[1]);
-    markers.push({position:pos},{info:returnInfo(hash)});
+    markers.push({position:pos,info:returnInfo(hash)});
     //markers.push(location.concat(getHash(location[0],location[1])));
   });
 
