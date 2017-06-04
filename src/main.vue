@@ -55,84 +55,23 @@
 				</f7-pages>
       -->
             <f7-pages>
-                <f7-page>
-                    <div class="popup popup-addcrime">
-                            <f7-list form>
-
-                                <f7-list-item>
-                                    <div class="list-block accordion-list">
-
-                                        <li class="accordion-item">
-                                            <a href="#" class="item-content item-link">
-                                                <div class="item-inner">
-                                                    <div class="item-title">Categories</div>
-                                                </div>
-                                            </a>
-                                            <div class="accordion-item-content">
-                                                <div class="list-block">
-                                                    <ul>
-                                                        <!-- Single chekbox item -->
-                                                        <li>
-                                                            <label class="label-checkbox item-content">
-                                                                <!-- Checked by default -->
-                                                                <input type="checkbox" name="my-checkbox" value="Murder" v-model="Category" lazy>
-                                                                <div class="item-media">
-                                                                    <i class="icon icon-form-checkbox"></i>
-                                                                </div>
-                                                                <div class="item-inner">
-                                                                    <div class="item-title">Murder</div>
-                                                                </div>
-                                                            </label>
-                                                        </li>
-                                                        <!-- Another chekbox item -->
-                                                        <li>
-                                                            <label class="label-checkbox item-content">
-                                                                <input type="checkbox" name="my-checkbox" value="Theft" v-model="Category" lazy>
-                                                                <div class="item-media">
-                                                                    <i class="icon icon-form-checkbox"></i>
-                                                                </div>
-                                                                <div class="item-inner">
-                                                                    <div class="item-title">Theft</div>
-                                                                </div>
-                                                            </label>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                        </li>
-
-                                    </div>
-                                </f7-list-item>
-                                <f7-list-item>
-                                    <f7-label> Comments</f7-label>
-                                    <f7-input type="textarea" placeholder="" v-model="comment" lazy />
-                                </f7-list-item>
-
-
-                            <p>{{Category}}</p>
-                            </f7-list>
-
-                            <f7-button fill color="blue" @click="submit">Send</f7-button>
-                            <!-- Popup content goes here -->
-                    </div>
-                    <div class="popup popup-marker">
-                      <div class="content-block">
-                        <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
-                        <h1> {{viewComment}} </h1>
-                        <div class="chip" v-for="type in viewTypes">
-                          <div class="chip-label" > {{type}} </div></div>
-                    </div>
-                    </div>
-                    <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue open-popup">
-                        <i class="icon icon-plus"></i>
-                    </a>
-                    <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
-                        <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
-                        </GmapMarker>
-                    </GmapMap>
-                </f7-page>
+              <f7-page>
+                  <f7-list-item link="/addForm/" link-view="#main-view" class="floating-button color-blue">
+                    <i class="icon icon-plus"></i>
+                  </f7-list-item>
+                  <div class="popup popup-marker">
+                    <div class="content-block">
+                      <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
+                      <h1> {{viewComment}} </h1>
+                      <div class="chip" v-for="type in viewTypes">
+                        <div class="chip-label" > {{type}} </div></div>
+                  </div>
+                  </div>
+        <GmapMap :center="center" :zoom="7" style="width: 100%; height:100%">
+          <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
+          </GmapMarker>
+        </GmapMap>
+      </f7-page>
             </f7-pages>
         </f7-view>
     </f7-views>
