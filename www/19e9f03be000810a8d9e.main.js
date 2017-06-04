@@ -64495,23 +64495,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -64523,11 +64506,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     lat: 10.0,
                     lng: 10.0
                 },
+                zoom: 15,
                 markers: [],
                 comment: null,
-                Category:["Murder","Theft"],
-                viewTypes:[],
-                viewComment:null
+                Category: ["Murder", "Theft"],
+                viewTypes: [],
+                viewComment: null
             }
         },
         mounted: function() {
@@ -64536,35 +64520,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log(this.$data);
         },
         methods: {
-          campturePhoto: function(){
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])();
-          },
-          getPhoto: function(){
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
-          },
-            crime: function(){
-              this.$f7.popup('.popup-addcrime');
+            zoomUpdate: function(event){
+              //console.log(event);
+              this.$data.zoom = event;
+              this.setMarkers();
             },
-            close: function(){
-              this.$f7.closeModal()
+            campturePhoto: function() {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])();
             },
-            submit: function(){
-              var currentTime = new Date();
-              var year = currentTime.getFullYear();
-              var month = currentTime.getMonth();
-              var day = currentTime.getDay();
-              var hour = currentTime.getHours();
-              var minute = currentTime.getMinutes();
-              var types = this.$data.Category;
-              var comment = this.$data.comment;
-              var data = {
-                "time": year +"/"+month+"/"+day+" "+hour+":"+minute ,
-                "category": types,
-                "comment": comment
-              }
-              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat,this.$data.center.lng,data);
-              console.log(this.$data);
-              this.$f7.closeModal()
+            getPhoto: function() {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
+            },
+            crime: function() {
+                this.$f7.popup('.popup-addcrime');
+            },
+            close: function() {
+                this.$f7.closeModal()
+            },
+            submit: function() {
+                var currentTime = new Date();
+                var year = currentTime.getFullYear();
+                var month = currentTime.getMonth();
+                var day = currentTime.getDay();
+                var hour = currentTime.getHours();
+                var minute = currentTime.getMinutes();
+                var types = this.$data.Category;
+                var comment = this.$data.comment;
+                var data = {
+                    "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
+                    "category": types,
+                    "comment": comment
+                }
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat, this.$data.center.lng, data);
+                console.log(this.$data);
+                this.$f7.closeModal()
             },
             getInfo: function(m) {
                 console.log(m.position.lat);
@@ -64605,7 +64594,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
                     }
-                    that.$data.zoom = 15
                     that.$nextTick(function() {
                         that.setMarkers();
                     });
@@ -64622,17 +64610,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             setMarkers: function() {
                 var locs = [];
-                var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, 100);
+                console.log(this.$data.zoom);
+                var radius = Math.pow(2,(17-this.$data.zoom));
+                this.$nextTick(function() {
+                  console.log(radius)
+                  var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
+                  this.$data.markers = locations;
+                  console.log("In set markers");
+                  this.setCenter()
+                });
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};
                   //info is set just to open up a connection
                   locs.push({position:pos},{info:returnInfo(index[2])});
                   });*/
-                this.$data.markers = locations;
-                console.log("In set markers");
-                setTimeout(this.setCenter(), 5000)
-                console.log(locations);
-                console.log(this.$data.markers);
+
             }
         }
 });
@@ -64930,13 +64922,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
     staticClass: "popup popup-addcrime"
-  }, [_c('f7-list', {
+  }, [_vm._v("\n                        Report a crime\n                        "), _c('f7-list', {
     attrs: {
       "form": ""
     }
-  }, [_c('f7-list-item', [_c('div', {
-    staticClass: "list-block accordion-list"
-  }, [_c('li', {
+  }, [_c('div', {
     staticClass: "accordion-item"
   }, [_c('a', {
     staticClass: "item-content item-link",
@@ -64951,20 +64941,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "accordion-item-content"
   }, [_c('div', {
     staticClass: "list-block"
-  }, [_c('ul', [_c('li', [_c('label', {
-    staticClass: "label-checkbox item-content"
-  }, [_c('input', {
+  }, [_c('ul', [_c('li', [_c('input', {
     directives: [{
       name: "model",
-      rawName: "v-model",
+      rawName: "v-model.lazy",
       value: (_vm.Category),
-      expression: "Category"
+      expression: "Category",
+      modifiers: {
+        "lazy": true
+      }
     }],
+    staticStyle: {
+      "width": "25px",
+      "height": "25px"
+    },
     attrs: {
       "type": "checkbox",
-      "name": "my-checkbox",
+      "id": "murder",
       "value": "Murder",
-      "lazy": ""
+      "onclick": "checked()"
     },
     domProps: {
       "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Murder") > -1 : (_vm.Category)
@@ -64987,28 +64982,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "item-media"
-  }, [_c('i', {
-    staticClass: "icon icon-form-checkbox"
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("Murder")])])])]), _vm._v(" "), _c('li', [_c('label', {
-    staticClass: "label-checkbox item-content"
-  }, [_c('input', {
+  }), _c('font', {
+    attrs: {
+      "size": "4"
+    }
+  }, [_vm._v("Murder")])], 1), _vm._v(" "), _c('li', [_c('input', {
     directives: [{
       name: "model",
-      rawName: "v-model",
+      rawName: "v-model.lazy",
       value: (_vm.Category),
-      expression: "Category"
+      expression: "Category",
+      modifiers: {
+        "lazy": true
+      }
     }],
+    staticStyle: {
+      "width": "25px",
+      "height": "25px"
+    },
     attrs: {
       "type": "checkbox",
-      "name": "my-checkbox",
+      "id": "theft",
       "value": "Theft",
-      "lazy": ""
+      "onclick": "checked()"
     },
     domProps: {
       "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Theft") > -1 : (_vm.Category)
@@ -65031,15 +65027,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "item-media"
-  }, [_c('i', {
-    staticClass: "icon icon-form-checkbox"
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("Theft")])])])])])])])])])]), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_vm._v(" Comments")]), _vm._v(" "), _c('f7-input', {
+  }), _c('font', {
+    attrs: {
+      "size": "4"
+    }
+  }, [_vm._v("Theft")])], 1)])])])]), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_c('b', [_vm._v("Comments")])]), _vm._v(" "), _c('f7-input', {
     attrs: {
       "type": "textarea",
       "placeholder": "",
@@ -65127,7 +65119,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     attrs: {
       "center": _vm.center,
-      "zoom": 7
+      "zoom": _vm.zoom,
+      "options": {
+        zoomControl: false,
+        streetViewControl: false
+      }
+    },
+    on: {
+      "zoom_changed": function($event) {
+        _vm.zoomUpdate($event)
+      }
     }
   }, _vm._l((_vm.markers), function(m) {
     return _c('GmapMarker', {
