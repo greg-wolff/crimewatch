@@ -27,6 +27,13 @@ import {
   loadInfo,
   returnInfo
 } from './backend.js'
+
+import {
+ storeImage, 
+ retrieveImage,
+ imagePrepare
+} from './image_storage.js'
+
 // Import Routes
 import Routes from './routes.js'
 
@@ -78,3 +85,25 @@ var vm = new Vue({
 });
 console.log(vm.center);
 console.log(vm.markers);
+
+
+document.addEventListener("deviceready",onDeviceReady,false);
+
+// Cordova is ready to be used!
+//
+function onDeviceReady() {
+  // console.log(cordova.file.applicationStorageDirectory);
+   
+  // imagePrepare(cordova.file.applicationStorageDirectory + "/waterfall.jpg",10.03,10);
+
+  storeImage("testtesttesttest",10.03,10);
+  storeImage("testtesttesttest",10.03,10);
+  storeImage("testtesttesttest",10.03,10);
+  storeImage("testtesttesttest",10.03,10);
+
+
+}
+
+
+
+

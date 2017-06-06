@@ -9,7 +9,7 @@ getHash,
 firebase
 } from './backend.js'
 
-
+var fileSystem;
 // // Initialize Firebase
 // var config = {
 //   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
@@ -21,31 +21,69 @@ firebase
 // };
 // firebase.initializeApp(config);
 
+// Wait for Cordova to connect with the device
+   //
 
-function retrieveImage(){
+
+
+function retrieveImage(Hash){
 
 }
 
 //stores the base64 image into storage
-function storeImage(imageData){
+function storeImage(imageData,a,b){
+  var max = 4;
+  var storageRef = firebase.storage().ref(getHash(a,b)+"/");
   // Create a root reference
-  storageRef.child("TEST").putString(imageData);
+  var storeChild = storageRef.child("0.image");
+
+  var store = storeCheck(0,max,storeChild);
+
+  storageRef.child(store+".image").putString(imageData);
+
+  function storeCheck(min,max,storageRef){
+    if(min == max){
+      return 0
+    }
+    storageRef.once('value',function(snapshot){
+      if(snapshot.hasChild(min+".image")){
+            storeCheck(min+1,max,storageRef);
+      }
+      else{
+        return min;
+      }
+    });
+    
+   
+  }
+  
+  // storageRef.child().putString(imageData);
   
 }
 
 //converts image into base64 and stores it
-function imagePrepare(imageURI){
-  var storageRef = firebase.storage().ref("images");
+function imagePrepare(imageURI,a,b){
+  // var storageRef = firebase.storage().ref("images");
   getFileAsBase64(imageURI,function(base64Img){
-    storageRef.child(getHash(a,b)).putString(base64Img);
+    // storageRef.child(getHash(a,b)).putString(base64Img);
+    storeImage(base64Img);
     console.log("WOW! " + base64Img)
   });
   // var childRef = storageRef.child(getHash(a,b)).putString();
 
 
   function getFileAsBase64(path, callback){
-      window.resolveLocalFileSystemURL(path,gotFile,fail);
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    // Cordova is ready to be used!
+    //
+    function onDeviceReady() {
+       
+       window.resolveLocalFileSystemURL(path,gotFile,fail);
     
+    }
+      
 
     function fail(e){
       alert("bad path, can't find file")
@@ -71,4 +109,4 @@ function imagePrepare(imageURI){
 
 
 
-export {storeImage, retrieveImage};
+export {storeImage, retrieveImage, imagePrepare};

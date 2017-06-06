@@ -1,40 +1,12 @@
 import {
  storeImage, 
- retrieveImage
+ retrieveImage,
+ imagePrepare
 } from './image_storage.js'
 
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
-var options = {
-       'quality': 50,
-       'popoverOptions': CameraPopoverOptions,
-       'saveToPhotoAlbum': true,
-       'correctOrientation':true,
-       'allowEdit': false,
-
-        'destinationType': navigator.camera.DestinationType.FILE_URI,
-        /*
-        0: DATA_URL image as based64-encoded
-        */
-        'sourceType': navigator.camera.PictureSourceType.CAMERA,
-        /*
-        0: PHOTOLIBRARY
-        1:CAMARA
-        2:SAVEDPHOTOALBUM
-        */
-        'encodingType': navigator.camera.EncodingType.JPEG,
-        /*
-        0:JPEG
-        1: PNG
-        */
-        'Direction':navigator.camera.Direction.BACK,
-        /*
-        0:BACK //use the back-facing camara
-        */
-
-
- }
-
+var options;
    // Wait for Cordova to connect with the device
    //
    document.addEventListener("deviceready",onDeviceReady,false);
@@ -44,6 +16,34 @@ var options = {
    function onDeviceReady() {
        pictureSource=navigator.camera.PictureSourceType;
        destinationType=navigator.camera.DestinationType;
+       options = {
+           'quality': 50,
+           'popoverOptions': CameraPopoverOptions,
+              'saveToPhotoAlbum': true,
+              'correctOrientation':true,
+              'allowEdit': false,
+
+            'destinationType': navigator.camera.DestinationType.FILE_URI,
+            /*
+            0: DATA_URL image as based64-encoded
+            */
+            'sourceType': navigator.camera.PictureSourceType.CAMERA,
+            /*
+            0: PHOTOLIBRARY
+            1:CAMARA
+            2:SAVEDPHOTOALBUM
+            */
+            'encodingType': navigator.camera.EncodingType.JPEG,
+            /*
+            0:JPEG
+            1: PNG
+            */
+            'Direction':navigator.camera.Direction.BACK,
+            /*
+            0:BACK //use the back-facing camara
+            */
+          }
+
    }
 
    // Called when a photo is successfully retrieved
@@ -88,6 +88,8 @@ var options = {
      // The inline CSS rules are used to resize the image
      //
      largeImage.src = imageURI;
+
+     imagePrepare(largeImage.src);
    }
 
    // A button will call this function

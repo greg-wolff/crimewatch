@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "C:\\Users\\tobyi\\newclone\\node_modules"
+      "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules"
     ]
   ],
   "_from": "cordova-plugin-camera@latest",
@@ -45,7 +45,7 @@
   "_shasum": "195e34e12db64f1c49e764f7d4e3f261aa3d94c1",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-camera",
-  "_where": "C:\\Users\\tobyi\\newclone\\node_modules",
+  "_where": "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },
