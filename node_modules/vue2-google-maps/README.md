@@ -51,7 +51,8 @@ Or use the power of Vue.js within a google map like this:
     style="width: 500px; height: 300px"
   >
     <gmap-marker
-      v-for="m in markers"
+      :key="index"
+      v-for="(m, index) in markers"
       :position="m.position"
       :clickable="true"
       :draggable="true"

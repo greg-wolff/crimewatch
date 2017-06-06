@@ -1,3 +1,8 @@
+import {
+ storeImage, 
+ retrieveImage
+} from './image_storage.js'
+
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
 var options = {
@@ -60,6 +65,8 @@ var options = {
      //
     smallImage.src = imageData;
     console.log(smallImage.src);
+
+    // storeImage(imageData);
 
    }
 

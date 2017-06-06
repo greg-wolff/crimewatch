@@ -32,10 +32,6 @@ var _mountableMixin = require('../utils/mountableMixin.js');
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
-var _latlngChangedHandler = require('../utils/latlngChangedHandler.js');
-
-var _latlngChangedHandler2 = _interopRequireDefault(_latlngChangedHandler);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var props = {
@@ -100,19 +96,28 @@ exports.default = {
     this.$panoCreated = new _promise2.default(function (resolve, reject) {
       _this.$panoCreatedDeferred = { resolve: resolve, reject: reject };
     });
+
+    var updateCenter = function updateCenter() {
+      _this.$panoObject.setPosition({
+        lat: _this.finalLat,
+        lng: _this.finalLng
+      });
+    };
+    this.$watch('finalLat', updateCenter);
+    this.$watch('finalLng', updateCenter);
   },
 
 
-  watch: {
-    position: {
-      deep: true,
-      handler: (0, _latlngChangedHandler2.default)(function (val, oldVal) {
-        // eslint-disable-line no-unused-vars
-        if (this.$panoObject) {
-          this.$panoObject.setPosition(val);
-        }
-      })
+  computed: {
+    finalLat: function finalLat() {
+      return this.position && typeof this.position.lat === 'function' ? this.position.lat() : this.position.lat;
     },
+    finalLng: function finalLng() {
+      return this.position && typeof this.position.lng === 'function' ? this.position.lng() : this.position.lng;
+    }
+  },
+
+  watch: {
     zoom: function zoom(_zoom) {
       if (this.$panoObject) {
         this.$panoObject.setZoom(_zoom);

@@ -81,34 +81,32 @@ exports.default = {
 
     this.$watch('path', function (path) {
       if (path) {
-        (function () {
-          clearEvents();
+        clearEvents();
 
-          _this.$polylineObject.setPath(path);
+        _this.$polylineObject.setPath(path);
 
-          var mvcPath = _this.$polylineObject.getPath();
-          var eventListeners = [];
+        var mvcPath = _this.$polylineObject.getPath();
+        var eventListeners = [];
 
-          var updatePaths = function updatePaths() {
-            _this.$emit('path_changed', _this.$polylineObject.getPath());
-          };
+        var updatePaths = function updatePaths() {
+          _this.$emit('path_changed', _this.$polylineObject.getPath());
+        };
 
-          eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
-          eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
-          eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
 
-          clearEvents = function clearEvents() {
-            eventListeners.map(function (_ref) {
-              var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-                  obj = _ref2[0],
-                  listenerHandle = _ref2[1];
+        clearEvents = function clearEvents() {
+          eventListeners.map(function (_ref) {
+            var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+                obj = _ref2[0],
+                listenerHandle = _ref2[1];
 
-              return (// eslint-disable-line no-unused-vars
-                google.maps.event.removeListener(listenerHandle)
-              );
-            });
-          };
-        })();
+            return (// eslint-disable-line no-unused-vars
+              google.maps.event.removeListener(listenerHandle)
+            );
+          });
+        };
       }
     }, {
       deep: this.deepWatch

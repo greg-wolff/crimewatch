@@ -118,4 +118,6 @@ function returnInfo(hash){
   return comment;
 }
 
-export {StoreMarker,Nearby,loadInfo,returnInfo,getHash};
+
+
+export {StoreMarker,Nearby,loadInfo,returnInfo,getHash, firebase};
