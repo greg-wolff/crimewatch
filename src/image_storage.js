@@ -46,9 +46,10 @@ function retrieveImage(imageName,a,b){
   var location = name+"/"+imageName;
   console.log(location);
   var downloadRef = firebase.storage().ref().child(location);
-
+  var x;
   downloadRef.getDownloadURL().then(function(url){      
-      document.querySelector('img').src = url;
+      // document.querySelector('img').src = url;
+      x = url;
     });
 
   // firebase.auth().signInAnonymously().then(function(){
@@ -97,6 +98,7 @@ function retrieveImage(imageName,a,b){
   //         break;
   //     }
   //   });
+  return x;
 }
 
 //function for converting base64 to blob according to data / content type
@@ -198,6 +200,22 @@ function storeImage(imageData,a,b){
   // Create a root reference
 
   var imageName = Date.now()+".image";
+  // var hash = getHash(a,b);
+  // var firebaseRef = firebase.database().ref("info"); //top level <info>
+  // var infoRef = firebaseRef.child(hash);
+  // var filenames = infoRef.child('filenames');
+  // firebaseRef.on("value", function(snapshot) {
+  //           var newPost = snapshot.val();
+  //           if(newPost !== null) //does this data exist?
+  //           {
+  //               // console.log("hash: " + newPost.g);
+  //               filenames.set(newPost.filenames + ';'+imageName);
+  //               // console.log("Previous Post ID: " + prevChildKey);
+  //           }else{
+  //               filenames.set(imageName);
+  //               // console.log("null!");
+  //           }
+  //       });
 
   storageRef.child(imageName).putString(imageData, 'data_url');
 

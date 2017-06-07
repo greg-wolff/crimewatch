@@ -180,7 +180,7 @@ export default {
                 getPhoto();
             },
             crime: function() {
-                this.$data.photo = null;
+                this.$data.photo = retrieveImage("1496829446385.image",10,10);
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
