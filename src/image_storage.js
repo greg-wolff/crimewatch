@@ -40,50 +40,63 @@ firebase
 function retrieveImage(imageName,a,b){
 
   // var storage = firebase.storage()
-  var imageBase64;
+  // var imageBase64;
+  var name = a.toString().replace(/\./g,'x')+"and"+ b.toString().replace(/\./g,'y');
 
-  var location = getHash(a,b)+"/"+imageName;
+  var location = name+"/"+imageName;
+  console.log(location);
+  var downloadRef = firebase.storage().ref().child(location);
 
-  var downloadRef = firebase.storage().ref(location)
-
-  imageBase64 = downloadRef.getDownloadURL().then(function(url){
-    // Get the download URL
-    // This can be downloaded directly:
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = function(event) {
-      var blob = xhr.response;
-    };
-    xhr.open('GET', url);
-    xhr.send();
-  }).catch(function(error) {
-
-    // A full list of error codes is available at
-    // https://firebase.google.com/docs/storage/web/handle-errors
-      console.log(error);
-      switch (error.code) {
-        case 'storage/object_not_found':
-          console.log("file does not exist"+error);
-          // File doesn't exist
-          break;
-
-        case 'storage/unauthorized':
-          console.log("no permission for this file");
-          // User doesn't have permission to access the object
-          break;
-
-        case 'storage/canceled':
-          console.log("cancled");
-          // User canceled the upload
-          break;
-
-        case 'storage/unknown':
-          console.log("unknown error");
-          // Unknown error occurred, inspect the server response
-          break;
-      }
+  downloadRef.getDownloadURL().then(function(url){      
+      document.querySelector('img').src = url;
     });
-  console.log(imageBase64 + "wowowowow");
+
+  // firebase.auth().signInAnonymously().then(function(){
+    
+  // }).catch(function(err){
+  //   console.error(err);
+  // });
+
+  // downloadRef.getDownloadURL().then(function(url){
+  //   // Get the download URL
+  //   // This can be downloaded directly:
+  //   var xhr = new XMLHttpRequest();
+  //   xhr.responseType = 'blob';
+  //   xhr.onload = function(event) {
+  //     var data = xhr.responseText;
+  //     var jsonResponse = JSON.parse(data);
+  //     console.log(jsonResponse["Data"]);
+
+  //   };
+  //   xhr.open('GET', url);
+  //   xhr.send();
+  // }).catch(function(error) {
+
+  //   // A full list of error codes is available at
+  //   // https://firebase.google.com/docs/storage/web/handle-errors
+  //     console.log(error);
+  //     switch (error.code) {
+  //       case 'storage/object_not_found':
+  //         console.log("file does not exist"+error);
+  //         // File doesn't exist
+  //         break;
+
+  //       case 'storage/unauthorized':
+  //         console.log("no permission for this file");
+  //         // User doesn't have permission to access the object
+  //         break;
+
+  //       case 'storage/canceled':
+  //         console.log("cancled");
+  //         // User canceled the upload
+  //         break;
+
+  //       case 'storage/unknown':
+  //         console.log("unknown error");
+  //         // Unknown error occurred, inspect the server response
+  //         break;
+  //     }
+  //   });
 }
 
 //function for converting base64 to blob according to data / content type
