@@ -202,7 +202,7 @@ export default {
                         "comment": comment
                     }
                     console.log("in submit:"+this.$data.photo)
-                    imagePrepare(this.$data.center.lat, this.$data.center.lng);
+                    storeImage(window.img,this.$data.center.lat, this.$data.center.lng);
                     loadInfo(this.$data.center.lat, this.$data.center.lng, data);
                 });
                 //console.log(this.$data);

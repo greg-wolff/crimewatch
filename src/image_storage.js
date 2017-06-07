@@ -93,14 +93,16 @@ function retrieveImage(imageName,a,b){
 //stores the base64 image into storage
 function storeImage(imageData,a,b){
   var max = 4;
-  var storageRef = firebase.storage().ref(getHash(a,b)+"/");
+  var name = a.toString().replace(/\./g,'x')+"and"+ b.toString().replace(/\./g,'y');
+  console.log("in store image:"+imageData)
+  var storageRef = firebase.storage().ref(name+"/");
   // Create a root reference
 
-  var imageName = Date.now() + ".image";
+  var imageName = Date.now()+".image";
 
-  storageRef.child(imageName).putString(imageData);
+  storageRef.child(imageName).putString(imageData, 'data_url');
 
-  return imageName;  
+  return imageName;
 }
 
 //converts image into base64 and stores it
@@ -122,11 +124,11 @@ function imagePrepare(imageURI,a,b){
     // Cordova is ready to be used!
     //
     function onDeviceReady() {
-       
+
        window.resolveLocalFileSystemURL(path,gotFile,fail);
-    
+
     }
-      
+
 
     function fail(e){
       alert("bad path, can't find file" + e)
