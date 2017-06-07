@@ -87,22 +87,17 @@ console.log(vm.center);
 console.log(vm.markers);
 
 
-document.addEventListener("deviceready",onDeviceReady,false);
 
-// Cordova is ready to be used!
-//
-function onDeviceReady() {
   // console.log(cordova.file.applicationStorageDirectory);
    
   // imagePrepare(cordova.file.applicationStorageDirectory + "/waterfall.jpg",10.03,10);
 
-  storeImage("testtesttesttest",10.03,10);
+  print(storeImage("testtesttesttest",10.03,10));
   storeImage("testtesttesttest",10.03,10);
   storeImage("testtesttesttest",10.03,10);
   storeImage("testtesttesttest",10.03,10);
 
 
-}
 
 
 

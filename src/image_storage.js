@@ -9,7 +9,18 @@ getHash,
 firebase
 } from './backend.js'
 
-var fileSystem;
+
+var config = {
+  apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
+  authDomain: "crimewatch-8f003.firebaseapp.com",
+  databaseURL: "https://crimewatch-8f003.firebaseio.com",
+  projectId: "crimewatch-8f003",
+  storageBucket: "crimewatch-8f003.appspot.com",
+  messagingSenderId: "901121598403"
+};
+
+
+// var fileSystem;
 // // Initialize Firebase
 // var config = {
 //   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
@@ -25,8 +36,8 @@ var fileSystem;
    //
 
 
-
-function retrieveImage(Hash){
+//retrieve the image
+function retrieveImage(hash,imageName){
 
 }
 
@@ -35,29 +46,35 @@ function storeImage(imageData,a,b){
   var max = 4;
   var storageRef = firebase.storage().ref(getHash(a,b)+"/");
   // Create a root reference
-  var storeChild = storageRef.child("0.image");
 
-  var store = storeCheck(0,max,storeChild);
+  // var store = storeCheck(0,max,storageRef);
+  var imageName = Date.now() + ".image";
 
-  storageRef.child(store+".image").putString(imageData);
+  storageRef.child(imageName).putString(imageData);
 
-  function storeCheck(min,max,storageRef){
-    if(min == max){
-      return 0
-    }
-    storageRef.once('value',function(snapshot){
-      if(snapshot.hasChild(min+".image")){
-            storeCheck(min+1,max,storageRef);
-      }
-      else{
-        return min;
-      }
-    });
+  // function storeCheck(min,max,storageRef){
+  //   if(min == max){
+  //     return 0
+  //   }
+  //   var storeChild = storageRef.child(min+".image");
+
+  //   storeChild.on("value",function(snapshot){
+  //     var newPost = snapshot.val();
+  //     if(newPost !== null){
+  //         min = storeCheck(min+1,max,storageRef);
+  //     }
+  //     else{
+  //       //continue
+  //     }
+  //   });
+
+  //   return min
     
    
-  }
+  // }
   
   // storageRef.child().putString(imageData);
+  return imageName;
   
 }
 
@@ -66,7 +83,7 @@ function imagePrepare(imageURI,a,b){
   // var storageRef = firebase.storage().ref("images");
   getFileAsBase64(imageURI,function(base64Img){
     // storageRef.child(getHash(a,b)).putString(base64Img);
-    storeImage(base64Img);
+    storeImage(base64Img,a,b);
     console.log("WOW! " + base64Img)
   });
   // var childRef = storageRef.child(getHash(a,b)).putString();
