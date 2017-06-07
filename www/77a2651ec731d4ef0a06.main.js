@@ -17172,8 +17172,8 @@
   \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var store  = __webpack_require__(/*! ./$.shared */ 57)('wks')
-  , uid    = __webpack_require__(/*! ./$.uid */ 59)
+var store  = __webpack_require__(/*! ./$.shared */ 56)('wks')
+  , uid    = __webpack_require__(/*! ./$.uid */ 58)
   , Symbol = __webpack_require__(/*! ./$.global */ 7).Symbol;
 module.exports = function(name){
   return store[name] || (store[name] =
@@ -18870,7 +18870,7 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 /***/ }),
 /* 31 */
 /* exports provided: StoreMarker, Nearby, loadInfo, returnInfo, getHash, firebase */
-/* exports used: loadInfo, Nearby, firebase, getHash, returnInfo */
+/* exports used: loadInfo, getHash, returnInfo, Nearby, firebase */
 /*!************************!*\
   !*** ./src/backend.js ***!
   \************************/
@@ -18878,15 +18878,15 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 
 "use strict";
 /* unused harmony export StoreMarker */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Nearby; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Nearby; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loadInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return returnInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getHash; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 63);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return returnInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getHash; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_geofire__);
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0_firebase__; });
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0_firebase__; });
 
 
 // Initialize Firebase
@@ -19673,7 +19673,7 @@ module.exports = __webpack_require__(/*! ./$.hide */ 38);
 var $at  = __webpack_require__(/*! ./$.string-at */ 120)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(/*! ./$.iter-define */ 56)(String, 'String', function(iterated){
+__webpack_require__(/*! ./$.iter-define */ 55)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -20237,7 +20237,7 @@ var json = _interopRequireWildcard(_json);
 
 var _location = __webpack_require__(/*! ./location */ 29);
 
-var _path = __webpack_require__(/*! ./path */ 69);
+var _path = __webpack_require__(/*! ./path */ 68);
 
 var path = _interopRequireWildcard(_path);
 
@@ -20980,131 +20980,6 @@ exports.default = {
 
 /***/ }),
 /* 54 */
-/* exports provided: storeImage, retrieveImage, imagePrepare */
-/* exports used: storeImage, imagePrepare */
-/*!******************************!*\
-  !*** ./src/image_storage.js ***!
-  \******************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return storeImage; });
-/* unused harmony export retrieveImage */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return imagePrepare; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_geofire__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backend_js__ = __webpack_require__(/*! ./backend.js */ 31);
-
-
-
-
-var fileSystem;
-// // Initialize Firebase
-// var config = {
-//   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
-//   authDomain: "crimewatch-8f003.firebaseapp.com",
-//   databaseURL: "https://crimewatch-8f003.firebaseio.com",
-//   projectId: "crimewatch-8f003",
-//   storageBucket: "crimewatch-8f003.appspot.com",
-//   messagingSenderId: "901121598403"
-// };
-// firebase.initializeApp(config);
-
-// Wait for Cordova to connect with the device
-   //
-
-
-
-function retrieveImage(Hash){
-
-}
-
-//stores the base64 image into storage
-function storeImage(imageData,a,b){
-  var max = 4;
-  var storageRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["c" /* firebase */].storage().ref(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["d" /* getHash */])(a,b)+"/");
-  // Create a root reference
-  var storeChild = storageRef.child("0.image");
-
-  var store = storeCheck(0,max,storeChild);
-
-  storageRef.child(store+".image").putString(imageData);
-
-  function storeCheck(min,max,storageRef){
-    if(min == max){
-      return 0
-    }
-    storageRef.once('value',function(snapshot){
-      if(snapshot.hasChild(min+".image")){
-            storeCheck(min+1,max,storageRef);
-      }
-      else{
-        return min;
-      }
-    });
-    
-   
-  }
-  
-  // storageRef.child().putString(imageData);
-  
-}
-
-//converts image into base64 and stores it
-function imagePrepare(imageURI,a,b){
-  // var storageRef = firebase.storage().ref("images");
-  getFileAsBase64(imageURI,function(base64Img){
-    // storageRef.child(getHash(a,b)).putString(base64Img);
-    storeImage(base64Img);
-    console.log("WOW! " + base64Img)
-  });
-  // var childRef = storageRef.child(getHash(a,b)).putString();
-
-
-  function getFileAsBase64(path, callback){
-
-    document.addEventListener("deviceready",onDeviceReady,false);
-
-    // Cordova is ready to be used!
-    //
-    function onDeviceReady() {
-       
-       window.resolveLocalFileSystemURL(path,gotFile,fail);
-    
-    }
-      
-
-    function fail(e){
-      alert("bad path, can't find file")
-    }
-
-    function gotFile(fileEntry){
-      fileEntry.file(function(file){
-        var reader = new FileReader();
-        reader.onloadend = function(e){
-          var content = this.result;
-          callback(content);
-        };
-
-        reader.readAsDataURL(file);
-      });
-
-    }
-
-  }
-
-
-}
-
-
-
-
-
-
-/***/ }),
-/* 55 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -21166,7 +21041,7 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 56 */
+/* 55 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
@@ -21243,7 +21118,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 57 */
+/* 56 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
@@ -21259,7 +21134,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 58 */
+/* 57 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
@@ -21275,7 +21150,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 59 */
+/* 58 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
@@ -21290,7 +21165,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 60 */
+/* 59 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************************************!*\
@@ -21308,7 +21183,7 @@ module.exports = __webpack_require__(/*! ./$.core */ 5).getIteratorMethod = func
 };
 
 /***/ }),
-/* 61 */
+/* 60 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************************!*\
@@ -21319,7 +21194,7 @@ module.exports = __webpack_require__(/*! ./$.core */ 5).getIteratorMethod = func
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************!*\
@@ -21609,7 +21484,7 @@ function noop() {
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************!*\
@@ -21651,7 +21526,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 64 */
+/* 63 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
@@ -21697,7 +21572,7 @@ var _tokenManager = __webpack_require__(/*! ../models/token-manager */ 144);
 
 var _tokenManager2 = _interopRequireDefault(_tokenManager);
 
-var _notificationPermission = __webpack_require__(/*! ../models/notification-permission */ 66);
+var _notificationPermission = __webpack_require__(/*! ../models/notification-permission */ 65);
 
 var _notificationPermission2 = _interopRequireDefault(_notificationPermission);
 
@@ -21896,7 +21771,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
@@ -21944,7 +21819,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
@@ -21987,7 +21862,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
@@ -22051,7 +21926,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
@@ -22222,7 +22097,7 @@ var FbsBlob = exports.FbsBlob = function () {
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
@@ -22317,7 +22192,7 @@ function lastComponent(path) {
 
 
 /***/ }),
-/* 70 */
+/* 69 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -22355,7 +22230,7 @@ var _array = __webpack_require__(/*! ./array */ 48);
 
 var array = _interopRequireWildcard(_array);
 
-var _blob = __webpack_require__(/*! ./blob */ 68);
+var _blob = __webpack_require__(/*! ./blob */ 67);
 
 var _error = __webpack_require__(/*! ./error */ 8);
 
@@ -22676,7 +22551,7 @@ function continueResumableUpload(location, authWrapper, url, blob, chunkSize, ma
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
@@ -22758,7 +22633,7 @@ function taskStateFromInternalTaskState(state) {
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
@@ -22804,7 +22679,7 @@ var ErrorCode = exports.ErrorCode = undefined;
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************!*\
@@ -22848,7 +22723,7 @@ var _args = __webpack_require__(/*! ./implementation/args */ 47);
 
 var args = _interopRequireWildcard(_args);
 
-var _blob = __webpack_require__(/*! ./implementation/blob */ 68);
+var _blob = __webpack_require__(/*! ./implementation/blob */ 67);
 
 var _error = __webpack_require__(/*! ./implementation/error */ 8);
 
@@ -22864,11 +22739,11 @@ var _object = __webpack_require__(/*! ./implementation/object */ 16);
 
 var object = _interopRequireWildcard(_object);
 
-var _path = __webpack_require__(/*! ./implementation/path */ 69);
+var _path = __webpack_require__(/*! ./implementation/path */ 68);
 
 var path = _interopRequireWildcard(_path);
 
-var _requests = __webpack_require__(/*! ./implementation/requests */ 70);
+var _requests = __webpack_require__(/*! ./implementation/requests */ 69);
 
 var requests = _interopRequireWildcard(_requests);
 
@@ -23118,7 +22993,7 @@ var Reference = exports.Reference = function () {
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************!*\
@@ -24355,7 +24230,7 @@ if (typeof module !== "undefined" && typeof process !== "undefined") {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 52)))
 
 /***/ }),
-/* 75 */
+/* 74 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
@@ -24581,7 +24456,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
@@ -24626,7 +24501,7 @@ exports.default = function (input) {
 };
 
 /***/ }),
-/* 77 */
+/* 76 */
 /* exports provided: capturePhoto, getPhoto */
 /* exports used: capturePhoto, getPhoto */
 /*!***********************!*\
@@ -24637,12 +24512,14 @@ exports.default = function (input) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return capturePhoto; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getPhoto; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 77);
 
-
+var longitude = -1;
+var latitude = -1;
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
 var options;
+window.img;
    // Wait for Cordova to connect with the device
    //
    document.addEventListener("deviceready",onDeviceReady,false);
@@ -24650,41 +24527,42 @@ var options;
    // Cordova is ready to be used!
    //
    function onDeviceReady() {
+      options = {
+            'quality': 50,
+            'popoverOptions': CameraPopoverOptions,
+            'saveToPhotoAlbum': true,
+            'correctOrientation':true,
+            'allowEdit': false,
+
+             'destinationType': navigator.camera.DestinationType.DATA_URL,
+             /*
+             0: DATA_URL image as based64-encoded
+             */
+             'sourceType': navigator.camera.PictureSourceType.CAMERA,
+             /*
+             0: PHOTOLIBRARY
+             1:CAMARA
+             2:SAVEDPHOTOALBUM
+             */
+             'encodingType': navigator.camera.EncodingType.JPEG,
+             /*
+             0:JPEG
+             1: PNG
+             */
+             'Direction':navigator.camera.Direction.BACK,
+             /*
+             0:BACK //use the back-facing camara
+             */
+
+
+      }
        pictureSource=navigator.camera.PictureSourceType;
        destinationType=navigator.camera.DestinationType;
-       options = {
-           'quality': 50,
-           'popoverOptions': CameraPopoverOptions,
-              'saveToPhotoAlbum': true,
-              'correctOrientation':true,
-              'allowEdit': false,
-
-            'destinationType': navigator.camera.DestinationType.FILE_URI,
-            /*
-            0: DATA_URL image as based64-encoded
-            */
-            'sourceType': navigator.camera.PictureSourceType.CAMERA,
-            /*
-            0: PHOTOLIBRARY
-            1:CAMARA
-            2:SAVEDPHOTOALBUM
-            */
-            'encodingType': navigator.camera.EncodingType.JPEG,
-            /*
-            0:JPEG
-            1: PNG
-            */
-            'Direction':navigator.camera.Direction.BACK,
-            /*
-            0:BACK //use the back-facing camara
-            */
-          }
-
    }
 
    // Called when a photo is successfully retrieved
    //
-   function onPhotoDataSuccess(imageData) {
+   function onPhotoDataSuccess(imageData,lng) {
      // Uncomment to view the base64 encoded image data
      // console.log(imageData);
 
@@ -24700,17 +24578,15 @@ var options;
      // The inline CSS rules are used to resize the image
      //
     smallImage.src = imageData;
-    console.log(smallImage.src);
-
-    // storeImage(imageData);
-
+    console.log(lng);
+    return smallImage.src;
    }
 
    // Called when a photo is successfully retrieved
    //
-   function onPhotoURISuccess(imageURI) {
+   /*function onPhotoURISuccess(imageURI) {
      // Uncomment to view the image file URI
-     // console.log(imageURI);
+     //console.log(imageURI);
 
      // Get image handle
      //
@@ -24725,14 +24601,33 @@ var options;
      //
      largeImage.src = imageURI;
 
-     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__image_storage_js__["b" /* imagePrepare */])(largeImage.src);
-   }
+     //storeImage(imageURI,)
+     return imageURI;
+   }*/
 
    // A button will call this function
    //
    function capturePhoto() {
      // Take picture using device camera and retrieve image as base64-encoded string
-     navigator.camera.getPicture(onPhotoDataSuccess, onFail, options);
+     var img = navigator.camera.getPicture(function(imageData,img){
+       var smallImage = document.getElementById('smallImage');
+
+       // Unhide image elements
+       //
+       smallImage.style.display = 'block';
+
+       // Show the captured photo
+       // The inline CSS rules are used to resize the image
+       //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+      //console.log(window.longitude);
+      //console.log(window.latitude);
+      //console.log(smallImage.src);
+      //storeImage(smallImage.src,window.longitude,window.latitude);
+      //callback(SmallImage.src);
+      window.img = smallImage.src;
+      console.log(window.img);
+    }, onFail, options)
    }
 
 
@@ -24752,6 +24647,135 @@ var options;
    }
 
    
+
+
+/***/ }),
+/* 77 */
+/* exports provided: storeImage, retrieveImage, imagePrepare */
+/* exports used: imagePrepare */
+/*!******************************!*\
+  !*** ./src/image_storage.js ***!
+  \******************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export storeImage */
+/* unused harmony export retrieveImage */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return imagePrepare; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_geofire__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backend_js__ = __webpack_require__(/*! ./backend.js */ 31);
+
+
+
+
+var fileSystem;
+// // Initialize Firebase
+// var config = {
+//   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
+//   authDomain: "crimewatch-8f003.firebaseapp.com",
+//   databaseURL: "https://crimewatch-8f003.firebaseio.com",
+//   projectId: "crimewatch-8f003",
+//   storageBucket: "crimewatch-8f003.appspot.com",
+//   messagingSenderId: "901121598403"
+// };
+// firebase.initializeApp(config);
+
+// Wait for Cordova to connect with the device
+   //
+
+
+
+function retrieveImage(Hash){
+
+}
+
+//stores the base64 image into storage
+function storeImage(a,b){
+  var imageData=capturePhoto()
+  var max = 4;
+  var name = a.toString().replace(/\./g,'X')+" and "+ b.toString().replace(/\./g,'Y');
+  var Data = imageData.replace(/\s/g, "");
+  var storageRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["e" /* firebase */].storage().ref(name+"/");
+  // Create a root reference
+  var time = new Date();
+  var storeChild = storageRef.child(time+".image");
+  console.log("In store image")
+  /*var store = storeCheck(0,max,storeChild);*/
+  storageRef.child(storeChild).putString(imageData);
+  /*function storeCheck(min,max,storageRef){
+    if(min == max){
+      return 0
+    }
+    storageRef.once('value',function(snapshot){
+      if(snapshot.hasChild(min+".image")){
+            storeCheck(min+1,max,storageRef);
+      }
+      else{
+        return min;
+      }
+    });*/
+
+
+  //}
+
+  // storageRef.child().putString(imageData);
+
+}
+
+//converts image into base64 and stores it
+function imagePrepare(a,b){
+  // var storageRef = firebase.storage().ref("images");
+  getFileAsBase64(a,b,function(base64Img){
+    // storageRef.child(getHash(a,b)).putString(base64Img);
+    storeImage(base64Img,a,b);
+    console.log("WOW! " + base64Img)
+  });
+  // var childRef = storageRef.child(getHash(a,b)).putString();
+
+
+  function getFileAsBase64(callback){
+    //console.log(path)
+    //document.addEventListener("deviceready",onDeviceReady,false);
+
+    // Cordova is ready to be used!
+    //
+    /*function onDeviceReady() {
+
+       window.resolveLocalFileSystemURL(path,gotFile,fail);
+
+    }*/
+
+
+    function fail(e){
+      alert("bad path, can't find file")
+    }
+
+    function gotFile(fileEntry){
+      /*fileEntry.file(function(file){
+        var reader = new FileReader();
+        reader.onloadend = function(e){
+          var content = this.result;
+          console.log(content)
+          callback(content);*/
+          callback(capturePhoto());
+        //};
+
+        //reader.readAsDataURL(file);
+      //});
+
+    }
+
+  }
+
+
+}
+
+
+
+
 
 
 /***/ }),
@@ -43217,13 +43241,13 @@ var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer
   /* script */
   __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./main.vue */ 179),
   /* template */
-  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed116d0"}!../~/vue-loader/lib/selector?type=template&index=0!./main.vue */ 181),
+  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-3fea1678"}!../~/vue-loader/lib/selector?type=template&index=0!./main.vue */ 182),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/src/main.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\src\\main.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] main.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43234,9 +43258,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ed116d0", Component.options)
+    hotAPI.createRecord("data-v-3fea1678", Component.options)
   } else {
-    hotAPI.reload("data-v-0ed116d0", Component.options)
+    hotAPI.reload("data-v-3fea1678", Component.options)
   }
 })()}
 
@@ -43275,6 +43299,138 @@ if(false) {
 
 /***/ }),
 /* 84 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************!*\
+  !*** ./~/vue2-google-maps/dist/main.js ***!
+  \*****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
+exports.install = install;
+
+var _manager = __webpack_require__(/*! ./manager.js */ 20);
+
+var _marker = __webpack_require__(/*! ./components/marker */ 198);
+
+var _marker2 = _interopRequireDefault(_marker);
+
+var _cluster = __webpack_require__(/*! ./components/cluster */ 195);
+
+var _cluster2 = _interopRequireDefault(_cluster);
+
+var _polyline = __webpack_require__(/*! ./components/polyline */ 201);
+
+var _polyline2 = _interopRequireDefault(_polyline);
+
+var _polygon = __webpack_require__(/*! ./components/polygon */ 200);
+
+var _polygon2 = _interopRequireDefault(_polygon);
+
+var _circle = __webpack_require__(/*! ./components/circle */ 194);
+
+var _circle2 = _interopRequireDefault(_circle);
+
+var _rectangle = __webpack_require__(/*! ./components/rectangle */ 202);
+
+var _rectangle2 = _interopRequireDefault(_rectangle);
+
+var _lodash = __webpack_require__(/*! lodash */ 0);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 171);
+
+var _infoWindow2 = _interopRequireDefault(_infoWindow);
+
+var _map = __webpack_require__(/*! ./components/map.vue */ 172);
+
+var _map2 = _interopRequireDefault(_map);
+
+var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 174);
+
+var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
+
+var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 173);
+
+var _placeInput2 = _interopRequireDefault(_placeInput);
+
+var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 170);
+
+var _autocomplete2 = _interopRequireDefault(_autocomplete);
+
+var _mapElementMixin = __webpack_require__(/*! ./components/mapElementMixin */ 12);
+
+var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
+
+var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ 53);
+
+var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
+
+var _deferredReady = __webpack_require__(/*! ./utils/deferredReady */ 30);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// export everything
+
+
+// Vue component imports
+exports.load = _manager.load;
+exports.loaded = _manager.loaded;
+exports.Marker = _marker2.default;
+exports.Cluster = _cluster2.default;
+exports.Polyline = _polyline2.default;
+exports.Polygon = _polygon2.default;
+exports.Circle = _circle2.default;
+exports.Rectangle = _rectangle2.default;
+exports.InfoWindow = _infoWindow2.default;
+exports.Map = _map2.default;
+exports.PlaceInput = _placeInput2.default;
+exports.MapElementMixin = _mapElementMixin2.default;
+exports.Autocomplete = _autocomplete2.default;
+exports.MountableMixin = _mountableMixin2.default;
+function install(Vue, options) {
+  options = _lodash2.default.defaults(options, {
+    installComponents: true
+  });
+
+  Vue.use(_deferredReady.DeferredReady);
+
+  var defaultResizeBus = new Vue();
+  Vue.$gmapDefaultResizeBus = defaultResizeBus;
+  Vue.mixin({
+    created: function created() {
+      this.$gmapDefaultResizeBus = defaultResizeBus;
+    }
+  });
+
+  if (options.load) {
+    (0, _manager.load)(options.load);
+  }
+
+  if (options.installComponents) {
+    Vue.component('GmapMap', _map2.default);
+    Vue.component('GmapMarker', _marker2.default);
+    Vue.component('GmapCluster', _cluster2.default);
+    Vue.component('GmapInfoWindow', _infoWindow2.default);
+    Vue.component('GmapPolyline', _polyline2.default);
+    Vue.component('GmapPolygon', _polygon2.default);
+    Vue.component('GmapCircle', _circle2.default);
+    Vue.component('GmapRectangle', _rectangle2.default);
+    Vue.component('GmapAutocomplete', _autocomplete2.default);
+    Vue.component('GmapPlaceInput', _placeInput2.default);
+    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
+  }
+}
+
+/***/ }),
+/* 85 */
 /* no static exports found */
 /* exports used: default */
 /*!**********************************!*\
@@ -52977,138 +53133,6 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 10)))
 
 /***/ }),
-/* 85 */
-/* no static exports found */
-/* all exports used */
-/*!*****************************************!*\
-  !*** ./~/vue2-google-maps/dist/main.js ***!
-  \*****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
-exports.install = install;
-
-var _manager = __webpack_require__(/*! ./manager.js */ 20);
-
-var _marker = __webpack_require__(/*! ./components/marker */ 198);
-
-var _marker2 = _interopRequireDefault(_marker);
-
-var _cluster = __webpack_require__(/*! ./components/cluster */ 195);
-
-var _cluster2 = _interopRequireDefault(_cluster);
-
-var _polyline = __webpack_require__(/*! ./components/polyline */ 201);
-
-var _polyline2 = _interopRequireDefault(_polyline);
-
-var _polygon = __webpack_require__(/*! ./components/polygon */ 200);
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _circle = __webpack_require__(/*! ./components/circle */ 194);
-
-var _circle2 = _interopRequireDefault(_circle);
-
-var _rectangle = __webpack_require__(/*! ./components/rectangle */ 202);
-
-var _rectangle2 = _interopRequireDefault(_rectangle);
-
-var _lodash = __webpack_require__(/*! lodash */ 0);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 171);
-
-var _infoWindow2 = _interopRequireDefault(_infoWindow);
-
-var _map = __webpack_require__(/*! ./components/map.vue */ 172);
-
-var _map2 = _interopRequireDefault(_map);
-
-var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 174);
-
-var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
-
-var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 173);
-
-var _placeInput2 = _interopRequireDefault(_placeInput);
-
-var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 170);
-
-var _autocomplete2 = _interopRequireDefault(_autocomplete);
-
-var _mapElementMixin = __webpack_require__(/*! ./components/mapElementMixin */ 12);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ 53);
-
-var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
-
-var _deferredReady = __webpack_require__(/*! ./utils/deferredReady */ 30);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// export everything
-
-
-// Vue component imports
-exports.load = _manager.load;
-exports.loaded = _manager.loaded;
-exports.Marker = _marker2.default;
-exports.Cluster = _cluster2.default;
-exports.Polyline = _polyline2.default;
-exports.Polygon = _polygon2.default;
-exports.Circle = _circle2.default;
-exports.Rectangle = _rectangle2.default;
-exports.InfoWindow = _infoWindow2.default;
-exports.Map = _map2.default;
-exports.PlaceInput = _placeInput2.default;
-exports.MapElementMixin = _mapElementMixin2.default;
-exports.Autocomplete = _autocomplete2.default;
-exports.MountableMixin = _mountableMixin2.default;
-function install(Vue, options) {
-  options = _lodash2.default.defaults(options, {
-    installComponents: true
-  });
-
-  Vue.use(_deferredReady.DeferredReady);
-
-  var defaultResizeBus = new Vue();
-  Vue.$gmapDefaultResizeBus = defaultResizeBus;
-  Vue.mixin({
-    created: function created() {
-      this.$gmapDefaultResizeBus = defaultResizeBus;
-    }
-  });
-
-  if (options.load) {
-    (0, _manager.load)(options.load);
-  }
-
-  if (options.installComponents) {
-    Vue.component('GmapMap', _map2.default);
-    Vue.component('GmapMarker', _marker2.default);
-    Vue.component('GmapCluster', _cluster2.default);
-    Vue.component('GmapInfoWindow', _infoWindow2.default);
-    Vue.component('GmapPolyline', _polyline2.default);
-    Vue.component('GmapPolygon', _polygon2.default);
-    Vue.component('GmapCircle', _circle2.default);
-    Vue.component('GmapRectangle', _rectangle2.default);
-    Vue.component('GmapAutocomplete', _autocomplete2.default);
-    Vue.component('GmapPlaceInput', _placeInput2.default);
-    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
-  }
-}
-
-/***/ }),
 /* 86 */
 /* exports provided: default */
 /* exports used: default */
@@ -53240,7 +53264,7 @@ module.exports = __webpack_require__(/*! ../../modules/$.core */ 5).Object.keys;
   \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../modules/es6.object.to-string */ 61);
+__webpack_require__(/*! ../modules/es6.object.to-string */ 60);
 __webpack_require__(/*! ../modules/es6.string.iterator */ 42);
 __webpack_require__(/*! ../modules/web.dom.iterable */ 43);
 __webpack_require__(/*! ../modules/es6.promise */ 128);
@@ -53256,7 +53280,7 @@ module.exports = __webpack_require__(/*! ../modules/$.core */ 5).Promise;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../../modules/es6.symbol */ 129);
-__webpack_require__(/*! ../../modules/es6.object.to-string */ 61);
+__webpack_require__(/*! ../../modules/es6.object.to-string */ 60);
 module.exports = __webpack_require__(/*! ../../modules/$.core */ 5).Symbol;
 
 /***/ }),
@@ -53325,7 +53349,7 @@ var ctx         = __webpack_require__(/*! ./$.ctx */ 18)
   , isArrayIter = __webpack_require__(/*! ./$.is-array-iter */ 105)
   , anObject    = __webpack_require__(/*! ./$.an-object */ 13)
   , toLength    = __webpack_require__(/*! ./$.to-length */ 122)
-  , getIterFn   = __webpack_require__(/*! ./core.get-iterator-method */ 60);
+  , getIterFn   = __webpack_require__(/*! ./core.get-iterator-method */ 59);
 module.exports = function(iterable, entries, fn, that){
   var iterFn = getIterFn(iterable)
     , f      = ctx(fn, that, entries ? 2 : 1)
@@ -53789,7 +53813,7 @@ module.exports = function(it, Constructor, name){
   \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(/*! ./$.to-integer */ 58)
+var toInteger = __webpack_require__(/*! ./$.to-integer */ 57)
   , defined   = __webpack_require__(/*! ./$.defined */ 35);
 // true  -> String#at
 // false -> String#codePointAt
@@ -53902,7 +53926,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(/*! ./$.to-integer */ 58)
+var toInteger = __webpack_require__(/*! ./$.to-integer */ 57)
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -53933,7 +53957,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./$.an-object */ 13)
-  , get      = __webpack_require__(/*! ./core.get-iterator-method */ 60);
+  , get      = __webpack_require__(/*! ./core.get-iterator-method */ 59);
 module.exports = __webpack_require__(/*! ./$.core */ 5).getIterator = function(it){
   var iterFn = get(it);
   if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
@@ -53979,7 +54003,7 @@ var addToUnscopables = __webpack_require__(/*! ./$.add-to-unscopables */ 97)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(/*! ./$.iter-define */ 56)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(/*! ./$.iter-define */ 55)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -54345,9 +54369,9 @@ var $              = __webpack_require__(/*! ./$ */ 3)
   , $export        = __webpack_require__(/*! ./$.export */ 23)
   , redefine       = __webpack_require__(/*! ./$.redefine */ 41)
   , $fails         = __webpack_require__(/*! ./$.fails */ 36)
-  , shared         = __webpack_require__(/*! ./$.shared */ 57)
+  , shared         = __webpack_require__(/*! ./$.shared */ 56)
   , setToStringTag = __webpack_require__(/*! ./$.set-to-string-tag */ 25)
-  , uid            = __webpack_require__(/*! ./$.uid */ 59)
+  , uid            = __webpack_require__(/*! ./$.uid */ 58)
   , wks            = __webpack_require__(/*! ./$.wks */ 1)
   , keyOf          = __webpack_require__(/*! ./$.keyof */ 111)
   , $names         = __webpack_require__(/*! ./$.get-names */ 101)
@@ -56516,7 +56540,7 @@ exports.push([module.i, "* {\n  user-select: none; }\n\ninput {\n  user-select: 
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
   \***************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -56525,7 +56549,7 @@ exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relative;\n}\n.vue-street-view-pano-container .vue-street-view-pano {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n", ""]);
+exports.push([module.i, "\n.vue-street-view-pano-container {\r\n  position: relative;\n}\n.vue-street-view-pano-container .vue-street-view-pano {\r\n  left: 0; right: 0; top: 0; bottom: 0;\r\n  position: absolute;\n}\r\n", ""]);
 
 // exports
 
@@ -56535,7 +56559,7 @@ exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relati
 /* no static exports found */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
+  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
   \************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -56544,7 +56568,7 @@ exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.vue-map-container {\n  position: relative;\n}\n.vue-map-container .vue-map {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n.vue-map-hidden {\n  display: none;\n}\n", ""]);
+exports.push([module.i, "\n.vue-map-container {\r\n  position: relative;\n}\n.vue-map-container .vue-map {\r\n  left: 0; right: 0; top: 0; bottom: 0;\r\n  position: absolute;\n}\n.vue-map-hidden {\r\n  display: none;\n}\r\n", ""]);
 
 // exports
 
@@ -56695,7 +56719,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.createFirebaseNamespace = createFirebaseNamespace;
 
-var _subscribe = __webpack_require__(/*! ./subscribe */ 62);
+var _subscribe = __webpack_require__(/*! ./subscribe */ 61);
 
 var _errors = __webpack_require__(/*! ./errors */ 45);
 
@@ -57730,7 +57754,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _controllerInterface = __webpack_require__(/*! ./controller-interface */ 64);
+var _controllerInterface = __webpack_require__(/*! ./controller-interface */ 63);
 
 var _controllerInterface2 = _interopRequireDefault(_controllerInterface);
 
@@ -57738,11 +57762,11 @@ var _errors = __webpack_require__(/*! ../models/errors */ 27);
 
 var _errors2 = _interopRequireDefault(_errors);
 
-var _workerPageMessage = __webpack_require__(/*! ../models/worker-page-message */ 67);
+var _workerPageMessage = __webpack_require__(/*! ../models/worker-page-message */ 66);
 
 var _workerPageMessage2 = _interopRequireDefault(_workerPageMessage);
 
-var _fcmDetails = __webpack_require__(/*! ../models/fcm-details */ 65);
+var _fcmDetails = __webpack_require__(/*! ../models/fcm-details */ 64);
 
 var _fcmDetails2 = _interopRequireDefault(_fcmDetails);
 
@@ -58113,7 +58137,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _controllerInterface = __webpack_require__(/*! ./controller-interface */ 64);
+var _controllerInterface = __webpack_require__(/*! ./controller-interface */ 63);
 
 var _controllerInterface2 = _interopRequireDefault(_controllerInterface);
 
@@ -58121,7 +58145,7 @@ var _errors = __webpack_require__(/*! ../models/errors */ 27);
 
 var _errors2 = _interopRequireDefault(_errors);
 
-var _workerPageMessage = __webpack_require__(/*! ../models/worker-page-message */ 67);
+var _workerPageMessage = __webpack_require__(/*! ../models/worker-page-message */ 66);
 
 var _workerPageMessage2 = _interopRequireDefault(_workerPageMessage);
 
@@ -58129,11 +58153,11 @@ var _defaultSw = __webpack_require__(/*! ../models/default-sw */ 143);
 
 var _defaultSw2 = _interopRequireDefault(_defaultSw);
 
-var _notificationPermission = __webpack_require__(/*! ../models/notification-permission */ 66);
+var _notificationPermission = __webpack_require__(/*! ../models/notification-permission */ 65);
 
 var _notificationPermission2 = _interopRequireDefault(_notificationPermission);
 
-var _subscribe = __webpack_require__(/*! ../../app/subscribe */ 62);
+var _subscribe = __webpack_require__(/*! ../../app/subscribe */ 61);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58617,7 +58641,7 @@ var _arrayBufferToBase = __webpack_require__(/*! ../helpers/array-buffer-to-base
 
 var _arrayBufferToBase2 = _interopRequireDefault(_arrayBufferToBase);
 
-var _fcmDetails = __webpack_require__(/*! ./fcm-details */ 65);
+var _fcmDetails = __webpack_require__(/*! ./fcm-details */ 64);
 
 var _fcmDetails2 = _interopRequireDefault(_fcmDetails);
 
@@ -59265,11 +59289,11 @@ exports.registerStorage = registerStorage;
 
 var _string = __webpack_require__(/*! ./storage/implementation/string */ 50);
 
-var _taskenums = __webpack_require__(/*! ./storage/implementation/taskenums */ 71);
+var _taskenums = __webpack_require__(/*! ./storage/implementation/taskenums */ 70);
 
 var _xhriopool = __webpack_require__(/*! ./storage/implementation/xhriopool */ 158);
 
-var _reference = __webpack_require__(/*! ./storage/reference */ 73);
+var _reference = __webpack_require__(/*! ./storage/reference */ 72);
 
 var _service = __webpack_require__(/*! ./storage/service */ 159);
 
@@ -60054,7 +60078,7 @@ var _url = __webpack_require__(/*! ./url */ 51);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
-var _xhrio = __webpack_require__(/*! ./xhrio */ 72);
+var _xhrio = __webpack_require__(/*! ./xhrio */ 71);
 
 var XhrIoExports = _interopRequireWildcard(_xhrio);
 
@@ -60464,7 +60488,7 @@ var _type = __webpack_require__(/*! ./type */ 2);
 
 var type = _interopRequireWildcard(_type);
 
-var _xhrio = __webpack_require__(/*! ./xhrio */ 72);
+var _xhrio = __webpack_require__(/*! ./xhrio */ 71);
 
 var XhrIoExports = _interopRequireWildcard(_xhrio);
 
@@ -60730,7 +60754,7 @@ var _request = __webpack_require__(/*! ./implementation/request */ 154);
 
 var RequestExports = _interopRequireWildcard(_request);
 
-var _reference = __webpack_require__(/*! ./reference */ 73);
+var _reference = __webpack_require__(/*! ./reference */ 72);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -60913,7 +60937,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _taskenums = __webpack_require__(/*! ./implementation/taskenums */ 71);
+var _taskenums = __webpack_require__(/*! ./implementation/taskenums */ 70);
 
 var fbsTaskEnums = _interopRequireWildcard(_taskenums);
 
@@ -60939,7 +60963,7 @@ var _promise_external = __webpack_require__(/*! ./implementation/promise_externa
 
 var fbsPromiseimpl = _interopRequireWildcard(_promise_external);
 
-var _requests = __webpack_require__(/*! ./implementation/requests */ 70);
+var _requests = __webpack_require__(/*! ./implementation/requests */ 69);
 
 var fbsRequests = _interopRequireWildcard(_requests);
 
@@ -64256,13 +64280,13 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* script */
   __webpack_require__(/*! !!./autocompleteImpl.js */ 193),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-92295ce8"}!../../../vue-loader/lib/selector?type=template&index=0!./autocomplete.vue */ 187),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-5d2dbb6c"}!../../../vue-loader/lib/selector?type=template&index=0!./autocomplete.vue */ 184),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\autocomplete.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] autocomplete.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64273,9 +64297,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-92295ce8", Component.options)
+    hotAPI.createRecord("data-v-5d2dbb6c", Component.options)
   } else {
-    hotAPI.reload("data-v-92295ce8", Component.options)
+    hotAPI.reload("data-v-5d2dbb6c", Component.options)
   }
 })()}
 
@@ -64295,13 +64319,13 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* script */
   __webpack_require__(/*! !!./infoWindowImpl.js */ 196),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3d7de83c"}!../../../vue-loader/lib/selector?type=template&index=0!./infoWindow.vue */ 182),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-c257247c"}!../../../vue-loader/lib/selector?type=template&index=0!./infoWindow.vue */ 186),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\infoWindow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] infoWindow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64312,9 +64336,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3d7de83c", Component.options)
+    hotAPI.createRecord("data-v-c257247c", Component.options)
   } else {
-    hotAPI.reload("data-v-3d7de83c", Component.options)
+    hotAPI.reload("data-v-c257247c", Component.options)
   }
 })()}
 
@@ -64332,19 +64356,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./map.vue */ 189)
+__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./map.vue */ 189)
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
   __webpack_require__(/*! !!./mapImpl.js */ 197),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-5408ed30"}!../../../vue-loader/lib/selector?type=template&index=0!./map.vue */ 185),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-dc3ef8f0"}!../../../vue-loader/lib/selector?type=template&index=0!./map.vue */ 187),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/map.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\map.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] map.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64355,9 +64379,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5408ed30", Component.options)
+    hotAPI.createRecord("data-v-dc3ef8f0", Component.options)
   } else {
-    hotAPI.reload("data-v-5408ed30", Component.options)
+    hotAPI.reload("data-v-dc3ef8f0", Component.options)
   }
 })()}
 
@@ -64377,13 +64401,13 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* script */
   __webpack_require__(/*! !!./placeInputImpl.js */ 199),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-686eca27"}!../../../vue-loader/lib/selector?type=template&index=0!./placeInput.vue */ 186),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-26022c07"}!../../../vue-loader/lib/selector?type=template&index=0!./placeInput.vue */ 181),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/placeInput.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\placeInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] placeInput.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64394,9 +64418,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-686eca27", Component.options)
+    hotAPI.createRecord("data-v-26022c07", Component.options)
   } else {
-    hotAPI.reload("data-v-686eca27", Component.options)
+    hotAPI.reload("data-v-26022c07", Component.options)
   }
 })()}
 
@@ -64414,19 +64438,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./streetViewPanorama.vue */ 188)
+__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./streetViewPanorama.vue */ 188)
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
   __webpack_require__(/*! !!./streetViewPanoramaImpl.js */ 203),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3dd66e01"}!../../../vue-loader/lib/selector?type=template&index=0!./streetViewPanorama.vue */ 183),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-6259efe1"}!../../../vue-loader/lib/selector?type=template&index=0!./streetViewPanorama.vue */ 185),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\streetViewPanorama.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] streetViewPanorama.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64437,9 +64461,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3dd66e01", Component.options)
+    hotAPI.createRecord("data-v-6259efe1", Component.options)
   } else {
-    hotAPI.reload("data-v-3dd66e01", Component.options)
+    hotAPI.reload("data-v-6259efe1", Component.options)
   }
 })()}
 
@@ -64459,13 +64483,13 @@ var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer
   /* script */
   __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./addForm.vue */ 177),
   /* template */
-  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-09c19ef6"}!../~/vue-loader/lib/selector?type=template&index=0!./addForm.vue */ 180),
+  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-1a759dd4"}!../~/vue-loader/lib/selector?type=template&index=0!./addForm.vue */ 180),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/src/addForm.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\src\\addForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] addForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64476,9 +64500,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-09c19ef6", Component.options)
+    hotAPI.createRecord("data-v-1a759dd4", Component.options)
   } else {
-    hotAPI.reload("data-v-09c19ef6", Component.options)
+    hotAPI.reload("data-v-1a759dd4", Component.options)
   }
 })()}
 
@@ -64498,13 +64522,13 @@ var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-n
   /* script */
   __webpack_require__(/*! !!../../../../~/vue-loader/lib/selector?type=script&index=0!./marker.vue */ 178),
   /* template */
-  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-499cdd6a"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./marker.vue */ 184),
+  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-540ce36b"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./marker.vue */ 183),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/src/assets/vue/pages/marker.vue"
+Component.options.__file = "C:\\Users\\tobyi\\newclone\\src\\assets\\vue\\pages\\marker.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] marker.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64515,9 +64539,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-499cdd6a", Component.options)
+    hotAPI.createRecord("data-v-540ce36b", Component.options)
   } else {
-    hotAPI.reload("data-v-499cdd6a", Component.options)
+    hotAPI.reload("data-v-540ce36b", Component.options)
   }
 })()}
 
@@ -64535,7 +64559,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__camera_js__ = __webpack_require__(/*! ./camera.js */ 77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__camera_js__ = __webpack_require__(/*! ./camera.js */ 76);
 //
 //
 //
@@ -64672,7 +64696,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__backend_js__ = __webpack_require__(/*! ./backend.js */ 31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camera_js__ = __webpack_require__(/*! ./camera.js */ 77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camera_js__ = __webpack_require__(/*! ./camera.js */ 76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 77);
 //
 //
 //
@@ -64800,6 +64825,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -64816,7 +64843,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 comment: null,
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
-                viewComment: null
+                viewComment: null,
+                photo: null
             }
         },
         mounted: function() {
@@ -64825,46 +64853,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //console.log(this.$data);
         },
         methods: {
-            zoomUpdate: function(event){
-              //console.log(event);
-              this.$data.zoom = event;
-              this.setMarkers();
+            zoomUpdate: function(event) {
+                //console.log(event);
+                this.$data.zoom = event;
+                this.setMarkers();
             },
             campturePhoto: function() {
-                console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])());
+               //console.log(window.longitude);
+               //console.log(window.latitude);
+               __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])();
+               console.log(window.img);
             },
             getPhoto: function() {
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
             },
             crime: function() {
+                this.$data.photo = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
                 this.$f7.closeModal()
             },
             submit: function() {
-                var currentTime = new Date();
-                var year = currentTime.getFullYear();
-                var month = currentTime.getMonth();
-                var day = currentTime.getDay();
-                var hour = currentTime.getHours();
-                var minute = currentTime.getMinutes();
-                var types = this.$data.Category;
-                var comment = this.$data.comment;
-                var data = {
-                    "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
-                    "category": types,
-                    "comment": comment
-                }
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat, this.$data.center.lng, data);
-                console.log(this.$data);
+                this.$nextTick(function() {
+                    var currentTime = new Date();
+                    var year = currentTime.getFullYear();
+                    var month = currentTime.getMonth();
+                    var day = currentTime.getDay();
+                    var hour = currentTime.getHours();
+                    var minute = currentTime.getMinutes();
+                    var types = this.$data.Category;
+                    var comment = this.$data.comment;
+                    var data = {
+                        "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
+                        "category": types,
+                        "comment": comment
+                    }
+                    console.log("in submit:"+this.$data.photo)
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["a" /* imagePrepare */])(this.$data.center.lat, this.$data.center.lng);
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat, this.$data.center.lng, data);
+                });
+                //console.log(this.$data);
                 this.$f7.closeModal()
             },
             getInfo: function(m) {
                 console.log(m.position.lat);
-                var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* getHash */])(m.position.lat, m.position.lng);
-                var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["e" /* returnInfo */])(Infohash);
-                console.log(this.$f7);
+                var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* getHash */])(m.position.lat, m.position.lng);
+                var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* returnInfo */])(Infohash);
+                //console.log(this.$f7);
                 /*console.log(json)*/
                 //push category data to vue.$data so we can use v-for
                 this.$data.viewTypes = json.category;
@@ -64883,18 +64919,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             setCenter: function() {
                 //console.log('setcenter')
-                    // Request Location Services
+                // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
                         timeout: 30000,
                         enableHighAccuracy: true
                     })
                 var that = this
-                //console.log(this)
+                    //console.log(this)
 
                 function onSuccess(pos) {
-                    console.log(pos)
-                    console.log(this)
+                    //console.log(pos)
+                    //console.log(this)
                     that.$data.center = {
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
@@ -64916,13 +64952,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             setMarkers: function() {
                 var locs = [];
                 //console.log(this.$data.zoom);
-                var radius = Math.pow(2,(17-this.$data.zoom));
+                var radius = Math.pow(2, (17 - this.$data.zoom));
                 this.$nextTick(function() {
-                  //console.log(radius)
-                  var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
-                  this.$data.markers = locations;
-                  //console.log("In set markers");
-                  this.setCenter()
+                    //console.log(radius)
+                    var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
+                    this.$data.markers = locations;
+                    //console.log("In set markers");
+                    this.setCenter()
                 });
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};
@@ -64941,7 +64977,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-09c19ef6"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/addForm.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-1a759dd4"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/addForm.vue ***!
   \********************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65124,7 +65160,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-09c19ef6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1a759dd4", module.exports)
   }
 }
 
@@ -65132,8 +65168,39 @@ if (false) {
 /* 181 */
 /* no static exports found */
 /* all exports used */
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-26022c07"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/placeInput.vue ***!
+  \******************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.label)
+    }
+  }), _vm._v(" "), _c('input', {
+    ref: "input",
+    class: _vm.className,
+    attrs: {
+      "type": "text",
+      "placeholder": _vm.placeholder
+    }
+  })])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-26022c07", module.exports)
+  }
+}
+
+/***/ }),
+/* 182 */
+/* no static exports found */
+/* all exports used */
 /*!*****************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0ed116d0"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/main.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3fea1678"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/main.vue ***!
   \*****************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65428,33 +65495,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0ed116d0", module.exports)
-  }
-}
-
-/***/ }),
-/* 182 */
-/* no static exports found */
-/* all exports used */
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3d7de83c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/infoWindow.vue ***!
-  \******************************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    ref: "flyaway"
-  }, [_vm._t("default", [_c('div', {
-    domProps: {
-      "innerHTML": _vm._s(_vm.content)
-    }
-  })])], 2)])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3d7de83c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3fea1678", module.exports)
   }
 }
 
@@ -65462,33 +65503,8 @@ if (false) {
 /* 183 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3dd66e01"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
-  \**************************************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "vue-street-view-pano-container"
-  }, [_c('div', {
-    ref: "vue-street-view-pano",
-    staticClass: "vue-street-view-pano"
-  }), _vm._v(" "), _vm._t("default")], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3dd66e01", module.exports)
-  }
-}
-
-/***/ }),
-/* 184 */
-/* no static exports found */
-/* all exports used */
 /*!************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-499cdd6a"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/marker.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-540ce36b"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/marker.vue ***!
   \************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65513,74 +65529,16 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-499cdd6a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-540ce36b", module.exports)
   }
 }
 
 /***/ }),
-/* 185 */
-/* no static exports found */
-/* all exports used */
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5408ed30"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
-  \***********************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "vue-map-container"
-  }, [_c('div', {
-    ref: "vue-map",
-    staticClass: "vue-map"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "vue-map-hidden"
-  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("visible")], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5408ed30", module.exports)
-  }
-}
-
-/***/ }),
-/* 186 */
-/* no static exports found */
-/* all exports used */
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-686eca27"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/placeInput.vue ***!
-  \******************************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('span', {
-    domProps: {
-      "textContent": _vm._s(_vm.label)
-    }
-  }), _vm._v(" "), _c('input', {
-    ref: "input",
-    class: _vm.className,
-    attrs: {
-      "type": "text",
-      "placeholder": _vm.placeholder
-    }
-  })])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-686eca27", module.exports)
-  }
-}
-
-/***/ }),
-/* 187 */
+/* 184 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-92295ce8"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/autocomplete.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5d2dbb6c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/autocomplete.vue ***!
   \********************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65600,7 +65558,85 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-92295ce8", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-5d2dbb6c", module.exports)
+  }
+}
+
+/***/ }),
+/* 185 */
+/* no static exports found */
+/* all exports used */
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-6259efe1"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  \**************************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "vue-street-view-pano-container"
+  }, [_c('div', {
+    ref: "vue-street-view-pano",
+    staticClass: "vue-street-view-pano"
+  }), _vm._v(" "), _vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-6259efe1", module.exports)
+  }
+}
+
+/***/ }),
+/* 186 */
+/* no static exports found */
+/* all exports used */
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-c257247c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/infoWindow.vue ***!
+  \******************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    ref: "flyaway"
+  }, [_vm._t("default", [_c('div', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.content)
+    }
+  })])], 2)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-c257247c", module.exports)
+  }
+}
+
+/***/ }),
+/* 187 */
+/* no static exports found */
+/* all exports used */
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-dc3ef8f0"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
+  \***********************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "vue-map-container"
+  }, [_c('div', {
+    ref: "vue-map",
+    staticClass: "vue-map"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "vue-map-hidden"
+  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("visible")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-dc3ef8f0", module.exports)
   }
 }
 
@@ -65609,24 +65645,24 @@ if (false) {
 /* no static exports found */
 /* all exports used */
 /*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
   \*************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue */ 133);
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue */ 133);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 75)("4a719143", content, false);
+var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 74)("7401ce1d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3dd66e01\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3dd66e01\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6259efe1\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6259efe1\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -65640,24 +65676,24 @@ if(false) {
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
+  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
   \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue */ 134);
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue */ 134);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 75)("c11036b0", content, false);
+var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 74)("a88d29c4", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5408ed30\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5408ed30\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-dc3ef8f0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-dc3ef8f0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -65992,7 +66028,7 @@ var _propsBinder = __webpack_require__(/*! ../utils/propsBinder.js */ 4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 76);
+var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 75);
 
 var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
 
@@ -66805,7 +66841,7 @@ var _propsBinder = __webpack_require__(/*! ../utils/propsBinder.js */ 4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 76);
+var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ 75);
 
 var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
 
@@ -66912,7 +66948,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 55);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 54);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -67091,7 +67127,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 55);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 54);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -67500,13 +67536,13 @@ module.exports = function(module) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(/*! vue */ 84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(/*! vue */ 85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7__ = __webpack_require__(/*! framework7 */ 81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_framework7__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue__ = __webpack_require__(/*! framework7-vue */ 80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_framework7_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__ = __webpack_require__(/*! vue2-google-maps */ 85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__ = __webpack_require__(/*! vue2-google-maps */ 84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__ = __webpack_require__(/*! framework7/dist/css/framework7.material.min.css */ 79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__);
@@ -67515,10 +67551,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss__ = __webpack_require__(/*! ./assets/sass/main.scss */ 83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__assets_sass_main_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__backend_js__ = __webpack_require__(/*! ./backend.js */ 31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__routes_js__ = __webpack_require__(/*! ./routes.js */ 86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__main_vue__ = __webpack_require__(/*! ./main.vue */ 82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__main_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__routes_js__ = __webpack_require__(/*! ./routes.js */ 86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__main_vue__ = __webpack_require__(/*! ./main.vue */ 82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__main_vue__);
 
 // Import Vue
 
@@ -67544,14 +67579,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //Import backend.js
 //import StoreMarker(),Nearby() from './backend.js'
 
-
-
-
 // Import Routes
 
 
 // Import App Component
 
+
+var longitude = -1;
+var latitude = -1;
 
 // Init F7 Vue Plugin
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_framework7_vue___default.a)
@@ -67560,26 +67595,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue2
     key: 'AIzaSyAahrq97Y4diRkkbXM6_7uxSVs-7S59AtQ'
   }
 });
-//Testing
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10, 10, {
-  "timestamp": "3:14",
-  "comment": "foo",
-  "photo-url": "ex.url",
-  "category": "murder"
-});
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10.02, 10, {
-  "timestamp": "3:14",
-  "comment": "bar",
-  "photo-url": "ex.url",
-  "category": "theft"
-});
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10.03, 10, {
-  "timestamp": "3:14",
-  "comment": "baz",
-  "photo-url": "ex.url",
-  "category": "blah"
-});
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["b" /* Nearby */])(10, 10, 100);
+//Nearby(10, 10, 100);
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
@@ -67589,37 +67605,15 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   framework7: {
     root: '#app',
     material: true,
-    routes: __WEBPACK_IMPORTED_MODULE_9__routes_js__["a" /* default */]
+    routes: __WEBPACK_IMPORTED_MODULE_8__routes_js__["a" /* default */]
   },
   // Register App Component
   components: {
-    app: __WEBPACK_IMPORTED_MODULE_10__main_vue___default.a
+    app: __WEBPACK_IMPORTED_MODULE_9__main_vue___default.a
   },
 });
 console.log(vm.center);
 console.log(vm.markers);
-
-
-document.addEventListener("deviceready",onDeviceReady,false);
-
-// Cordova is ready to be used!
-//
-function onDeviceReady() {
-  // console.log(cordova.file.applicationStorageDirectory);
-   
-  // imagePrepare(cordova.file.applicationStorageDirectory + "/waterfall.jpg",10.03,10);
-
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__image_storage_js__["a" /* storeImage */])("testtesttesttest",10.03,10);
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__image_storage_js__["a" /* storeImage */])("testtesttesttest",10.03,10);
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__image_storage_js__["a" /* storeImage */])("testtesttesttest",10.03,10);
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__image_storage_js__["a" /* storeImage */])("testtesttesttest",10.03,10);
-
-
-}
-
-
-
-
 
 
 /***/ })

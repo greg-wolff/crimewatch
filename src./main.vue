@@ -72,7 +72,8 @@
                                     <div class="list-block">
                                         <ul>
                                             <!-- Single chekbox item -->
-                                            <li>                  <!--  -->
+                                            <li>
+                                                <!--  -->
                                                 <input type="checkbox" id="murder" value="Murder" onclick="checked()" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Murder</font></input>
                                             </li>
                                             <!-- Another chekbox item -->
@@ -113,7 +114,7 @@
                     <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue open-popup">
                         <i class="icon icon-plus"></i>
                     </a>
-                    <GmapMap :center="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%" >
+                    <GmapMap :center="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%">
                         <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
                         </GmapMarker>
                     </GmapMap>
@@ -138,6 +139,10 @@ import {
     capturePhoto, getPhoto
 }
 from './camera.js'
+import {
+    storeImage, retrieveImage, imagePrepare
+}
+from './image_storage.js'
 export default {
     data() {
             return {
@@ -150,7 +155,8 @@ export default {
                 comment: null,
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
-                viewComment: null
+                viewComment: null,
+                photo: null
             }
         },
         mounted: function() {
@@ -159,46 +165,54 @@ export default {
             //console.log(this.$data);
         },
         methods: {
-            zoomUpdate: function(event){
-              //console.log(event);
-              this.$data.zoom = event;
-              this.setMarkers();
+            zoomUpdate: function(event) {
+                //console.log(event);
+                this.$data.zoom = event;
+                this.setMarkers();
             },
             campturePhoto: function() {
-                console.log(capturePhoto());
+               //console.log(window.longitude);
+               //console.log(window.latitude);
+               capturePhoto();
+               console.log(window.img);
             },
             getPhoto: function() {
                 getPhoto();
             },
             crime: function() {
+                this.$data.photo = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
                 this.$f7.closeModal()
             },
             submit: function() {
-                var currentTime = new Date();
-                var year = currentTime.getFullYear();
-                var month = currentTime.getMonth();
-                var day = currentTime.getDay();
-                var hour = currentTime.getHours();
-                var minute = currentTime.getMinutes();
-                var types = this.$data.Category;
-                var comment = this.$data.comment;
-                var data = {
-                    "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
-                    "category": types,
-                    "comment": comment
-                }
-                loadInfo(this.$data.center.lat, this.$data.center.lng, data);
-                console.log(this.$data);
+                this.$nextTick(function() {
+                    var currentTime = new Date();
+                    var year = currentTime.getFullYear();
+                    var month = currentTime.getMonth();
+                    var day = currentTime.getDay();
+                    var hour = currentTime.getHours();
+                    var minute = currentTime.getMinutes();
+                    var types = this.$data.Category;
+                    var comment = this.$data.comment;
+                    var data = {
+                        "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
+                        "category": types,
+                        "comment": comment
+                    }
+                    console.log("in submit:"+this.$data.photo)
+                    imagePrepare(this.$data.center.lat, this.$data.center.lng);
+                    loadInfo(this.$data.center.lat, this.$data.center.lng, data);
+                });
+                //console.log(this.$data);
                 this.$f7.closeModal()
             },
             getInfo: function(m) {
                 console.log(m.position.lat);
                 var Infohash = getHash(m.position.lat, m.position.lng);
                 var json = returnInfo(Infohash);
-                console.log(this.$f7);
+                //console.log(this.$f7);
                 /*console.log(json)*/
                 //push category data to vue.$data so we can use v-for
                 this.$data.viewTypes = json.category;
@@ -217,18 +231,18 @@ export default {
             },
             setCenter: function() {
                 //console.log('setcenter')
-                    // Request Location Services
+                // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
                         timeout: 30000,
                         enableHighAccuracy: true
                     })
                 var that = this
-                //console.log(this)
+                    //console.log(this)
 
                 function onSuccess(pos) {
-                    console.log(pos)
-                    console.log(this)
+                    //console.log(pos)
+                    //console.log(this)
                     that.$data.center = {
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
@@ -250,13 +264,13 @@ export default {
             setMarkers: function() {
                 var locs = [];
                 //console.log(this.$data.zoom);
-                var radius = Math.pow(2,(17-this.$data.zoom));
+                var radius = Math.pow(2, (17 - this.$data.zoom));
                 this.$nextTick(function() {
-                  //console.log(radius)
-                  var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);
-                  this.$data.markers = locations;
-                  //console.log("In set markers");
-                  this.setCenter()
+                    //console.log(radius)
+                    var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);
+                    this.$data.markers = locations;
+                    //console.log("In set markers");
+                    this.setCenter()
                 });
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};

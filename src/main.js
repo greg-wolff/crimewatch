@@ -27,18 +27,14 @@ import {
   loadInfo,
   returnInfo
 } from './backend.js'
-
-import {
- storeImage, 
- retrieveImage,
- imagePrepare
-} from './image_storage.js'
-
 // Import Routes
 import Routes from './routes.js'
 
 // Import App Component
 import App from './main.vue'
+
+var longitude = -1;
+var latitude = -1;
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
@@ -47,26 +43,7 @@ Vue.use(VueGoogleMaps, {
     key: 'AIzaSyAahrq97Y4diRkkbXM6_7uxSVs-7S59AtQ'
   }
 });
-//Testing
-loadInfo(10, 10, {
-  "timestamp": "3:14",
-  "comment": "foo",
-  "photo-url": "ex.url",
-  "category": "murder"
-});
-loadInfo(10.02, 10, {
-  "timestamp": "3:14",
-  "comment": "bar",
-  "photo-url": "ex.url",
-  "category": "theft"
-});
-loadInfo(10.03, 10, {
-  "timestamp": "3:14",
-  "comment": "baz",
-  "photo-url": "ex.url",
-  "category": "blah"
-});
-Nearby(10, 10, 100);
+//Nearby(10, 10, 100);
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new Vue({
@@ -85,25 +62,3 @@ var vm = new Vue({
 });
 console.log(vm.center);
 console.log(vm.markers);
-
-
-document.addEventListener("deviceready",onDeviceReady,false);
-
-// Cordova is ready to be used!
-//
-function onDeviceReady() {
-  // console.log(cordova.file.applicationStorageDirectory);
-   
-  // imagePrepare(cordova.file.applicationStorageDirectory + "/waterfall.jpg",10.03,10);
-
-  storeImage("testtesttesttest",10.03,10);
-  storeImage("testtesttesttest",10.03,10);
-  storeImage("testtesttesttest",10.03,10);
-  storeImage("testtesttesttest",10.03,10);
-
-
-}
-
-
-
-
