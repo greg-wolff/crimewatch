@@ -84,11 +84,97 @@ function retrieveImage(imageName,a,b){
       }
     });
   console.log(imageBase64 + "wowowowow");
-
-
-
-
 }
+
+//function for converting base64 to blob according to data / content type
+//for foreseeable future, contentType will be image/jpeg / image/jpg
+//sliceSize = amount of bytes to process
+function base64toBlob(base64data,contentType,sliceSize){
+  contentType = contentType || '';
+  // sliceSize = sliceSize || 512;
+
+  var byteCharacters=atob(base64data);
+  var byteArrays=[];
+
+  for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+    var byteNumbers = new Array(slice.length);
+    for (var i = 0; i < slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i);
+    }
+    var byteArray = new Uint8Array(byteNumbers);
+    byteArrays.push(byteArray);
+  }
+  var blob = new Blob(byteArrays,{type: contentType});
+  return blob;
+}
+
+//dad function of 'base64toBlob'
+//creates imagefile according to it's database64 content
+function saveBase64AsImageFile(path,filename,content,contentType){
+  var DataBlob = base64toBlob(content,contentType,512);
+
+  console.log(DataBlob + " beginning file-write....");
+  
+  document.addEventListener("deviceready",onDeviceReady,false);
+  // Cordova is ready to be used!
+  function onDeviceReady() {
+    console.log("device is ready: "+path);
+    window.resolveLocalFileSystemURL(path,function(dir){
+      console.log("access granted...");
+      dir.getFile(filename,{create:true},function(file){
+        console.log("file created...");
+        file.createWriter(function(fileWriter){
+          console.log("writing to file...");
+          fileWriter.write(DataBlob);
+        },function(){
+            alert("unable to save file in path: "+folderpath);
+          });
+      });
+    },function(e){
+      alert("error occured: "+ e);
+    });
+  }
+}
+
+function saveB64asImageInitialize(base64data){
+  //what format is it?
+  if(base64data.split(";") != ""){
+    var block = base64data.split(";");//bunch of things
+    console.log(block);
+    var dataType = block[0].split(":")[1];//image/content
+    console.log(dataType);
+    var realData = block[1].split(",")[1];//data
+    console.log(realData);
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+    // Cordova is ready to be used!
+    function onDeviceReady() {
+      var path =cordova.file.externalRootDirectory;
+      // var path = "file:///home/cojaroge/images/"
+      var filename = Date.now()+".jpg";
+      saveBase64AsImageFile(path,filename,realData,dataType);
+
+      return filename;
+    }
+  }else{
+    var contentType = "image/jpg";
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+    // Cordova is ready to be used!
+    function onDeviceReady() {
+      // var path = "file:///home/cojaroge/images/";
+      var path = cordova.file.externalRootDirectory;
+
+      var filename = Date.now()+".jpg";
+      saveBase64AsImageFile(path,filename,base64data,contentType);
+
+      return filename;
+    }
+  }
+}
+
 
 //stores the base64 image into storage
 function storeImage(imageData,a,b){
@@ -154,4 +240,4 @@ function imagePrepare(imageURI,a,b){
 
 
 
-export {storeImage, retrieveImage, imagePrepare};
+export {storeImage, retrieveImage, imagePrepare, saveB64asImageInitialize};

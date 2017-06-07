@@ -17190,8 +17190,8 @@ module.exports = function(name){
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -17484,8 +17484,8 @@ if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -17943,8 +17943,8 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -18018,8 +18018,8 @@ module.exports = {};
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -18140,8 +18140,8 @@ module.exports = function(fn, that, length){
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -18440,8 +18440,8 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -18523,8 +18523,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -18615,8 +18615,8 @@ var minSafeInteger = exports.minSafeInteger = -9007199254740991;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -18870,7 +18870,7 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 /***/ }),
 /* 31 */
 /* exports provided: StoreMarker, Nearby, loadInfo, returnInfo, getHash, firebase */
-/* exports used: loadInfo, Nearby, getHash, returnInfo, firebase */
+/* exports used: loadInfo, Nearby, getHash, firebase, returnInfo */
 /*!************************!*\
   !*** ./src/backend.js ***!
   \************************/
@@ -18880,13 +18880,13 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 /* unused harmony export StoreMarker */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Nearby; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loadInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return returnInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return returnInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getHash; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_geofire__);
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0_firebase__; });
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0_firebase__; });
 
 
 // Initialize Firebase
@@ -19014,17 +19014,18 @@ function returnInfo(hash){
 
 /***/ }),
 /* 32 */
-/* exports provided: storeImage, retrieveImage, imagePrepare */
-/* exports used: storeImage */
+/* exports provided: storeImage, retrieveImage, imagePrepare, saveB64asImageInitialize */
+/* exports used: saveB64asImageInitialize, storeImage */
 /*!******************************!*\
   !*** ./src/image_storage.js ***!
   \******************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return storeImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return storeImage; });
 /* unused harmony export retrieveImage */
 /* unused harmony export imagePrepare */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return saveB64asImageInitialize; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
@@ -19069,7 +19070,7 @@ function retrieveImage(imageName,a,b){
 
   var location = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["c" /* getHash */])(a,b)+"/"+imageName;
 
-  var downloadRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["e" /* firebase */].storage().ref(location)
+  var downloadRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["d" /* firebase */].storage().ref(location)
 
   imageBase64 = downloadRef.getDownloadURL().then(function(url){
     // Get the download URL
@@ -19109,18 +19110,104 @@ function retrieveImage(imageName,a,b){
       }
     });
   console.log(imageBase64 + "wowowowow");
-
-
-
-
 }
+
+//function for converting base64 to blob according to data / content type
+//for foreseeable future, contentType will be image/jpeg / image/jpg
+//sliceSize = amount of bytes to process
+function base64toBlob(base64data,contentType,sliceSize){
+  contentType = contentType || '';
+  // sliceSize = sliceSize || 512;
+
+  var byteCharacters=atob(base64data);
+  var byteArrays=[];
+
+  for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+    var byteNumbers = new Array(slice.length);
+    for (var i = 0; i < slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i);
+    }
+    var byteArray = new Uint8Array(byteNumbers);
+    byteArrays.push(byteArray);
+  }
+  var blob = new Blob(byteArrays,{type: contentType});
+  return blob;
+}
+
+//dad function of 'base64toBlob'
+//creates imagefile according to it's database64 content
+function saveBase64AsImageFile(path,filename,content,contentType){
+  var DataBlob = base64toBlob(content,contentType,512);
+
+  console.log(DataBlob + " beginning file-write....");
+  
+  document.addEventListener("deviceready",onDeviceReady,false);
+  // Cordova is ready to be used!
+  function onDeviceReady() {
+    console.log("device is ready: "+path);
+    window.resolveLocalFileSystemURL(path,function(dir){
+      console.log("access granted...");
+      dir.getFile(filename,{create:true},function(file){
+        console.log("file created...");
+        file.createWriter(function(fileWriter){
+          console.log("writing to file...");
+          fileWriter.write(DataBlob);
+        },function(){
+            alert("unable to save file in path: "+folderpath);
+          });
+      });
+    },function(e){
+      alert("error occured: "+ e);
+    });
+  }
+}
+
+function saveB64asImageInitialize(base64data){
+  //what format is it?
+  if(base64data.split(";") != ""){
+    var block = base64data.split(";");//bunch of things
+    console.log(block);
+    var dataType = block[0].split(":")[1];//image/content
+    console.log(dataType);
+    var realData = block[1].split(",")[1];//data
+    console.log(realData);
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+    // Cordova is ready to be used!
+    function onDeviceReady() {
+      var path =cordova.file.externalRootDirectory;
+      // var path = "file:///home/cojaroge/images/"
+      var filename = Date.now()+".jpg";
+      saveBase64AsImageFile(path,filename,realData,dataType);
+
+      return filename;
+    }
+  }else{
+    var contentType = "image/jpg";
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+    // Cordova is ready to be used!
+    function onDeviceReady() {
+      // var path = "file:///home/cojaroge/images/";
+      var path = cordova.file.externalRootDirectory;
+
+      var filename = Date.now()+".jpg";
+      saveBase64AsImageFile(path,filename,base64data,contentType);
+
+      return filename;
+    }
+  }
+}
+
 
 //stores the base64 image into storage
 function storeImage(imageData,a,b){
   var max = 4;
   var name = a.toString().replace(/\./g,'x')+"and"+ b.toString().replace(/\./g,'y');
   console.log("in store image:"+imageData)
-  var storageRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["e" /* firebase */].storage().ref(name+"/");
+  var storageRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["d" /* firebase */].storage().ref(name+"/");
   // Create a root reference
 
   var imageName = Date.now()+".image";
@@ -19967,8 +20054,8 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -20079,8 +20166,8 @@ var ErrorFactory = exports.ErrorFactory = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -20134,8 +20221,8 @@ var local = exports.local = {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -20303,8 +20390,8 @@ function nullFunctionSpec(opt_optional) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -20382,8 +20469,8 @@ function remove(array, elem) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -20597,8 +20684,8 @@ function metadataValidator(p) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -20812,8 +20899,8 @@ function endsWith(s, end) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -21373,8 +21460,8 @@ module.exports = __webpack_require__(/*! ./$.core */ 5).getIteratorMethod = func
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -21663,8 +21750,8 @@ function noop() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -21705,8 +21792,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -21950,8 +22037,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -21998,8 +22085,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -22041,8 +22128,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -22105,8 +22192,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -22276,8 +22363,8 @@ var FbsBlob = exports.FbsBlob = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -22371,8 +22458,8 @@ function lastComponent(path) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -22730,8 +22817,8 @@ function continueResumableUpload(location, authWrapper, url, blob, chunkSize, ma
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -22812,8 +22899,8 @@ function taskStateFromInternalTaskState(state) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -22858,8 +22945,8 @@ var ErrorCode = exports.ErrorCode = undefined;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -43282,13 +43369,13 @@ var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer
   /* script */
   __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./main.vue */ 179),
   /* template */
-  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-3fea1678"}!../~/vue-loader/lib/selector?type=template&index=0!./main.vue */ 182),
+  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed116d0"}!../~/vue-loader/lib/selector?type=template&index=0!./main.vue */ 181),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\src\\main.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/src/main.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] main.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43299,9 +43386,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3fea1678", Component.options)
+    hotAPI.createRecord("data-v-0ed116d0", Component.options)
   } else {
-    hotAPI.reload("data-v-3fea1678", Component.options)
+    hotAPI.reload("data-v-0ed116d0", Component.options)
   }
 })()}
 
@@ -43340,138 +43427,6 @@ if(false) {
 
 /***/ }),
 /* 84 */
-/* no static exports found */
-/* all exports used */
-/*!*****************************************!*\
-  !*** ./~/vue2-google-maps/dist/main.js ***!
-  \*****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
-exports.install = install;
-
-var _manager = __webpack_require__(/*! ./manager.js */ 20);
-
-var _marker = __webpack_require__(/*! ./components/marker */ 198);
-
-var _marker2 = _interopRequireDefault(_marker);
-
-var _cluster = __webpack_require__(/*! ./components/cluster */ 195);
-
-var _cluster2 = _interopRequireDefault(_cluster);
-
-var _polyline = __webpack_require__(/*! ./components/polyline */ 201);
-
-var _polyline2 = _interopRequireDefault(_polyline);
-
-var _polygon = __webpack_require__(/*! ./components/polygon */ 200);
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _circle = __webpack_require__(/*! ./components/circle */ 194);
-
-var _circle2 = _interopRequireDefault(_circle);
-
-var _rectangle = __webpack_require__(/*! ./components/rectangle */ 202);
-
-var _rectangle2 = _interopRequireDefault(_rectangle);
-
-var _lodash = __webpack_require__(/*! lodash */ 0);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 171);
-
-var _infoWindow2 = _interopRequireDefault(_infoWindow);
-
-var _map = __webpack_require__(/*! ./components/map.vue */ 172);
-
-var _map2 = _interopRequireDefault(_map);
-
-var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 174);
-
-var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
-
-var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 173);
-
-var _placeInput2 = _interopRequireDefault(_placeInput);
-
-var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 170);
-
-var _autocomplete2 = _interopRequireDefault(_autocomplete);
-
-var _mapElementMixin = __webpack_require__(/*! ./components/mapElementMixin */ 12);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ 54);
-
-var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
-
-var _deferredReady = __webpack_require__(/*! ./utils/deferredReady */ 30);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// export everything
-
-
-// Vue component imports
-exports.load = _manager.load;
-exports.loaded = _manager.loaded;
-exports.Marker = _marker2.default;
-exports.Cluster = _cluster2.default;
-exports.Polyline = _polyline2.default;
-exports.Polygon = _polygon2.default;
-exports.Circle = _circle2.default;
-exports.Rectangle = _rectangle2.default;
-exports.InfoWindow = _infoWindow2.default;
-exports.Map = _map2.default;
-exports.PlaceInput = _placeInput2.default;
-exports.MapElementMixin = _mapElementMixin2.default;
-exports.Autocomplete = _autocomplete2.default;
-exports.MountableMixin = _mountableMixin2.default;
-function install(Vue, options) {
-  options = _lodash2.default.defaults(options, {
-    installComponents: true
-  });
-
-  Vue.use(_deferredReady.DeferredReady);
-
-  var defaultResizeBus = new Vue();
-  Vue.$gmapDefaultResizeBus = defaultResizeBus;
-  Vue.mixin({
-    created: function created() {
-      this.$gmapDefaultResizeBus = defaultResizeBus;
-    }
-  });
-
-  if (options.load) {
-    (0, _manager.load)(options.load);
-  }
-
-  if (options.installComponents) {
-    Vue.component('GmapMap', _map2.default);
-    Vue.component('GmapMarker', _marker2.default);
-    Vue.component('GmapCluster', _cluster2.default);
-    Vue.component('GmapInfoWindow', _infoWindow2.default);
-    Vue.component('GmapPolyline', _polyline2.default);
-    Vue.component('GmapPolygon', _polygon2.default);
-    Vue.component('GmapCircle', _circle2.default);
-    Vue.component('GmapRectangle', _rectangle2.default);
-    Vue.component('GmapAutocomplete', _autocomplete2.default);
-    Vue.component('GmapPlaceInput', _placeInput2.default);
-    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
-  }
-}
-
-/***/ }),
-/* 85 */
 /* no static exports found */
 /* exports used: default */
 /*!**********************************!*\
@@ -53174,6 +53129,138 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 10)))
 
 /***/ }),
+/* 85 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************!*\
+  !*** ./~/vue2-google-maps/dist/main.js ***!
+  \*****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
+exports.install = install;
+
+var _manager = __webpack_require__(/*! ./manager.js */ 20);
+
+var _marker = __webpack_require__(/*! ./components/marker */ 198);
+
+var _marker2 = _interopRequireDefault(_marker);
+
+var _cluster = __webpack_require__(/*! ./components/cluster */ 195);
+
+var _cluster2 = _interopRequireDefault(_cluster);
+
+var _polyline = __webpack_require__(/*! ./components/polyline */ 201);
+
+var _polyline2 = _interopRequireDefault(_polyline);
+
+var _polygon = __webpack_require__(/*! ./components/polygon */ 200);
+
+var _polygon2 = _interopRequireDefault(_polygon);
+
+var _circle = __webpack_require__(/*! ./components/circle */ 194);
+
+var _circle2 = _interopRequireDefault(_circle);
+
+var _rectangle = __webpack_require__(/*! ./components/rectangle */ 202);
+
+var _rectangle2 = _interopRequireDefault(_rectangle);
+
+var _lodash = __webpack_require__(/*! lodash */ 0);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 171);
+
+var _infoWindow2 = _interopRequireDefault(_infoWindow);
+
+var _map = __webpack_require__(/*! ./components/map.vue */ 172);
+
+var _map2 = _interopRequireDefault(_map);
+
+var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 174);
+
+var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
+
+var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 173);
+
+var _placeInput2 = _interopRequireDefault(_placeInput);
+
+var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 170);
+
+var _autocomplete2 = _interopRequireDefault(_autocomplete);
+
+var _mapElementMixin = __webpack_require__(/*! ./components/mapElementMixin */ 12);
+
+var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
+
+var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ 54);
+
+var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
+
+var _deferredReady = __webpack_require__(/*! ./utils/deferredReady */ 30);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// export everything
+
+
+// Vue component imports
+exports.load = _manager.load;
+exports.loaded = _manager.loaded;
+exports.Marker = _marker2.default;
+exports.Cluster = _cluster2.default;
+exports.Polyline = _polyline2.default;
+exports.Polygon = _polygon2.default;
+exports.Circle = _circle2.default;
+exports.Rectangle = _rectangle2.default;
+exports.InfoWindow = _infoWindow2.default;
+exports.Map = _map2.default;
+exports.PlaceInput = _placeInput2.default;
+exports.MapElementMixin = _mapElementMixin2.default;
+exports.Autocomplete = _autocomplete2.default;
+exports.MountableMixin = _mountableMixin2.default;
+function install(Vue, options) {
+  options = _lodash2.default.defaults(options, {
+    installComponents: true
+  });
+
+  Vue.use(_deferredReady.DeferredReady);
+
+  var defaultResizeBus = new Vue();
+  Vue.$gmapDefaultResizeBus = defaultResizeBus;
+  Vue.mixin({
+    created: function created() {
+      this.$gmapDefaultResizeBus = defaultResizeBus;
+    }
+  });
+
+  if (options.load) {
+    (0, _manager.load)(options.load);
+  }
+
+  if (options.installComponents) {
+    Vue.component('GmapMap', _map2.default);
+    Vue.component('GmapMarker', _marker2.default);
+    Vue.component('GmapCluster', _cluster2.default);
+    Vue.component('GmapInfoWindow', _infoWindow2.default);
+    Vue.component('GmapPolyline', _polyline2.default);
+    Vue.component('GmapPolygon', _polygon2.default);
+    Vue.component('GmapCircle', _circle2.default);
+    Vue.component('GmapRectangle', _rectangle2.default);
+    Vue.component('GmapAutocomplete', _autocomplete2.default);
+    Vue.component('GmapPlaceInput', _placeInput2.default);
+    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
+  }
+}
+
+/***/ }),
 /* 86 */
 /* exports provided: default */
 /* exports used: default */
@@ -56581,7 +56668,7 @@ exports.push([module.i, "* {\n  user-select: none; }\n\ninput {\n  user-select: 
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
   \***************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -56590,7 +56677,7 @@ exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.vue-street-view-pano-container {\r\n  position: relative;\n}\n.vue-street-view-pano-container .vue-street-view-pano {\r\n  left: 0; right: 0; top: 0; bottom: 0;\r\n  position: absolute;\n}\r\n", ""]);
+exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relative;\n}\n.vue-street-view-pano-container .vue-street-view-pano {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n", ""]);
 
 // exports
 
@@ -56600,7 +56687,7 @@ exports.push([module.i, "\n.vue-street-view-pano-container {\r\n  position: rela
 /* no static exports found */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
+  !*** ./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
   \************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -56609,7 +56696,7 @@ exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.vue-map-container {\r\n  position: relative;\n}\n.vue-map-container .vue-map {\r\n  left: 0; right: 0; top: 0; bottom: 0;\r\n  position: absolute;\n}\n.vue-map-hidden {\r\n  display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n.vue-map-container {\n  position: relative;\n}\n.vue-map-container .vue-map {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n.vue-map-hidden {\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -56624,8 +56711,8 @@ exports.push([module.i, "\n.vue-map-container {\r\n  position: relative;\n}\n.vu
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -56731,8 +56818,8 @@ function patchProperty(obj, prop, value) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -56789,6 +56876,26 @@ var FirebaseAppImpl = function () {
         this.services_ = {};
         this.name_ = name;
         this.options_ = (0, _deep_copy.deepCopy)(options);
+        this.INTERNAL = {
+            'getUid': function getUid() {
+                return null;
+            },
+            'getToken': function getToken() {
+                return LocalPromise.resolve(null);
+            },
+            'addAuthTokenListener': function addAuthTokenListener(callback) {
+                tokenListeners.push(callback);
+                // Make sure callback is called, asynchronously, in the absence of the auth module
+                setTimeout(function () {
+                    return callback(null);
+                }, 0);
+            },
+            'removeAuthTokenListener': function removeAuthTokenListener(callback) {
+                tokenListeners = tokenListeners.filter(function (listener) {
+                    return listener !== callback;
+                });
+            }
+        };
     }
 
     _createClass(FirebaseAppImpl, [{
@@ -56861,7 +56968,7 @@ var FirebaseAppImpl = function () {
             var _this2 = this;
 
             // Copy the object onto the FirebaseAppImpl prototype
-            (0, _deep_copy.deepExtend)(FirebaseAppImpl.prototype, props);
+            (0, _deep_copy.deepExtend)(this, props);
             /**
              * If the app has overwritten the addAuthTokenListener stub, forward
              * the active token listeners on to the true fxn.
@@ -56907,26 +57014,6 @@ var FirebaseAppImpl = function () {
     return FirebaseAppImpl;
 }();
 
-FirebaseAppImpl.prototype.INTERNAL = {
-    'getUid': function getUid() {
-        return null;
-    },
-    'getToken': function getToken() {
-        return LocalPromise.resolve(null);
-    },
-    'addAuthTokenListener': function addAuthTokenListener(callback) {
-        tokenListeners.push(callback);
-        // Make sure callback is called, asynchronously, in the absence of the auth module
-        setTimeout(function () {
-            return callback(null);
-        }, 0);
-    },
-    'removeAuthTokenListener': function removeAuthTokenListener(callback) {
-        tokenListeners = tokenListeners.filter(function (listener) {
-            return listener !== callback;
-        });
-    }
-};
 // Prevent dead-code elimination of these methods w/o invalid property
 // copying.
 FirebaseAppImpl.prototype.name && FirebaseAppImpl.prototype.options || FirebaseAppImpl.prototype.delete || console.log("dc");
@@ -56973,7 +57060,7 @@ function createFirebaseNamespace() {
         'app': app,
         'apps': null,
         'Promise': LocalPromise,
-        'SDK_VERSION': '4.1.1',
+        'SDK_VERSION': '4.1.2',
         'INTERNAL': {
             'registerService':
             /*
@@ -57139,8 +57226,8 @@ var appErrors = new _errors.ErrorFactory('app', 'Firebase', errors);
   \****************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 var firebase = __webpack_require__(/*! ./app */ 19);
@@ -57423,8 +57510,8 @@ c){a=new T(a);c({INTERNAL:{getUid:q(a.getUid,a),getToken:q(a.getIdToken,a),addAu
   \********************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/
 
 ---
@@ -57700,8 +57787,8 @@ d;return d.Ya},{Reference:U,Query:X,Database:Pg,enableLogging:Sb,INTERNAL:Z,TEST
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -57766,8 +57853,8 @@ registerMessaging(_app2.default);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -58149,8 +58236,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -58555,8 +58642,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -58603,8 +58690,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -58645,8 +58732,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 /**
@@ -59317,8 +59404,8 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59392,8 +59479,8 @@ registerStorage(_app2.default);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59455,8 +59542,8 @@ function async(f) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59642,8 +59729,8 @@ var AuthWrapper = exports.AuthWrapper = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59779,8 +59866,8 @@ function stop(id) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59843,8 +59930,8 @@ var FailRequest = exports.FailRequest = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59929,8 +60016,8 @@ function sliceBlob(blob, start, end) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -59990,8 +60077,8 @@ function jsonObjectOrNull(s) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60055,8 +60142,8 @@ var Observer = exports.Observer = function Observer(nextOrObserver, opt_error, o
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60333,8 +60420,8 @@ function makeRequest(requestInfo, authToken, pool) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60385,8 +60472,8 @@ handler, timeout) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60485,8 +60572,8 @@ var RequestMap = exports.RequestMap = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60689,8 +60776,8 @@ var NetworkXhrIo = exports.NetworkXhrIo = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60751,8 +60838,8 @@ var XhrIoPool = exports.XhrIoPool = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -60947,8 +61034,8 @@ var ServiceInternals = exports.ServiceInternals = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -61595,8 +61682,8 @@ var UploadTask = exports.UploadTask = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*! @license Firebase v4.1.1
-Build: rev-ca0d1df
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
 Terms: https://firebase.google.com/terms/ */
 
 
@@ -64321,13 +64408,13 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* script */
   __webpack_require__(/*! !!./autocompleteImpl.js */ 193),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-5d2dbb6c"}!../../../vue-loader/lib/selector?type=template&index=0!./autocomplete.vue */ 184),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-92295ce8"}!../../../vue-loader/lib/selector?type=template&index=0!./autocomplete.vue */ 187),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\autocomplete.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] autocomplete.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64338,9 +64425,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5d2dbb6c", Component.options)
+    hotAPI.createRecord("data-v-92295ce8", Component.options)
   } else {
-    hotAPI.reload("data-v-5d2dbb6c", Component.options)
+    hotAPI.reload("data-v-92295ce8", Component.options)
   }
 })()}
 
@@ -64360,13 +64447,13 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* script */
   __webpack_require__(/*! !!./infoWindowImpl.js */ 196),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-c257247c"}!../../../vue-loader/lib/selector?type=template&index=0!./infoWindow.vue */ 186),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3d7de83c"}!../../../vue-loader/lib/selector?type=template&index=0!./infoWindow.vue */ 182),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\infoWindow.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] infoWindow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64377,9 +64464,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c257247c", Component.options)
+    hotAPI.createRecord("data-v-3d7de83c", Component.options)
   } else {
-    hotAPI.reload("data-v-c257247c", Component.options)
+    hotAPI.reload("data-v-3d7de83c", Component.options)
   }
 })()}
 
@@ -64397,19 +64484,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./map.vue */ 189)
+__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./map.vue */ 189)
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
   __webpack_require__(/*! !!./mapImpl.js */ 197),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-dc3ef8f0"}!../../../vue-loader/lib/selector?type=template&index=0!./map.vue */ 187),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-5408ed30"}!../../../vue-loader/lib/selector?type=template&index=0!./map.vue */ 185),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\map.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/map.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] map.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64420,9 +64507,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-dc3ef8f0", Component.options)
+    hotAPI.createRecord("data-v-5408ed30", Component.options)
   } else {
-    hotAPI.reload("data-v-dc3ef8f0", Component.options)
+    hotAPI.reload("data-v-5408ed30", Component.options)
   }
 })()}
 
@@ -64442,13 +64529,13 @@ var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normal
   /* script */
   __webpack_require__(/*! !!./placeInputImpl.js */ 199),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-26022c07"}!../../../vue-loader/lib/selector?type=template&index=0!./placeInput.vue */ 181),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-686eca27"}!../../../vue-loader/lib/selector?type=template&index=0!./placeInput.vue */ 186),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\placeInput.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/placeInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] placeInput.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64459,9 +64546,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-26022c07", Component.options)
+    hotAPI.createRecord("data-v-686eca27", Component.options)
   } else {
-    hotAPI.reload("data-v-26022c07", Component.options)
+    hotAPI.reload("data-v-686eca27", Component.options)
   }
 })()}
 
@@ -64479,19 +64566,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./streetViewPanorama.vue */ 188)
+__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./streetViewPanorama.vue */ 188)
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
   __webpack_require__(/*! !!./streetViewPanoramaImpl.js */ 203),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-6259efe1"}!../../../vue-loader/lib/selector?type=template&index=0!./streetViewPanorama.vue */ 185),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3dd66e01"}!../../../vue-loader/lib/selector?type=template&index=0!./streetViewPanorama.vue */ 183),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\node_modules\\vue2-google-maps\\dist\\components\\streetViewPanorama.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] streetViewPanorama.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64502,9 +64589,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6259efe1", Component.options)
+    hotAPI.createRecord("data-v-3dd66e01", Component.options)
   } else {
-    hotAPI.reload("data-v-6259efe1", Component.options)
+    hotAPI.reload("data-v-3dd66e01", Component.options)
   }
 })()}
 
@@ -64524,13 +64611,13 @@ var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer
   /* script */
   __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./addForm.vue */ 177),
   /* template */
-  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-1a759dd4"}!../~/vue-loader/lib/selector?type=template&index=0!./addForm.vue */ 180),
+  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-09c19ef6"}!../~/vue-loader/lib/selector?type=template&index=0!./addForm.vue */ 180),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\src\\addForm.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/src/addForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] addForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64541,9 +64628,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1a759dd4", Component.options)
+    hotAPI.createRecord("data-v-09c19ef6", Component.options)
   } else {
-    hotAPI.reload("data-v-1a759dd4", Component.options)
+    hotAPI.reload("data-v-09c19ef6", Component.options)
   }
 })()}
 
@@ -64563,13 +64650,13 @@ var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-n
   /* script */
   __webpack_require__(/*! !!../../../../~/vue-loader/lib/selector?type=script&index=0!./marker.vue */ 178),
   /* template */
-  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-540ce36b"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./marker.vue */ 183),
+  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-499cdd6a"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./marker.vue */ 184),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\tobyi\\newclone\\src\\assets\\vue\\pages\\marker.vue"
+Component.options.__file = "/home/cojaroge/Desktop/school/UCSC/Spring17/crimewatch/src/assets/vue/pages/marker.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] marker.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -64580,9 +64667,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-540ce36b", Component.options)
+    hotAPI.createRecord("data-v-499cdd6a", Component.options)
   } else {
-    hotAPI.reload("data-v-540ce36b", Component.options)
+    hotAPI.reload("data-v-499cdd6a", Component.options)
   }
 })()}
 
@@ -64931,7 +65018,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         "comment": comment
                     }
                     console.log("in submit:"+this.$data.photo)
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["a" /* storeImage */])(window.img,this.$data.center.lat, this.$data.center.lng);
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["b" /* storeImage */])(window.img,this.$data.center.lat, this.$data.center.lng);
                     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat, this.$data.center.lng, data);
                 });
                 //console.log(this.$data);
@@ -64940,7 +65027,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             getInfo: function(m) {
                 console.log(m.position.lat);
                 var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* getHash */])(m.position.lat, m.position.lng);
-                var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* returnInfo */])(Infohash);
+                var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["e" /* returnInfo */])(Infohash);
                 //console.log(this.$f7);
                 /*console.log(json)*/
                 //push category data to vue.$data so we can use v-for
@@ -65018,7 +65105,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-1a759dd4"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/addForm.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-09c19ef6"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/addForm.vue ***!
   \********************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65201,7 +65288,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1a759dd4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-09c19ef6", module.exports)
   }
 }
 
@@ -65209,39 +65296,8 @@ if (false) {
 /* 181 */
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-26022c07"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/placeInput.vue ***!
-  \******************************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('span', {
-    domProps: {
-      "textContent": _vm._s(_vm.label)
-    }
-  }), _vm._v(" "), _c('input', {
-    ref: "input",
-    class: _vm.className,
-    attrs: {
-      "type": "text",
-      "placeholder": _vm.placeholder
-    }
-  })])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-26022c07", module.exports)
-  }
-}
-
-/***/ }),
-/* 182 */
-/* no static exports found */
-/* all exports used */
 /*!*****************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3fea1678"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/main.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0ed116d0"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/main.vue ***!
   \*****************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65304,7 +65360,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
     staticClass: "popup popup-addcrime"
-  }, [_vm._v("\r\n                        Report a crime\r\n                        "), _c('f7-list', {
+  }, [_vm._v("\n                        Report a crime\n                        "), _c('f7-list', {
     attrs: {
       "form": ""
     }
@@ -65536,7 +65592,33 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3fea1678", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0ed116d0", module.exports)
+  }
+}
+
+/***/ }),
+/* 182 */
+/* no static exports found */
+/* all exports used */
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3d7de83c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/infoWindow.vue ***!
+  \******************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    ref: "flyaway"
+  }, [_vm._t("default", [_c('div', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.content)
+    }
+  })])], 2)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-3d7de83c", module.exports)
   }
 }
 
@@ -65544,8 +65626,33 @@ if (false) {
 /* 183 */
 /* no static exports found */
 /* all exports used */
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3dd66e01"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  \**************************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "vue-street-view-pano-container"
+  }, [_c('div', {
+    ref: "vue-street-view-pano",
+    staticClass: "vue-street-view-pano"
+  }), _vm._v(" "), _vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-3dd66e01", module.exports)
+  }
+}
+
+/***/ }),
+/* 184 */
+/* no static exports found */
+/* all exports used */
 /*!************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-540ce36b"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/marker.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-499cdd6a"}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/marker.vue ***!
   \************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65570,16 +65677,74 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-540ce36b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-499cdd6a", module.exports)
   }
 }
 
 /***/ }),
-/* 184 */
+/* 185 */
+/* no static exports found */
+/* all exports used */
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5408ed30"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
+  \***********************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "vue-map-container"
+  }, [_c('div', {
+    ref: "vue-map",
+    staticClass: "vue-map"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "vue-map-hidden"
+  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("visible")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-5408ed30", module.exports)
+  }
+}
+
+/***/ }),
+/* 186 */
+/* no static exports found */
+/* all exports used */
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-686eca27"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/placeInput.vue ***!
+  \******************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.label)
+    }
+  }), _vm._v(" "), _c('input', {
+    ref: "input",
+    class: _vm.className,
+    attrs: {
+      "type": "text",
+      "placeholder": _vm.placeholder
+    }
+  })])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-686eca27", module.exports)
+  }
+}
+
+/***/ }),
+/* 187 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5d2dbb6c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/autocomplete.vue ***!
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-92295ce8"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/autocomplete.vue ***!
   \********************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65599,85 +65764,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5d2dbb6c", module.exports)
-  }
-}
-
-/***/ }),
-/* 185 */
-/* no static exports found */
-/* all exports used */
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-6259efe1"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
-  \**************************************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "vue-street-view-pano-container"
-  }, [_c('div', {
-    ref: "vue-street-view-pano",
-    staticClass: "vue-street-view-pano"
-  }), _vm._v(" "), _vm._t("default")], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6259efe1", module.exports)
-  }
-}
-
-/***/ }),
-/* 186 */
-/* no static exports found */
-/* all exports used */
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-c257247c"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/infoWindow.vue ***!
-  \******************************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    ref: "flyaway"
-  }, [_vm._t("default", [_c('div', {
-    domProps: {
-      "innerHTML": _vm._s(_vm.content)
-    }
-  })])], 2)])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-c257247c", module.exports)
-  }
-}
-
-/***/ }),
-/* 187 */
-/* no static exports found */
-/* all exports used */
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-dc3ef8f0"}!./~/vue-loader/lib/selector.js?type=template&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
-  \***********************************************************************************************************************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "vue-map-container"
-  }, [_c('div', {
-    ref: "vue-map",
-    staticClass: "vue-map"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "vue-map-hidden"
-  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("visible")], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-dc3ef8f0", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-92295ce8", module.exports)
   }
 }
 
@@ -65686,24 +65773,24 @@ if (false) {
 /* no static exports found */
 /* all exports used */
 /*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
   \*************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-6259efe1","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue */ 133);
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue */ 133);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 75)("7401ce1d", content, false);
+var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 75)("4a719143", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6259efe1\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6259efe1\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3dd66e01\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3dd66e01\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -65717,24 +65804,24 @@ if(false) {
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
+  !*** ./~/vue-loader/~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./~/vue2-google-maps/dist/components/map.vue ***!
   \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-dc3ef8f0","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue */ 134);
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/style-compiler?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue */ 134);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 75)("a88d29c4", content, false);
+var update = __webpack_require__(/*! ../../../vue-loader/~/vue-style-loader/lib/addStylesClient.js */ 75)("c11036b0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-dc3ef8f0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-dc3ef8f0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5408ed30\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5408ed30\",\"scoped\":false,\"hasInlineConfig\":false}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -67577,13 +67664,13 @@ module.exports = function(module) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(/*! vue */ 85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(/*! vue */ 84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7__ = __webpack_require__(/*! framework7 */ 81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_framework7___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_framework7__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue__ = __webpack_require__(/*! framework7-vue */ 80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_framework7_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_framework7_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__ = __webpack_require__(/*! vue2-google-maps */ 84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__ = __webpack_require__(/*! vue2-google-maps */ 85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__ = __webpack_require__(/*! framework7/dist/css/framework7.material.min.css */ 79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_framework7_dist_css_framework7_material_min_css__);
@@ -67692,7 +67779,8 @@ console.log(vm.markers);
   // print(storeImage("testtesttesttest",10.03,10));
   // storeImage("data:image/jpeg;base64,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"
   //   ,10,10);
-
+console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__image_storage_js__["a" /* saveB64asImageInitialize */])("data:image/jpeg;base64,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"
+));
 // retrieveImage("1496803811914.image",10,10);
   // storeImage("testtesttesttest",10.03,10);
   // storeImage("testtesttesttest",10.03,10);
