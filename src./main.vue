@@ -164,7 +164,7 @@ export default {
               this.$data.zoom = event;
               this.setMarkers();
             },
-            campturePhoto: function() {
+            capturePhoto: function() {
                 console.log(capturePhoto());
             },
             getPhoto: function() {
