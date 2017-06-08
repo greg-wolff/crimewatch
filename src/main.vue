@@ -56,13 +56,10 @@
       -->
             <f7-pages>
                 <f7-page>
-                    <div class="popup popup-addcrime">
-                        Report a crime
+                    <div class="popup popup-addcrime tablet-fullscreen">
+                        <a href="#" @click="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
                         <f7-list form>
-
-
-
-                            <div class="accordion-item">
+                          <div class="accordion-item">
                                 <a href="#" class="item-content item-link">
                                     <div class="item-inner">
                                         <div class="item-title">Categories</div>
@@ -104,17 +101,17 @@
                     </div>
                     <div class="popup popup-marker">
                         <div class="content-block">
-                            <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
+                            <p><a href="#" @click="close"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></p>
                             <h1> {{viewComment}} </h1>
                             <div class="photo" style="display:block">
-                                <img style="display:none;max-width:100%;height:auto;" id="img" src="" />
+                                <img style="display:inline;max-width:100%;height:auto;" id="img" :src="getUrl" alt="no image" class="lazy lazy-fadeIn" />
                             </div>
                             <div class="chip" v-for="type in viewTypes">
                                 <div class="chip-label"> {{type}} </div>
                             </div>
                         </div>
                     </div>
-                    <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue open-popup">
+                    <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue" @click="crime()">
                         <i class="icon icon-plus"></i>
                     </a>
                     <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @idle="recenter()" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%">
@@ -165,11 +162,13 @@ export default {
                   lng:10.0
                 },
                 track:true,
+                pause:false,
                 curr: 'http://i.imgur.com/VnDEIQt.png',
                 markers: [],
                 comment: null,
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
+                getUrl: null,
                 viewComment: null,
                 imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m'
             }
@@ -177,6 +176,7 @@ export default {
         mounted: function() {
             this.setLoc();
             this.setMarkers();
+            console.log(this.$data.pause)
             //console.log("In mounted");
             //console.log(this.$data);
         },
@@ -200,10 +200,15 @@ export default {
                 getPhoto();
             },
             crime: function() {
-                document.getElementById('smallImage').src = null;
-                this.$f7.popup('.popup-addcrime');
+                  document.getElementById('smallImage').src = "";
+                  this.$data.pause = true;
+                  console.log("in crime:" + this.$data.pause)
+                  this.$f7.popup('.popup-addcrime')
+
             },
             close: function() {
+                this.$data.pause = false;
+                this.setMarkers();
                 this.$f7.closeModal()
             },
             submit: function() {
@@ -222,9 +227,10 @@ export default {
                         "comment": comment
                     }
                     var url = document.getElementById('smallImage').src;
-                    console.log(url);
+                    //console.log(url);
                     var check = new RegExp("data:image/jpeg;base64,")
                     var base64 = check.test(url);
+                    console.log(url);
                     if(base64){
                       console.log(url);
                       storeImage(url, this.$data.center.lat, this.$data.center.lng);
@@ -233,10 +239,13 @@ export default {
                     loadInfo(this.$data.center.lat, this.$data.center.lng, data);
                 });
                 //console.log(this.$data);
-                this.$f7.closeModal()
+                this.$data.pause = false;
+                this.setMarkers();
+                this.$f7.closeModal();
             },
             getInfo: function(m) {
                 console.log(m.position.lat);
+                this.$data.pause = true;
                 var Infohash = getHash(m.position.lat, m.position.lng);
                 var json = returnInfo(Infohash);
                 //console.log(this.$f7);
@@ -245,9 +254,12 @@ export default {
                 this.$data.viewTypes = json.category;
                 this.$data.viewComment = json.comment;
                 if(typeof json.url != "undefined"){
-                  var Image =document.querySelector("div.photo img")
-                  Image.src = json.url;
-                  Image.style.display = 'inline';
+                  //var Image =document.querySelector("div.photo img")
+                  //Image.src = json.url;
+                  //Image.style.display = 'inline';
+                  this.$data.getUrl = json.url;
+                }else{
+                  this.$data.getUrl = "";
                 }
                 // console.log(this.$data.center.lat);
                 // console.log("photo: " +this.$data.photo);
@@ -282,7 +294,7 @@ export default {
                         lng: pos.coords.longitude
                     }
                       that.$data.center = that.$data.loc;
-                    setTimeout(function(){ that.setLoc() },5000);
+                    setTimeout(function(){ that.setLoc() },10000);
                     /*that.$nextTick(function() {
                         that.setMarkers();
                     });*/
@@ -302,14 +314,18 @@ export default {
                 var locs = [];
                 //console.log(this.$data.zoom);
                 var radius = Math.pow(2, (17 - this.$data.zoom));
-                console.log(this.$data.center);
+                console.log("in setMarkers");
                 this.$nextTick(function() {
                     //console.log(radius)
                     var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);
                     this.$data.markers = locations;
                     var self = this;
                     //console.log("In set markers");
-                    setTimeout(function(){ self.setMarkers() },5000)
+                    if(this.$data.pause != true){
+                      setTimeout(function(){ self.setMarkers() },10000)
+                      console.log(this.$data.pause)
+                    }
+
                 });
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};

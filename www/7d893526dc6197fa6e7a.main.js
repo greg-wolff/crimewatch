@@ -65038,9 +65038,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 // document.querySelector('img').src = {{photo}};
@@ -65061,11 +65058,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                   lng:10.0
                 },
                 track:true,
+                pause:false,
                 curr: 'http://i.imgur.com/VnDEIQt.png',
                 markers: [],
                 comment: null,
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
+                getUrl: null,
                 viewComment: null,
                 imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m'
             }
@@ -65073,6 +65072,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         mounted: function() {
             this.setLoc();
             this.setMarkers();
+            console.log(this.$data.pause)
             //console.log("In mounted");
             //console.log(this.$data);
         },
@@ -65096,10 +65096,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
             },
             crime: function() {
-                document.getElementById('smallImage').src = null;
-                this.$f7.popup('.popup-addcrime');
+                  document.getElementById('smallImage').src = "";
+                  this.$data.pause = true;
+                  console.log("in crime:" + this.$data.pause)
+                  this.$f7.popup('.popup-addcrime')
+
             },
             close: function() {
+                this.$data.pause = false;
+                this.setMarkers();
                 this.$f7.closeModal()
             },
             submit: function() {
@@ -65118,9 +65123,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         "comment": comment
                     }
                     var url = document.getElementById('smallImage').src;
-                    console.log(url);
+                    //console.log(url);
                     var check = new RegExp("data:image/jpeg;base64,")
                     var base64 = check.test(url);
+                    console.log(url);
                     if(base64){
                       console.log(url);
                       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["a" /* storeImage */])(url, this.$data.center.lat, this.$data.center.lng);
@@ -65129,10 +65135,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat, this.$data.center.lng, data);
                 });
                 //console.log(this.$data);
-                this.$f7.closeModal()
+                this.$data.pause = false;
+                this.setMarkers();
+                this.$f7.closeModal();
             },
             getInfo: function(m) {
                 console.log(m.position.lat);
+                this.$data.pause = true;
                 var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* getHash */])(m.position.lat, m.position.lng);
                 var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* returnInfo */])(Infohash);
                 //console.log(this.$f7);
@@ -65141,9 +65150,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.$data.viewTypes = json.category;
                 this.$data.viewComment = json.comment;
                 if(typeof json.url != "undefined"){
-                  var Image =document.querySelector("div.photo img")
-                  Image.src = json.url;
-                  Image.style.display = 'inline';
+                  //var Image =document.querySelector("div.photo img")
+                  //Image.src = json.url;
+                  //Image.style.display = 'inline';
+                  this.$data.getUrl = json.url;
+                }else{
+                  this.$data.getUrl = "";
                 }
                 // console.log(this.$data.center.lat);
                 // console.log("photo: " +this.$data.photo);
@@ -65178,7 +65190,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         lng: pos.coords.longitude
                     }
                       that.$data.center = that.$data.loc;
-                    setTimeout(function(){ that.setLoc() },5000);
+                    setTimeout(function(){ that.setLoc() },10000);
                     /*that.$nextTick(function() {
                         that.setMarkers();
                     });*/
@@ -65198,14 +65210,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var locs = [];
                 //console.log(this.$data.zoom);
                 var radius = Math.pow(2, (17 - this.$data.zoom));
-                console.log(this.$data.center);
+                console.log("in setMarkers");
                 this.$nextTick(function() {
                     //console.log(radius)
                     var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
                     this.$data.markers = locations;
                     var self = this;
                     //console.log("In set markers");
-                    setTimeout(function(){ self.setMarkers() },5000)
+                    if(this.$data.pause != true){
+                      setTimeout(function(){ self.setMarkers() },10000)
+                      console.log(this.$data.pause)
+                    }
+
                 });
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};
@@ -65515,8 +65531,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "open-panel": "right"
     }
   })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
-    staticClass: "popup popup-addcrime"
-  }, [_vm._v("\n                        Report a crime\n                        "), _c('f7-list', {
+    staticClass: "popup popup-addcrime tablet-fullscreen"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": _vm.close
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-times fa-3x",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('f7-list', {
     attrs: {
       "form": ""
     }
@@ -65686,7 +65714,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.close
     }
   }, [_c('i', {
-    staticClass: "fa fa-arrow-left",
+    staticClass: "fa fa-arrow-left fa-3x",
     attrs: {
       "aria-hidden": "true"
     }
@@ -65696,14 +65724,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "display": "block"
     }
   }, [_c('img', {
+    staticClass: "lazy lazy-fadeIn",
     staticStyle: {
-      "display": "none",
+      "display": "inline",
       "max-width": "100%",
       "height": "auto"
     },
     attrs: {
       "id": "img",
-      "src": ""
+      "src": _vm.getUrl,
+      "alt": "no image"
     }
   })]), _vm._v(" "), _vm._l((_vm.viewTypes), function(type) {
     return _c('div', {
@@ -65712,10 +65742,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "chip-label"
     }, [_vm._v(" " + _vm._s(type) + " ")])])
   })], 2)]), _vm._v(" "), _c('a', {
-    staticClass: " floating-button color-blue open-popup",
+    staticClass: " floating-button color-blue",
     attrs: {
       "href": "#",
       "data-popup": ".popup-addcrime"
+    },
+    on: {
+      "click": function($event) {
+        _vm.crime()
+      }
     }
   }, [_c('i', {
     staticClass: "icon icon-plus"
