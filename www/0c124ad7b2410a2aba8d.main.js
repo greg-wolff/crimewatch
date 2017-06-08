@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 205);
+/******/ 	return __webpack_require__(__webpack_require__.s = 206);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -17172,8 +17172,8 @@
   \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var store  = __webpack_require__(/*! ./$.shared */ 57)('wks')
-  , uid    = __webpack_require__(/*! ./$.uid */ 59)
+var store  = __webpack_require__(/*! ./$.shared */ 58)('wks')
+  , uid    = __webpack_require__(/*! ./$.uid */ 60)
   , Symbol = __webpack_require__(/*! ./$.global */ 7).Symbol;
 module.exports = function(name){
   return store[name] || (store[name] =
@@ -18882,7 +18882,7 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loadInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return returnInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getHash; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_geofire__);
@@ -19026,7 +19026,7 @@ function returnInfo(hash){
 /* unused harmony export retrieveImage */
 /* unused harmony export imagePrepare */
 /* unused harmony export saveB64asImageInitialize */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_geofire__);
@@ -20016,7 +20016,7 @@ module.exports = __webpack_require__(/*! ./$.hide */ 39);
 var $at  = __webpack_require__(/*! ./$.string-at */ 120)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(/*! ./$.iter-define */ 56)(String, 'String', function(iterated){
+__webpack_require__(/*! ./$.iter-define */ 57)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -20301,6 +20301,48 @@ var local = exports.local = {
 /* 48 */
 /* no static exports found */
 /* all exports used */
+/*!****************************************!*\
+  !*** ./~/firebase/firebase-browser.js ***!
+  \****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
+Terms: https://firebase.google.com/terms/ */
+
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _app = __webpack_require__(/*! ./app */ 19);
+
+var _app2 = _interopRequireDefault(_app);
+
+__webpack_require__(/*! ./auth */ 137);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Import instance of FirebaseApp from ./app
+var Storage, XMLHttpRequest;
+
+__webpack_require__(/*! ./database */ 138);
+__webpack_require__(/*! ./storage */ 146);
+var AsyncStorage;
+
+__webpack_require__(/*! ./messaging */ 139);
+// Export the single instance of firebase
+exports.default = _app2.default;
+module.exports = exports['default'];
+//# sourceMappingURL=firebase-browser.js.map
+
+
+/***/ }),
+/* 49 */
+/* no static exports found */
+/* all exports used */
 /*!***************************************************!*\
   !*** ./~/firebase/storage/implementation/args.js ***!
   \***************************************************/
@@ -20330,7 +20372,7 @@ var _error = __webpack_require__(/*! ./error */ 8);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _metadata = __webpack_require__(/*! ./metadata */ 50);
+var _metadata = __webpack_require__(/*! ./metadata */ 51);
 
 var MetadataUtils = _interopRequireWildcard(_metadata);
 
@@ -20467,7 +20509,7 @@ function nullFunctionSpec(opt_optional) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
@@ -20546,7 +20588,7 @@ function remove(array, elem) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -20588,7 +20630,7 @@ var _type = __webpack_require__(/*! ./type */ 2);
 
 var type = _interopRequireWildcard(_type);
 
-var _url = __webpack_require__(/*! ./url */ 52);
+var _url = __webpack_require__(/*! ./url */ 53);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
@@ -20761,7 +20803,7 @@ function metadataValidator(p) {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
@@ -20976,7 +21018,7 @@ function endsWith(s, end) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -21051,7 +21093,7 @@ function makeQueryString(params) {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /* no static exports found */
 /* all exports used */
 /*!******************************!*\
@@ -21246,7 +21288,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -21322,7 +21364,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 55 */
+/* 56 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -21384,7 +21426,7 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 56 */
+/* 57 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
@@ -21461,7 +21503,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 57 */
+/* 58 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
@@ -21477,7 +21519,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 58 */
+/* 59 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
@@ -21493,7 +21535,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 59 */
+/* 60 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
@@ -21508,7 +21550,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 60 */
+/* 61 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************************************!*\
@@ -21526,7 +21568,7 @@ module.exports = __webpack_require__(/*! ./$.core */ 5).getIteratorMethod = func
 };
 
 /***/ }),
-/* 61 */
+/* 62 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************************!*\
@@ -21537,7 +21579,7 @@ module.exports = __webpack_require__(/*! ./$.core */ 5).getIteratorMethod = func
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************!*\
@@ -21824,48 +21866,6 @@ function noop() {
     // do nothing
 }
 //# sourceMappingURL=subscribe.js.map
-
-
-/***/ }),
-/* 63 */
-/* no static exports found */
-/* all exports used */
-/*!****************************************!*\
-  !*** ./~/firebase/firebase-browser.js ***!
-  \****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*! @license Firebase v4.1.2
-Build: rev-4a4cc92
-Terms: https://firebase.google.com/terms/ */
-
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _app = __webpack_require__(/*! ./app */ 19);
-
-var _app2 = _interopRequireDefault(_app);
-
-__webpack_require__(/*! ./auth */ 137);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Import instance of FirebaseApp from ./app
-var Storage, XMLHttpRequest;
-
-__webpack_require__(/*! ./database */ 138);
-__webpack_require__(/*! ./storage */ 146);
-var AsyncStorage;
-
-__webpack_require__(/*! ./messaging */ 139);
-// Export the single instance of firebase
-exports.default = _app2.default;
-module.exports = exports['default'];
-//# sourceMappingURL=firebase-browser.js.map
 
 
 /***/ }),
@@ -22315,7 +22315,7 @@ var _fs = __webpack_require__(/*! ./fs */ 151);
 
 var fs = _interopRequireWildcard(_fs);
 
-var _string = __webpack_require__(/*! ./string */ 51);
+var _string = __webpack_require__(/*! ./string */ 52);
 
 var string = _interopRequireWildcard(_string);
 
@@ -22569,7 +22569,7 @@ exports.createResumableUpload = createResumableUpload;
 exports.getResumableUploadStatus = getResumableUploadStatus;
 exports.continueResumableUpload = continueResumableUpload;
 
-var _array = __webpack_require__(/*! ./array */ 49);
+var _array = __webpack_require__(/*! ./array */ 50);
 
 var array = _interopRequireWildcard(_array);
 
@@ -22579,7 +22579,7 @@ var _error = __webpack_require__(/*! ./error */ 8);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _metadata = __webpack_require__(/*! ./metadata */ 50);
+var _metadata = __webpack_require__(/*! ./metadata */ 51);
 
 var MetadataUtils = _interopRequireWildcard(_metadata);
 
@@ -22593,7 +22593,7 @@ var _type = __webpack_require__(/*! ./type */ 2);
 
 var type = _interopRequireWildcard(_type);
 
-var _url = __webpack_require__(/*! ./url */ 52);
+var _url = __webpack_require__(/*! ./url */ 53);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
@@ -23062,7 +23062,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _args = __webpack_require__(/*! ./implementation/args */ 48);
+var _args = __webpack_require__(/*! ./implementation/args */ 49);
 
 var args = _interopRequireWildcard(_args);
 
@@ -23074,7 +23074,7 @@ var errorsExports = _interopRequireWildcard(_error);
 
 var _location = __webpack_require__(/*! ./implementation/location */ 29);
 
-var _metadata = __webpack_require__(/*! ./implementation/metadata */ 50);
+var _metadata = __webpack_require__(/*! ./implementation/metadata */ 51);
 
 var metadata = _interopRequireWildcard(_metadata);
 
@@ -23090,7 +23090,7 @@ var _requests = __webpack_require__(/*! ./implementation/requests */ 70);
 
 var requests = _interopRequireWildcard(_requests);
 
-var _string = __webpack_require__(/*! ./implementation/string */ 51);
+var _string = __webpack_require__(/*! ./implementation/string */ 52);
 
 var fbsString = _interopRequireWildcard(_string);
 
@@ -24570,7 +24570,7 @@ var GeoQuery = function (firebaseRef, queryCriteria) {
 if (typeof module !== "undefined" && typeof process !== "undefined") {
   module.exports = GeoFire;
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 53)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 54)))
 
 /***/ }),
 /* 75 */
@@ -43577,7 +43577,7 @@ var _mapElementMixin = __webpack_require__(/*! ./components/mapElementMixin */ 1
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
-var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ 54);
+var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ 55);
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
@@ -53472,7 +53472,7 @@ module.exports = __webpack_require__(/*! ../../modules/$.core */ 5).Object.keys;
   \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../modules/es6.object.to-string */ 61);
+__webpack_require__(/*! ../modules/es6.object.to-string */ 62);
 __webpack_require__(/*! ../modules/es6.string.iterator */ 43);
 __webpack_require__(/*! ../modules/web.dom.iterable */ 44);
 __webpack_require__(/*! ../modules/es6.promise */ 128);
@@ -53488,7 +53488,7 @@ module.exports = __webpack_require__(/*! ../modules/$.core */ 5).Promise;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../../modules/es6.symbol */ 129);
-__webpack_require__(/*! ../../modules/es6.object.to-string */ 61);
+__webpack_require__(/*! ../../modules/es6.object.to-string */ 62);
 module.exports = __webpack_require__(/*! ../../modules/$.core */ 5).Symbol;
 
 /***/ }),
@@ -53557,7 +53557,7 @@ var ctx         = __webpack_require__(/*! ./$.ctx */ 18)
   , isArrayIter = __webpack_require__(/*! ./$.is-array-iter */ 105)
   , anObject    = __webpack_require__(/*! ./$.an-object */ 13)
   , toLength    = __webpack_require__(/*! ./$.to-length */ 122)
-  , getIterFn   = __webpack_require__(/*! ./core.get-iterator-method */ 60);
+  , getIterFn   = __webpack_require__(/*! ./core.get-iterator-method */ 61);
 module.exports = function(iterable, entries, fn, that){
   var iterFn = getIterFn(iterable)
     , f      = ctx(fn, that, entries ? 2 : 1)
@@ -54021,7 +54021,7 @@ module.exports = function(it, Constructor, name){
   \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(/*! ./$.to-integer */ 58)
+var toInteger = __webpack_require__(/*! ./$.to-integer */ 59)
   , defined   = __webpack_require__(/*! ./$.defined */ 36);
 // true  -> String#at
 // false -> String#codePointAt
@@ -54134,7 +54134,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(/*! ./$.to-integer */ 58)
+var toInteger = __webpack_require__(/*! ./$.to-integer */ 59)
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -54165,7 +54165,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./$.an-object */ 13)
-  , get      = __webpack_require__(/*! ./core.get-iterator-method */ 60);
+  , get      = __webpack_require__(/*! ./core.get-iterator-method */ 61);
 module.exports = __webpack_require__(/*! ./$.core */ 5).getIterator = function(it){
   var iterFn = get(it);
   if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
@@ -54211,7 +54211,7 @@ var addToUnscopables = __webpack_require__(/*! ./$.add-to-unscopables */ 97)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(/*! ./$.iter-define */ 56)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(/*! ./$.iter-define */ 57)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -54577,9 +54577,9 @@ var $              = __webpack_require__(/*! ./$ */ 3)
   , $export        = __webpack_require__(/*! ./$.export */ 23)
   , redefine       = __webpack_require__(/*! ./$.redefine */ 42)
   , $fails         = __webpack_require__(/*! ./$.fails */ 37)
-  , shared         = __webpack_require__(/*! ./$.shared */ 57)
+  , shared         = __webpack_require__(/*! ./$.shared */ 58)
   , setToStringTag = __webpack_require__(/*! ./$.set-to-string-tag */ 25)
-  , uid            = __webpack_require__(/*! ./$.uid */ 59)
+  , uid            = __webpack_require__(/*! ./$.uid */ 60)
   , wks            = __webpack_require__(/*! ./$.wks */ 1)
   , keyOf          = __webpack_require__(/*! ./$.keyof */ 111)
   , $names         = __webpack_require__(/*! ./$.get-names */ 101)
@@ -56927,7 +56927,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.createFirebaseNamespace = createFirebaseNamespace;
 
-var _subscribe = __webpack_require__(/*! ./subscribe */ 62);
+var _subscribe = __webpack_require__(/*! ./subscribe */ 63);
 
 var _errors = __webpack_require__(/*! ./errors */ 46);
 
@@ -58365,7 +58365,7 @@ var _notificationPermission = __webpack_require__(/*! ../models/notification-per
 
 var _notificationPermission2 = _interopRequireDefault(_notificationPermission);
 
-var _subscribe = __webpack_require__(/*! ../../app/subscribe */ 62);
+var _subscribe = __webpack_require__(/*! ../../app/subscribe */ 63);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59495,7 +59495,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.registerStorage = registerStorage;
 
-var _string = __webpack_require__(/*! ./storage/implementation/string */ 51);
+var _string = __webpack_require__(/*! ./storage/implementation/string */ 52);
 
 var _taskenums = __webpack_require__(/*! ./storage/implementation/taskenums */ 71);
 
@@ -60258,7 +60258,7 @@ exports.addAuthHeader_ = addAuthHeader_;
 exports.addVersionHeader_ = addVersionHeader_;
 exports.makeRequest = makeRequest;
 
-var _array = __webpack_require__(/*! ./array */ 49);
+var _array = __webpack_require__(/*! ./array */ 50);
 
 var array = _interopRequireWildcard(_array);
 
@@ -60282,7 +60282,7 @@ var _type = __webpack_require__(/*! ./type */ 2);
 
 var type = _interopRequireWildcard(_type);
 
-var _url = __webpack_require__(/*! ./url */ 52);
+var _url = __webpack_require__(/*! ./url */ 53);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
@@ -60946,7 +60946,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 
-var _args = __webpack_require__(/*! ./implementation/args */ 48);
+var _args = __webpack_require__(/*! ./implementation/args */ 49);
 
 var args = _interopRequireWildcard(_args);
 
@@ -61153,11 +61153,11 @@ var _observer = __webpack_require__(/*! ./implementation/observer */ 153);
 
 var _tasksnapshot = __webpack_require__(/*! ./tasksnapshot */ 161);
 
-var _args = __webpack_require__(/*! ./implementation/args */ 48);
+var _args = __webpack_require__(/*! ./implementation/args */ 49);
 
 var fbsArgs = _interopRequireWildcard(_args);
 
-var _array = __webpack_require__(/*! ./implementation/array */ 49);
+var _array = __webpack_require__(/*! ./implementation/array */ 50);
 
 var fbsArray = _interopRequireWildcard(_array);
 
@@ -63761,7 +63761,7 @@ module.exports = MarkerClusterer
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../process/browser.js */ 53)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../process/browser.js */ 54)))
 
 /***/ }),
 /* 166 */
@@ -64473,7 +64473,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../process/browser.js */ 53)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../process/browser.js */ 54)))
 
 /***/ }),
 /* 170 */
@@ -64904,8 +64904,80 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__backend_js__ = __webpack_require__(/*! ./backend.js */ 31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camera_js__ = __webpack_require__(/*! ./camera.js */ 77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(/*! firebase */ 48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__camera_js__ = __webpack_require__(/*! ./camera.js */ 77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebaseConfig__ = __webpack_require__(/*! ./firebaseConfig */ 205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebaseConfig___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__firebaseConfig__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -65045,6 +65117,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
             return {
@@ -65069,6 +65143,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m'
             }
         },
+        beforeCreated(){
+          __WEBPACK_IMPORTED_MODULE_1_firebase__["initializeApp"](__WEBPACK_IMPORTED_MODULE_4__firebaseConfig__["config"]);
+        },
+        created() {
+            var self = this;
+            __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().onAuthStateChanged((user) => {
+                if (user) {
+                  console.log(user);
+                //  console.log("logged in should go to main")
+                  self.$f7.closeModal();
+                } else {
+                    self.$f7.loginScreen();
+                }
+            });
+            //this.setCenter();
+
+        },
         mounted: function() {
             this.setLoc();
             this.setMarkers();
@@ -65089,11 +65180,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             campturePhoto: function() {
                 //console.log(window.longitude);
                 //console.log(window.latitude);
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["a" /* capturePhoto */])();
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__camera_js__["a" /* capturePhoto */])();
                 //console.log(window.img);
             },
             getPhoto: function() {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__camera_js__["b" /* getPhoto */])();
             },
             crime: function() {
                   document.getElementById('smallImage').src = "";
@@ -65129,7 +65220,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(url);
                     if(base64){
                       console.log(url);
-                      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["a" /* storeImage */])(url, this.$data.center.lat, this.$data.center.lng);
+                      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__image_storage_js__["a" /* storeImage */])(url, this.$data.center.lat, this.$data.center.lng);
                     }
                     //console.log(window.img);
                     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.center.lat, this.$data.center.lng, data);
@@ -65229,7 +65320,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                   locs.push({position:pos},{info:returnInfo(index[2])});
                   });*/
 
-            }
+            },
+            onLogIn: function() {
+            const txtEmail = document.getElementById('txtEmail');
+            const txtPassword = document.getElementById('txtPassword');
+            console.log("Log in Buttonclicked");
+            //Get email and pass
+            const email = txtEmail.value;
+            const pass = txtPassword.value;
+            const auth = __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]();
+            //Sign In
+            const promise = auth.signInWithEmailAndPassword(email, pass);
+            promise.then(user => console.log(user));
+            promise.catch(e => console.log(e.message));
+            return false;
+          },
+          onLogOut: function () {
+            __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().signOut();
+            console.log('not logged in');
+              //btnLogout.classList.add('hide');
+          },
+          SignUpSummit: function() {
+          const txtEmail = document.getElementById('txtEmail2');
+          const txtPassword = document.getElementById('txtPassword2');
+          //Get email and pass
+           const email = txtEmail.value;
+           const pass = txtPassword.value;
+           const auth = __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]();
+           //Sign In
+           const promise = auth.createUserWithEmailAndPassword(email, pass);
+           //promise.then(user => console.log(user));
+           promise.catch(e => console.log(e.message));
+           __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().signOut();
+          }
         },
         watch: {
             '$route' (to, from) {
@@ -65525,12 +65648,123 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "sliding": ""
     }
-  }, [_vm._v("Crimewatch")]), _vm._v(" "), _c('f7-nav-right', [_c('f7-link', {
+  }, [_vm._v("Crimewatch")]), _vm._v(" "), _c('f7-nav-right', [_c('f7-button', {
+    attrs: {
+      "active": ""
+    },
+    on: {
+      "click": function($event) {
+        _vm.onLogOut()
+      }
+    }
+  }, [_vm._v("LogOut")]), _vm._v(" "), _c('f7-link', {
     attrs: {
       "icon": "icon-bars",
       "open-panel": "right"
     }
-  })], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
+  })], 1)], 1), _vm._v(" "), _c('f7-login-screen', [_c('f7-view', [_c('f7-pages', [_c('f7-page', [_c('f7-login-screen-title', [_vm._v("Crimewatch")]), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [_c('center', [_c('input', {
+    attrs: {
+      "id": "txtEmail",
+      "type": "email",
+      "placeholder": "Email"
+    }
+  }), _vm._v(" "), _c('input', {
+    attrs: {
+      "id": "txtPassword",
+      "type": "password",
+      "placeholder": "Password"
+    }
+  })]), _vm._v(" "), _c('f7-button', {
+    attrs: {
+      "active": ""
+    },
+    on: {
+      "click": function($event) {
+        _vm.onLogIn()
+      }
+    }
+  }, [_vm._v("Sign in")])], 1), _vm._v(" "), _c('center', [_vm._v("OR")]), _vm._v(" "), _c('center', [_c('div', {
+    staticClass: "page-content"
+  }, [_c('div', {
+    staticClass: "content-block"
+  }, [_c('p', [_c('a', {
+    staticClass: "open-popup",
+    attrs: {
+      "href": "#",
+      "data-popup": ".popup-createaccount"
+    }
+  }, [_vm._v("Create an Account ")])])])])]), _vm._v("\r\n                              ...\r\n                              "), _vm._v(" "), _c('div', {
+    staticClass: "popup popup-createaccount"
+  }, [_c('div', {
+    staticClass: "content-block"
+  }, [_c('div', {
+    staticClass: "list-block"
+  }, [_c('ul', [_c('li', [_c('div', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-media"
+  }, [_c('i', {
+    staticClass: "icon f7-icons"
+  }, [_vm._v("Name")])]), _vm._v(" "), _c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-input"
+  }, [_c('input', {
+    attrs: {
+      "type": "text",
+      "placeholder": "Your name"
+    }
+  })])])])]), _vm._v(" "), _c('li', [_c('div', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-media"
+  }, [_c('i', {
+    staticClass: "icon f7-icons"
+  }, [_vm._v("email")])]), _vm._v(" "), _c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-input"
+  }, [_c('input', {
+    attrs: {
+      "id": "txtEmail2",
+      "type": "email",
+      "placeholder": "E-mail"
+    }
+  })])])])]), _vm._v(" "), _c('li', [_c('div', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-media"
+  }, [_c('i', {
+    staticClass: "icon f7-icons"
+  }, [_vm._v("Password")])]), _vm._v(" "), _c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-input"
+  }, [_c('input', {
+    attrs: {
+      "id": "txtPassword2",
+      "type": "password",
+      "placeholder": "Password"
+    }
+  })])])])])]), _vm._v(" "), _c('f7-button', {
+    staticClass: "close-popup",
+    attrs: {
+      "active": ""
+    },
+    on: {
+      "click": function($event) {
+        _vm.SignUpSummit()
+      }
+    }
+  }, [_vm._v("Sign Up")]), _vm._v(" "), _c('f7-button', {
+    staticClass: "close-popup",
+    attrs: {
+      "href": "#",
+      "active": ""
+    }
+  }, [_vm._v("Cancel")])], 1)])])], 1)], 1)], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
     staticClass: "popup popup-addcrime tablet-fullscreen"
   }, [_c('a', {
     attrs: {
@@ -65786,7 +66020,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "zIndex": 1,
       "icon": _vm.curr
     }
-  }), _vm._v("\n                        //borrowing images for clusters from google for demo purpose\n                        "), _c('Gmap-cluster', {
+  }), _vm._v("\r\n                        //borrowing images for clusters from google for demo purpose\r\n                        "), _c('Gmap-cluster', {
     attrs: {
       "gridSize": 20,
       "imagePath": _vm.imagePath
@@ -66817,7 +67051,7 @@ var _getPropsValuesMixin = __webpack_require__(/*! ../utils/getPropsValuesMixin.
 
 var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
 
-var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ 54);
+var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ 55);
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
@@ -67268,7 +67502,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 55);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 56);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -67447,7 +67681,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 55);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 56);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -67688,7 +67922,7 @@ var _getPropsValuesMixin = __webpack_require__(/*! ../utils/getPropsValuesMixin.
 
 var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
 
-var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ 54);
+var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ 55);
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
@@ -67847,6 +68081,17 @@ module.exports = function(module) {
 
 /***/ }),
 /* 205 */
+/* no static exports found */
+/* exports used: config */
+/*!****************************!*\
+  !*** ./src/firebaseConfig ***!
+  \****************************/
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 206 */
 /* no static exports found */
 /* all exports used */
 /*!*********************!*\
