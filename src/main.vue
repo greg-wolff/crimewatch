@@ -106,6 +106,9 @@
                         <div class="content-block">
                             <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
                             <h1> {{viewComment}} </h1>
+                            <div class="photo">
+                            <img/>
+                            </div>
                             <div class="chip" v-for="type in viewTypes">
                                 <div class="chip-label"> {{type}} </div>
                             </div>
@@ -127,6 +130,7 @@
 </template>
 
 <script>
+// document.querySelector('img').src = {{photo}};
 
 import {
     Nearby,
@@ -156,7 +160,7 @@ export default {
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
                 viewComment: null,
-                photo: null
+                photo: []
             }
         },
         mounted: function() {
@@ -180,7 +184,7 @@ export default {
                 getPhoto();
             },
             crime: function() {
-                this.$data.photo = retrieveImage("1496829446385.image",10,10);
+                this.$data.photo = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
@@ -217,6 +221,8 @@ export default {
                 //push category data to vue.$data so we can use v-for
                 this.$data.viewTypes = json.category;
                 this.$data.viewComment = json.comment;
+                this.$data.photo = retrieveImage($data.center.lng,$data.center.lat);
+                // console.log("photo: " +this.$data.photo);
                 /*var popupHTML =
                     '<div class="popup">' +
                     '<div class="content-block">' +

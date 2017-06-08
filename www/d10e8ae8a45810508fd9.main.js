@@ -19072,10 +19072,23 @@ function retrieveImage(imageName,a,b){
   var location = name+"/"+imageName;
   console.log(location);
   var downloadRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["c" /* firebase */].storage().ref().child(location);
-  var x;
-  downloadRef.getDownloadURL().then(function(url){      
-      // document.querySelector('img').src = url;
-      x = url;
+  // var x ="https://firebasestorage.googleapis.com/v0/b/crimewatch-8f003.appspot.com/o/…2F1496875005526.image?alt=media&token=f9ad2e01-f2b2-42a3-b8d9-9a07fda27eab"
+
+  downloadRef.getDownloadURL().then(function(url){  
+
+      // console.log(url.toString());
+      
+
+
+    // Cordova is ready to be used!
+    //
+
+      document.querySelector("div.photo img").src = url;
+      // return url;
+      // callback(url);
+      // var img = document.querySelector('img');
+      // img.src = url;
+      // x = url;
     });
 
   // firebase.auth().signInAnonymously().then(function(){
@@ -19124,7 +19137,8 @@ function retrieveImage(imageName,a,b){
   //         break;
   //     }
   //   });
-  return x;
+  // console.log(x);
+  // return x;
 }
 
 //function for converting base64 to blob according to data / content type
@@ -19226,22 +19240,22 @@ function storeImage(imageData,a,b){
   // Create a root reference
 
   var imageName = Date.now()+".image";
-  var hash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["d" /* getHash */])(a,b);
-  var firebaseRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["c" /* firebase */].database().ref("info"); //top level <info>
-  var infoRef = firebaseRef.child(hash);
-  var filenames = infoRef.child('filenames');
-  firebaseRef.on("value", function(snapshot) {
-            var newPost = snapshot.val();
-            if(newPost !== null) //does this data exist?
-            {
-                // console.log("hash: " + newPost.g);
-                filenames.set(newPost.filenames + ';'+imageName);
-                // console.log("Previous Post ID: " + prevChildKey);
-            }else{
-                filenames.set(imageName);
-                // console.log("null!");
-            }
-        });
+  // var hash = getHash(a,b);
+  // var firebaseRef = firebase.database().ref("info"); //top level <info>
+  // var infoRef = firebaseRef.child(hash);
+  // var filenames = infoRef.child('filenames');
+  // firebaseRef.on("value", function(snapshot) {
+  //           var newPost = snapshot.val();
+  //           if(newPost !== null) //does this data exist?
+  //           {
+  //               // console.log("hash: " + newPost.g);
+  //               filenames.set(newPost.filenames + ';'+imageName);
+  //               // console.log("Previous Post ID: " + prevChildKey);
+  //           }else{
+  //               filenames.set(imageName);
+  //               // console.log("null!");
+  //           }
+  //       });
 
   storageRef.child(imageName).putString(imageData, 'data_url');
 
@@ -64985,7 +64999,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
+// document.querySelector('img').src = {{photo}};
 
 
 
@@ -65027,7 +65045,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
             },
             crime: function() {
-                this.$data.photo = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["b" /* retrieveImage */])("1496829446385.image",10,10);
+                this.$data.photo = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
@@ -65064,6 +65082,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 //push category data to vue.$data so we can use v-for
                 this.$data.viewTypes = json.category;
                 this.$data.viewComment = json.comment;
+                // this.$data.photo = retrieveImage("1496875005526.image",10,10);
+                // console.log("photo: " +this.$data.photo);
                 /*var popupHTML =
                     '<div class="popup">' +
                     '<div class="content-block">' +
@@ -65567,7 +65587,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])]), _vm._v(" "), _c('h1', [_vm._v(" " + _vm._s(_vm.viewComment) + " ")]), _vm._v(" "), _vm._l((_vm.viewTypes), function(type) {
+  })])]), _vm._v(" "), _c('h1', [_vm._v(" " + _vm._s(_vm.viewComment) + " ")]), _vm._v(" "), _c('div', {
+    staticClass: "photo"
+  }, [_c('img')]), _vm._v(" "), _vm._l((_vm.viewTypes), function(type) {
     return _c('div', {
       staticClass: "chip"
     }, [_c('div', {
