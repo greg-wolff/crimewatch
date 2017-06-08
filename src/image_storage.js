@@ -66,7 +66,7 @@ function retrieveImage(imageName,a,b){
   console.log(b);
   var name = a.toString().replace(/\./g,'x')+"and"+ b.toString().replace(/\./g,'y');
 
-
+  
 
   if(imageName == ''){
     imageName = getFileNames(a,b);
@@ -75,9 +75,9 @@ function retrieveImage(imageName,a,b){
     var downloadRef = firebase.storage().ref().child(location);
 
     var path = downloadRef.getPath();
-    downloadRef.getDownloadURL().then(function(url){
+    downloadRef.getDownloadURL().then(function(url){  
 
-      // console.log(url.toString());
+      // console.log(url.toString());     
       document.querySelector("div.photo img").src = url;
       // return url;
       // callback(url);
@@ -90,9 +90,9 @@ function retrieveImage(imageName,a,b){
   var location = name+"/"+imageName;
   console.log(location);
   var downloadRef = firebase.storage().ref().child(location);
-  downloadRef.getDownloadURL().then(function(url){
+  downloadRef.getDownloadURL().then(function(url){  
 
-      // console.log(url.toString());
+      // console.log(url.toString());     
       document.querySelector("div.photo img").src = url;
       // return url;
       // callback(url);
@@ -102,7 +102,7 @@ function retrieveImage(imageName,a,b){
     });
 
   // firebase.auth().signInAnonymously().then(function(){
-
+    
   // }).catch(function(err){
   //   console.error(err);
   // });
@@ -181,7 +181,7 @@ function saveBase64AsImageFile(path,filename,content,contentType){
   var DataBlob = base64toBlob(content,contentType,512);
 
   console.log(DataBlob + " beginning file-write....");
-
+  
   document.addEventListener("deviceready",onDeviceReady,false);
   // Cordova is ready to be used!
   function onDeviceReady() {

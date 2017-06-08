@@ -106,8 +106,7 @@
                         <div class="content-block">
                             <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
                             <h1> {{viewComment}} </h1>
-                            <div class="photo" style="height:75%;display: inline-block;">
-                            <img class="img" style = "max-width:100%;max-height:100%;";>
+                            <div class="photo">
                             <img/>
                             </div>
                             <div class="chip" v-for="type in viewTypes">
