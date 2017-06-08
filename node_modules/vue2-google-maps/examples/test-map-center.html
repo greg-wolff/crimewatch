@@ -117,9 +117,10 @@
   <script src="vue-google-maps.js"></script>
 
   <script>
-    VueGoogleMaps.load({
-      key: 'AIzaSyBzlLYISGjL_ovJwAehh6ydhB56fCCpPQw',
-      v: '3.26',
+    Vue.use(VueGoogleMaps, {
+      load: {
+        key: 'AIzaSyBzlLYISGjL_ovJwAehh6ydhB56fCCpPQw',
+      }
     });
 
     document.addEventListener('DOMContentLoaded', function() {

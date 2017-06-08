@@ -32,10 +32,6 @@ var _mountableMixin = require('../utils/mountableMixin.js');
 
 var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
 
-var _latlngChangedHandler = require('../utils/latlngChangedHandler.js');
-
-var _latlngChangedHandler2 = _interopRequireDefault(_latlngChangedHandler);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var props = {
@@ -120,19 +116,28 @@ exports.default = {
     this.$mapCreated = new _promise2.default(function (resolve, reject) {
       _this.$mapCreatedDeferred = { resolve: resolve, reject: reject };
     });
+
+    var updateCenter = function updateCenter() {
+      _this.$mapObject.setCenter({
+        lat: _this.finalLat,
+        lng: _this.finalLng
+      });
+    };
+    this.$watch('finalLat', updateCenter);
+    this.$watch('finalLng', updateCenter);
   },
 
 
-  watch: {
-    center: {
-      deep: true,
-      handler: (0, _latlngChangedHandler2.default)(function (val, oldVal) {
-        // eslint-disable-line no-unused-vars
-        if (this.$mapObject) {
-          this.$mapObject.setCenter(val);
-        }
-      })
+  computed: {
+    finalLat: function finalLat() {
+      return this.center && typeof this.center.lat === 'function' ? this.center.lat() : this.center.lat;
     },
+    finalLng: function finalLng() {
+      return this.center && typeof this.center.lng === 'function' ? this.center.lng() : this.center.lng;
+    }
+  },
+
+  watch: {
     zoom: function zoom(_zoom) {
       if (this.$mapObject) {
         this.$mapObject.setZoom(_zoom);

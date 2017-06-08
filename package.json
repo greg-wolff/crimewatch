@@ -15,11 +15,11 @@
         "cheerio": "^0.22.0",
         "chokidar": "^1.6.1",
         "clean-webpack-plugin": "^0.1.15",
-        "cross-env": "^5.0.0",
+        "cross-env": "^5.0.1",
         "css-loader": "^0.27.3",
         "device.js": "git+https://github.com/matthewhudson/device.js.git",
         "epipebomb": "^1.0.0",
-        "extract-text-webpack-plugin": "^2.1.0",
+        "extract-text-webpack-plugin": "^2.1.2",
         "file-loader": "^0.10.1",
         "html-loader": "^0.4.5",
         "html-webpack-plugin": "^2.28.0",
@@ -36,24 +36,28 @@
         "vue-html-loader": "^1.2.4",
         "vue-loader": "^11.1.4",
         "vue-style-loader": "^3.0.1",
-        "vue-template-compiler": "^2.2.4",
-        "vue2-google-maps": "^0.7.5",
-        "webpack": "^2.2.1",
+        "vue-template-compiler": "^2.3.4",
+        "vue2-google-maps": "^0.7.7",
+        "webpack": "^2.6.1",
         "webpack-dev-server": "^2.4.1"
     },
     "dependencies": {
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
+        "cordova-plugin-browsertab": "^0.2.0",
+        "cordova-plugin-buildinfo": "^1.1.0",
         "cordova-plugin-camera": "^2.4.1",
         "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-inappbrowser": "^1.7.1",
         "cordova-plugin-whitelist": "1",
-        "cross-env": "^5.0.0",
-        "firebase": "^4.1.1",
-        "framework7": "^1.5.4",
+        "cordova-universal-links-plugin": "^1.2.1",
+        "firebase": "^4.1.2",
+        "framework7": "^1.6.4",
         "framework7-vue": "^0.8.5",
         "geofire": "^4.1.2",
-        "vue": "^2.2.4"
+        "npm-install": "0.0.1",
+        "vue": "^2.3.4"
     },
     "displayName": "crimewatch",
     "cordova": {
@@ -61,9 +65,14 @@
             "cordova-plugin-whitelist": {},
             "cordova-plugin-compat": {},
             "cordova-plugin-camera": {},
-            "cordova-plugin-geolocation": {}
+            "cordova-plugin-geolocation": {},
+            "cordova-plugin-buildinfo": {},
+            "cordova-universal-links-plugin": {},
+            "cordova-plugin-browsertab": {},
+            "cordova-plugin-inappbrowser": {}
         },
         "platforms": [
+            "android",
             "browser"
         ]
     }

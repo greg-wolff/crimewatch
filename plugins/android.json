@@ -7,13 +7,28 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.cmps.crimewatch"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.cmps.crimewatch"
         },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
         "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-buildinfo": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-universal-links-plugin": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-browsertab": {
+            "PACKAGE_NAME": "com.cmps.crimewatch"
+        },
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.cmps.crimewatch"
         }
     },
