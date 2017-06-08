@@ -66,7 +66,7 @@ function retrieveImage(imageName,a,b){
   console.log(b);
   var name = a.toString().replace(/\./g,'x')+"and"+ b.toString().replace(/\./g,'y');
 
-  
+
 
   if(imageName == ''){
     imageName = getFileNames(a,b);
@@ -75,9 +75,9 @@ function retrieveImage(imageName,a,b){
     var downloadRef = firebase.storage().ref().child(location);
 
     var path = downloadRef.getPath();
-    downloadRef.getDownloadURL().then(function(url){  
+    downloadRef.getDownloadURL().then(function(url){
 
-      // console.log(url.toString());     
+      // console.log(url.toString());
       document.querySelector("div.photo img").src = url;
       // return url;
       // callback(url);
@@ -90,10 +90,12 @@ function retrieveImage(imageName,a,b){
   var location = name+"/"+imageName;
   console.log(location);
   var downloadRef = firebase.storage().ref().child(location);
-  downloadRef.getDownloadURL().then(function(url){  
+  downloadRef.getDownloadURL().then(function(url){
 
-      // console.log(url.toString());     
-      document.querySelector("div.photo img").src = url;
+      // console.log(url.toString());
+      var Image =document.querySelector("div.photo img")
+      Image.src = url;
+      Image.style.display = 'inline';
       // return url;
       // callback(url);
       // var img = document.querySelector('img');
@@ -102,7 +104,7 @@ function retrieveImage(imageName,a,b){
     });
 
   // firebase.auth().signInAnonymously().then(function(){
-    
+
   // }).catch(function(err){
   //   console.error(err);
   // });
@@ -181,7 +183,7 @@ function saveBase64AsImageFile(path,filename,content,contentType){
   var DataBlob = base64toBlob(content,contentType,512);
 
   console.log(DataBlob + " beginning file-write....");
-  
+
   document.addEventListener("deviceready",onDeviceReady,false);
   // Cordova is ready to be used!
   function onDeviceReady() {
@@ -250,26 +252,29 @@ function storeImage(imageData,a,b){
   // Create a root reference
 
   var imageName = Date.now()+".image";
+  var uploadTask = storageRef.child(imageName).putString(imageData, 'data_url');
+  uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // code snippet from firebase documentation adapted
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+  // Handle unsuccessful uploads
+}, function() {
+  console.log("sucess!")
   var hash = getHash(a,b);
   var firebaseRef = firebase.database().ref("info"); //top level <info>
   var infoRef = firebaseRef.child(hash);
-  var filenames = infoRef.child('filenames');
-  filenames.on("value", function(snapshot) {
-            var newPost = snapshot.val();
-            if(newPost !== null) //does this data exist?
-            {
-                // console.log("hash: " + newPost.g);
-                filenames.add(imageName);
-                // console.log("Previous Post ID: " + prevChildKey);
-            }else{
-                // filenames.set(imageName);
-                // console.log("null!");
-            }
-        });
+  var src = infoRef.child("url");
+  src.set(uploadTask.snapshot.downloadURL);
 
-  storageRef.child(imageName).putString(imageData, 'data_url');
-
-  return imageName;
+});
 }
 
 //converts image into base64 and stores it

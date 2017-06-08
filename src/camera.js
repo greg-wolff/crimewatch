@@ -96,7 +96,7 @@ window.img;
    //
    function capturePhoto() {
      // Take picture using device camera and retrieve image as base64-encoded string
-     var img = navigator.camera.getPicture(function(imageData,img){
+     navigator.camera.getPicture(function(imageData){
        var smallImage = document.getElementById('smallImage');
 
        // Unhide image elements
@@ -107,14 +107,8 @@ window.img;
        // The inline CSS rules are used to resize the image
        //
       smallImage.src = "data:image/jpeg;base64," + imageData;
-      //console.log(window.longitude);
-      //console.log(window.latitude);
-      //console.log(smallImage.src);
-      //storeImage(smallImage.src,window.longitude,window.latitude);
-      //callback(SmallImage.src);
-      window.img = smallImage.src;
-      console.log(window.img);
-    }, onFail, options)
+      var photo = smallImage.src;
+    }, onFail, options);
    }
 
 

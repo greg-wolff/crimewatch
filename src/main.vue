@@ -74,12 +74,12 @@
                                             <!-- Single chekbox item -->
                                             <li>
                                                 <!--  -->
-                                                <input type="checkbox" id="murder" value="Murder" onclick="checked()" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Murder</font></input>
+                                                <input type="checkbox" id="murder" value="Murder" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Murder</font></input>
                                             </li>
                                             <!-- Another chekbox item -->
                                             <li>
                                                 <!--  -->
-                                                <input type="checkbox" id="theft" value="Theft" onclick="checked()" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Theft</font></input>
+                                                <input type="checkbox" id="theft" value="Theft" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Theft</font></input>
                                             </li>
                                         </ul>
                                     </div>
@@ -106,8 +106,8 @@
                         <div class="content-block">
                             <p><a href="#" @click="close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>
                             <h1> {{viewComment}} </h1>
-                            <div class="photo">
-                            <img/>
+                            <div class="photo" style="display:block">
+                                <img style="display:none;max-width:100%;height:auto;" id="img" src="" />
                             </div>
                             <div class="chip" v-for="type in viewTypes">
                                 <div class="chip-label"> {{type}} </div>
@@ -118,6 +118,7 @@
                         <i class="icon icon-plus"></i>
                     </a>
                     <GmapMap :center="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%">
+                        <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
                         <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
                         </GmapMarker>
                     </GmapMap>
@@ -130,6 +131,7 @@
 </template>
 
 <script>
+
 // document.querySelector('img').src = {{photo}};
 
 import {
@@ -155,16 +157,22 @@ export default {
                     lng: 10.0
                 },
                 zoom: 15,
+                loc:{
+                  lat:10.0,
+                  lng:10.0
+                },
+                track:true,
+                curr: 'http://i.imgur.com/VnDEIQt.png',
                 markers: [],
                 comment: null,
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
                 viewComment: null,
-                photo: null
             }
         },
         mounted: function() {
-            this.setCenter();
+            this.setLoc();
+            this.setMarkers();
             //console.log("In mounted");
             //console.log(this.$data);
         },
@@ -172,19 +180,18 @@ export default {
             zoomUpdate: function(event) {
                 //console.log(event);
                 this.$data.zoom = event;
-                this.setMarkers();
+                //this.setMarkers();
             },
             campturePhoto: function() {
-               //console.log(window.longitude);
-               //console.log(window.latitude);
-               capturePhoto();
-               console.log(window.img);
+                //console.log(window.longitude);
+                //console.log(window.latitude);
+                capturePhoto();
+                //console.log(window.img);
             },
             getPhoto: function() {
                 getPhoto();
             },
             crime: function() {
-                this.$data.photo = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
@@ -205,9 +212,11 @@ export default {
                         "category": types,
                         "comment": comment
                     }
-                    console.log("in submit:"+this.$data.photo)
-                    console.log(this.$data.center.lat);
-                    storeImage(window.img,this.$data.center.lat, this.$data.center.lng);
+                    var url = document.getElementById('smallImage').src;
+                    if(url){
+                      storeImage(url, this.$data.center.lat, this.$data.center.lng);
+                    }
+                    //console.log(window.img);
                     loadInfo(this.$data.center.lat, this.$data.center.lng, data);
                 });
                 //console.log(this.$data);
@@ -222,8 +231,12 @@ export default {
                 //push category data to vue.$data so we can use v-for
                 this.$data.viewTypes = json.category;
                 this.$data.viewComment = json.comment;
+                if(typeof json.url != "undefined"){
+                  var Image =document.querySelector("div.photo img")
+                  Image.src = json.url;
+                  Image.style.display = 'inline';
+                }
                 // console.log(this.$data.center.lat);
-                retrieveImage("1496829446385.image",10,10);
                 // console.log("photo: " +this.$data.photo);
                 /*var popupHTML =
                     '<div class="popup">' +
@@ -237,8 +250,8 @@ export default {
                     */
                 this.$f7.popup('.popup-marker');
             },
-            setCenter: function() {
-                //console.log('setcenter')
+            setLoc: function() {
+                console.log('setcenter')
                 // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
@@ -251,34 +264,41 @@ export default {
                 function onSuccess(pos) {
                     //console.log(pos)
                     //console.log(this)
-                    that.$data.center = {
+                    that.$data.loc = {
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
                     }
-                    that.$nextTick(function() {
+                    if(that.$data.track == true){
+                      that.$data.center = that.$data.loc;
+                    }
+                    setTimeout(function(){ that.setLoc() },5000);
+                    /*that.$nextTick(function() {
                         that.setMarkers();
-                    });
+                    });*/
                 }
 
                 function onError(err) {
-                    //console.log(err)
-                    //console.log(err.code)
-                    //console.log(err.message)
-                    that.$nextTick(function() {
+                    console.log(err)
+                    console.log(err.code)
+                    console.log(err.message)
+                    setTimeout(function(){ that.setLoc() },5000);
+                    /*that.$nextTick(function() {
                         that.setMarkers();
-                    });
+                    });*/
                 }
             },
             setMarkers: function() {
                 var locs = [];
                 //console.log(this.$data.zoom);
                 var radius = Math.pow(2, (17 - this.$data.zoom));
+                console.log("in setMarkers")
                 this.$nextTick(function() {
                     //console.log(radius)
                     var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);
                     this.$data.markers = locations;
+                    var self = this;
                     //console.log("In set markers");
-                    this.setCenter()
+                    setTimeout(function(){ self.setMarkers() },5000)
                 });
                 /*locations.forEach(function pop(index){
                   var pos = {lat: index[0],lng:index[1]};
@@ -286,6 +306,12 @@ export default {
                   locs.push({position:pos},{info:returnInfo(index[2])});
                   });*/
 
+            }
+        },
+        watch: {
+            '$route' (to, from) {
+                // Call resizePreserveCenter() on all maps
+                Vue.$gmapDefaultResizeBus.$emit('resize')
             }
         }
 }
