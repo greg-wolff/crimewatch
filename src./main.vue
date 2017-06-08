@@ -98,7 +98,7 @@
                         <f7-button fill color="blue" @click="submit">Send</f7-button>
                         <f7-button @click='campturePhoto()'>Take a Picture</f7-button>
                         <f7-button @click="getPhoto()">PHOTOLIBRARY</f7-button>
-                        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+                        <img style="display:none;width:60px;height:60px;" id="smallImage" src="null" />
                         <img style="display:none;" id="largeImage" src="" />
                         <!-- Popup content goes here -->
                     </div>
@@ -117,10 +117,13 @@
                     <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue open-popup">
                         <i class="icon icon-plus"></i>
                     </a>
-                    <GmapMap :center="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%">
+                    <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @idle="recenter()" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%">
                         <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
+                        //borrowing images for clusters from google for demo purpose
+                        <Gmap-cluster :gridSize="20" :imagePath="imagePath">
                         <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
                         </GmapMarker>
+                        </Gmap-cluster>
                     </GmapMap>
                 </f7-page>
             </f7-pages>
@@ -168,6 +171,7 @@ export default {
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
                 viewComment: null,
+                imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m'
             }
         },
         mounted: function() {
@@ -177,6 +181,10 @@ export default {
             //console.log(this.$data);
         },
         methods: {
+            recenter: function(){
+              console.log("in recenter");
+              this.$refs.myMap.panTo(this.$data.center);
+            },
             zoomUpdate: function(event) {
                 //console.log(event);
                 this.$data.zoom = event;
@@ -192,6 +200,7 @@ export default {
                 getPhoto();
             },
             crime: function() {
+                document.getElementById('smallImage').src = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
@@ -213,7 +222,11 @@ export default {
                         "comment": comment
                     }
                     var url = document.getElementById('smallImage').src;
-                    if(url){
+                    console.log(url);
+                    var check = new RegExp("data:image/jpeg;base64,")
+                    var base64 = check.test(url);
+                    if(base64){
+                      console.log(url);
                       storeImage(url, this.$data.center.lat, this.$data.center.lng);
                     }
                     //console.log(window.img);
@@ -251,7 +264,7 @@ export default {
                 this.$f7.popup('.popup-marker');
             },
             setLoc: function() {
-                console.log('setcenter')
+                console.log('setLoc')
                 // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
@@ -268,9 +281,7 @@ export default {
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
                     }
-                    if(that.$data.track == true){
                       that.$data.center = that.$data.loc;
-                    }
                     setTimeout(function(){ that.setLoc() },5000);
                     /*that.$nextTick(function() {
                         that.setMarkers();
@@ -291,7 +302,7 @@ export default {
                 var locs = [];
                 //console.log(this.$data.zoom);
                 var radius = Math.pow(2, (17 - this.$data.zoom));
-                console.log("in setMarkers")
+                console.log(this.$data.center);
                 this.$nextTick(function() {
                     //console.log(radius)
                     var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);

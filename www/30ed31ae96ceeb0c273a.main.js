@@ -65038,6 +65038,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 // document.querySelector('img').src = {{photo}};
@@ -65064,6 +65067,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
                 viewComment: null,
+                imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m'
             }
         },
         mounted: function() {
@@ -65073,6 +65077,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //console.log(this.$data);
         },
         methods: {
+            recenter: function(){
+              console.log("in recenter");
+              this.$refs.myMap.panTo(this.$data.center);
+            },
             zoomUpdate: function(event) {
                 //console.log(event);
                 this.$data.zoom = event;
@@ -65088,6 +65096,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__camera_js__["b" /* getPhoto */])();
             },
             crime: function() {
+                document.getElementById('smallImage').src = null;
                 this.$f7.popup('.popup-addcrime');
             },
             close: function() {
@@ -65109,7 +65118,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         "comment": comment
                     }
                     var url = document.getElementById('smallImage').src;
-                    if(url){
+                    console.log(url);
+                    var check = new RegExp("data:image/jpeg;base64,")
+                    var base64 = check.test(url);
+                    if(base64){
+                      console.log(url);
                       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__image_storage_js__["a" /* storeImage */])(url, this.$data.center.lat, this.$data.center.lng);
                     }
                     //console.log(window.img);
@@ -65147,7 +65160,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.$f7.popup('.popup-marker');
             },
             setLoc: function() {
-                console.log('setcenter')
+                console.log('setLoc')
                 // Request Location Services
                 var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
                     onError, {
@@ -65164,9 +65177,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
                     }
-                    if(that.$data.track == true){
                       that.$data.center = that.$data.loc;
-                    }
                     setTimeout(function(){ that.setLoc() },5000);
                     /*that.$nextTick(function() {
                         that.setMarkers();
@@ -65187,7 +65198,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var locs = [];
                 //console.log(this.$data.zoom);
                 var radius = Math.pow(2, (17 - this.$data.zoom));
-                console.log("in setMarkers")
+                console.log(this.$data.center);
                 this.$nextTick(function() {
                     //console.log(radius)
                     var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
@@ -65653,7 +65664,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     attrs: {
       "id": "smallImage",
-      "src": ""
+      "src": "null"
     }
   }), _vm._v(" "), _c('img', {
     staticStyle: {
@@ -65709,6 +65720,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "icon icon-plus"
   })]), _vm._v(" "), _c('GmapMap', {
+    ref: "myMap",
     staticStyle: {
       "width": "100%",
       "height": "100%"
@@ -65722,8 +65734,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     },
     on: {
+      "update:center": function($event) {
+        _vm.center = $event
+      },
       "zoom_changed": function($event) {
         _vm.zoomUpdate($event)
+      },
+      "idle": function($event) {
+        _vm.recenter()
       }
     }
   }, [_c('GmapMarker', {
@@ -65733,7 +65751,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "zIndex": 1,
       "icon": _vm.curr
     }
-  }), _vm._v(" "), _vm._l((_vm.markers), function(m) {
+  }), _vm._v("\n                        //borrowing images for clusters from google for demo purpose\n                        "), _c('Gmap-cluster', {
+    attrs: {
+      "gridSize": 20,
+      "imagePath": _vm.imagePath
+    }
+  }, _vm._l((_vm.markers), function(m) {
     return _c('GmapMarker', {
       directives: [{
         name: "el",
@@ -65751,7 +65774,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  })], 2)], 1)], 1)], 1)], 1)], 1)
+  }))], 1)], 1)], 1)], 1)], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
