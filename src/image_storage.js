@@ -35,6 +35,27 @@ firebase
 // Wait for Cordova to connect with the device
    //
 
+function getFileNames(a,b){
+
+  var firebaseRef = firebase.database().ref("info/"+getHash(a,b));
+  // var filenames = firebaseRef.child("filenames");
+  var files;
+
+  // var childRef = firebase.database().ref(firebaseRef.child(name));
+  firebaseRef.on("value", function(snapshot) {
+      var newPost = snapshot.val();
+      if(newPost !== null) //does this data exist?
+      {
+          // console.log("hash: " + newPost.g);
+          files = newPost.filenames;
+          // console.log("Previous Post ID: " + prevChildKey);
+      }else{
+          // console.log("null!");
+      }
+  });
+  return files;
+}
+
 
 //retrieve the image data
 function retrieveImage(imageName,a,b){
@@ -42,13 +63,17 @@ function retrieveImage(imageName,a,b){
 
   // var storage = firebase.storage()
   // var imageBase64;
+  console.log(b);
   var name = a.toString().replace(/\./g,'x')+"and"+ b.toString().replace(/\./g,'y');
 
-  var location = name+"/"+imageName;
-  console.log(location);
-  var downloadRef = firebase.storage().ref().child(location);
+  
 
   if(imageName == ''){
+    imageName = getFileNames(a,b);
+    var location = name+"/"+imageName[0];
+    console.log(location);
+    var downloadRef = firebase.storage().ref().child(location);
+
     var path = downloadRef.getPath();
     downloadRef.getDownloadURL().then(function(url){  
 
@@ -61,6 +86,10 @@ function retrieveImage(imageName,a,b){
       // x = url;
     });
   }
+
+  var location = name+"/"+imageName;
+  console.log(location);
+  var downloadRef = firebase.storage().ref().child(location);
   downloadRef.getDownloadURL().then(function(url){  
 
       // console.log(url.toString());     
@@ -230,10 +259,10 @@ function storeImage(imageData,a,b){
             if(newPost !== null) //does this data exist?
             {
                 // console.log("hash: " + newPost.g);
-                filenames.set(newPost.filenames +';'+imageName);
+                filenames.add(imageName);
                 // console.log("Previous Post ID: " + prevChildKey);
             }else{
-                filenames.set(imageName);
+                // filenames.set(imageName);
                 // console.log("null!");
             }
         });

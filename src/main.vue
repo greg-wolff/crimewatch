@@ -160,7 +160,7 @@ export default {
                 Category: ["Murder", "Theft"],
                 viewTypes: [],
                 viewComment: null,
-                photo: []
+                photo: null
             }
         },
         mounted: function() {
@@ -206,6 +206,7 @@ export default {
                         "comment": comment
                     }
                     console.log("in submit:"+this.$data.photo)
+                    console.log(this.$data.center.lat);
                     storeImage(window.img,this.$data.center.lat, this.$data.center.lng);
                     loadInfo(this.$data.center.lat, this.$data.center.lng, data);
                 });
@@ -221,7 +222,8 @@ export default {
                 //push category data to vue.$data so we can use v-for
                 this.$data.viewTypes = json.category;
                 this.$data.viewComment = json.comment;
-                this.$data.photo = retrieveImage($data.center.lng,$data.center.lat);
+                // console.log(this.$data.center.lat);
+                retrieveImage("1496829446385.image",10,10);
                 // console.log("photo: " +this.$data.photo);
                 /*var popupHTML =
                     '<div class="popup">' +
