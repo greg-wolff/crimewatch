@@ -91,39 +91,37 @@ exports.default = {
     // empty
     this.$watch('paths', function (paths) {
       if (paths) {
-        (function () {
-          clearEvents();
+        clearEvents();
 
-          _this.$polygonObject.setPaths(paths);
+        _this.$polygonObject.setPaths(paths);
 
-          var updatePaths = function updatePaths() {
-            _this.$emit('paths_changed', _this.$polygonObject.getPaths());
-          };
-          var eventListeners = [];
+        var updatePaths = function updatePaths() {
+          _this.$emit('paths_changed', _this.$polygonObject.getPaths());
+        };
+        var eventListeners = [];
 
-          var mvcArray = _this.$polygonObject.getPaths();
-          for (var i = 0; i < mvcArray.getLength(); i++) {
-            var mvcPath = mvcArray.getAt(i);
-            eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
-            eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
-            eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
-          }
-          eventListeners.push([mvcArray, mvcArray.addListener('insert_at', updatePaths)]);
-          eventListeners.push([mvcArray, mvcArray.addListener('remove_at', updatePaths)]);
-          eventListeners.push([mvcArray, mvcArray.addListener('set_at', updatePaths)]);
+        var mvcArray = _this.$polygonObject.getPaths();
+        for (var i = 0; i < mvcArray.getLength(); i++) {
+          var mvcPath = mvcArray.getAt(i);
+          eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
+          eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
+          eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
+        }
+        eventListeners.push([mvcArray, mvcArray.addListener('insert_at', updatePaths)]);
+        eventListeners.push([mvcArray, mvcArray.addListener('remove_at', updatePaths)]);
+        eventListeners.push([mvcArray, mvcArray.addListener('set_at', updatePaths)]);
 
-          clearEvents = function clearEvents() {
-            eventListeners.map(function (_ref) {
-              var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-                  obj = _ref2[0],
-                  listenerHandle = _ref2[1];
+        clearEvents = function clearEvents() {
+          eventListeners.map(function (_ref) {
+            var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+                obj = _ref2[0],
+                listenerHandle = _ref2[1];
 
-              return (// eslint-disable-line no-unused-vars
-                google.maps.event.removeListener(listenerHandle)
-              );
-            });
-          };
-        })();
+            return (// eslint-disable-line no-unused-vars
+              google.maps.event.removeListener(listenerHandle)
+            );
+          });
+        };
       }
     }, {
       deep: this.deepWatch,
@@ -132,34 +130,32 @@ exports.default = {
 
     this.$watch('path', function (path) {
       if (path) {
-        (function () {
-          clearEvents();
+        clearEvents();
 
-          _this.$polygonObject.setPaths(path);
+        _this.$polygonObject.setPaths(path);
 
-          var mvcPath = _this.$polygonObject.getPath();
-          var eventListeners = [];
+        var mvcPath = _this.$polygonObject.getPath();
+        var eventListeners = [];
 
-          var updatePaths = function updatePaths() {
-            _this.$emit('path_changed', _this.$polygonObject.getPath());
-          };
+        var updatePaths = function updatePaths() {
+          _this.$emit('path_changed', _this.$polygonObject.getPath());
+        };
 
-          eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
-          eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
-          eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
 
-          clearEvents = function clearEvents() {
-            eventListeners.map(function (_ref3) {
-              var _ref4 = (0, _slicedToArray3.default)(_ref3, 2),
-                  obj = _ref4[0],
-                  listenerHandle = _ref4[1];
+        clearEvents = function clearEvents() {
+          eventListeners.map(function (_ref3) {
+            var _ref4 = (0, _slicedToArray3.default)(_ref3, 2),
+                obj = _ref4[0],
+                listenerHandle = _ref4[1];
 
-              return (// eslint-disable-line no-unused-vars
-                google.maps.event.removeListener(listenerHandle)
-              );
-            });
-          };
-        })();
+            return (// eslint-disable-line no-unused-vars
+              google.maps.event.removeListener(listenerHandle)
+            );
+          });
+        };
       }
     }, {
       deep: this.deepWatch,

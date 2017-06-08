@@ -17,8 +17,6 @@ exports.default = {
 
   data: function data() {
     return {
-      // For propsBinder trackProperties
-      _changeIndicators: {},
       _actualResizeBus: null
     };
   },

@@ -6,7 +6,6 @@ import eventsBinder from '../utils/eventsBinder.js';
 import propsBinder from '../utils/propsBinder.js';
 import getPropsMixin from '../utils/getPropsValuesMixin.js';
 import mountableMixin from '../utils/mountableMixin.js';
-import latlngChangedHandler from '../utils/latlngChangedHandler.js';
 
 const props = {
   center: {
@@ -107,17 +106,29 @@ export default {
     this.$mapCreated = new Promise((resolve, reject) => {
       this.$mapCreatedDeferred = { resolve, reject };
     });
+
+    const updateCenter = () => {
+      this.$mapObject.setCenter({
+        lat: this.finalLat,
+        lng: this.finalLng,
+      })
+    }
+    this.$watch('finalLat', updateCenter)
+    this.$watch('finalLng', updateCenter)
+  },
+
+  computed: {
+    finalLat () {
+      return this.center &&
+        (typeof this.center.lat === 'function') ? this.center.lat() : this.center.lat
+    },
+    finalLng () {
+      return this.center &&
+        (typeof this.center.lng === 'function') ? this.center.lng() : this.center.lng
+    },
   },
 
   watch: {
-    center: {
-      deep: true,
-      handler: latlngChangedHandler(function (val, oldVal) { // eslint-disable-line no-unused-vars
-        if (this.$mapObject) {
-          this.$mapObject.setCenter(val);
-        }
-      }),
-    },
     zoom(zoom) {
       if (this.$mapObject) {
         this.$mapObject.setZoom(zoom);
@@ -158,9 +169,9 @@ export default {
 
       return this.$mapCreated;
     })
-      .catch((error) => {
-        throw error;
-      });
+    .catch((error) => {
+      throw error;
+    });
   },
   methods: methods
 };

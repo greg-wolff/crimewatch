@@ -19,11 +19,6 @@ exports.default = {
 
   mixins: [_deferredReady.DeferredReadyMixin],
 
-  data: function data() {
-    return {
-      _changeIndicators: {} // For propsBinder trackProperties
-    };
-  },
   created: function created() {
     var _this = this;
 
