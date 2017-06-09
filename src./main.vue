@@ -15,19 +15,8 @@
             <f7-pages>
                 <f7-page>
                     <f7-block>
-                        <p>Right panel content goes here</p>
+                        <p><f7-button active @click='onLogOut()'>LogOut</f7-button></p>
                     </f7-block>
-                    <f7-block-title>Load page in panel</f7-block-title>
-                    <f7-list>
-                        <f7-list-item link="/form/" title="Form"></f7-list-item>
-                    </f7-list>
-                    <f7-block-title>Load page in main view</f7-block-title>
-                    <f7-list>
-                        <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
-                    </f7-list>
-                    <f7-list>
-                        <f7-list-item link="/map/" title="Map" link-view="#main-view" link-close-panel></f7-list-item>
-                    </f7-list>
                 </f7-page>
             </f7-pages>
         </f7-view>
@@ -40,7 +29,7 @@
             <f7-navbar>
                 <f7-nav-center sliding>Crimewatch</f7-nav-center>
                 <f7-nav-right>
-                    <f7-button active @click='onLogOut()'>LogOut</f7-button>
+                    <f7-button v-if="!this.$data.track" active @click='snap()'>Center</f7-button>
                     <f7-link icon="icon-bars" open-panel="right"></f7-link>
                 </f7-nav-right>
             </f7-navbar>
@@ -167,7 +156,7 @@
                         <img style="display:none;" id="largeImage" src="" />
                         <!-- Popup content goes here -->
                     </div>
-                    <div class="popup popup-marker">
+                    <div class="popup popup-marker tablet-fullscreen">
                         <div class="content-block">
                             <p><a href="#" @click="close"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></p>
                             <h1> {{viewComment}} </h1>
@@ -182,11 +171,16 @@
                     <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue" @click="crime()">
                         <i class="icon icon-plus"></i>
                     </a>
-                    <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @idle="recenter()" :options='{ zoomControl: false, streetViewControl: false  }' style="width: 100%; height:100%">
+                    <GmapMap ref="myMap" :center.sync="center" :zoom="zoom"
+                    @zoom_changed="zoomUpdate($event)"
+                    @idle="recenter()"
+                    @center_changed="cen($event)"
+                    :options='{ zoomControl: false, streetViewControl: false, disableDoubleClickZoom: true  }'
+                    style="width: 100%; height:100%">
                         <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
-                        //borrowing images for clusters from google for demo purpose
-                        <Gmap-cluster :gridSize="20" :imagePath="imagePath">
-                        <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)" v-el:current>
+                        <!--borrowing images for clusters from google for demo purpose-->
+                        <Gmap-cluster :gridSize="10" :imagePath="imagePath" @click="viewCluster">
+                        <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)">
                         </GmapMarker>
                         </Gmap-cluster>
                     </GmapMap>
@@ -225,6 +219,7 @@ from './firebaseConfig';
 export default {
     data() {
             return {
+                //map variables
                 center: {
                     lat: 10.0,
                     lng: 10.0
@@ -234,22 +229,33 @@ export default {
                   lat:10.0,
                   lng:10.0
                 },
+                markers: [],
+
+                //flags for functions
                 track:true,
                 pause:false,
+
+                //current location image
                 curr: 'http://i.imgur.com/VnDEIQt.png',
-                markers: [],
+                //cluster image
+                imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m',
+
+                //Add crime variables
                 comment: null,
                 Category: ["Murder", "Theft"],
+
+                //Retrieval info
                 viewTypes: [],
                 getUrl: null,
                 viewComment: null,
-                imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m'
+
             }
         },
         beforeCreated(){
           firebase.initializeApp(config);
         },
         created() {
+            //user login
             var self = this;
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
@@ -273,18 +279,27 @@ export default {
         methods: {
             recenter: function(){
               console.log("in recenter");
-              this.$refs.myMap.panTo(this.$data.center);
+            },
+            viewCluster: function(){
+              this.$data.track = false;
+            },
+            snap: function(){
+              this.$data.track = true;
+              this.$data.zoom = 15;
+              //this.$refs.myMap.panTo(this.$data.loc);
+              //this.$refs.myMap.zoom = 15;
+              //this.$refs.myMap.panTo(this.$data.loc);
             },
             zoomUpdate: function(event) {
-                //console.log(event);
                 this.$data.zoom = event;
-                //this.setMarkers();
+            },
+            cen: function(event){
+              if(this.$data.track == false){
+                this.$data.center = event;
+              }
             },
             campturePhoto: function() {
-                //console.log(window.longitude);
-                //console.log(window.latitude);
                 capturePhoto();
-                //console.log(window.img);
             },
             getPhoto: function() {
                 getPhoto();
@@ -323,10 +338,10 @@ export default {
                     console.log(url);
                     if(base64){
                       console.log(url);
-                      storeImage(url, this.$data.center.lat, this.$data.center.lng);
+                      storeImage(url, this.$data.loc.lat, this.$data.loc.lng);
                     }
                     //console.log(window.img);
-                    loadInfo(this.$data.center.lat, this.$data.center.lng, data);
+                    loadInfo(this.$data.loc.lat, this.$data.loc.lng, data);
                 });
                 //console.log(this.$data);
                 this.$data.pause = false;
@@ -383,8 +398,13 @@ export default {
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude
                     }
-                      that.$data.center = that.$data.loc;
-                    setTimeout(function(){ that.setLoc() },10000);
+                    if(that.$data.track == true){
+                      that.$data.center = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                      }
+                    }
+                    setTimeout(function(){ that.setLoc() },5000);
                     /*that.$nextTick(function() {
                         that.setMarkers();
                     });*/
@@ -409,10 +429,10 @@ export default {
                     //console.log(radius)
                     var locations = Nearby(this.$data.center.lat, this.$data.center.lng, radius);
                     this.$data.markers = locations;
-                    var self = this;
                     //console.log("In set markers");
+                    var self = this;
                     if(this.$data.pause != true){
-                      setTimeout(function(){ self.setMarkers() },10000)
+                      setTimeout(function(){ self.setMarkers() },5000)
                       console.log(this.$data.pause)
                     }
 

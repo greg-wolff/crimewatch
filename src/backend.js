@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 import * as GeoFire from 'geofire';
 // Initialize Firebase
-var config = {
+var config ={
   apiKey: "AIzaSyCwARzDLBornfgDnyPSJ-wxPSv9Ow2k2Gc",
   authDomain: "crimewatch-8f003.firebaseapp.com",
   databaseURL: "https://crimewatch-8f003.firebaseio.com",
@@ -57,36 +57,6 @@ function loadInfo(a,b,infoJSON)
     var firebaseRef = firebase.database().ref("info"); //top level <info>
     var infoRef = firebaseRef.child(hash);
     infoRef.set(infoJSON);
-}
-
-//currently not working
-function getGeo(hash)
-{
-    //searches through g children to find match
-    return [a,b];
-}
-
-//currently not working
-function getJSON(hash)
-{
-
-    // var infoJSON="{}";
-    //
-    // var firebaseRef = firebase.database().ref("info/");
-    //
-    // firebaseRef.on("value", function(snapshot) {
-    //     var newPost = snapshot.val();
-    //     if(newPost !== null) //does this data exist?
-    //     {
-    //         // console.log("hash: " + newPost.g);
-    //         infoJSON = newPost[hash];
-    //         // console.log("Previous Post ID: " + prevChildKey);
-    //     }else{
-    //         // console.log("null!");
-    //     }
-    // });
-    // console.log(infoJSON);
-    // return infoJSON;
 }
 
 //returns a list of locations with dist km of a,b
