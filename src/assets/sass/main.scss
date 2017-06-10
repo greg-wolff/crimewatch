@@ -6,6 +6,16 @@ input {
 	user-select: element !important;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s;
+}
+/* .fade-leave-active in <2.1.8 */
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}
+
 #splash:before {
 	content: url("../images/crimewatch-logo.png");
 	zoom: 12.5%;

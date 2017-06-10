@@ -3,9 +3,9 @@
 <template>
 <!-- App -->
 <div id="app">
-
-  <div id="splash" v-if="this.$data.splash"></div>
-
+  <transition name="fade">
+    <div id="splash" v-if="this.$data.splash"></div>
+  </transition>
   <!-- Statusbar -->
   <f7-statusbar></f7-statusbar>
 
