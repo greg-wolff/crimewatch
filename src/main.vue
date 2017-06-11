@@ -15,8 +15,12 @@
             <f7-pages>
                 <f7-page>
                     <f7-block>
-                        <p><f7-button active @click='onLogOut()'>LogOut</f7-button></p>
+                        <p><f7-button active fill color="blue" @click='onLogOut()'>LogOut</f7-button></p>
                     </f7-block>
+                    <f7-block>
+                      <f7-label>Track</f7-label>
+                      <f7-input type="switch" size="12" @change="onChange" v-model="track"></f7-input>
+                  </f7-block>
                 </f7-page>
             </f7-pages>
         </f7-view>
@@ -29,7 +33,6 @@
             <f7-navbar>
                 <f7-nav-center sliding>Crimewatch</f7-nav-center>
                 <f7-nav-right>
-                    <f7-button v-if="!this.$data.track" active @click='snap()'>Center</f7-button>
                     <f7-link icon="icon-bars" open-panel="right"></f7-link>
                 </f7-nav-right>
             </f7-navbar>
@@ -168,6 +171,7 @@
                             </div>
                         </div>
                     </div>
+                    <f7-button v-if="!this.$data.track" active fill color="blue" @click='snap()'>Center</f7-button>
                     <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue" @click="crime()">
                         <i class="icon icon-plus"></i>
                     </a>
@@ -341,7 +345,7 @@ export default {
                       storeImage(url, this.$data.loc.lat, this.$data.loc.lng);
                     }
                     //console.log(window.img);
-                    loadInfo(this.$data.loc.lat, this.$data.loc.lng, data);
+                    loadInfo(this.$data.center.lat, this.$data.center.lng, data);
                 });
                 //console.log(this.$data);
                 this.$data.pause = false;
