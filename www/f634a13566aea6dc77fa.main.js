@@ -65067,25 +65067,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 // document.querySelector('img').src = {{photo}};
 
@@ -65123,7 +65104,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       //Add crime variables
       comment: null,
-      Category: ["Murder", "Theft"],
+      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Harrasment", "Vandalism", "Sexual"],
 
       //Retrieval info
       viewTypes: [],
@@ -65205,6 +65186,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var day = currentTime.getDay();
         var hour = currentTime.getHours();
         var minute = currentTime.getMinutes();
+        console.log(this.$data.Category);
         var types = this.$data.Category;
         var comment = this.$data.comment;
         var data = {
@@ -65771,99 +65753,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-title"
-  }, [_vm._v("Categories")])])]), _vm._v(" "), _c('div', {
-    staticClass: "accordion-item-content"
-  }, [_c('div', {
-    staticClass: "list-block"
-  }, [_c('ul', [_c('li', [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model.lazy",
-      value: (_vm.Category),
-      expression: "Category",
-      modifiers: {
-        "lazy": true
-      }
-    }],
-    staticStyle: {
-      "width": "25px",
-      "height": "25px"
-    },
-    attrs: {
-      "type": "checkbox",
-      "id": "murder",
-      "value": "Murder"
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Murder") > -1 : (_vm.Category)
-    },
-    on: {
-      "__c": function($event) {
-        var $$a = _vm.Category,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = "Murder",
-            $$i = _vm._i($$a, $$v);
-          if ($$c) {
-            $$i < 0 && (_vm.Category = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.Category = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.Category = $$c
-        }
-      }
-    }
-  }), _vm._v(" "), _c('font', {
-    attrs: {
-      "size": "4"
-    }
-  }, [_vm._v("Murder")])], 1), _vm._v(" "), _c('li', [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model.lazy",
-      value: (_vm.Category),
-      expression: "Category",
-      modifiers: {
-        "lazy": true
-      }
-    }],
-    staticStyle: {
-      "width": "25px",
-      "height": "25px"
-    },
-    attrs: {
-      "type": "checkbox",
-      "id": "theft",
-      "value": "Theft"
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Theft") > -1 : (_vm.Category)
-    },
-    on: {
-      "__c": function($event) {
-        var $$a = _vm.Category,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = "Theft",
-            $$i = _vm._i($$a, $$v);
-          if ($$c) {
-            $$i < 0 && (_vm.Category = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.Category = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.Category = $$c
-        }
-      }
-    }
-  }), _vm._v(" "), _c('font', {
-    attrs: {
-      "size": "4"
-    }
-  }, [_vm._v("Theft")])], 1)])])])]), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_c('b', [_vm._v("Comments")])]), _vm._v(" "), _c('f7-input', {
+  }, [_vm._v("Categories")])])]), _vm._v(" "), _vm._l((_vm.Category), function(type) {
+    return _c('div', {
+      staticClass: "chip"
+    }, [_c('div', {
+      staticClass: "chip-label"
+    }, [_vm._v(" " + _vm._s(type) + " ")])])
+  })], 2), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_c('b', [_vm._v("Comments")])]), _vm._v(" "), _c('f7-input', {
     attrs: {
       "type": "textarea",
       "placeholder": "",
@@ -65876,7 +65772,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "comment"
     }
-  })], 1), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.Category))])], 1), _vm._v(" "), _c('f7-button', {
+  })], 1)], 1), _vm._v(" "), _c('f7-button', {
     attrs: {
       "fill": "",
       "color": "blue"
@@ -65952,7 +65848,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "chip"
     }, [_c('div', {
       staticClass: "chip-label"
-    }, [_vm._v(" " + _vm._s(type) + " ")])])
+    }, [_vm._v(" " + _vm._s(type) + " ")]), _vm._v(" "), _c('div', {
+      staticClass: "chip-label"
+    }, [_vm._v(" \"+\" ")])])
   })], 2)]), _vm._v(" "), _c('a', {
     staticClass: " floating-button color-blue",
     attrs: {

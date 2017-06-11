@@ -125,35 +125,15 @@
                     <div class="item-title">Categories</div>
                   </div>
                 </a>
-                <div class="accordion-item-content">
-                  <div class="list-block">
-                    <ul>
-                      <!-- Single chekbox item -->
-                      <li>
-                        <!--  -->
-                        <input type="checkbox" id="murder" value="Murder" style="width:25px;height:25px;" v-model.lazy="Category">
-                        <font size="4">Murder</font>
-                        </input>
-                      </li>
-                      <!-- Another chekbox item -->
-                      <li>
-                        <!--  -->
-                        <input type="checkbox" id="theft" value="Theft" style="width:25px;height:25px;" v-model.lazy="Category">
-                        <font size="4">Theft</font>
-                        </input>
-                      </li>
-                    </ul>
-                  </div>
+                <div class="chip" v-for="type in Category">
+                  <div class="chip-label"> {{type}} </div>
                 </div>
               </div>
 
               <f7-list-item>
                 <f7-label><b>Comments</b></f7-label>
                 <f7-input type="textarea" placeholder="" v-model="comment" lazy />
-              </f7-list-item>
-
-
-              <p>{{Category}}</p>
+              </f7-list-item>              
             </f7-list>
 
             <f7-button fill color="blue" @click="submit">Send</f7-button>
@@ -172,6 +152,7 @@
               </div>
               <div class="chip" v-for="type in viewTypes">
                 <div class="chip-label"> {{type}} </div>
+                <!-- BUTTON LOGIC HERE -->
               </div>
             </div>
           </div>
@@ -248,7 +229,7 @@ export default {
 
       //Add crime variables
       comment: null,
-      Category: ["Murder", "Theft"],
+      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Harrasment", "Vandalism", "Sexual"],
 
       //Retrieval info
       viewTypes: [],
@@ -330,6 +311,7 @@ export default {
         var day = currentTime.getDay();
         var hour = currentTime.getHours();
         var minute = currentTime.getMinutes();
+        console.log(this.$data.Category);
         var types = this.$data.Category;
         var comment = this.$data.comment;
         var data = {
