@@ -4,7 +4,9 @@
 
 <!-- App -->
 <div id="app">
-
+  <transition name="fade">
+    <div id="splash" v-if="this.$data.splash"></div>
+  </transition>
     <!-- Statusbar -->
     <f7-statusbar></f7-statusbar>
 
@@ -238,7 +240,7 @@ export default {
                 //flags for functions
                 track:true,
                 pause:false,
-
+                splash:true,
                 //current location image
                 curr: 'http://i.imgur.com/VnDEIQt.png',
                 //cluster image
@@ -274,6 +276,7 @@ export default {
 
         },
         mounted: function() {
+            this.$data.splash = false;
             this.setLoc();
             this.setMarkers();
             console.log(this.$data.pause)
