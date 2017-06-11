@@ -6,53 +6,77 @@ input {
 	user-select: element !important;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s;
+}
+/* .fade-leave-active in <2.1.8 */
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}
+
+#splash:before {
+	content: url("../images/crimewatch-logo.png");
+	zoom: 12.5%;
+}
+
+#splash {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #5882f9;
+	width: 100%;
+	height: 100%;
+}
+
 .tab-link {
-	
 	&.active:not(.offline),
 	&.active:not(.online) {
 		background-color: rgba(1, 18, 25, 0.1);
 	}
-	
+
 	&.offline {
 		background-color: rgba(255, 0, 0, 0.60);
-		
+
 		&.active {
 			background-color: rgba(255, 0, 0, 0.70);
 		}
 	}
-	
+
 	&.online {
 		background-color: rgba(0, 255, 0, 0.25);
-		
+
 		&.active {
 			background-color: rgba(0, 255, 0, 0.50);
 		}
 	}
-	
+
 	i {
 		font-size: 24px;
 		color: #FFFFFF;
-		
+
 		&.settings-icon {
 			font-size: 26px;
 			margin-top: -2px;
 			margin-left: 2px;
 		}
-		
+
 		&.a {
 			display: inline-block;
 		}
+
 		&.b {
 			display: none;
 		}
 	}
-	
+
 	&.active {
-		
 		i {
 			&.a {
 				display: none;
 			}
+
 			&.b {
 				display: inline-block;
 			}
@@ -66,17 +90,17 @@ input {
 	border: 1px solid #EEE;
 }
 
-.phone-code-selection, .language-selection {
-	
+.language-selection,
+.phone-code-selection {
 	.item-title-row {
 		background-position-y: 10px !important;
-		
+
 		.item-title span {
 			display: block;
 			font-size: 12px;
 			color: #999;
 		}
-		
+
 		.item-after {
 			position: relative;
 			top: 11px;
@@ -90,7 +114,7 @@ input {
 
 #select-contact {
 	position: relative;
-	
+
 	i {
 		position: absolute;
 		font-size: 18px;
@@ -107,12 +131,12 @@ input {
 
 .phone-number-area {
 	margin-top: -1px;
-	
+
 	ul:before {
 		background: none;
 		display: none;
 	}
-	
+
 	i {
 		font-size: 26px;
 		margin-left: 7px;
@@ -126,13 +150,14 @@ input {
 	text-align: center;
 	color: #FFF;
 	position: relative;
-	
-	i, span {
+
+	i,
+	span {
 		display: inline-block;
 		vertical-align: middle;
 		font-size: 16px;
 	}
-	
+
 	i {
 		font-size: 23px;
 		position: absolute;
@@ -140,18 +165,18 @@ input {
 		top: 50%;
 		margin-top: -12px;
 	}
-	
+
 	&.phone-good {
 		background: #2196F3;
-		
+
 		.icon-close {
 			display: none;
 		}
 	}
-	
+
 	&.phone-bad {
 		background: #F44336;
-		
+
 		.icon-check {
 			display: none;
 		}
