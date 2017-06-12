@@ -125,10 +125,19 @@
                     <div class="item-title">Categories</div>
                   </div>
                 </a>
-                <div class="chip" v-for="type in Category">
-                  <div class="chip-label"> {{type}} </div>
+                <div class="row">
+                  <div class="col-auto">
+                    <a href="#" class="chip" v-for="type in Category" :clickable="true" @click="addTag(type,$event)"> {{type}} </a>
+                  </div>
                 </div>
               </div>
+              <!-- <div class="actions-modal"> -->
+                <!-- this is a single group -->
+                    <!-- now this represents a single button -->
+              <!--       <div class="item-input">
+                        <f7-input type="text" placeholder="new tag" v-model="comment" lazy />
+                    </div>
+              </div>     -->        
 
               <f7-list-item>
                 <f7-label><b>Comments</b></f7-label>
@@ -218,6 +227,7 @@ export default {
       //flags for functions
       track: true,
       pause: false,
+      newTag: null,
 
       //splash screen
       splash: true,
@@ -229,7 +239,10 @@ export default {
 
       //Add crime variables
       comment: null,
-      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Harrasment", "Vandalism", "Sexual"],
+      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial","Sexual", "Harrasment", "Vandalism"],
+
+      //for specific category-type
+      categoryType: [],
 
       //Retrieval info
       viewTypes: [],
@@ -303,6 +316,38 @@ export default {
       this.setMarkers();
       this.$f7.closeModal()
     },
+    addTag: function(tag,event){
+      console.log(tag);
+      // if(tag === "+"){
+      //   var myApp = new Framework7();
+      //   myApp.actions([{x:""}]);
+      
+      // }
+      // else{
+        //if not in...
+        if(this.$data.categoryType.includes(tag)){
+          console.log("removing tag");
+          //these chips are gainsboro 
+          event.target.style.backgroundColor='#DCDCDC';
+          event.target.style.color='black';
+
+          // $(this).animate({'opacity':1});
+
+          this.$data.categoryType.splice(this.$data.categoryType.indexOf(tag),1);
+        }
+        else{
+          console.log("adding tag");
+          this.$data.categoryType.push(tag);
+          event.target.style.backgroundColor='grey';
+          event.target.style.color='white';
+          // (this).animate({'opacity':0});
+        }
+      // }
+      
+      
+
+
+    },
     submit: function() {
       this.$nextTick(function() {
         var currentTime = new Date();
@@ -312,7 +357,7 @@ export default {
         var hour = currentTime.getHours();
         var minute = currentTime.getMinutes();
         console.log(this.$data.Category);
-        var types = this.$data.Category;
+        var types = this.$data.categoryType;
         var comment = this.$data.comment;
         var data = {
           "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,

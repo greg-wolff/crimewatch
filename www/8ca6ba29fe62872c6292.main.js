@@ -65067,6 +65067,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // document.querySelector('img').src = {{photo}};
 
@@ -65093,6 +65102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       //flags for functions
       track: true,
       pause: false,
+      newTag: null,
 
       //splash screen
       splash: true,
@@ -65104,7 +65114,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       //Add crime variables
       comment: null,
-      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Harrasment", "Vandalism", "Sexual"],
+      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial","Sexual", "Harrasment", "Vandalism"],
+
+      //for specific category-type
+      categoryType: [],
 
       //Retrieval info
       viewTypes: [],
@@ -65178,6 +65191,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.setMarkers();
       this.$f7.closeModal()
     },
+    addTag: function(tag,event){
+      console.log(tag);
+      // if(tag === "+"){
+      //   var myApp = new Framework7();
+      //   myApp.actions([{x:""}]);
+      
+      // }
+      // else{
+        //if not in...
+        if(this.$data.categoryType.includes(tag)){
+          console.log("removing tag");
+          //these chips are gainsboro 
+          event.target.style.backgroundColor='#DCDCDC';
+          event.target.style.color='black';
+
+          // $(this).animate({'opacity':1});
+
+          this.$data.categoryType.splice(this.$data.categoryType.indexOf(tag),1);
+        }
+        else{
+          console.log("adding tag");
+          this.$data.categoryType.push(tag);
+          event.target.style.backgroundColor='grey';
+          event.target.style.color='white';
+          // (this).animate({'opacity':0});
+        }
+      // }
+      
+      
+
+
+    },
     submit: function() {
       this.$nextTick(function() {
         var currentTime = new Date();
@@ -65187,7 +65232,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var hour = currentTime.getHours();
         var minute = currentTime.getMinutes();
         console.log(this.$data.Category);
-        var types = this.$data.Category;
+        var types = this.$data.categoryType;
         var comment = this.$data.comment;
         var data = {
           "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
@@ -65753,13 +65798,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-title"
-  }, [_vm._v("Categories")])])]), _vm._v(" "), _vm._l((_vm.Category), function(type) {
-    return _c('div', {
-      staticClass: "chip"
-    }, [_c('div', {
-      staticClass: "chip-label"
-    }, [_vm._v(" " + _vm._s(type) + " ")])])
-  })], 2), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_c('b', [_vm._v("Comments")])]), _vm._v(" "), _c('f7-input', {
+  }, [_vm._v("Categories")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-auto"
+  }, _vm._l((_vm.Category), function(type) {
+    return _c('a', {
+      staticClass: "chip",
+      attrs: {
+        "href": "#",
+        "clickable": true
+      },
+      on: {
+        "click": function($event) {
+          _vm.addTag(type, $event)
+        }
+      }
+    }, [_vm._v(" " + _vm._s(type) + " ")])
+  }))])]), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_c('b', [_vm._v("Comments")])]), _vm._v(" "), _c('f7-input', {
     attrs: {
       "type": "textarea",
       "placeholder": "",
@@ -65848,9 +65904,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "chip"
     }, [_c('div', {
       staticClass: "chip-label"
-    }, [_vm._v(" " + _vm._s(type) + " ")]), _vm._v(" "), _c('div', {
-      staticClass: "chip-label"
-    }, [_vm._v(" \"+\" ")])])
+    }, [_vm._v(" " + _vm._s(type) + " ")])])
   })], 2)]), _vm._v(" "), _c('a', {
     staticClass: " floating-button color-blue",
     attrs: {
