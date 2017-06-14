@@ -19,10 +19,6 @@
                     <f7-block>
                         <p><f7-button active fill color="blue" @click='onLogOut()'>LogOut</f7-button></p>
                     </f7-block>
-                    <f7-block>
-                      <f7-label>Track</f7-label>
-                      <f7-input type="switch" size="12" v-model="track"></f7-input>
-                  </f7-block>
                 </f7-page>
             </f7-pages>
         </f7-view>
@@ -139,12 +135,12 @@
                       <!--       <div class="item-input">
                                 <f7-input type="text" placeholder="new tag" v-model="comment" lazy />
                             </div>
-                      </div>     -->        
+                      </div>     -->
 
                       <f7-list-item>
                         <f7-label><b>Comments</b></f7-label>
                         <f7-input type="textarea" placeholder="" v-model="comment" lazy />
-                      </f7-list-item>              
+                      </f7-list-item>
                     </f7-list>
 
                     <f7-button fill color="blue" @click="submit">Send</f7-button>
@@ -172,8 +168,9 @@
                     </a>
                     <GmapMap ref="myMap" :center.sync="center" :zoom="zoom"
                     @zoom_changed="zoomUpdate($event)"
-                    @idle="recenter()"
                     @center_changed="cen($event)"
+                    @idle = "recenter"
+                    @drag = "drag"
                     :options='{ zoomControl: false, streetViewControl: false, disableDoubleClickZoom: true  }'
                     style="width: 100%; height:100%">
                         <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
@@ -283,13 +280,22 @@ export default {
         },
         methods: {
             recenter: function(){
-              console.log("in recenter");
+              console.log("in recenter")
+              if(this.$data.track == true){
+                this.$refs.myMap.panTo(this.$data.loc);
+              }
+            },
+            drag: function(){
+              console.log("in drag")
+              this.$data.track = false;
             },
             viewCluster: function(){
               this.$data.track = false;
             },
             snap: function(){
               this.$data.track = true;
+              this.$refs.myMap.panTo(this.$data.loc);
+              this.$data.center = this.$data.loc;
               this.$data.zoom = 15;
               //this.$refs.myMap.panTo(this.$data.loc);
               //this.$refs.myMap.zoom = 15;
@@ -299,9 +305,8 @@ export default {
                 this.$data.zoom = event;
             },
             cen: function(event){
-              if(this.$data.track == false){
-                this.$data.center = event;
-              }
+                this.$data.center.lat = event.lat();
+                this.$data.center.lng = event.lng();
             },
             campturePhoto: function() {
                 capturePhoto();
@@ -311,7 +316,7 @@ export default {
             },
             crime: function() {
                   document.getElementById('smallImage').src = "";
-                  this.$data.pause = true;
+                  //this.$data.pause = true;
                   console.log("in crime:" + this.$data.pause)
                   this.$f7.popup('.popup-addcrime')
 
@@ -323,16 +328,10 @@ export default {
             },
             addTag: function(tag,event){
               console.log(tag);
-              // if(tag === "+"){
-              //   var myApp = new Framework7();
-              //   myApp.actions([{x:""}]);
-              
-              // }
-              // else{
-                //if not in...
+
                 if(this.$data.categoryType.includes(tag)){
                   console.log("removing tag");
-                  //these chips are gainsboro 
+                  //these chips are gainsboro
                   event.target.style.backgroundColor='#DCDCDC';
                   event.target.style.color='black';
 
@@ -346,7 +345,7 @@ export default {
                   event.target.style.backgroundColor='grey';
                   event.target.style.color='white';
                   // (this).animate({'opacity':0});
-                }      
+                }
 
 
             },
@@ -375,7 +374,7 @@ export default {
                       storeImage(url, this.$data.loc.lat, this.$data.loc.lng);
                     }
                     //console.log(window.img);
-                    loadInfo(this.$data.center.lat, this.$data.center.lng, data);
+                    loadInfo(this.$data.loc.lat, this.$data.loc.lng, data);
                 });
                 //console.log(this.$data);
                 this.$data.pause = false;
@@ -433,22 +432,18 @@ export default {
                         lng: pos.coords.longitude
                     }
                     if(that.$data.track == true){
-                      that.$data.center = {
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                      }
+                      that.$refs.myMap.panTo(that.$data.loc);
                     }
-                    setTimeout(function(){ that.setLoc() },5000);
-                    /*that.$nextTick(function() {
-                        that.setMarkers();
-                    });*/
+                    //that.$data.center = that.$data.loc;
+                    setTimeout(function(){ that.setLoc() },500);
+
                 }
 
                 function onError(err) {
-                    console.log(err)
+                    console.log("in error")
                     console.log(err.code)
                     console.log(err.message)
-                    setTimeout(function(){ that.setLoc() },5000);
+                    setTimeout(function(){ that.setLoc() },500);
                     /*that.$nextTick(function() {
                         that.setMarkers();
                     });*/
