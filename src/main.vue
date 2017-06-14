@@ -269,6 +269,7 @@ export default {
                 //  console.log("logged in should go to main")
                   self.$f7.closeModal();
                 } else {
+
                     self.$f7.loginScreen();
                 }
             });
@@ -462,7 +463,18 @@ export default {
             //Sign In
             const promise = auth.signInWithEmailAndPassword(email, pass);
             promise.then(user => console.log(user));
-            promise.catch(e => console.log(e.message));
+            //promise.catch(e => console.log(e.message));
+            promise.catch(function(error) {
+             // Handle Errors here.
+             var errorCode = error.code;
+             var errorMessage = error.message;
+             if (errorCode == 'auth/weak-password') {
+               alert('Incorrect password.');
+             } else {
+               alert(errorMessage);
+             }
+             console.log(error);
+             });
             return false;
           },
           onLogOut: function () {
@@ -480,7 +492,18 @@ export default {
            //Sign In
            const promise = auth.createUserWithEmailAndPassword(email, pass);
            //promise.then(user => console.log(user));
-           promise.catch(e => console.log(e.message));
+          // promise.catch(e => console.log(e.message));
+           promise.catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == 'auth/weak-password') {
+              alert('The password is too weak.');
+            } else {
+              alert(errorMessage);
+            }
+            console.log(error);
+            });
            firebase.auth().signOut();
           }
         },
