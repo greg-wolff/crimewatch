@@ -37,23 +37,51 @@
         <f7-view>
           <f7-pages>
             <f7-page>
-              <f7-login-screen-title>Crimewatch</f7-login-screen-title>
-              <div class="container">
-                <center><input id="txtEmail" type="email" placeholder="Email">
-                  <input id="txtPassword" type="password" placeholder="Password"></center>
-                <f7-button active @click='onLogIn()'>Sign in</f7-button>
-              </div>
-
-              <center>OR</center>
-              <center>
-                <div class="page-content">
-                  <div class="content-block">
-                    <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                    <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
+              <div class="view">
+                    <div class="page">
+                      <div class="page-content login-screen-content">
+                        <f7-login-screen-title>Crimewatch</f7-login-screen-title>
+                        <form>
+                          <div class="list-block">
+                            <ul>
+                              <li class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label">Email</div>
+                                  <div class="item-input">
+                                    <input id="txtEmail" type="text" name="username" placeholder="Your Email">
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label">Password</div>
+                                  <div class="item-input">
+                                    <input id="txtPassword" type="password" name="password" placeholder="Your password">
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="list-block">
+                            <ul>
+                              <center>
+                                <f7-button active @click='onLogIn()'>Sign in</f7-button>
+                              </center>
+                            </ul>
+                            <center>OR</center>
+                            <center>
+                              <div class="page-content">
+                                <div class="content-block">
+                                  <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                                  <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
+                                </div>
+                              </div>
+                            </center>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </center>
-              ...
               <!-- About Popup -->
               <div class="popup popup-createaccount">
                 <div class="content-block">
