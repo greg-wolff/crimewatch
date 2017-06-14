@@ -29,10 +29,10 @@ import {
 } from './backend.js'
 
 import {
- storeImage,
- retrieveImage,
- imagePrepare,
- saveB64asImageInitialize
+  storeImage,
+  retrieveImage,
+  imagePrepare,
+  saveB64asImageInitialize
 } from './image_storage.js'
 
 // Import Routes
@@ -48,7 +48,7 @@ Vue.use(VueGoogleMaps, {
     key: 'AIzaSyAahrq97Y4diRkkbXM6_7uxSVs-7S59AtQ'
   }
 });
-//Testing
+/* Testing
 loadInfo(10, 10, {
   "timestamp": "3:14",
   "comment": "foo",
@@ -67,7 +67,7 @@ loadInfo(10.03, 10, {
   "photo-url": "ex.url",
   "category": "blah"
 });
-Nearby(10, 10, 100);
+Nearby(10, 10, 100);*/
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new Vue({
@@ -84,5 +84,6 @@ var vm = new Vue({
     app: App
   },
 });
+
 console.log(vm.center);
 console.log(vm.markers);
