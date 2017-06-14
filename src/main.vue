@@ -118,49 +118,42 @@
       -->
             <f7-pages>
                 <f7-page>
-                    <div class="popup popup-addcrime tablet-fullscreen">
-                        <a href="#" @click="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
-                        <f7-list form>
-                          <div class="accordion-item">
-                                <a href="#" class="item-content item-link">
-                                    <div class="item-inner">
-                                        <div class="item-title">Categories</div>
-                                    </div>
-                                </a>
-                                <div class="accordion-item-content">
-                                    <div class="list-block">
-                                        <ul>
-                                            <!-- Single chekbox item -->
-                                            <li>
-                                                <!--  -->
-                                                <input type="checkbox" id="murder" value="Murder" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Murder</font></input>
-                                            </li>
-                                            <!-- Another chekbox item -->
-                                            <li>
-                                                <!--  -->
-                                                <input type="checkbox" id="theft" value="Theft" style="width:25px;height:25px;" v-model.lazy="Category"><font size="4">Theft</font></input>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                  <div class="popup popup-addcrime tablet-fullscreen">
+                    <a href="#" @click="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+                    <f7-list form>
+                      <div class="accordion-item">
+                        <a href="#" class="item-content item-link">
+                          <div class="item-inner">
+                            <div class="item-title">Categories</div>
+                          </div>
+                        </a>
+                        <div class="row">
+                          <div class="col-auto">
+                            <a href="#" class="chip" v-for="type in Category" :clickable="true" @click="addTag(type,$event)"> {{type}} </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="actions-modal"> -->
+                        <!-- this is a single group -->
+                            <!-- now this represents a single button -->
+                      <!--       <div class="item-input">
+                                <f7-input type="text" placeholder="new tag" v-model="comment" lazy />
                             </div>
+                      </div>     -->        
 
-                            <f7-list-item>
-                                <f7-label><b>Comments</b></f7-label>
-                                <f7-input type="textarea" placeholder="" v-model="comment" lazy />
-                            </f7-list-item>
+                      <f7-list-item>
+                        <f7-label><b>Comments</b></f7-label>
+                        <f7-input type="textarea" placeholder="" v-model="comment" lazy />
+                      </f7-list-item>              
+                    </f7-list>
 
-
-                            <p>{{Category}}</p>
-                        </f7-list>
-
-                        <f7-button fill color="blue" @click="submit">Send</f7-button>
-                        <f7-button @click='campturePhoto()'>Take a Picture</f7-button>
-                        <f7-button @click="getPhoto()">PHOTOLIBRARY</f7-button>
-                        <img style="display:none;width:60px;height:60px;" id="smallImage" src="null" />
-                        <img style="display:none;" id="largeImage" src="" />
-                        <!-- Popup content goes here -->
-                    </div>
+                    <f7-button fill color="blue" @click="submit">Send</f7-button>
+                    <f7-button @click='campturePhoto()'>Take a Picture</f7-button>
+                    <f7-button @click="getPhoto()">PHOTOLIBRARY</f7-button>
+                    <img style="display:none;width:60px;height:60px;" id="smallImage" src="null" />
+                    <img style="display:none;" id="largeImage" src="" />
+                    <!-- Popup content goes here -->
+                  </div>
                     <div class="popup popup-marker tablet-fullscreen">
                         <div class="content-block">
                             <p><a href="#" @click="close"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></p>
@@ -241,6 +234,7 @@ export default {
                 track:true,
                 pause:false,
                 splash:true,
+
                 //current location image
                 curr: 'http://i.imgur.com/VnDEIQt.png',
                 //cluster image
@@ -248,7 +242,10 @@ export default {
 
                 //Add crime variables
                 comment: null,
-                Category: ["Murder", "Theft"],
+                Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial","Sexual", "Harrasment", "Vandalism"],
+                //for specific tag
+                categoryType: [],
+
 
                 //Retrieval info
                 viewTypes: [],
@@ -323,6 +320,38 @@ export default {
                 this.setMarkers();
                 this.$f7.closeModal()
             },
+            addTag: function(tag,event){
+              console.log(tag);
+              // if(tag === "+"){
+              //   var myApp = new Framework7();
+              //   myApp.actions([{x:""}]);
+              
+              // }
+              // else{
+                //if not in...
+                if(this.$data.categoryType.includes(tag)){
+                  console.log("removing tag");
+                  //these chips are gainsboro 
+                  event.target.style.backgroundColor='#DCDCDC';
+                  event.target.style.color='black';
+
+                  // $(this).animate({'opacity':1});
+
+                  this.$data.categoryType.splice(this.$data.categoryType.indexOf(tag),1);
+                }
+                else{
+                  console.log("adding tag");
+                  this.$data.categoryType.push(tag);
+                  event.target.style.backgroundColor='grey';
+                  event.target.style.color='white';
+                  // (this).animate({'opacity':0});
+                }
+              // }
+              
+              
+
+
+            },
             submit: function() {
                 this.$nextTick(function() {
                     var currentTime = new Date();
@@ -331,7 +360,7 @@ export default {
                     var day = currentTime.getDay();
                     var hour = currentTime.getHours();
                     var minute = currentTime.getMinutes();
-                    var types = this.$data.Category;
+                    var types = this.$data.categoryType;
                     var comment = this.$data.comment;
                     var data = {
                         "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
