@@ -42,42 +42,48 @@
                   <div class="page-content login-screen-content">
                     <f7-login-screen-title></f7-login-screen-title>
                     <form>
-                      <div class="list-block" v-if="!this.$data.createAcc">
-                        <ul>
-                          <li class="item-content">
-                            <div class="item-inner">
-                              <div class="item-title label">Email</div>
-                              <div class="item-input">
-                                <input id="txtEmail" type="text" name="username" placeholder="Your Email">
+                      <transition name="fade">
+
+                        <div class="list-block" v-if="!this.$data.createAcc">
+                          <ul>
+                            <li class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title label">Email</div>
+                                <div class="item-input">
+                                  <input id="txtEmail" type="text" name="username" placeholder="Your Email">
+                                </div>
                               </div>
-                            </div>
-                          </li>
-                          <li class="item-content">
-                            <div class="item-inner">
-                              <div class="item-title label">Password</div>
-                              <div class="item-input">
-                                <input id="txtPassword" type="password" name="password" placeholder="Your password">
+                            </li>
+                            <li class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title label">Password</div>
+                                <div class="item-input">
+                                  <input id="txtPassword" type="password" name="password" placeholder="Your password">
+                                </div>
                               </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="list-block" v-if="!this.$data.createAcc">
-                        <ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </transition>
+                      <transition name="fade">
+                        <div class="list-block" v-if="!this.$data.createAcc">
+                          <ul>
+                            <center>
+                              <f7-button active fill color="blue" @click='onLogIn()'>Sign in</f7-button>
+                            </center>
+                          </ul>
+                          <center>OR</center>
                           <center>
-                            <f7-button active fill color="blue" @click='onLogIn()'>Sign in</f7-button>
-                          </center>
-                        </ul>
-                        <center>OR</center>
-                        <center>
-                          <div class="page-content">
-                            <div class="content-block">
-                              <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                              <p><a href="#" data-popup=".popup-createaccount" @click="createAcc = !createAcc" class="open-popup">Create an Account</a></p>
+                            <div class="page-content">
+                              <div class="content-block">
+                                <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                                <p><a href="#" data-popup=".popup-createaccount" @click="createAcc = !createAcc" class="open-popup">Create an Account</a></p>
+                              </div>
                             </div>
-                          </div>
-                        </center>
-                      </div>
+                          </center>
+                        </div>
+                      </transition>
+
                     </form>
                   </div>
                 </div>
