@@ -295,7 +295,6 @@ export default {
             snap: function(){
               this.$data.track = true;
               this.$refs.myMap.panTo(this.$data.loc);
-              this.$data.center = this.$data.loc;
               this.$data.zoom = 15;
               //this.$refs.myMap.panTo(this.$data.loc);
               //this.$refs.myMap.zoom = 15;
