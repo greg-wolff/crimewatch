@@ -21,7 +21,7 @@
                     </f7-block>
                     <f7-block>
                       <f7-label>Track</f7-label>
-                      <f7-input type="switch" size="12" @change="onChange" v-model="track"></f7-input>
+                      <f7-input type="switch" size="12" v-model="track"></f7-input>
                   </f7-block>
                 </f7-page>
             </f7-pages>
@@ -345,10 +345,7 @@ export default {
                   event.target.style.backgroundColor='grey';
                   event.target.style.color='white';
                   // (this).animate({'opacity':0});
-                }
-              // }
-              
-              
+                }      
 
 
             },
