@@ -38,50 +38,50 @@
           <f7-pages>
             <f7-page>
               <div class="view">
-                    <div class="page">
-                      <div class="page-content login-screen-content">
-                        <f7-login-screen-title>Crimewatch</f7-login-screen-title>
-                        <form>
-                          <div class="list-block">
-                            <ul>
-                              <li class="item-content">
-                                <div class="item-inner">
-                                  <div class="item-title label">Email</div>
-                                  <div class="item-input">
-                                    <input id="txtEmail" type="text" name="username" placeholder="Your Email">
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="item-content">
-                                <div class="item-inner">
-                                  <div class="item-title label">Password</div>
-                                  <div class="item-input">
-                                    <input id="txtPassword" type="password" name="password" placeholder="Your password">
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="list-block">
-                            <ul>
-                              <center>
-                                <f7-button active @click='onLogIn()'>Sign in</f7-button>
-                              </center>
-                            </ul>
-                            <center>OR</center>
-                            <center>
-                              <div class="page-content">
-                                <div class="content-block">
-                                  <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                                  <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
-                                </div>
+                <div class="page">
+                  <div class="page-content login-screen-content">
+                    <f7-login-screen-title>Crimewatch</f7-login-screen-title>
+                    <form>
+                      <div class="list-block">
+                        <ul>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title label">Email</div>
+                              <div class="item-input">
+                                <input id="txtEmail" type="text" name="username" placeholder="Your Email">
                               </div>
-                            </center>
-                          </div>
-                        </form>
+                            </div>
+                          </li>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title label">Password</div>
+                              <div class="item-input">
+                                <input id="txtPassword" type="password" name="password" placeholder="Your password">
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
-                    </div>
+                      <div class="list-block">
+                        <ul>
+                          <center>
+                            <f7-button active @click='onLogIn()'>Sign in</f7-button>
+                          </center>
+                        </ul>
+                        <center>OR</center>
+                        <center>
+                          <div class="page-content">
+                            <div class="content-block">
+                              <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                              <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
+                            </div>
+                          </div>
+                        </center>
+                      </div>
+                    </form>
                   </div>
+                </div>
+              </div>
               <!-- About Popup -->
               <div class="popup popup-createaccount">
                 <div class="content-block">
@@ -161,17 +161,11 @@
                 </div>
               </div>
               <div id="insert-details">
-                <f7-label><b>Comments</b></f7-label>
+                <h2 id="body-header">Comments</h2>
                 <f7-input type="textarea" placeholder="" v-model="comment" lazy />
-                <div class="accordion-item">
-                  <a href="#" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Categories</div>
-                    </div>
-                  </a>
-                  <div class="row">
-                    <a href="#" class="chip" v-for="type in Category" :clickable="true" @click="addTag(type,$event)"> {{type}} </a>
-                  </div>
+                <h2 id="body-header">Categories</h2>
+                <div class="row">
+                  <a href="#" class="chip" v-for="type in Category" :clickable="true" @click="addTag(type,$event)"> {{type}} </a>
                 </div>
                 <a href="#" class="color-blue button-fill button" @click="submit">CREATE</a>
               </div>
@@ -180,10 +174,22 @@
             <!-- Popup content goes here -->
           </div>
           <div class="popup popup-marker tablet-fullscreen">
-            <div class="content-block">
-              <p><a href="#" @click="close"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></p>
-              <h1> {{viewComment}} </h1>
-              <div class="photo" style="display:block">
+            <div id="popup-title">
+              <h1 class="popup-header">{{timeStamp}}</h1>
+              <a href="#" @click="close"><i aria-hidden="true" class="close fa fa-times fa-3x"></i></a>
+            </div>
+            <div id="insert-photo" style="background: rgb(46, 47, 56);">
+              <h1 id="quote"> {{viewComment}} </h1>
+              <div id="in-quote"></div>
+              <div id="out-quote"></div>
+
+            </div>
+            <div id="popup-content">
+              <h2 id="body-header">Tagged with</h2>
+              <div class="chip">
+                <div class="chip-label"> Police </div>
+              </div>
+              <div class="photo" id="view-photo" style="display:block">
                 <img style="display:inline;max-width:100%;height:auto;" id="img" :src="getUrl" alt="no image" class="lazy lazy-fadeIn" />
               </div>
               <div class="chip" v-for="type in viewTypes">
@@ -197,7 +203,7 @@
           <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue" @click="crime()">
                         <i class="icon icon-plus"></i>
                     </a>
-          <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @center_changed="cen($event)" @idle="recenter" @drag="drag" :options='{ zoomControl: false,   mapTypeControl: false, streetViewControl: false, disableDoubleClickZoom: true  }'
+          <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @center_changed="cen($event)" @idle="recenter" @drag="drag" :options='{ zoomControl: false,   mapTypeControl: false, fullscreenControl: false, streetViewControl: false, disableDoubleClickZoom: true  }'
             style="width: 100%; height:100%">
             <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
             <!--borrowing images for clusters from google for demo purpose-->
@@ -266,6 +272,7 @@ export default {
       //Add crime variables
       comment: null,
       Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Sexual", "Harrasment", "Vandalism"],
+      timeStamp: null,
       //for specific tag
       categoryType: [],
 
@@ -296,11 +303,12 @@ export default {
 
   },
   mounted: function() {
-    this.$data.splash = false;
     this.setLoc();
     this.setMarkers();
     console.log(this.$data.pause)
-    //console.log("In mounted");
+    setTimeout(() => document.getElementById("splash").style.display = 'none', 3000);
+    setTimeout(() => this.$data.splash = false, 3000)
+    console.log("In mounted");
     //console.log(this.$data);
   },
   methods: {
@@ -417,6 +425,8 @@ export default {
       //push category data to vue.$data so we can use v-for
       this.$data.viewTypes = json.category;
       this.$data.viewComment = json.comment;
+      // console.log(json)
+      this.$data.timeStamp = json.time;
       if (typeof json.url != "undefined") {
         //var Image =document.querySelector("div.photo img")
         //Image.src = json.url;
