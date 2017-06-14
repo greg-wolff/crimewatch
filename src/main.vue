@@ -282,7 +282,7 @@ export default {
       //Add crime variables
       comment: null,
       createAcc: false,
-      Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Sexual", "Harrasment", "Vandalism"],
+      Category: ["Murder", "Theft", "Automotive", "Assault", "Racial", "Sexual", "Harrasment", "Vandalism"],
       timeStamp: null,
       //for specific tag
       categoryType: [],
@@ -361,20 +361,22 @@ export default {
       document.getElementById('smallImage').src = "";
       document.getElementById('add-circle').style.display = 'block';
       document.getElementById('edit-circle').style.display = 'none';
-
+      this.$data.categoryType = [];
       //this.$data.pause = true;
+      console.log(this.$data.categoryType);
       console.log("in crime:" + this.$data.pause)
       this.$f7.popup('.popup-addcrime')
 
     },
     close: function() {
       this.$data.pause = false;
+      this.$data.viewTypes = [];
       this.setMarkers();
       this.$f7.closeModal()
     },
     addTag: function(tag, event) {
       console.log(tag);
-
+      console.log(this.$data.categoryType)
       if (this.$data.categoryType.includes(tag)) {
         console.log("removing tag");
         //these chips are gainsboro
@@ -397,15 +399,11 @@ export default {
     submit: function() {
       this.$nextTick(function() {
         var currentTime = new Date();
-        var year = currentTime.getFullYear();
-        var month = currentTime.getMonth();
-        var day = currentTime.getDay();
-        var hour = currentTime.getHours();
-        var minute = currentTime.getMinutes();
         var types = this.$data.categoryType;
         var comment = this.$data.comment;
+        console.log(types);
         var data = {
-          "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
+          "time": currentTime.toLocaleString(),
           "category": types,
           "comment": comment
         }
@@ -421,7 +419,7 @@ export default {
         //console.log(window.img);
         loadInfo(this.$data.loc.lat, this.$data.loc.lng, data);
       });
-      //console.log(this.$data);
+
       this.$data.pause = false;
       this.setMarkers();
       this.$f7.closeModal();
@@ -446,6 +444,7 @@ export default {
       } else {
         this.$data.getUrl = "";
       }
+
       // console.log(this.$data.center.lat);
       // console.log("photo: " +this.$data.photo);
       /*var popupHTML =
@@ -458,7 +457,7 @@ export default {
           '</div>' +
           '</div>'
           */
-      this.$f7.popup('.popup-marker');
+        this.$f7.popup('.popup-marker');
     },
     setLoc: function() {
       console.log('setLoc')
