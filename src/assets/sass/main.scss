@@ -43,6 +43,18 @@ input {
 	opacity: 0;
 }
 
+.login-screen-title:before {
+	content: url("../images/crimewatch-logo2.png");
+	zoom: 12.5%;
+}
+
+#signUp {
+	margin: 124px 0;
+	@media (min-width:630px) {
+		margin: -241px -315px;
+	}
+}
+
 #splash:before {
 	content: url("../images/crimewatch-logo.png");
 	zoom: 12.5%;

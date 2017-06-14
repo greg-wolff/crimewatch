@@ -40,9 +40,9 @@
               <div class="view">
                 <div class="page">
                   <div class="page-content login-screen-content">
-                    <f7-login-screen-title>Crimewatch</f7-login-screen-title>
+                    <f7-login-screen-title></f7-login-screen-title>
                     <form>
-                      <div class="list-block">
+                      <div class="list-block" v-if="!this.$data.createAcc">
                         <ul>
                           <li class="item-content">
                             <div class="item-inner">
@@ -62,10 +62,10 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="list-block">
+                      <div class="list-block" v-if="!this.$data.createAcc">
                         <ul>
                           <center>
-                            <f7-button active @click='onLogIn()'>Sign in</f7-button>
+                            <f7-button active fill color="blue" @click='onLogIn()'>Sign in</f7-button>
                           </center>
                         </ul>
                         <center>OR</center>
@@ -73,55 +73,60 @@
                           <div class="page-content">
                             <div class="content-block">
                               <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                              <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
+                              <p><a href="#" data-popup=".popup-createaccount" @click="createAcc = !createAcc" class="open-popup">Create an Account</a></p>
                             </div>
                           </div>
                         </center>
                       </div>
-                      <!-- About Popup -->
-                      <div id="signUp" class="popup popup-createaccount">
-                        <div class="content-block">
-                          <div class="list-block">
-                            <ul>
-                              <!-- Text inputs -->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">Name</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-input">
-                                      <input type="text" placeholder="Your name">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">email</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-input">
-                                      <input id="txtEmail2" type="email" placeholder="E-mail">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">Password</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-input">
-                                      <input id="txtPassword2" type="password" placeholder="Password">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                            <f7-button active class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
-                            <f7-button href="#" class="close-popup" active>Cancel</f7-button>
-                          </div>
-                        </div>
-                      </div>
+                    </form>
                   </div>
                 </div>
+              </div>
+              <!-- About Popup -->
+              <div id="signUp" class="popup popup-createaccount">
+                <div class="content-block">
+                  <div class="list-block">
+                    <ul>
+                      <!-- Text inputs -->
+                      <li>
+                        <div class="item-content">
+                          <!--<div class="item-media"><i class="icon f7-icons">Name</i></div>-->
+                          <div class="item-inner">
+                            <div class="item-title label">Name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Your name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <!--<div class="item-media"><i class="icon f7-icons">Email</i></div>-->
+                          <div class="item-inner">
+                            <div class="item-title label">Email</div>
+                            <div class="item-input">
+                              <input id="txtEmail2" type="email" placeholder="E-mail">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <!--<div class="item-media"><i class="icon f7-icons">Password</i></div>-->
+                          <div class="item-inner">
+                            <div class="item-title label">Password</div>
+                            <div class="item-input">
+                              <input id="txtPassword2" type="password" placeholder="Password">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <f7-button active fill color="blue" class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
+                    <f7-button href="#" class="close-popup" active @click="createAcc = !createAcc">Cancel</f7-button>
+                  </div>
+                </div>
+              </div>
 
 
 
@@ -218,7 +223,7 @@
       </f7-pages>
     </f7-view>
   </f7-views>
-  </div>
+</div>
 </template>
 
 <script>
@@ -273,6 +278,7 @@ export default {
 
       //Add crime variables
       comment: null,
+      createAcc: false,
       Category: ["Murder", "Theft", "Police", "Automotive", "Assault", "Racial", "Sexual", "Harrasment", "Vandalism"],
       timeStamp: null,
       //for specific tag
