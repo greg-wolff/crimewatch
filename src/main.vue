@@ -47,21 +47,21 @@
                         <div class="list-block" v-if="!this.$data.createAcc">
                           <ul>
                             <li class="item-content">
-                                <div class="item-media"><i class="fa fa-envelope-o" aria-hidden="true" id="White"></i></div>
-                                <div class="item-inner">
-                                  <div class="item-input">
-                                    <input id="txtEmail" type="email" placeholder="E-mail">
-                                  </div>
+                              <div class="item-media"><i class="fa fa-envelope-o" aria-hidden="true" id="White"></i></div>
+                              <div class="item-inner">
+                                <div class="item-input">
+                                  <input id="txtEmail" type="email" placeholder="E-mail">
                                 </div>
-                              </li>
-                              <li class="item-content">
-                                <div class="item-media"><i id="White" class="fa fa-key" aria-hidden="true"></i></div>
-                                <div class="item-inner">
-                                  <div class="item-input">
-                                    <input id="txtPassword" type="password" placeholder="Password">
-                                  </div>
+                              </div>
+                            </li>
+                            <li class="item-content">
+                              <div class="item-media"><i id="White" class="fa fa-key" aria-hidden="true"></i></div>
+                              <div class="item-inner">
+                                <div class="item-input">
+                                  <input id="txtPassword" type="password" placeholder="Password">
                                 </div>
-                              </li>
+                              </div>
+                            </li>
                           </ul>
                         </div>
                       </transition>
@@ -94,36 +94,36 @@
                   <div class="list-block">
                     <ul>
                       <!-- Text inputs -->
-                         <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i id="White" class="fa fa-user" aria-hidden="true"></i></div>
-                                  <div class="item-inner">
-                                    <div class="item-input">
-                                      <input type="text" placeholder="Your name">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i id="White" class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                                  <div class="item-inner">
-                                    <div class="item-input">
-                                      <input id="txtEmail2" type="email" placeholder="E-mail">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i id="White" class="fa fa-key" aria-hidden="true"></i></div>
-                                  <div class="item-inner">
-                                    <div class="item-input">
-                                      <input id="txtPassword2" type="password" placeholder="Create Password">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i id="White" class="fa fa-user" aria-hidden="true"></i></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input type="text" placeholder="Your name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i id="White" class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input id="txtEmail2" type="email" placeholder="E-mail">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i id="White" class="fa fa-key" aria-hidden="true"></i></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input id="txtPassword2" type="password" placeholder="Create Password">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
                     </ul>
                     <f7-button active fill color="blue" class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
                     <f7-button href="#" class="close-popup" active @click="createAcc = !createAcc">Cancel</f7-button>
@@ -217,8 +217,8 @@
             style="width: 100%; height:100%">
             <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
             <!--borrowing images for clusters from google for demo purpose-->
-            <Gmap-cluster :gridSize="10" :imagePath="imagePath" @click="viewCluster">
-              <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" @click="getInfo(m)">
+            <Gmap-cluster :gridSize="10" :icon="imagePath" @click="viewCluster">
+              <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" :icon="customMarker" @click="getInfo(m)">
               </GmapMarker>
             </Gmap-cluster>
           </GmapMap>
@@ -276,8 +276,10 @@ export default {
 
       //current location image
       curr: 'http://i.imgur.com/VnDEIQt.png',
+      //custom marker image
+      customMarker: 'http://i.imgur.com/GAvSlmr.png',
       //cluster image
-      imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m',
+      imagePath: 'https://github.com/greg-wolff/crimewatch/blob/production/src/assets/images/m1.png',
 
       //Add crime variables
       comment: null,
