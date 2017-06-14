@@ -58,8 +58,11 @@ function onPhotoDataSuccess(imageData, lng) {
   // Get image handle
   // and get buttons
   var smallImage = document.getElementById('smallImage');
-  document.getElementById('add-circle').style.display = 'none';
-  document.getElementById('edit-circle').style.display = 'block';
+  var addCircle = document.getElementById('add-circle');
+  var editCircle = document.getElementById('edit-circle');
+
+  addCircle.style.display = 'none';
+  editCircle.style.display = 'block';
 
   // Unhide image elements
   //

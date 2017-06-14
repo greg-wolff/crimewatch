@@ -157,7 +157,6 @@
                 <a href="#" class="color-blue button-fill button" @click="submit">CREATE</a>
               </div>
 
-              <p>{{Category}}</p>
             </f7-list>
             <!-- Popup content goes here -->
           </div>
