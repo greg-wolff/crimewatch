@@ -215,9 +215,9 @@
                     </a>
           <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @center_changed="cen($event)" @idle="recenter" @drag="drag" :options='{ zoomControl: false,   mapTypeControl: false, fullscreenControl: false, streetViewControl: false, disableDoubleClickZoom: true  }'
             style="width: 100%; height:100%">
-            <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
+            <GmapMarker  :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
             <!--borrowing images for clusters from google for demo purpose-->
-            <Gmap-cluster :gridSize="10" :icon="imagePath" @click="viewCluster">
+            <Gmap-cluster ref="myCluster" :gridSize="15" :icon="imagePath" @click="viewCluster">
               <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" :icon="customMarker" @click="getInfo(m)">
               </GmapMarker>
             </Gmap-cluster>
@@ -348,10 +348,12 @@ export default {
     },
     zoomUpdate: function(event) {
       this.$data.zoom = event;
+      this.setMarkers();
     },
     cen: function(event) {
       this.$data.center.lat = event.lat();
       this.$data.center.lng = event.lng();
+      console.log(this.$data.center);
     },
     campturePhoto: function() {
       capturePhoto();
@@ -504,7 +506,7 @@ export default {
     setMarkers: function() {
       var locs = [];
       //console.log(this.$data.zoom);
-      var radius = Math.pow(2, (17 - this.$data.zoom));
+      var radius = Math.pow(2, (18 - this.$data.zoom));
       console.log("in setMarkers");
       this.$nextTick(function() {
         //console.log(radius)
