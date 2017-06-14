@@ -75,6 +75,7 @@ input {
 	background-color: #f9f9f9;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 	box-shadow: 0 4px 21px rgba(0, 0, 0, 0.12);
 }
 
@@ -110,6 +111,39 @@ input {
 	justify-content: center;
 }
 
+#edit-circle {
+	display: none;
+	width: 50px;
+	top: 200px;
+	border-radius: 50%;
+	background-color: #588ef9;
+	height: 50px;
+	left: 56%;
+	position: absolute;
+}
+
+.edit-photo-icon {
+	width: 100%;
+	color: white;
+	display: flex;
+	font-size: 1.1em;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#center-button {
+	top: 76px;
+	z-index: 1;
+	left: 42.7%;
+	position: absolute;
+}
+
+#smallImage {
+	display: none;
+	height: 100%;
+}
+
 #insert-details {
 	background-color: #fff;
 	height: 100vh;
@@ -139,7 +173,18 @@ input {
 .title-create {}
 
 .list-block {
-	clear: both;
+	margin: 0;
+	font-size: inherit;
+}
+
+.chip {
+	margin: 5px 9px;
+	padding: 30px;
+	border-radius: 100px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #3e3e3e;
+	background: rgba(0, 0, 0, 0.06);
 }
 
 .tab-link {
@@ -200,6 +245,10 @@ input {
 	width: 44px;
 	height: 34px;
 	border: 1px solid #EEE;
+}
+
+.row {
+	justify-content: center;
 }
 
 .language-selection,
