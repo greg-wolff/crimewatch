@@ -58,11 +58,7 @@ function onPhotoDataSuccess(imageData, lng) {
   // Get image handle
   // and get buttons
   var smallImage = document.getElementById('smallImage');
-  var addCircle = document.getElementById('add-circle');
-  var editCircle = document.getElementById('edit-circle');
 
-  addCircle.style.display = 'none';
-  editCircle.style.display = 'block';
 
   // Unhide image elements
   //
@@ -105,6 +101,13 @@ function capturePhoto() {
   // Take picture using device camera and retrieve image as base64-encoded string
   navigator.camera.getPicture(function(imageData) {
     var smallImage = document.getElementById('smallImage');
+    var addCircle = document.getElementById('add-circle');
+    var editCircle = document.getElementById('edit-circle');
+    var cameraIcon = document.getElementById('camera-icon')
+
+    addCircle.style.display = 'none';
+    editCircle.style.display = 'block';
+    cameraIcon.style.display = 'none';
 
     // Unhide image elements
     //

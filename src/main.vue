@@ -9,9 +9,9 @@
   <!-- Statusbar -->
   <f7-statusbar></f7-statusbar>
   <!-- Right Panel -->
-  <f7-panel right cover layout="dark">
+  <f7-panel right cover>
     <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
-      <f7-navbar title="Right Panel" sliding></f7-navbar>
+      <f7-navbar title="Settings" sliding></f7-navbar>
       <f7-pages>
         <f7-page>
           <f7-block>
@@ -30,7 +30,7 @@
       <f7-navbar>
         <f7-nav-center sliding>Crimewatch</f7-nav-center>
         <f7-nav-right>
-          <f7-link icon="icon-bars" open-panel="right"></f7-link>
+          <f7-link icon="fa fa-cog" open-panel="right"></f7-link>
         </f7-nav-right>
       </f7-navbar>
       <f7-login-screen>
@@ -151,7 +151,7 @@
               <div id="insert-photo" @click='campturePhoto()'>
                 <div id="photo-circle">
                   <img id="smallImage" src="null" />
-                  <i aria-hidden="true" class="fa fa-camera fa-3x"></i>
+                  <i aria-hidden="true" class="fa fa-camera fa-3x" id="camera-icon"></i>
                   <div id="add-circle">
                     <i aria-hidden="true" class="add-photo-icon fa fa-plus fa-3x"></i>
                   </div>
@@ -206,7 +206,8 @@
           <a href="#" data-popup=".popup-addcrime" class=" floating-button color-blue" @click="crime()">
                         <i class="icon icon-plus"></i>
                     </a>
-          <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @center_changed="cen($event)" @idle="recenter" @drag="drag" :options='{ zoomControl: false, streetViewControl: false, disableDoubleClickZoom: true  }' style="width: 100%; height:100%">
+          <GmapMap ref="myMap" :center.sync="center" :zoom="zoom" @zoom_changed="zoomUpdate($event)" @center_changed="cen($event)" @idle="recenter" @drag="drag" :options='{ zoomControl: false,   mapTypeControl: false, streetViewControl: false, disableDoubleClickZoom: true  }'
+            style="width: 100%; height:100%">
             <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
             <!--borrowing images for clusters from google for demo purpose-->
             <Gmap-cluster :gridSize="10" :imagePath="imagePath" @click="viewCluster">

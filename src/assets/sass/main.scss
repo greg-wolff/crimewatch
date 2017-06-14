@@ -2,6 +2,33 @@
 	user-select: none;
 }
 
+a[href^="http://maps.google.com/maps"] {
+	display: none !important;
+}
+
+a[href^="https://maps.google.com/maps"] {
+	display: none !important;
+}
+
+.gm-style-cc,
+.gmnoprint a,
+.gmnoprint span {
+	display: none;
+}
+
+.gmnoprint div {
+	background: none !important;
+}
+
+.navbar {
+	background: #588ef9;
+}
+
+.floating-button.color-blue {
+	background: #588ef9;
+	margin: 10px;
+}
+
 input {
 	user-select: element !important;
 }
@@ -135,7 +162,7 @@ input {
 #center-button {
 	top: 76px;
 	z-index: 1;
-	left: 42.7%;
+	left: calc(50% - 63px);
 	position: absolute;
 }
 
@@ -147,6 +174,7 @@ input {
 #insert-details {
 	background-color: #fff;
 	height: 100vh;
+	padding: 30px;
 }
 
 .popup {
@@ -174,14 +202,15 @@ input {
 
 .list-block {
 	margin: 0;
+	height: 100%;
 	font-size: inherit;
 }
 
 .chip {
 	margin: 5px 9px;
-	padding: 30px;
+	padding: 17px;
 	border-radius: 100px;
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: 500;
 	color: #3e3e3e;
 	background: rgba(0, 0, 0, 0.06);
