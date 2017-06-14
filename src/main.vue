@@ -217,7 +217,7 @@
             style="width: 100%; height:100%">
             <GmapMarker :position="loc" :optimized="false" :zIndex="1" :icon="curr"></GmapMarker>
             <!--borrowing images for clusters from google for demo purpose-->
-            <Gmap-cluster :gridSize="10" :imagePath="imagePath" @click="viewCluster">
+            <Gmap-cluster :gridSize="10" :icon="imagePath" @click="viewCluster">
               <GmapMarker v-for="m in markers" :position="m.position" :info="m.info" :clickable="true" :icon="customMarker" @click="getInfo(m)">
               </GmapMarker>
             </Gmap-cluster>
@@ -277,9 +277,9 @@ export default {
       //current location image
       curr: 'http://i.imgur.com/VnDEIQt.png',
       //custom marker image
-      customMarker: 'https://raw.githubusercontent.com/greg-wolff/crimewatch/production/src/assets/images/marker.png',
+      customMarker: 'http://i.imgur.com/GAvSlmr.png',
       //cluster image
-      imagePath: 'https://github.com/greg-wolff/crimewatch/blob/production/src/assets/images/m',
+      imagePath: 'https://github.com/greg-wolff/crimewatch/blob/production/src/assets/images/m1.png',
 
       //Add crime variables
       comment: null,
