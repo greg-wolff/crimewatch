@@ -47,21 +47,21 @@
                         <div class="list-block" v-if="!this.$data.createAcc">
                           <ul>
                             <li class="item-content">
-                              <div class="item-inner">
-                                <div class="item-title label">Email</div>
-                                <div class="item-input">
-                                  <input id="txtEmail" type="text" name="username" placeholder="Your Email">
+                                <div class="item-media"><i class="fa fa-envelope-o" aria-hidden="true" id="White"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-input">
+                                    <input id="txtEmail" type="email" placeholder="E-mail">
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li class="item-content">
-                              <div class="item-inner">
-                                <div class="item-title label">Password</div>
-                                <div class="item-input">
-                                  <input id="txtPassword" type="password" name="password" placeholder="Your password">
+                              </li>
+                              <li class="item-content">
+                                <div class="item-media"><i id="White" class="fa fa-key" aria-hidden="true"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-input">
+                                    <input id="txtPassword" type="password" placeholder="Password">
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
+                              </li>
                           </ul>
                         </div>
                       </transition>
@@ -94,39 +94,36 @@
                   <div class="list-block">
                     <ul>
                       <!-- Text inputs -->
-                      <li>
-                        <div class="item-content">
-                          <!--<div class="item-media"><i class="icon f7-icons">Name</i></div>-->
-                          <div class="item-inner">
-                            <div class="item-title label">Name</div>
-                            <div class="item-input">
-                              <input type="text" placeholder="Your name">
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-content">
-                          <!--<div class="item-media"><i class="icon f7-icons">Email</i></div>-->
-                          <div class="item-inner">
-                            <div class="item-title label">Email</div>
-                            <div class="item-input">
-                              <input id="txtEmail2" type="email" placeholder="E-mail">
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-content">
-                          <!--<div class="item-media"><i class="icon f7-icons">Password</i></div>-->
-                          <div class="item-inner">
-                            <div class="item-title label">Password</div>
-                            <div class="item-input">
-                              <input id="txtPassword2" type="password" placeholder="Password">
-                            </div>
-                          </div>
-                        </div>
-                      </li>
+                         <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i id="White" class="fa fa-user" aria-hidden="true"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-input">
+                                      <input type="text" placeholder="Your name">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i id="White" class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-input">
+                                      <input id="txtEmail2" type="email" placeholder="E-mail">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i id="White" class="fa fa-key" aria-hidden="true"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-input">
+                                      <input id="txtPassword2" type="password" placeholder="Create Password">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
                     </ul>
                     <f7-button active fill color="blue" class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
                     <f7-button href="#" class="close-popup" active @click="createAcc = !createAcc">Cancel</f7-button>
