@@ -340,8 +340,8 @@ export default {
       if (this.$data.categoryType.includes(tag)) {
         console.log("removing tag");
         //these chips are gainsboro
-        event.target.style.backgroundColor = '#DCDCDC';
-        event.target.style.color = 'black';
+        event.target.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
+        event.target.style.color = '#3e3e3e';
 
         // $(this).animate({'opacity':1});
 
