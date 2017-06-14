@@ -78,52 +78,54 @@
                           </div>
                         </center>
                       </div>
-                    </form>
+                      <!-- About Popup -->
+                      <div id="signUp" class="popup popup-createaccount">
+                        <div class="content-block">
+                          <div class="list-block">
+                            <ul>
+                              <!-- Text inputs -->
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon f7-icons">Name</i></div>
+                                  <div class="item-inner">
+                                    <div class="item-input">
+                                      <input type="text" placeholder="Your name">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon f7-icons">email</i></div>
+                                  <div class="item-inner">
+                                    <div class="item-input">
+                                      <input id="txtEmail2" type="email" placeholder="E-mail">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon f7-icons">Password</i></div>
+                                  <div class="item-inner">
+                                    <div class="item-input">
+                                      <input id="txtPassword2" type="password" placeholder="Password">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                            <f7-button active class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
+                            <f7-button href="#" class="close-popup" active>Cancel</f7-button>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                 </div>
-              </div>
-              <!-- About Popup -->
-              <div class="popup popup-createaccount">
-                <div class="content-block">
-                  <div class="list-block">
-                    <ul>
-                      <!-- Text inputs -->
-                      <li>
-                        <div class="item-content">
-                          <div class="item-media"><i class="icon f7-icons">Name</i></div>
-                          <div class="item-inner">
-                            <div class="item-input">
-                              <input type="text" placeholder="Your name">
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-content">
-                          <div class="item-media"><i class="icon f7-icons">email</i></div>
-                          <div class="item-inner">
-                            <div class="item-input">
-                              <input id="txtEmail2" type="email" placeholder="E-mail">
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-content">
-                          <div class="item-media"><i class="icon f7-icons">Password</i></div>
-                          <div class="item-inner">
-                            <div class="item-input">
-                              <input id="txtPassword2" type="password" placeholder="Password">
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                    <f7-button active class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
-                    <f7-button href="#" class="close-popup" active>Cancel</f7-button>
-                  </div>
-                </div>
-              </div>
+
+
+
+
             </f7-page>
           </f7-pages>
         </f7-view>
@@ -216,7 +218,7 @@
       </f7-pages>
     </f7-view>
   </f7-views>
-</div>
+  </div>
 </template>
 
 <script>
