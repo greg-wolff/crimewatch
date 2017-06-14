@@ -196,9 +196,9 @@
             </div>
             <div id="popup-content">
               <h2 id="body-header">Tagged with</h2>
-              <div class="chip">
-                <div class="chip-label"> Police </div>
-              </div>
+              <!-- <div class="chip"> -->
+                <!-- <div class="chip-label"> Police </div> -->
+              <!-- </div> -->
               <div class="photo" id="view-photo" style="display:block">
                 <img style="display:inline;max-width:100%;height:auto;" id="img" :src="getUrl" alt="no image" class="lazy lazy-fadeIn" />
               </div>
