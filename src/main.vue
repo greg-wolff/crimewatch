@@ -133,6 +133,8 @@
                 </div>
               </div>
               <div id="insert-details">
+                <f7-label><b>Comments</b></f7-label>
+                <f7-input type="textarea" placeholder="" v-model="comment" lazy />
                 <div class="accordion-item">
                   <a href="#" class="item-content item-link">
                     <div class="item-inner">
@@ -143,17 +145,6 @@
                     <a href="#" class="chip" v-for="type in Category" :clickable="true" @click="addTag(type,$event)"> {{type}} </a>
                   </div>
                 </div>
-                <!-- <div class="actions-modal"> -->
-                <!-- this is a single group -->
-                <!-- now this represents a single button -->
-                <!--       <div class="item-input">
-                                <f7-input type="text" placeholder="new tag" v-model="comment" lazy />
-                            </div>
-                      </div>     -->
-
-
-                <f7-label><b>Comments</b></f7-label>
-                <f7-input type="textarea" placeholder="" v-model="comment" lazy />
                 <a href="#" class="color-blue button-fill button" @click="submit">CREATE</a>
               </div>
 
