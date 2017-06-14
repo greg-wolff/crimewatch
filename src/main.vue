@@ -1,15 +1,13 @@
 
 
 <template>
-
 <!-- App -->
 <div id="app">
   <transition name="fade">
     <div id="splash" v-if="this.$data.splash"></div>
   </transition>
-    <!-- Statusbar -->
-    <f7-statusbar></f7-statusbar>
-
+  <!-- Statusbar -->
+  <f7-statusbar></f7-statusbar>
     <!-- Right Panel -->
     <f7-panel right cover layout="dark">
         <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
@@ -23,86 +21,85 @@
             </f7-pages>
         </f7-view>
     </f7-panel>
+  <!-- Main Views -->
+  <f7-views>
+    <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+      <!-- Navbar -->
+      <f7-navbar>
+        <f7-nav-center sliding>Crimewatch</f7-nav-center>
+        <f7-nav-right>
+          <f7-link icon="icon-bars" open-panel="right"></f7-link>
+        </f7-nav-right>
+      </f7-navbar>
+      <f7-login-screen>
+        <f7-view>
+          <f7-pages>
+            <f7-page>
+              <f7-login-screen-title>Crimewatch</f7-login-screen-title>
+              <div class="container">
+                <center><input id="txtEmail" type="email" placeholder="Email">
+                  <input id="txtPassword" type="password" placeholder="Password"></center>
+                <f7-button active @click='onLogIn()'>Sign in</f7-button>
+              </div>
 
-    <!-- Main Views -->
-    <f7-views>
-        <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
-            <!-- Navbar -->
-            <f7-navbar>
-                <f7-nav-center sliding>Crimewatch</f7-nav-center>
-                <f7-nav-right>
-                    <f7-link icon="icon-bars" open-panel="right"></f7-link>
-                </f7-nav-right>
-            </f7-navbar>
-            <f7-login-screen>
-                <f7-view>
-                    <f7-pages>
-                        <f7-page>
-                            <f7-login-screen-title>Crimewatch</f7-login-screen-title>
-                                <div class="container">
-                                  <center><input id="txtEmail" type="email" placeholder="Email">
-                                  <input id="txtPassword" type="password" placeholder="Password"></center>
-                                  <f7-button active @click='onLogIn()'>Sign in</f7-button>
-                                </div>
-
-                                <center>OR</center>
-                                <center>
-                                <div class="page-content">
-                                  <div class="content-block">
-                                    <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                                    <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
-                                  </div>
-                                </div>
-                              </center>
-                              ...
-                              <!-- About Popup -->
-                              <div class="popup popup-createaccount">
-                                <div class="content-block">
-                                  <div class="list-block">
-                                    <ul>
-                                      <!-- Text inputs -->
-                                      <li>
-                                        <div class="item-content">
-                                          <div class="item-media"><i class="icon f7-icons">Name</i></div>
-                                          <div class="item-inner">
-                                            <div class="item-input">
-                                              <input type="text" placeholder="Your name">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li>
-                                        <div class="item-content">
-                                          <div class="item-media"><i class="icon f7-icons">email</i></div>
-                                          <div class="item-inner">
-                                            <div class="item-input">
-                                              <input id="txtEmail2" type="email" placeholder="E-mail">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li>
-                                        <div class="item-content">
-                                          <div class="item-media"><i class="icon f7-icons">Password</i></div>
-                                          <div class="item-inner">
-                                            <div class="item-input">
-                                              <input id="txtPassword2" type="password" placeholder="Password">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                    <f7-button active class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
-                                    <f7-button href="#" class="close-popup" active>Cancel</f7-button>
-                                  </div>
-                                </div>
-                              </div>
-                        </f7-page>
-                    </f7-pages>
-                </f7-view>
-            </f7-login-screen>
-            <!-- Pages -->
-            <!--
+              <center>OR</center>
+              <center>
+                <div class="page-content">
+                  <div class="content-block">
+                    <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                    <p><a href="#" data-popup=".popup-createaccount" class="open-popup">Create an Account </a></p>
+                  </div>
+                </div>
+              </center>
+              ...
+              <!-- About Popup -->
+              <div class="popup popup-createaccount">
+                <div class="content-block">
+                  <div class="list-block">
+                    <ul>
+                      <!-- Text inputs -->
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon f7-icons">Name</i></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input type="text" placeholder="Your name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon f7-icons">email</i></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input id="txtEmail2" type="email" placeholder="E-mail">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon f7-icons">Password</i></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input id="txtPassword2" type="password" placeholder="Password">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <f7-button active class="close-popup" @click='SignUpSummit()'>Sign Up</f7-button>
+                    <f7-button href="#" class="close-popup" active>Cancel</f7-button>
+                  </div>
+                </div>
+              </div>
+            </f7-page>
+          </f7-pages>
+        </f7-view>
+      </f7-login-screen>
+      <!-- Pages -->
+      <!--
 				<f7-pages>
 					<f7-page>
 						<f7-block-title>Welcome to my App</f7-block-title>
@@ -112,11 +109,24 @@
 					</f7-page>
 				</f7-pages>
       -->
-            <f7-pages>
-                <f7-page>
-                  <div class="popup popup-addcrime tablet-fullscreen">
-                    <a href="#" @click="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
-                    <f7-list form>
+      <f7-pages>
+        <f7-page>
+          <div class="popup popup-addcrime tablet-fullscreen">
+            <div id="popup-title">
+              <h1 class="popup-header">Create New Incident</h1>
+              <a href="#"><i aria-hidden="true" class="close fa fa-times fa-3x"></i></a>
+            </div>
+            <a href="#" @click="close"><i class="close fa fa-times fa-3x" aria-hidden="true"></i></a>
+            <f7-list form>
+              <div id="insert-photo" @click='campturePhoto()'>
+                <div id="photo-circle">
+                  <i aria-hidden="true" class="fa fa-camera fa-3x"></i>
+                  <div id="add-circle">
+                    <i aria-hidden="true" class="add-photo-icon fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+              <div id="insert-details">
                       <div class="accordion-item">
                         <a href="#" class="item-content item-link">
                           <div class="item-inner">
@@ -137,19 +147,17 @@
                             </div>
                       </div>     -->
 
-                      <f7-list-item>
+
                         <f7-label><b>Comments</b></f7-label>
                         <f7-input type="textarea" placeholder="" v-model="comment" lazy />
-                      </f7-list-item>
-                    </f7-list>
+                <a href="#" class="color-blue button-fill button" @click="submit">CREATE</a>
 
-                    <f7-button fill color="blue" @click="submit">Send</f7-button>
-                    <f7-button @click='campturePhoto()'>Take a Picture</f7-button>
-                    <f7-button @click="getPhoto()">PHOTOLIBRARY</f7-button>
-                    <img style="display:none;width:60px;height:60px;" id="smallImage" src="null" />
-                    <img style="display:none;" id="largeImage" src="" />
-                    <!-- Popup content goes here -->
-                  </div>
+              </div>
+
+              <p>{{Category}}</p>
+            </f7-list>
+            <!-- Popup content goes here -->
+          </div>
                     <div class="popup popup-marker tablet-fullscreen">
                         <div class="content-block">
                             <p><a href="#" @click="close"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></p>
@@ -185,49 +193,49 @@
         </f7-view>
     </f7-views>
 </div>
-
 </template>
 
 <script>
-
 // document.querySelector('img').src = {{photo}};
 
 import {
-    Nearby,
-    loadInfo,
-    returnInfo,
-    getHash
+  Nearby,
+  loadInfo,
+  returnInfo,
+  getHash
 }
 from './backend.js'
 import * as firebase from 'firebase';
 import {
-    capturePhoto, getPhoto
+  capturePhoto,
+  getPhoto
 }
 from './camera.js'
 import {
-    storeImage, retrieveImage, imagePrepare
+  storeImage,
+  retrieveImage,
+  imagePrepare
 }
 from './image_storage.js'
 import {
-    config
+  config
 }
 from './firebaseConfig';
 export default {
-    data() {
-            return {
-                //map variables
-                center: {
-                    lat: 10.0,
-                    lng: 10.0
-                },
-                zoom: 15,
-                loc:{
-                  lat:10.0,
-                  lng:10.0
-                },
-                markers: [],
+  data() {
+    return {
+      //map variables
+      center: {
+        lat: 10.0,
+        lng: 10.0
+      },
+      zoom: 15,
+      loc: {
+        lat: 10.0,
+        lng: 10.0
+      },
+      markers: [],
 
-                //flags for functions
                 track:true,
                 pause:false,
                 splash:true,
@@ -243,11 +251,10 @@ export default {
                 //for specific tag
                 categoryType: [],
 
-
-                //Retrieval info
-                viewTypes: [],
-                getUrl: null,
-                viewComment: null,
+      //Retrieval info
+      viewTypes: [],
+      getUrl: null,
+      viewComment: null,
 
             }
         },
@@ -463,13 +470,12 @@ export default {
                       setTimeout(function(){ self.setMarkers() },5000)
                       console.log(this.$data.pause)
                     }
-
-                });
-                /*locations.forEach(function pop(index){
-                  var pos = {lat: index[0],lng:index[1]};
-                  //info is set just to open up a connection
-                  locs.push({position:pos},{info:returnInfo(index[2])});
-                  });*/
+      });
+      /*locations.forEach(function pop(index){
+        var pos = {lat: index[0],lng:index[1]};
+        //info is set just to open up a connection
+        locs.push({position:pos},{info:returnInfo(index[2])});
+        });*/
 
             },
             onLogIn: function() {
@@ -534,5 +540,4 @@ export default {
             }
         }
 }
-
 </script>
