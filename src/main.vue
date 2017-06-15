@@ -576,12 +576,20 @@ export default {
         var errorMessage = error.message;
         if (errorCode == 'auth/weak-password') {
           alert('The password is too weak.');
+          // firebase.auth().signOut();
+
         } else {
           alert(errorMessage);
+          // firebase.auth().signOut();
+
         }
         console.log(error);
+        // firebase.auth().signOut();
+
       });
-      firebase.auth().signOut();
+      // firebase.auth().signOut();
+      this.$data.createAcc = !this.$data.createAcc;
+
     }
   },
   watch: {
