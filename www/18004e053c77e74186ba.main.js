@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 206);
+/******/ 	return __webpack_require__(__webpack_require__.s = 208);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -17161,7 +17161,7 @@
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../webpack/buildin/module.js */ 204)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../webpack/buildin/module.js */ 206)(module)))
 
 /***/ }),
 /* 1 */
@@ -18150,7 +18150,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _firebase_app = __webpack_require__(/*! ./app/firebase_app */ 136);
+var _firebase_app = __webpack_require__(/*! ./app/firebase_app */ 138);
 
 // Export a single instance of firebase app
 var firebase = (0, _firebase_app.createFirebaseNamespace)(); /**
@@ -18870,7 +18870,7 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 /***/ }),
 /* 31 */
 /* exports provided: StoreMarker, Nearby, loadInfo, returnInfo, getHash, firebase */
-/* exports used: loadInfo, Nearby, getHash, returnInfo, firebase */
+/* exports used: loadInfo, getHash, returnInfo, Nearby, firebase */
 /*!************************!*\
   !*** ./src/backend.js ***!
   \************************/
@@ -18878,10 +18878,10 @@ var DeferredReadyMixin = exports.DeferredReadyMixin = {
 
 "use strict";
 /* unused harmony export StoreMarker */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Nearby; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Nearby; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loadInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return returnInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getHash; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return returnInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getHash; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(/*! firebase */ 48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_geofire__ = __webpack_require__(/*! geofire */ 74);
@@ -19033,7 +19033,7 @@ function returnInfo(hash){
 
 function getFileNames(a,b){
 
-  var firebaseRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["e" /* firebase */].database().ref("info/"+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["c" /* getHash */])(a,b));
+  var firebaseRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["e" /* firebase */].database().ref("info/"+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["b" /* getHash */])(a,b));
   // var filenames = firebaseRef.child("filenames");
   var files;
 
@@ -19264,7 +19264,7 @@ function storeImage(imageData,a,b){
   // Handle unsuccessful uploads
 }, function() {
   console.log("sucess!")
-  var hash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["c" /* getHash */])(a,b);
+  var hash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__backend_js__["b" /* getHash */])(a,b);
   var firebaseRef = __WEBPACK_IMPORTED_MODULE_2__backend_js__["e" /* firebase */].database().ref("info"); //top level <info>
   var infoRef = firebaseRef.child(hash);
   var src = infoRef.child("url");
@@ -19403,7 +19403,7 @@ function isBuffer(b) {
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var util = __webpack_require__(/*! util/ */ 169);
+var util = __webpack_require__(/*! util/ */ 171);
 var hasOwn = Object.prototype.hasOwnProperty;
 var pSlice = Array.prototype.slice;
 var functionsHaveNames = (function () {
@@ -20258,7 +20258,7 @@ if (typeof global !== 'undefined') {
         throw new Error('polyfill failed because global object is unavailable in this environment');
     }
 }
-var PromiseImpl = scope.Promise || __webpack_require__(/*! promise-polyfill */ 145);
+var PromiseImpl = scope.Promise || __webpack_require__(/*! promise-polyfill */ 147);
 var local = exports.local = {
     Promise: PromiseImpl,
     GoogPromise: PromiseImpl
@@ -20291,18 +20291,18 @@ var _app = __webpack_require__(/*! ./app */ 19);
 
 var _app2 = _interopRequireDefault(_app);
 
-__webpack_require__(/*! ./auth */ 137);
+__webpack_require__(/*! ./auth */ 139);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Import instance of FirebaseApp from ./app
 var Storage, XMLHttpRequest;
 
-__webpack_require__(/*! ./database */ 138);
-__webpack_require__(/*! ./storage */ 146);
+__webpack_require__(/*! ./database */ 140);
+__webpack_require__(/*! ./storage */ 148);
 var AsyncStorage;
 
-__webpack_require__(/*! ./messaging */ 139);
+__webpack_require__(/*! ./messaging */ 141);
 // Export the single instance of firebase
 exports.default = _app2.default;
 module.exports = exports['default'];
@@ -20586,7 +20586,7 @@ exports.fromResourceString = fromResourceString;
 exports.toResourceString = toResourceString;
 exports.metadataValidator = metadataValidator;
 
-var _json = __webpack_require__(/*! ./json */ 152);
+var _json = __webpack_require__(/*! ./json */ 154);
 
 var json = _interopRequireWildcard(_json);
 
@@ -21881,7 +21881,7 @@ var _errors2 = __webpack_require__(/*! ../models/errors */ 27);
 
 var _errors3 = _interopRequireDefault(_errors2);
 
-var _tokenManager = __webpack_require__(/*! ../models/token-manager */ 144);
+var _tokenManager = __webpack_require__(/*! ../models/token-manager */ 146);
 
 var _tokenManager2 = _interopRequireDefault(_tokenManager);
 
@@ -22281,7 +22281,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _fs = __webpack_require__(/*! ./fs */ 151);
+var _fs = __webpack_require__(/*! ./fs */ 153);
 
 var fs = _interopRequireWildcard(_fs);
 
@@ -22557,7 +22557,7 @@ var _object = __webpack_require__(/*! ./object */ 16);
 
 var object = _interopRequireWildcard(_object);
 
-var _requestinfo = __webpack_require__(/*! ./requestinfo */ 155);
+var _requestinfo = __webpack_require__(/*! ./requestinfo */ 157);
 
 var _type = __webpack_require__(/*! ./type */ 2);
 
@@ -23068,7 +23068,7 @@ var _type = __webpack_require__(/*! ./implementation/type */ 2);
 
 var type = _interopRequireWildcard(_type);
 
-var _task = __webpack_require__(/*! ./task */ 160);
+var _task = __webpack_require__(/*! ./task */ 162);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -24567,7 +24567,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(/*! ./listToStyles */ 190)
+var listToStyles = __webpack_require__(/*! ./listToStyles */ 192)
 
 /*
 type StyleObject = {
@@ -24829,131 +24829,141 @@ exports.default = function (input) {
 
 var longitude = -1;
 var latitude = -1;
-var pictureSource;   // picture source
+var pictureSource; // picture source
 var destinationType; // sets the format of returned value
 var options;
 window.img;
-   // Wait for Cordova to connect with the device
-   //
-   document.addEventListener("deviceready",onDeviceReady,false);
+// Wait for Cordova to connect with the device
+//
+document.addEventListener("deviceready", onDeviceReady, false);
 
-   // Cordova is ready to be used!
-   //
-   function onDeviceReady() {
-      options = {
-            'quality': 50,
-            'popoverOptions': CameraPopoverOptions,
-            'saveToPhotoAlbum': true,
-            'correctOrientation':true,
-            'allowEdit': false,
+// Cordova is ready to be used!
+//
+function onDeviceReady() {
+  options = {
+    'quality': 50,
+    'popoverOptions': CameraPopoverOptions,
+    'saveToPhotoAlbum': true,
+    'correctOrientation': true,
+    'allowEdit': false,
 
-             'destinationType': navigator.camera.DestinationType.DATA_URL,
-             /*
-             0: DATA_URL image as based64-encoded
-             */
-             'sourceType': navigator.camera.PictureSourceType.CAMERA,
-             /*
-             0: PHOTOLIBRARY
-             1:CAMARA
-             2:SAVEDPHOTOALBUM
-             */
-             'encodingType': navigator.camera.EncodingType.JPEG,
-             /*
-             0:JPEG
-             1: PNG
-             */
-             'Direction':navigator.camera.Direction.BACK,
-             /*
-             0:BACK //use the back-facing camara
-             */
-
-
-      }
-       pictureSource=navigator.camera.PictureSourceType;
-       destinationType=navigator.camera.DestinationType;
-   }
-
-   // Called when a photo is successfully retrieved
-   //
-   function onPhotoDataSuccess(imageData,lng) {
-     // Uncomment to view the base64 encoded image data
-     // console.log(imageData);
-
-     // Get image handle
-     //
-     var smallImage = document.getElementById('smallImage');
-
-     // Unhide image elements
-     //
-     smallImage.style.display = 'block';
-
-     // Show the captured photo
-     // The inline CSS rules are used to resize the image
-     //
-    smallImage.src = imageData;
-    console.log(lng);
-    return smallImage.src;
-   }
-
-   // Called when a photo is successfully retrieved
-   //
-   /*function onPhotoURISuccess(imageURI) {
-     // Uncomment to view the image file URI
-     //console.log(imageURI);
-
-     // Get image handle
-     //
-     var largeImage = document.getElementById('largeImage');
-
-     // Unhide image elements
-     //
-     largeImage.style.display = 'block';
-
-     // Show the captured photo
-     // The inline CSS rules are used to resize the image
-     //
-     largeImage.src = imageURI;
-
-     //storeImage(imageURI,)
-     return imageURI;
-   }*/
-
-   // A button will call this function
-   //
-   function capturePhoto() {
-     // Take picture using device camera and retrieve image as base64-encoded string
-     navigator.camera.getPicture(function(imageData){
-       var smallImage = document.getElementById('smallImage');
-
-       // Unhide image elements
-       //
-       smallImage.style.display = 'block';
-
-       // Show the captured photo
-       // The inline CSS rules are used to resize the image
-       //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-      var photo = smallImage.src;
-    }, onFail, options);
-   }
+    'destinationType': navigator.camera.DestinationType.DATA_URL,
+    /*
+    0: DATA_URL image as based64-encoded
+    */
+    'sourceType': navigator.camera.PictureSourceType.CAMERA,
+    /*
+    0: PHOTOLIBRARY
+    1:CAMARA
+    2:SAVEDPHOTOALBUM
+    */
+    'encodingType': navigator.camera.EncodingType.JPEG,
+    /*
+    0:JPEG
+    1: PNG
+    */
+    'Direction': navigator.camera.Direction.BACK,
+    /*
+    0:BACK //use the back-facing camara
+    */
 
 
-   // A button will call this function
-   //
-   function getPhoto() {
-     // Retrieve image file location from specified source
-     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-       destinationType: destinationType.FILE_URI,
-       sourceType: pictureSource.PHOTOLIBRARY });
-   }
+  }
+  pictureSource = navigator.camera.PictureSourceType;
+  destinationType = navigator.camera.DestinationType;
+}
 
-   // Called if something bad happens.
-   //
-   function onFail(message) {
-     alert('Failed because: ' + message);
-   }
+// Called when a photo is successfully retrieved
+//
+function onPhotoDataSuccess(imageData, lng) {
+  // Uncomment to view the base64 encoded image data
+  // console.log(imageData);
 
-   
+  // Get image handle
+  // and get buttons
+  var smallImage = document.getElementById('smallImage');
+
+
+  // Unhide image elements
+  //
+  smallImage.style.display = 'block';
+
+  // Show the captured photo
+  // The inline CSS rules are used to resize the image
+  //
+  smallImage.src = imageData;
+  console.log(lng);
+  return smallImage.src;
+}
+
+// Called when a photo is successfully retrieved
+//
+/*function onPhotoURISuccess(imageURI) {
+  // Uncomment to view the image file URI
+  //console.log(imageURI);
+
+  // Get image handle
+  //
+  var largeImage = document.getElementById('largeImage');
+
+  // Unhide image elements
+  //
+  largeImage.style.display = 'block';
+
+  // Show the captured photo
+  // The inline CSS rules are used to resize the image
+  //
+  largeImage.src = imageURI;
+
+  //storeImage(imageURI,)
+  return imageURI;
+}*/
+
+// A button will call this function
+//
+function capturePhoto() {
+  // Take picture using device camera and retrieve image as base64-encoded string
+  navigator.camera.getPicture(function(imageData) {
+    var smallImage = document.getElementById('smallImage');
+    var addCircle = document.getElementById('add-circle');
+    var editCircle = document.getElementById('edit-circle');
+    var cameraIcon = document.getElementById('camera-icon')
+
+    addCircle.style.display = 'none';
+    editCircle.style.display = 'block';
+    cameraIcon.style.display = 'none';
+
+    // Unhide image elements
+    //
+    smallImage.style.display = 'block';
+
+    // Show the captured photo
+    // The inline CSS rules are used to resize the image
+    //
+    smallImage.src = "data:image/jpeg;base64," + imageData;
+    var photo = smallImage.src;
+  }, onFail, options);
+}
+
+
+// A button will call this function
+//
+function getPhoto() {
+  // Retrieve image file location from specified source
+  navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+    quality: 50,
+    destinationType: destinationType.FILE_URI,
+    sourceType: pictureSource.PHOTOLIBRARY
+  });
+}
+
+// Called if something bad happens.
+//
+function onFail(message) {
+  alert('Failed because: ' + message);
+}
+
+
 
 
 /***/ }),
@@ -43417,9 +43427,9 @@ return t7;
 
 var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./main.vue */ 179),
+  __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./main.vue */ 181),
   /* template */
-  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed116d0"}!../~/vue-loader/lib/selector?type=template&index=0!./main.vue */ 181),
+  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed116d0"}!../~/vue-loader/lib/selector?type=template&index=0!./main.vue */ 183),
   /* scopeId */
   null,
   /* cssModules */
@@ -43460,7 +43470,7 @@ var content = __webpack_require__(/*! !../../../~/css-loader!../../../~/sass-loa
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../~/vue-style-loader/lib/addStylesClient.js */ 191)("643f7c64", content, false);
+var update = __webpack_require__(/*! ../../../~/vue-style-loader/lib/addStylesClient.js */ 193)("643f7c64", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43486,7 +43496,7 @@ if(false) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/*!
- * Vue.js v2.3.3
+ * Vue.js v2.3.4
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
@@ -47915,7 +47925,7 @@ Object.defineProperty(Vue$3.prototype, '$ssrContext', {
   }
 });
 
-Vue$3.version = '2.3.3';
+Vue$3.version = '2.3.4';
 
 /*  */
 
@@ -48406,6 +48416,7 @@ function createPatchFunction (backend) {
   function initComponent (vnode, insertedVnodeQueue) {
     if (isDef(vnode.data.pendingInsert)) {
       insertedVnodeQueue.push.apply(insertedVnodeQueue, vnode.data.pendingInsert);
+      vnode.data.pendingInsert = null;
     }
     vnode.elm = vnode.componentInstance.$el;
     if (isPatchable(vnode)) {
@@ -53198,27 +53209,27 @@ exports.install = install;
 
 var _manager = __webpack_require__(/*! ./manager.js */ 20);
 
-var _marker = __webpack_require__(/*! ./components/marker */ 198);
+var _marker = __webpack_require__(/*! ./components/marker */ 200);
 
 var _marker2 = _interopRequireDefault(_marker);
 
-var _cluster = __webpack_require__(/*! ./components/cluster */ 195);
+var _cluster = __webpack_require__(/*! ./components/cluster */ 197);
 
 var _cluster2 = _interopRequireDefault(_cluster);
 
-var _polyline = __webpack_require__(/*! ./components/polyline */ 201);
+var _polyline = __webpack_require__(/*! ./components/polyline */ 203);
 
 var _polyline2 = _interopRequireDefault(_polyline);
 
-var _polygon = __webpack_require__(/*! ./components/polygon */ 200);
+var _polygon = __webpack_require__(/*! ./components/polygon */ 202);
 
 var _polygon2 = _interopRequireDefault(_polygon);
 
-var _circle = __webpack_require__(/*! ./components/circle */ 194);
+var _circle = __webpack_require__(/*! ./components/circle */ 196);
 
 var _circle2 = _interopRequireDefault(_circle);
 
-var _rectangle = __webpack_require__(/*! ./components/rectangle */ 202);
+var _rectangle = __webpack_require__(/*! ./components/rectangle */ 204);
 
 var _rectangle2 = _interopRequireDefault(_rectangle);
 
@@ -53226,23 +53237,23 @@ var _lodash = __webpack_require__(/*! lodash */ 0);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 171);
+var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ 173);
 
 var _infoWindow2 = _interopRequireDefault(_infoWindow);
 
-var _map = __webpack_require__(/*! ./components/map.vue */ 172);
+var _map = __webpack_require__(/*! ./components/map.vue */ 174);
 
 var _map2 = _interopRequireDefault(_map);
 
-var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 174);
+var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ 176);
 
 var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
 
-var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 173);
+var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ 175);
 
 var _placeInput2 = _interopRequireDefault(_placeInput);
 
-var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 170);
+var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ 172);
 
 var _autocomplete2 = _interopRequireDefault(_autocomplete);
 
@@ -53322,11 +53333,11 @@ function install(Vue, options) {
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ([{
     path: '/addForm/',
-    component: __webpack_require__(/*! ./addForm.vue */ 175)
+    component: __webpack_require__(/*! ./addForm.vue */ 177)
   },
   {
     path: '/marker/',
-    component: __webpack_require__(/*! ./assets/vue/pages/marker.vue */ 176)
+    component: __webpack_require__(/*! ./assets/vue/pages/marker.vue */ 178)
   }
 ]);
 
@@ -54913,8 +54924,8 @@ function fromByteArray (uint8) {
 
 
 var base64 = __webpack_require__(/*! base64-js */ 130)
-var ieee754 = __webpack_require__(/*! ieee754 */ 162)
-var isArray = __webpack_require__(/*! isarray */ 163)
+var ieee754 = __webpack_require__(/*! ieee754 */ 164)
+var isArray = __webpack_require__(/*! isarray */ 165)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -56708,7 +56719,7 @@ exports = module.exports = __webpack_require__(/*! ../../../~/css-loader/lib/css
 
 
 // module
-exports.push([module.i, "* {\n  user-select: none; }\n\ninput {\n  user-select: element !important; }\n\n.tab-link.active:not(.offline), .tab-link.active:not(.online) {\n  background-color: rgba(1, 18, 25, 0.1); }\n\n.tab-link.offline {\n  background-color: rgba(255, 0, 0, 0.6); }\n  .tab-link.offline.active {\n    background-color: rgba(255, 0, 0, 0.7); }\n\n.tab-link.online {\n  background-color: rgba(0, 255, 0, 0.25); }\n  .tab-link.online.active {\n    background-color: rgba(0, 255, 0, 0.5); }\n\n.tab-link i {\n  font-size: 24px;\n  color: #FFFFFF; }\n  .tab-link i.settings-icon {\n    font-size: 26px;\n    margin-top: -2px;\n    margin-left: 2px; }\n  .tab-link i.a {\n    display: inline-block; }\n  .tab-link i.b {\n    display: none; }\n\n.tab-link.active i.a {\n  display: none; }\n\n.tab-link.active i.b {\n  display: inline-block; }\n\n.fw-flag {\n  width: 44px;\n  height: 34px;\n  border: 1px solid #EEE; }\n\n.phone-code-selection .item-title-row, .language-selection .item-title-row {\n  background-position-y: 10px !important; }\n  .phone-code-selection .item-title-row .item-title span, .language-selection .item-title-row .item-title span {\n    display: block;\n    font-size: 12px;\n    color: #999; }\n  .phone-code-selection .item-title-row .item-after, .language-selection .item-title-row .item-after {\n    position: relative;\n    top: 11px; }\n\n.content-block-16-mar {\n  margin: 16px 0; }\n\n#select-contact {\n  position: relative; }\n  #select-contact i {\n    position: absolute;\n    font-size: 18px;\n    left: 10px;\n    top: 50%;\n    margin-top: -10px; }\n\n.phone-code-selection-area {\n  margin-bottom: 0;\n  margin-top: 0; }\n\n.phone-number-area {\n  margin-top: -1px; }\n  .phone-number-area ul:before {\n    background: none;\n    display: none; }\n  .phone-number-area i {\n    font-size: 26px;\n    margin-left: 7px;\n    margin-top: 5px; }\n\n.phone-info {\n  border-radius: 3px;\n  padding: 6px 0;\n  text-align: center;\n  color: #FFF;\n  position: relative; }\n  .phone-info i, .phone-info span {\n    display: inline-block;\n    vertical-align: middle;\n    font-size: 16px; }\n  .phone-info i {\n    font-size: 23px;\n    position: absolute;\n    left: 5px;\n    top: 50%;\n    margin-top: -12px; }\n  .phone-info.phone-good {\n    background: #2196F3; }\n    .phone-info.phone-good .icon-close {\n      display: none; }\n  .phone-info.phone-bad {\n    background: #F44336; }\n    .phone-info.phone-bad .icon-check {\n      display: none; }\n\n.mar-topbot-8 {\n  margin-top: 8px;\n  margin-bottom: 8px; }\n\n.settings-icon {\n  font-size: 35px;\n  margin-left: 4px; }\n\n.settings-icon-mini {\n  font-size: 25px;\n  margin-left: 8px; }\n\n.help-request-item .item-title {\n  padding-left: 6px; }\n\n.phone_number_input_wrap .item-media {\n  width: 46px; }\n", ""]);
+exports.push([module.i, "* {\n  user-select: none; }\n\na[href^=\"http://maps.google.com/maps\"] {\n  display: none !important; }\n\na[href^=\"https://maps.google.com/maps\"] {\n  display: none !important; }\n\n.gm-style-cc,\n.gmnoprint a,\n.gmnoprint span {\n  display: none; }\n\n.gmnoprint div {\n  background: none !important; }\n\n.navbar {\n  background: #588ef9; }\n\n.floating-button.color-blue {\n  background: #588ef9;\n  margin: 10px; }\n\ninput {\n  user-select: element !important; }\n\n.fade-enter-active,\n.fade-leave-active {\n  transition: opacity 0.5s; }\n\n/* .fade-leave-active in <2.1.8 */\n.fade-enter,\n.fade-leave-to {\n  opacity: 0; }\n\n.login-screen-title:before {\n  content: url(" + __webpack_require__(/*! ../images/crimewatch-logo2.png */ 136) + ");\n  zoom: 12.5%; }\n\n#signUp {\n  margin: 124px 0; }\n  @media (min-width: 630px) {\n    #signUp {\n      margin: -241px -315px; } }\n\n#splash:before {\n  content: url(" + __webpack_require__(/*! ../images/crimewatch-logo.png */ 135) + ");\n  zoom: 12.5%; }\n\n#splash {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #5882f9;\n  width: 100%;\n  height: 100%; }\n\n.close {\n  color: white;\n  display: block;\n  font-size: 20px;\n  position: absolute;\n  top: 28px;\n  right: 20px; }\n\n#popup-title {\n  display: flex;\n  height: 76px;\n  background-color: #588ef9;\n  align-items: center;\n  box-shadow: 0 2px 34px rgba(0, 0, 0, 0.82);\n  justify-content: center; }\n\n.popup-header {\n  font-size: 1.3em;\n  color: white; }\n\n.header {\n  float: left;\n  margin-left: 32px; }\n\n#insert-photo {\n  height: 200px;\n  background-color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 2px; }\n\n#photo-circle {\n  display: flex;\n  width: 150px;\n  border-radius: 50%;\n  height: 150px;\n  background-color: #f9f9f9;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  box-shadow: 0 4px 21px rgba(0, 0, 0, 0.12); }\n\n#add-circle {\n  display: block;\n  width: 50px;\n  top: 200px;\n  border-radius: 50%;\n  background-color: #588ef9;\n  height: 50px;\n  left: 56%;\n  position: absolute; }\n\n#add-circle {\n  display: block;\n  width: 50px;\n  top: 200px;\n  border-radius: 50%;\n  background-color: #588ef9;\n  height: 50px;\n  left: 56%;\n  position: absolute; }\n\n.add-photo-icon {\n  width: 100%;\n  color: white;\n  display: flex;\n  font-size: 1.1em;\n  height: 100%;\n  align-items: center;\n  justify-content: center; }\n\n#edit-circle {\n  display: none;\n  width: 50px;\n  top: 200px;\n  border-radius: 50%;\n  background-color: #588ef9;\n  height: 50px;\n  left: 56%;\n  position: absolute; }\n\n.edit-photo-icon {\n  width: 100%;\n  color: white;\n  display: flex;\n  font-size: 1.1em;\n  height: 100%;\n  align-items: center;\n  justify-content: center; }\n\n#center-button {\n  top: 50px;\n  z-index: 1;\n  margin: 28px auto;\n  left: calc(50% - 63px);\n  position: absolute; }\n\n#smallImage {\n  display: none;\n  width: 100%; }\n\n#insert-details {\n  background-color: #fff;\n  height: 100vh;\n  padding: 50px; }\n\n.popup {\n  background: none; }\n\n#body-header {\n  color: #3e3e3e; }\n\n#in-quote:before {\n  content: \"\\201C\";\n  font-size: 14em;\n  position: absolute;\n  left: 30px;\n  font-family: sans-serif;\n  color: rgba(255, 255, 255, 0.11);\n  top: 31px; }\n\n#out-quote:before {\n  content: \"\\201D\";\n  font-size: 14em;\n  position: absolute;\n  right: 30px;\n  font-family: sans-serif;\n  color: rgba(255, 255, 255, 0.11);\n  top: 117px; }\n\n#quote {\n  color: #f1f1f1;\n  padding: 42px;\n  text-shadow: 0 0 10px rgba(0, 0, 0, 0.58);\n  text-align: center;\n  line-height: 1.3;\n  font-size: 1.7em; }\n\n#view-photo {\n  width: 100%;\n  margin: 34px 0;\n  display: block;\n  left: 0;\n  position: absolute; }\n\n#popup-content {\n  background: white;\n  height: 1200px;\n  padding: 25px 55px; }\n\n.button.button-fill.color-blue {\n  background: #588ef9 !important;\n  color: #fff;\n  height: 52px;\n  margin: 70px auto;\n  display: flex;\n  box-shadow: 0 2px 11px rgba(0, 0, 0, 0.26);\n  width: 126px;\n  border-radius: 50px;\n  align-items: center;\n  justify-content: center; }\n\n.fa-camera {\n  color: #3e3e3e; }\n\n.list-block {\n  margin: 0;\n  height: 100%;\n  font-size: inherit; }\n\n.chip {\n  margin: 5px 9px;\n  padding: 17px;\n  border-radius: 100px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #3e3e3e;\n  background: rgba(0, 0, 0, 0.06); }\n\n.tab-link.active:not(.offline), .tab-link.active:not(.online) {\n  background-color: rgba(1, 18, 25, 0.1); }\n\n.tab-link.offline {\n  background-color: rgba(255, 0, 0, 0.6); }\n  .tab-link.offline.active {\n    background-color: rgba(255, 0, 0, 0.7); }\n\n.tab-link.online {\n  background-color: rgba(0, 255, 0, 0.25); }\n  .tab-link.online.active {\n    background-color: rgba(0, 255, 0, 0.5); }\n\n.tab-link i {\n  font-size: 24px;\n  color: #FFFFFF; }\n  .tab-link i.settings-icon {\n    font-size: 26px;\n    margin-top: -2px;\n    margin-left: 2px; }\n  .tab-link i.a {\n    display: inline-block; }\n  .tab-link i.b {\n    display: none; }\n\n.tab-link.active i.a {\n  display: none; }\n\n.tab-link.active i.b {\n  display: inline-block; }\n\n.fw-flag {\n  width: 44px;\n  height: 34px;\n  border: 1px solid #EEE; }\n\n.row {\n  justify-content: center; }\n\n.language-selection .item-title-row,\n.phone-code-selection .item-title-row {\n  background-position-y: 10px !important; }\n  .language-selection .item-title-row .item-title span,\n  .phone-code-selection .item-title-row .item-title span {\n    display: block;\n    font-size: 12px;\n    color: #999; }\n  .language-selection .item-title-row .item-after,\n  .phone-code-selection .item-title-row .item-after {\n    position: relative;\n    top: 11px; }\n\n.content-block-16-mar {\n  margin: 16px 0; }\n\n#select-contact {\n  position: relative; }\n  #select-contact i {\n    position: absolute;\n    font-size: 18px;\n    left: 10px;\n    top: 50%;\n    margin-top: -10px; }\n\n.phone-code-selection-area {\n  margin-bottom: 0;\n  margin-top: 0; }\n\n.phone-number-area {\n  margin-top: -1px; }\n  .phone-number-area ul:before {\n    background: none;\n    display: none; }\n  .phone-number-area i {\n    font-size: 26px;\n    margin-left: 7px;\n    margin-top: 5px; }\n\n.phone-info {\n  border-radius: 3px;\n  padding: 6px 0;\n  text-align: center;\n  color: #FFF;\n  position: relative; }\n  .phone-info i,\n  .phone-info span {\n    display: inline-block;\n    vertical-align: middle;\n    font-size: 16px; }\n  .phone-info i {\n    font-size: 23px;\n    position: absolute;\n    left: 5px;\n    top: 50%;\n    margin-top: -12px; }\n  .phone-info.phone-good {\n    background: #2196F3; }\n    .phone-info.phone-good .icon-close {\n      display: none; }\n  .phone-info.phone-bad {\n    background: #F44336; }\n    .phone-info.phone-bad .icon-check {\n      display: none; }\n\n.mar-topbot-8 {\n  margin-top: 8px;\n  margin-bottom: 8px; }\n\n.settings-icon {\n  font-size: 35px;\n  margin-left: 4px; }\n\n.settings-icon-mini {\n  font-size: 25px;\n  margin-left: 8px; }\n\n.help-request-item .item-title {\n  padding-left: 6px; }\n\n.phone_number_input_wrap .item-media {\n  width: 46px; }\n", ""]);
 
 // exports
 
@@ -56753,6 +56764,28 @@ exports.push([module.i, "\n.vue-map-container {\n  position: relative;\n}\n.vue-
 
 /***/ }),
 /* 135 */
+/* no static exports found */
+/* all exports used */
+/*!***********************************************!*\
+  !*** ./src/assets/images/crimewatch-logo.png ***!
+  \***********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "crimewatch-logo.png?94d2f028444718e81f7f142e1033aea9";
+
+/***/ }),
+/* 136 */
+/* no static exports found */
+/* all exports used */
+/*!************************************************!*\
+  !*** ./src/assets/images/crimewatch-logo2.png ***!
+  \************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "crimewatch-logo2.png?32e848b31cf8676f31e2fddea5d562d6";
+
+/***/ }),
+/* 137 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************!*\
@@ -56859,7 +56892,7 @@ function patchProperty(obj, prop, value) {
 
 
 /***/ }),
-/* 136 */
+/* 138 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************!*\
@@ -56903,7 +56936,7 @@ var _errors = __webpack_require__(/*! ./errors */ 46);
 
 var _shared_promise = __webpack_require__(/*! ./shared_promise */ 47);
 
-var _deep_copy = __webpack_require__(/*! ./deep_copy */ 135);
+var _deep_copy = __webpack_require__(/*! ./deep_copy */ 137);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -57268,7 +57301,7 @@ var appErrors = new _errors.ErrorFactory('app', 'Firebase', errors);
 
 
 /***/ }),
-/* 137 */
+/* 139 */
 /* no static exports found */
 /* all exports used */
 /*!****************************!*\
@@ -57552,7 +57585,7 @@ c){a=new T(a);c({INTERNAL:{getUid:q(a.getUid,a),getToken:q(a.getIdToken,a),addAu
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10)))
 
 /***/ }),
-/* 138 */
+/* 140 */
 /* no static exports found */
 /* all exports used */
 /*!********************************!*\
@@ -57828,7 +57861,7 @@ d;return d.Ya},{Reference:U,Query:X,Database:Pg,enableLogging:Sb,INTERNAL:Z,TEST
 
 
 /***/ }),
-/* 139 */
+/* 141 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************!*\
@@ -57863,11 +57896,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.registerMessaging = registerMessaging;
 
-var _windowController = __webpack_require__(/*! ./messaging/controllers/window-controller */ 141);
+var _windowController = __webpack_require__(/*! ./messaging/controllers/window-controller */ 143);
 
 var _windowController2 = _interopRequireDefault(_windowController);
 
-var _swController = __webpack_require__(/*! ./messaging/controllers/sw-controller */ 140);
+var _swController = __webpack_require__(/*! ./messaging/controllers/sw-controller */ 142);
 
 var _swController2 = _interopRequireDefault(_swController);
 
@@ -57894,7 +57927,7 @@ registerMessaging(_app2.default);
 
 
 /***/ }),
-/* 140 */
+/* 142 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************!*\
@@ -58277,7 +58310,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 141 */
+/* 143 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
@@ -58327,7 +58360,7 @@ var _workerPageMessage = __webpack_require__(/*! ../models/worker-page-message *
 
 var _workerPageMessage2 = _interopRequireDefault(_workerPageMessage);
 
-var _defaultSw = __webpack_require__(/*! ../models/default-sw */ 143);
+var _defaultSw = __webpack_require__(/*! ../models/default-sw */ 145);
 
 var _defaultSw2 = _interopRequireDefault(_defaultSw);
 
@@ -58683,7 +58716,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 142 */
+/* 144 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
@@ -58731,7 +58764,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 143 */
+/* 145 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
@@ -58773,7 +58806,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 144 */
+/* 146 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
@@ -58815,7 +58848,7 @@ var _errors2 = __webpack_require__(/*! ./errors */ 27);
 
 var _errors3 = _interopRequireDefault(_errors2);
 
-var _arrayBufferToBase = __webpack_require__(/*! ../helpers/array-buffer-to-base64 */ 142);
+var _arrayBufferToBase = __webpack_require__(/*! ../helpers/array-buffer-to-base64 */ 144);
 
 var _arrayBufferToBase2 = _interopRequireDefault(_arrayBufferToBase);
 
@@ -59200,7 +59233,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 145 */
+/* 147 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -59442,10 +59475,10 @@ module.exports = exports['default'];
 
 })(this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../timers-browserify/main.js */ 166).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../timers-browserify/main.js */ 168).setImmediate))
 
 /***/ }),
-/* 146 */
+/* 148 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************!*\
@@ -59469,11 +59502,11 @@ var _string = __webpack_require__(/*! ./storage/implementation/string */ 52);
 
 var _taskenums = __webpack_require__(/*! ./storage/implementation/taskenums */ 71);
 
-var _xhriopool = __webpack_require__(/*! ./storage/implementation/xhriopool */ 158);
+var _xhriopool = __webpack_require__(/*! ./storage/implementation/xhriopool */ 160);
 
 var _reference = __webpack_require__(/*! ./storage/reference */ 73);
 
-var _service = __webpack_require__(/*! ./storage/service */ 159);
+var _service = __webpack_require__(/*! ./storage/service */ 161);
 
 var _app = __webpack_require__(/*! ./app */ 19);
 
@@ -59520,7 +59553,7 @@ registerStorage(_app2.default);
 
 
 /***/ }),
-/* 147 */
+/* 149 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
@@ -59583,7 +59616,7 @@ function async(f) {
 
 
 /***/ }),
-/* 148 */
+/* 150 */
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************!*\
@@ -59613,7 +59646,7 @@ var _error2 = __webpack_require__(/*! ./error */ 8);
 
 var errorsExports = _interopRequireWildcard(_error2);
 
-var _failrequest = __webpack_require__(/*! ./failrequest */ 150);
+var _failrequest = __webpack_require__(/*! ./failrequest */ 152);
 
 var _location = __webpack_require__(/*! ./location */ 29);
 
@@ -59621,7 +59654,7 @@ var _promise_external = __webpack_require__(/*! ./promise_external */ 14);
 
 var promiseimpl = _interopRequireWildcard(_promise_external);
 
-var _requestmap = __webpack_require__(/*! ./requestmap */ 156);
+var _requestmap = __webpack_require__(/*! ./requestmap */ 158);
 
 var _type = __webpack_require__(/*! ./type */ 2);
 
@@ -59770,7 +59803,7 @@ var AuthWrapper = exports.AuthWrapper = function () {
 
 
 /***/ }),
-/* 149 */
+/* 151 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
@@ -59907,7 +59940,7 @@ function stop(id) {
 
 
 /***/ }),
-/* 150 */
+/* 152 */
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************!*\
@@ -59971,7 +60004,7 @@ var FailRequest = exports.FailRequest = function () {
 
 
 /***/ }),
-/* 151 */
+/* 153 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
@@ -60057,7 +60090,7 @@ function sliceBlob(blob, start, end) {
 
 
 /***/ }),
-/* 152 */
+/* 154 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
@@ -60118,7 +60151,7 @@ function jsonObjectOrNull(s) {
 
 
 /***/ }),
-/* 153 */
+/* 155 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -60183,7 +60216,7 @@ var Observer = exports.Observer = function Observer(nextOrObserver, opt_error, o
 
 
 /***/ }),
-/* 154 */
+/* 156 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
@@ -60232,7 +60265,7 @@ var _array = __webpack_require__(/*! ./array */ 50);
 
 var array = _interopRequireWildcard(_array);
 
-var _backoff = __webpack_require__(/*! ./backoff */ 149);
+var _backoff = __webpack_require__(/*! ./backoff */ 151);
 
 var backoff = _interopRequireWildcard(_backoff);
 
@@ -60461,7 +60494,7 @@ function makeRequest(requestInfo, authToken, pool) {
 
 
 /***/ }),
-/* 155 */
+/* 157 */
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************!*\
@@ -60513,7 +60546,7 @@ handler, timeout) {
 
 
 /***/ }),
-/* 156 */
+/* 158 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -60613,7 +60646,7 @@ var RequestMap = exports.RequestMap = function () {
 
 
 /***/ }),
-/* 157 */
+/* 159 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************************!*\
@@ -60817,7 +60850,7 @@ var NetworkXhrIo = exports.NetworkXhrIo = function () {
 
 
 /***/ }),
-/* 158 */
+/* 160 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
@@ -60854,7 +60887,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 
-var _xhrio_network = __webpack_require__(/*! ./xhrio_network */ 157);
+var _xhrio_network = __webpack_require__(/*! ./xhrio_network */ 159);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -60879,7 +60912,7 @@ var XhrIoPool = exports.XhrIoPool = function () {
 
 
 /***/ }),
-/* 159 */
+/* 161 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************!*\
@@ -60920,7 +60953,7 @@ var _args = __webpack_require__(/*! ./implementation/args */ 49);
 
 var args = _interopRequireWildcard(_args);
 
-var _authwrapper = __webpack_require__(/*! ./implementation/authwrapper */ 148);
+var _authwrapper = __webpack_require__(/*! ./implementation/authwrapper */ 150);
 
 var _location = __webpack_require__(/*! ./implementation/location */ 29);
 
@@ -60928,7 +60961,7 @@ var _promise_external = __webpack_require__(/*! ./implementation/promise_externa
 
 var fbsPromiseImpl = _interopRequireWildcard(_promise_external);
 
-var _request = __webpack_require__(/*! ./implementation/request */ 154);
+var _request = __webpack_require__(/*! ./implementation/request */ 156);
 
 var RequestExports = _interopRequireWildcard(_request);
 
@@ -61075,7 +61108,7 @@ var ServiceInternals = exports.ServiceInternals = function () {
 
 
 /***/ }),
-/* 160 */
+/* 162 */
 /* no static exports found */
 /* all exports used */
 /*!************************************!*\
@@ -61119,9 +61152,9 @@ var _taskenums = __webpack_require__(/*! ./implementation/taskenums */ 71);
 
 var fbsTaskEnums = _interopRequireWildcard(_taskenums);
 
-var _observer = __webpack_require__(/*! ./implementation/observer */ 153);
+var _observer = __webpack_require__(/*! ./implementation/observer */ 155);
 
-var _tasksnapshot = __webpack_require__(/*! ./tasksnapshot */ 161);
+var _tasksnapshot = __webpack_require__(/*! ./tasksnapshot */ 163);
 
 var _args = __webpack_require__(/*! ./implementation/args */ 49);
 
@@ -61131,7 +61164,7 @@ var _array = __webpack_require__(/*! ./implementation/array */ 50);
 
 var fbsArray = _interopRequireWildcard(_array);
 
-var _async = __webpack_require__(/*! ./implementation/async */ 147);
+var _async = __webpack_require__(/*! ./implementation/async */ 149);
 
 var _error = __webpack_require__(/*! ./implementation/error */ 8);
 
@@ -61723,7 +61756,7 @@ var UploadTask = exports.UploadTask = function () {
 
 
 /***/ }),
-/* 161 */
+/* 163 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************!*\
@@ -61780,7 +61813,7 @@ var UploadTaskSnapshot = exports.UploadTaskSnapshot = function () {
 
 
 /***/ }),
-/* 162 */
+/* 164 */
 /* no static exports found */
 /* all exports used */
 /*!****************************!*\
@@ -61875,7 +61908,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 163 */
+/* 165 */
 /* no static exports found */
 /* all exports used */
 /*!****************************!*\
@@ -61891,7 +61924,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 164 */
+/* 166 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
@@ -63536,7 +63569,7 @@ module.exports = MarkerClusterer
 
 
 /***/ }),
-/* 165 */
+/* 167 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************!*\
@@ -63734,7 +63767,7 @@ module.exports = MarkerClusterer
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../process/browser.js */ 54)))
 
 /***/ }),
-/* 166 */
+/* 168 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************!*\
@@ -63792,13 +63825,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(/*! setimmediate */ 165);
+__webpack_require__(/*! setimmediate */ 167);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 167 */
+/* 169 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -63832,7 +63865,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 168 */
+/* 170 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
@@ -63848,7 +63881,7 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 169 */
+/* 171 */
 /* no static exports found */
 /* all exports used */
 /*!************************!*\
@@ -64381,7 +64414,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(/*! ./support/isBuffer */ 168);
+exports.isBuffer = __webpack_require__(/*! ./support/isBuffer */ 170);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -64425,7 +64458,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(/*! inherits */ 167);
+exports.inherits = __webpack_require__(/*! inherits */ 169);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -64446,7 +64479,7 @@ function hasOwnProperty(obj, prop) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 10), __webpack_require__(/*! ./../process/browser.js */ 54)))
 
 /***/ }),
-/* 170 */
+/* 172 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
@@ -64456,9 +64489,9 @@ function hasOwnProperty(obj, prop) {
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!./autocompleteImpl.js */ 193),
+  __webpack_require__(/*! !!./autocompleteImpl.js */ 195),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-92295ce8"}!../../../vue-loader/lib/selector?type=template&index=0!./autocomplete.vue */ 187),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-92295ce8"}!../../../vue-loader/lib/selector?type=template&index=0!./autocomplete.vue */ 189),
   /* scopeId */
   null,
   /* cssModules */
@@ -64485,7 +64518,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 171 */
+/* 173 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************!*\
@@ -64495,9 +64528,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!./infoWindowImpl.js */ 196),
+  __webpack_require__(/*! !!./infoWindowImpl.js */ 198),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3d7de83c"}!../../../vue-loader/lib/selector?type=template&index=0!./infoWindow.vue */ 182),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3d7de83c"}!../../../vue-loader/lib/selector?type=template&index=0!./infoWindow.vue */ 184),
   /* scopeId */
   null,
   /* cssModules */
@@ -64524,7 +64557,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 172 */
+/* 174 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
@@ -64534,13 +64567,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./map.vue */ 189)
+__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-5408ed30","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./map.vue */ 191)
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!./mapImpl.js */ 197),
+  __webpack_require__(/*! !!./mapImpl.js */ 199),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-5408ed30"}!../../../vue-loader/lib/selector?type=template&index=0!./map.vue */ 185),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-5408ed30"}!../../../vue-loader/lib/selector?type=template&index=0!./map.vue */ 187),
   /* scopeId */
   null,
   /* cssModules */
@@ -64567,7 +64600,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 173 */
+/* 175 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************!*\
@@ -64577,9 +64610,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!./placeInputImpl.js */ 199),
+  __webpack_require__(/*! !!./placeInputImpl.js */ 201),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-686eca27"}!../../../vue-loader/lib/selector?type=template&index=0!./placeInput.vue */ 186),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-686eca27"}!../../../vue-loader/lib/selector?type=template&index=0!./placeInput.vue */ 188),
   /* scopeId */
   null,
   /* cssModules */
@@ -64606,7 +64639,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 174 */
+/* 176 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************************!*\
@@ -64616,13 +64649,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./streetViewPanorama.vue */ 188)
+__webpack_require__(/*! !vue-loader/~/vue-style-loader!css-loader!../../../vue-loader/lib/style-compiler/index?{"id":"data-v-3dd66e01","scoped":false,"hasInlineConfig":false}!../../../vue-loader/lib/selector?type=styles&index=0!./streetViewPanorama.vue */ 190)
 
 var Component = __webpack_require__(/*! ../../../vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!./streetViewPanoramaImpl.js */ 203),
+  __webpack_require__(/*! !!./streetViewPanoramaImpl.js */ 205),
   /* template */
-  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3dd66e01"}!../../../vue-loader/lib/selector?type=template&index=0!./streetViewPanorama.vue */ 183),
+  __webpack_require__(/*! !../../../vue-loader/lib/template-compiler/index?{"id":"data-v-3dd66e01"}!../../../vue-loader/lib/selector?type=template&index=0!./streetViewPanorama.vue */ 185),
   /* scopeId */
   null,
   /* cssModules */
@@ -64649,7 +64682,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 175 */
+/* 177 */
 /* no static exports found */
 /* all exports used */
 /*!*************************!*\
@@ -64659,9 +64692,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./addForm.vue */ 177),
+  __webpack_require__(/*! !!../~/vue-loader/lib/selector?type=script&index=0!./addForm.vue */ 179),
   /* template */
-  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-09c19ef6"}!../~/vue-loader/lib/selector?type=template&index=0!./addForm.vue */ 180),
+  __webpack_require__(/*! !../~/vue-loader/lib/template-compiler/index?{"id":"data-v-09c19ef6"}!../~/vue-loader/lib/selector?type=template&index=0!./addForm.vue */ 182),
   /* scopeId */
   null,
   /* cssModules */
@@ -64688,7 +64721,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 176 */
+/* 178 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************!*\
@@ -64698,9 +64731,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(/*! ../../../../~/vue-loader/lib/component-normalizer */ 11)(
   /* script */
-  __webpack_require__(/*! !!../../../../~/vue-loader/lib/selector?type=script&index=0!./marker.vue */ 178),
+  __webpack_require__(/*! !!../../../../~/vue-loader/lib/selector?type=script&index=0!./marker.vue */ 180),
   /* template */
-  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-499cdd6a"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./marker.vue */ 184),
+  __webpack_require__(/*! !../../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-499cdd6a"}!../../../../~/vue-loader/lib/selector?type=template&index=0!./marker.vue */ 186),
   /* scopeId */
   null,
   /* cssModules */
@@ -64727,7 +64760,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 177 */
+/* 179 */
 /* exports provided: default */
 /* all exports used */
 /*!****************************************************************************!*\
@@ -64834,7 +64867,7 @@ methods: {
 
 
 /***/ }),
-/* 178 */
+/* 180 */
 /* exports provided: default */
 /* all exports used */
 /*!********************************************************************************************!*\
@@ -64863,7 +64896,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 179 */
+/* 181 */
 /* exports provided: default */
 /* all exports used */
 /*!*************************************************************************!*\
@@ -64878,7 +64911,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__camera_js__ = __webpack_require__(/*! ./camera.js */ 77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__image_storage_js__ = __webpack_require__(/*! ./image_storage.js */ 32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebaseConfig__ = __webpack_require__(/*! ./firebaseConfig */ 205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebaseConfig__ = __webpack_require__(/*! ./firebaseConfig */ 207);
 //
 //
 //
@@ -65073,7 +65106,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // document.querySelector('img').src = {{photo}};
 
@@ -65083,278 +65153,344 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data() {
-            return {
-                //map variables
-                center: {
-                    lat: 10.0,
-                    lng: 10.0
-                },
-                zoom: 15,
-                loc:{
-                  lat:10.0,
-                  lng:10.0
-                },
-                markers: [],
+  data() {
+    return {
+      //map variables
+      center: {
+        lat: 10.0,
+        lng: 10.0
+      },
+      zoom: 15,
+      loc: {
+        lat: 10.0,
+        lng: 10.0
+      },
+      markers: [],
 
-                //flags for functions
-                track:true,
-                pause:false,
+      track: true,
+      pause: false,
+      splash: true,
 
-                //current location image
-                curr: 'http://i.imgur.com/VnDEIQt.png',
-                //cluster image
-                imagePath: 'https://github.com/googlemaps/js-marker-clusterer/tree/gh-pages/images/m',
+      //current location image
+      curr: 'http://i.imgur.com/VnDEIQt.png',
+      //custom marker image
+      customMarker: 'http://i.imgur.com/GAvSlmr.png',
+      //cluster image
+      imagePath: 'https://github.com/greg-wolff/crimewatch/blob/production/src/assets/images/m1.png',
 
-                //Add crime variables
-                comment: null,
-                Category: ["Murder", "Theft"],
+      //Add crime variables
+      comment: null,
+      createAcc: false,
+      Category: ["Murder", "Theft", "Automotive", "Assault", "Racial", "Sexual", "Harrasment", "Vandalism"],
+      timeStamp: null,
+      //for specific tag
+      categoryType: [],
 
-                //Retrieval info
-                viewTypes: [],
-                getUrl: null,
-                viewComment: null,
+      //Retrieval info
+      viewTypes: [],
+      getUrl: null,
+      viewComment: null,
 
-            }
-        },
-        beforeCreated(){
-          __WEBPACK_IMPORTED_MODULE_1_firebase__["initializeApp"](__WEBPACK_IMPORTED_MODULE_4__firebaseConfig__["a" /* config */]);
-        },
-        created() {
-            //user login
-            var self = this;
-            __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().onAuthStateChanged((user) => {
-                if (user) {
-                  console.log(user);
-                //  console.log("logged in should go to main")
-                  self.$f7.closeModal();
-                } else {
-                    self.$f7.loginScreen();
-                }
-            });
-            //this.setCenter();
+    }
+  },
+  beforeCreated() {
+    __WEBPACK_IMPORTED_MODULE_1_firebase__["initializeApp"](__WEBPACK_IMPORTED_MODULE_4__firebaseConfig__["a" /* config */]);
+  },
+  created() {
+    //user login
+    var self = this;
+    __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().onAuthStateChanged((user) => {
+      if (user) {
+        console.log(user);
+        //  console.log("logged in should go to main")
+        self.$f7.closeModal();
+      } else {
 
-        },
-        mounted: function() {
-            this.setLoc();
-            this.setMarkers();
-            console.log(this.$data.pause)
-            //console.log("In mounted");
-            //console.log(this.$data);
-        },
-        methods: {
-            recenter: function(){
-              console.log("in recenter");
-            },
-            viewCluster: function(){
-              this.$data.track = false;
-            },
-            snap: function(){
-              this.$data.track = true;
-              this.$data.zoom = 15;
-              //this.$refs.myMap.panTo(this.$data.loc);
-              //this.$refs.myMap.zoom = 15;
-              //this.$refs.myMap.panTo(this.$data.loc);
-            },
-            zoomUpdate: function(event) {
-                this.$data.zoom = event;
-            },
-            cen: function(event){
-              if(this.$data.track == false){
-                this.$data.center = event;
-              }
-            },
-            campturePhoto: function() {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__camera_js__["a" /* capturePhoto */])();
-            },
-            getPhoto: function() {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__camera_js__["b" /* getPhoto */])();
-            },
-            crime: function() {
-                  document.getElementById('smallImage').src = "";
-                  this.$data.pause = true;
-                  console.log("in crime:" + this.$data.pause)
-                  this.$f7.popup('.popup-addcrime')
+        self.$f7.loginScreen();
+      }
+    });
+    //this.setCenter();
 
-            },
-            close: function() {
-                this.$data.pause = false;
-                this.setMarkers();
-                this.$f7.closeModal()
-            },
-            submit: function() {
-                this.$nextTick(function() {
-                    var currentTime = new Date();
-                    var year = currentTime.getFullYear();
-                    var month = currentTime.getMonth();
-                    var day = currentTime.getDay();
-                    var hour = currentTime.getHours();
-                    var minute = currentTime.getMinutes();
-                    var types = this.$data.Category;
-                    var comment = this.$data.comment;
-                    var data = {
-                        "time": year + "/" + month + "/" + day + " " + hour + ":" + minute,
-                        "category": types,
-                        "comment": comment
-                    }
-                    var url = document.getElementById('smallImage').src;
-                    //console.log(url);
-                    var check = new RegExp("data:image/jpeg;base64,")
-                    var base64 = check.test(url);
-                    console.log(url);
-                    if(base64){
-                      console.log(url);
-                      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__image_storage_js__["a" /* storeImage */])(url, this.$data.loc.lat, this.$data.loc.lng);
-                    }
-                    //console.log(window.img);
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.loc.lat, this.$data.loc.lng, data);
-                });
-                //console.log(this.$data);
-                this.$data.pause = false;
-                this.setMarkers();
-                this.$f7.closeModal();
-            },
-            getInfo: function(m) {
-                console.log(m.position.lat);
-                this.$data.pause = true;
-                var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* getHash */])(m.position.lat, m.position.lng);
-                var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* returnInfo */])(Infohash);
-                //console.log(this.$f7);
-                /*console.log(json)*/
-                //push category data to vue.$data so we can use v-for
-                this.$data.viewTypes = json.category;
-                this.$data.viewComment = json.comment;
-                if(typeof json.url != "undefined"){
-                  //var Image =document.querySelector("div.photo img")
-                  //Image.src = json.url;
-                  //Image.style.display = 'inline';
-                  this.$data.getUrl = json.url;
-                }else{
-                  this.$data.getUrl = "";
-                }
-                // console.log(this.$data.center.lat);
-                // console.log("photo: " +this.$data.photo);
-                /*var popupHTML =
-                    '<div class="popup">' +
-                    '<div class="content-block">' +
-                    '<p><a href="#" class="close-popup"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>' +
-                    '<h1>' + json.comment + '</h2>' +
-                    '<div class="chip" v-repeat="5">' +
-                    '<div class="chip-label" >' + json.category + '</div></div>' +
-                    '</div>' +
-                    '</div>'
-                    */
-                this.$f7.popup('.popup-marker');
-            },
-            setLoc: function() {
-                console.log('setLoc')
-                // Request Location Services
-                var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
-                    onError, {
-                        timeout: 30000,
-                        enableHighAccuracy: true
-                    })
-                var that = this
-                    //console.log(this)
+  },
+  mounted: function() {
+    this.setLoc();
+    this.setMarkers();
+    console.log(this.$data.pause)
+    setTimeout(() => document.getElementById("splash").style.display = 'none', 3000);
+    setTimeout(() => this.$data.splash = false, 3000)
+    console.log("In mounted");
+    //console.log(this.$data);
+  },
+  methods: {
+    recenter: function() {
+      console.log("in recenter")
+      if (this.$data.track == true) {
+        this.$refs.myMap.panTo(this.$data.loc);
+      }
+    },
+    drag: function() {
+      console.log("in drag")
+      this.$data.track = false;
+    },
+    viewCluster: function() {
+      this.$data.track = false;
+    },
+    snap: function() {
+      this.$data.track = true;
+      this.$refs.myMap.panTo(this.$data.loc);
+      this.$data.zoom = 15;
+      //this.$refs.myMap.panTo(this.$data.loc);
+      //this.$refs.myMap.zoom = 15;
+      //this.$refs.myMap.panTo(this.$data.loc);
+    },
+    zoomUpdate: function(event) {
+      this.$data.zoom = event;
+      this.setMarkers();
+    },
+    cen: function(event) {
+      this.$data.center.lat = event.lat();
+      this.$data.center.lng = event.lng();
+      console.log(this.$data.center);
+    },
+    campturePhoto: function() {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__camera_js__["a" /* capturePhoto */])();
+    },
+    getPhoto: function() {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__camera_js__["b" /* getPhoto */])();
+    },
+    crime: function() {
+      document.getElementById('smallImage').src = "";
+      document.getElementById('add-circle').style.display = 'block';
+      document.getElementById('edit-circle').style.display = 'none';
+      this.$data.categoryType = [];
+      //this.$data.pause = true;
+      console.log(this.$data.categoryType);
+      console.log("in crime:" + this.$data.pause)
+      this.$f7.popup('.popup-addcrime')
 
-                function onSuccess(pos) {
-                    //console.log(pos)
-                    //console.log(this)
-                    that.$data.loc = {
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                    }
-                    if(that.$data.track == true){
-                      that.$data.center = {
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                      }
-                    }
-                    setTimeout(function(){ that.setLoc() },5000);
-                    /*that.$nextTick(function() {
-                        that.setMarkers();
-                    });*/
-                }
+    },
+    close: function() {
+      this.$data.pause = false;
+      this.$data.viewTypes = [];
+      this.setMarkers();
+      this.$f7.closeModal()
+    },
+    addTag: function(tag, event) {
+      console.log(tag);
+      console.log(this.$data.categoryType)
+      if (this.$data.categoryType.includes(tag)) {
+        console.log("removing tag");
+        //these chips are gainsboro
+        event.target.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
+        event.target.style.color = '#3e3e3e';
 
-                function onError(err) {
-                    console.log(err)
-                    console.log(err.code)
-                    console.log(err.message)
-                    setTimeout(function(){ that.setLoc() },5000);
-                    /*that.$nextTick(function() {
-                        that.setMarkers();
-                    });*/
-                }
-            },
-            setMarkers: function() {
-                var locs = [];
-                //console.log(this.$data.zoom);
-                var radius = Math.pow(2, (17 - this.$data.zoom));
-                console.log("in setMarkers");
-                this.$nextTick(function() {
-                    //console.log(radius)
-                    var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
-                    this.$data.markers = locations;
-                    //console.log("In set markers");
-                    var self = this;
-                    if(this.$data.pause != true){
-                      setTimeout(function(){ self.setMarkers() },5000)
-                      console.log(this.$data.pause)
-                    }
+        // $(this).animate({'opacity':1});
 
-                });
-                /*locations.forEach(function pop(index){
-                  var pos = {lat: index[0],lng:index[1]};
-                  //info is set just to open up a connection
-                  locs.push({position:pos},{info:returnInfo(index[2])});
-                  });*/
+        this.$data.categoryType.splice(this.$data.categoryType.indexOf(tag), 1);
+      } else {
+        console.log("adding tag");
+        this.$data.categoryType.push(tag);
+        event.target.style.backgroundColor = 'grey';
+        event.target.style.color = 'white';
+        // (this).animate({'opacity':0});
+      }
 
-            },
-            onLogIn: function() {
-            const txtEmail = document.getElementById('txtEmail');
-            const txtPassword = document.getElementById('txtPassword');
-            console.log("Log in Buttonclicked");
-            //Get email and pass
-            const email = txtEmail.value;
-            const pass = txtPassword.value;
-            const auth = __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]();
-            //Sign In
-            const promise = auth.signInWithEmailAndPassword(email, pass);
-            promise.then(user => console.log(user));
-            promise.catch(e => console.log(e.message));
-            return false;
-          },
-          onLogOut: function () {
-            __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().signOut();
-            console.log('not logged in');
-              //btnLogout.classList.add('hide');
-          },
-          SignUpSummit: function() {
-          const txtEmail = document.getElementById('txtEmail2');
-          const txtPassword = document.getElementById('txtPassword2');
-          //Get email and pass
-           const email = txtEmail.value;
-           const pass = txtPassword.value;
-           const auth = __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]();
-           //Sign In
-           const promise = auth.createUserWithEmailAndPassword(email, pass);
-           //promise.then(user => console.log(user));
-           promise.catch(e => console.log(e.message));
-           __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().signOut();
-          }
-        },
-        watch: {
-            '$route' (to, from) {
-                // Call resizePreserveCenter() on all maps
-                Vue.$gmapDefaultResizeBus.$emit('resize')
-            }
+
+    },
+    submit: function() {
+      this.$nextTick(function() {
+        var currentTime = new Date();
+        var types = this.$data.categoryType;
+        var comment = this.$data.comment;
+        console.log(types);
+        var data = {
+          "time": currentTime.toLocaleString(),
+          "category": types,
+          "comment": comment
         }
+        var url = document.getElementById('smallImage').src;
+        //console.log(url);
+        var check = new RegExp("data:image/jpeg;base64,")
+        var base64 = check.test(url);
+        console.log(url);
+        if (base64) {
+          console.log(url);
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__image_storage_js__["a" /* storeImage */])(url, this.$data.loc.lat, this.$data.loc.lng);
+        }
+        //console.log(window.img);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["a" /* loadInfo */])(this.$data.loc.lat, this.$data.loc.lng, data);
+      });
+
+      this.$data.pause = false;
+      this.setMarkers();
+      this.$f7.closeModal();
+    },
+    getInfo: function(m) {
+      console.log(m.position.lat);
+      this.$data.pause = true;
+      var Infohash = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["b" /* getHash */])(m.position.lat, m.position.lng);
+      var json = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["c" /* returnInfo */])(Infohash);
+      //console.log(this.$f7);
+      /*console.log(json)*/
+      //push category data to vue.$data so we can use v-for
+      this.$data.viewTypes = json.category;
+      this.$data.viewComment = json.comment;
+      // console.log(json)
+      this.$data.timeStamp = json.time;
+      if (typeof json.url != "undefined") {
+        //var Image =document.querySelector("div.photo img")
+        //Image.src = json.url;
+        //Image.style.display = 'inline';
+        this.$data.getUrl = json.url;
+      } else {
+        this.$data.getUrl = "";
+      }
+
+      // console.log(this.$data.center.lat);
+      // console.log("photo: " +this.$data.photo);
+      /*var popupHTML =
+          '<div class="popup">' +
+          '<div class="content-block">' +
+          '<p><a href="#" class="close-popup"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></p>' +
+          '<h1>' + json.comment + '</h2>' +
+          '<div class="chip" v-repeat="5">' +
+          '<div class="chip-label" >' + json.category + '</div></div>' +
+          '</div>' +
+          '</div>'
+          */
+        this.$f7.popup('.popup-marker');
+    },
+    setLoc: function() {
+      console.log('setLoc')
+      // Request Location Services
+      var watchID = navigator.geolocation.getCurrentPosition(onSuccess,
+        onError, {
+          timeout: 30000,
+          enableHighAccuracy: true
+        })
+      var that = this
+      //console.log(this)
+
+      function onSuccess(pos) {
+        //console.log(pos)
+        //console.log(this)
+        that.$data.loc = {
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+        }
+        if (that.$data.track == true) {
+          that.$refs.myMap.panTo(that.$data.loc);
+        }
+        //that.$data.center = that.$data.loc;
+        setTimeout(function() {
+          that.setLoc()
+        }, 500);
+
+      }
+
+      function onError(err) {
+        console.log("in error")
+        console.log(err.code)
+        console.log(err.message)
+        setTimeout(function() {
+          that.setLoc()
+        }, 500);
+        /*that.$nextTick(function() {
+            that.setMarkers();
+        });*/
+      }
+    },
+    setMarkers: function() {
+      var locs = [];
+      //console.log(this.$data.zoom);
+      var radius = Math.pow(2, (18 - this.$data.zoom));
+      console.log("in setMarkers");
+      this.$nextTick(function() {
+        //console.log(radius)
+        var locations = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__backend_js__["d" /* Nearby */])(this.$data.center.lat, this.$data.center.lng, radius);
+        this.$data.markers = locations;
+        //console.log("In set markers");
+        var self = this;
+        if (this.$data.pause != true) {
+          setTimeout(function() {
+            self.setMarkers()
+          }, 5000)
+          console.log(this.$data.pause)
+        }
+      });
+      /*locations.forEach(function pop(index){
+        var pos = {lat: index[0],lng:index[1]};
+        //info is set just to open up a connection
+        locs.push({position:pos},{info:returnInfo(index[2])});
+        });*/
+
+    },
+    onLogIn: function() {
+      const txtEmail = document.getElementById('txtEmail');
+      const txtPassword = document.getElementById('txtPassword');
+      console.log("Log in Buttonclicked");
+      //Get email and pass
+      const email = txtEmail.value;
+      const pass = txtPassword.value;
+      const auth = __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]();
+      //Sign In
+      const promise = auth.signInWithEmailAndPassword(email, pass);
+      promise.then(user => console.log(user));
+      //promise.catch(e => console.log(e.message));
+      promise.catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == 'auth/weak-password') {
+          alert('Incorrect password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+      });
+      return false;
+    },
+    onLogOut: function() {
+      __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().signOut();
+      console.log('not logged in');
+      //btnLogout.classList.add('hide');
+    },
+    SignUpSummit: function() {
+      const txtEmail = document.getElementById('txtEmail2');
+      const txtPassword = document.getElementById('txtPassword2');
+      //Get email and pass
+      const email = txtEmail.value;
+      const pass = txtPassword.value;
+      const auth = __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]();
+      //Sign In
+      const promise = auth.createUserWithEmailAndPassword(email, pass);
+      //promise.then(user => console.log(user));
+      // promise.catch(e => console.log(e.message));
+      promise.catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+      });
+      __WEBPACK_IMPORTED_MODULE_1_firebase__["auth"]().signOut();
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      // Call resizePreserveCenter() on all maps
+      Vue.$gmapDefaultResizeBus.$emit('resize')
+    }
+  }
 });
 
 
-
 /***/ }),
-/* 180 */
+/* 182 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
@@ -65546,7 +65682,7 @@ if (false) {
 }
 
 /***/ }),
-/* 181 */
+/* 183 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************************************************************************************************!*\
@@ -65559,11 +65695,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "app"
     }
-  }, [_c('f7-statusbar'), _vm._v(" "), _c('f7-panel', {
+  }, [_c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [(this.$data.splash) ? _c('div', {
+    attrs: {
+      "id": "splash"
+    }
+  }) : _vm._e()]), _vm._v(" "), _c('f7-statusbar'), _vm._v(" "), _c('f7-panel', {
     attrs: {
       "right": "",
-      "cover": "",
-      "layout": "dark"
+      "cover": ""
     }
   }, [_c('f7-view', {
     attrs: {
@@ -65573,12 +65716,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('f7-navbar', {
     attrs: {
-      "title": "Right Panel",
+      "title": "Settings",
       "sliding": ""
     }
   }), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('f7-block', [_c('p', [_c('f7-button', {
     attrs: {
-      "active": ""
+      "active": "",
+      "fill": "",
+      "color": "blue"
     },
     on: {
       "click": function($event) {
@@ -65596,44 +65741,81 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "sliding": ""
     }
-  }, [_vm._v("Crimewatch")]), _vm._v(" "), _c('f7-nav-right', [(!this.$data.track) ? _c('f7-button', {
+  }, [_vm._v("Crimewatch")]), _vm._v(" "), _c('f7-nav-right', [_c('f7-link', {
     attrs: {
-      "active": ""
-    },
-    on: {
-      "click": function($event) {
-        _vm.snap()
-      }
-    }
-  }, [_vm._v("Center")]) : _vm._e(), _vm._v(" "), _c('f7-link', {
-    attrs: {
-      "icon": "icon-bars",
+      "icon": "fa fa-cog",
       "open-panel": "right"
     }
-  })], 1)], 1), _vm._v(" "), _c('f7-login-screen', [_c('f7-view', [_c('f7-pages', [_c('f7-page', [_c('f7-login-screen-title', [_vm._v("Crimewatch")]), _vm._v(" "), _c('div', {
-    staticClass: "container"
-  }, [_c('center', [_c('input', {
+  })], 1)], 1), _vm._v(" "), _c('f7-login-screen', [_c('f7-view', [_c('f7-pages', [_c('f7-page', [_c('div', {
+    staticClass: "view"
+  }, [_c('div', {
+    staticClass: "page"
+  }, [_c('div', {
+    staticClass: "page-content login-screen-content"
+  }, [_c('f7-login-screen-title'), _vm._v(" "), _c('form', [_c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [(!this.$data.createAcc) ? _c('div', {
+    staticClass: "list-block"
+  }, [_c('ul', [_c('li', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-media"
+  }, [_c('i', {
+    staticClass: "fa fa-envelope-o",
+    attrs: {
+      "aria-hidden": "true",
+      "id": "White"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-input"
+  }, [_c('input', {
     attrs: {
       "id": "txtEmail",
       "type": "email",
-      "placeholder": "Email"
+      "placeholder": "E-mail"
     }
-  }), _vm._v(" "), _c('input', {
+  })])])]), _vm._v(" "), _c('li', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-media"
+  }, [_c('i', {
+    staticClass: "fa fa-key",
+    attrs: {
+      "id": "White",
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-input"
+  }, [_c('input', {
     attrs: {
       "id": "txtPassword",
       "type": "password",
       "placeholder": "Password"
     }
-  })]), _vm._v(" "), _c('f7-button', {
+  })])])])])]) : _vm._e()]), _vm._v(" "), _c('transition', {
     attrs: {
-      "active": ""
+      "name": "fade"
+    }
+  }, [(!this.$data.createAcc) ? _c('div', {
+    staticClass: "list-block"
+  }, [_c('ul', [_c('center', [_c('f7-button', {
+    attrs: {
+      "active": "",
+      "fill": "",
+      "color": "blue"
     },
     on: {
       "click": function($event) {
         _vm.onLogIn()
       }
     }
-  }, [_vm._v("Sign in")])], 1), _vm._v(" "), _c('center', [_vm._v("OR")]), _vm._v(" "), _c('center', [_c('div', {
+  }, [_vm._v("Sign in")])], 1)], 1), _vm._v(" "), _c('center', [_vm._v("OR")]), _vm._v(" "), _c('center', [_c('div', {
     staticClass: "page-content"
   }, [_c('div', {
     staticClass: "content-block"
@@ -65642,9 +65824,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#",
       "data-popup": ".popup-createaccount"
+    },
+    on: {
+      "click": function($event) {
+        _vm.createAcc = !_vm.createAcc
+      }
     }
-  }, [_vm._v("Create an Account ")])])])])]), _vm._v("\n                              ...\n                              "), _vm._v(" "), _c('div', {
-    staticClass: "popup popup-createaccount"
+  }, [_vm._v("Create an Account")])])])])])], 1) : _vm._e()])], 1)], 1)])]), _vm._v(" "), _c('div', {
+    staticClass: "popup popup-createaccount",
+    attrs: {
+      "id": "signUp"
+    }
   }, [_c('div', {
     staticClass: "content-block"
   }, [_c('div', {
@@ -65654,8 +65844,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "item-media"
   }, [_c('i', {
-    staticClass: "icon f7-icons"
-  }, [_vm._v("Name")])]), _vm._v(" "), _c('div', {
+    staticClass: "fa fa-user",
+    attrs: {
+      "id": "White",
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-input"
@@ -65669,8 +65863,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "item-media"
   }, [_c('i', {
-    staticClass: "icon f7-icons"
-  }, [_vm._v("email")])]), _vm._v(" "), _c('div', {
+    staticClass: "fa fa-envelope-o",
+    attrs: {
+      "id": "White",
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-input"
@@ -65685,8 +65883,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "item-media"
   }, [_c('i', {
-    staticClass: "icon f7-icons"
-  }, [_vm._v("Password")])]), _vm._v(" "), _c('div', {
+    staticClass: "fa fa-key",
+    attrs: {
+      "id": "White",
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-input"
@@ -65694,12 +65896,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "txtPassword2",
       "type": "password",
-      "placeholder": "Password"
+      "placeholder": "Create Password"
     }
   })])])])])]), _vm._v(" "), _c('f7-button', {
     staticClass: "close-popup",
     attrs: {
-      "active": ""
+      "active": "",
+      "fill": "",
+      "color": "blue"
     },
     on: {
       "click": function($event) {
@@ -65711,10 +65915,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#",
       "active": ""
+    },
+    on: {
+      "click": function($event) {
+        _vm.createAcc = !_vm.createAcc
+      }
     }
-  }, [_vm._v("Cancel")])], 1)])])], 1)], 1)], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
+  }, [_vm._v("Cancel")])], 1)])])])], 1)], 1)], 1), _vm._v(" "), _c('f7-pages', [_c('f7-page', [_c('div', {
     staticClass: "popup popup-addcrime tablet-fullscreen"
-  }, [_c('a', {
+  }, [_c('div', {
+    attrs: {
+      "id": "popup-title"
+    }
+  }, [_c('h1', {
+    staticClass: "popup-header"
+  }, [_vm._v("Create New Incident")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('i', {
+    staticClass: "close fa fa-times fa-3x",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "#"
     },
@@ -65722,7 +65946,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.close
     }
   }, [_c('i', {
-    staticClass: "fa fa-times fa-3x",
+    staticClass: "close fa fa-times fa-3x",
     attrs: {
       "aria-hidden": "true"
     }
@@ -65731,109 +65955,56 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "form": ""
     }
   }, [_c('div', {
-    staticClass: "accordion-item"
-  }, [_c('a', {
-    staticClass: "item-content item-link",
     attrs: {
-      "href": "#"
-    }
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("Categories")])])]), _vm._v(" "), _c('div', {
-    staticClass: "accordion-item-content"
-  }, [_c('div', {
-    staticClass: "list-block"
-  }, [_c('ul', [_c('li', [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model.lazy",
-      value: (_vm.Category),
-      expression: "Category",
-      modifiers: {
-        "lazy": true
-      }
-    }],
-    staticStyle: {
-      "width": "25px",
-      "height": "25px"
-    },
-    attrs: {
-      "type": "checkbox",
-      "id": "murder",
-      "value": "Murder"
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Murder") > -1 : (_vm.Category)
+      "id": "insert-photo"
     },
     on: {
-      "__c": function($event) {
-        var $$a = _vm.Category,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = "Murder",
-            $$i = _vm._i($$a, $$v);
-          if ($$c) {
-            $$i < 0 && (_vm.Category = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.Category = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.Category = $$c
-        }
+      "click": function($event) {
+        _vm.campturePhoto()
       }
     }
-  }), _c('font', {
+  }, [_c('div', {
     attrs: {
-      "size": "4"
+      "id": "photo-circle"
     }
-  }, [_vm._v("Murder")])], 1), _vm._v(" "), _c('li', [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model.lazy",
-      value: (_vm.Category),
-      expression: "Category",
-      modifiers: {
-        "lazy": true
-      }
-    }],
-    staticStyle: {
-      "width": "25px",
-      "height": "25px"
-    },
+  }, [_c('img', {
     attrs: {
-      "type": "checkbox",
-      "id": "theft",
-      "value": "Theft"
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.Category) ? _vm._i(_vm.Category, "Theft") > -1 : (_vm.Category)
-    },
-    on: {
-      "__c": function($event) {
-        var $$a = _vm.Category,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = "Theft",
-            $$i = _vm._i($$a, $$v);
-          if ($$c) {
-            $$i < 0 && (_vm.Category = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.Category = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.Category = $$c
-        }
-      }
+      "id": "smallImage",
+      "src": "null"
     }
-  }), _c('font', {
+  }), _vm._v(" "), _c('i', {
+    staticClass: "fa fa-camera fa-3x",
     attrs: {
-      "size": "4"
+      "aria-hidden": "true",
+      "id": "camera-icon"
     }
-  }, [_vm._v("Theft")])], 1)])])])]), _vm._v(" "), _c('f7-list-item', [_c('f7-label', [_c('b', [_vm._v("Comments")])]), _vm._v(" "), _c('f7-input', {
+  }), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "add-circle"
+    }
+  }, [_c('i', {
+    staticClass: "add-photo-icon fa fa-plus fa-3x",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "edit-circle"
+    }
+  }, [_c('i', {
+    staticClass: "edit-photo-icon fa fa-pencil fa-3x",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "insert-details"
+    }
+  }, [_c('h2', {
+    attrs: {
+      "id": "body-header"
+    }
+  }, [_vm._v("Comments")]), _vm._v(" "), _c('f7-input', {
     attrs: {
       "type": "textarea",
       "placeholder": "",
@@ -65846,49 +66017,42 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "comment"
     }
-  })], 1), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.Category))])], 1), _vm._v(" "), _c('f7-button', {
+  }), _vm._v(" "), _c('h2', {
     attrs: {
-      "fill": "",
-      "color": "blue"
+      "id": "body-header"
+    }
+  }, [_vm._v("Categories")]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, _vm._l((_vm.Category), function(type) {
+    return _c('a', {
+      staticClass: "chip",
+      attrs: {
+        "href": "#",
+        "clickable": true
+      },
+      on: {
+        "click": function($event) {
+          _vm.addTag(type, $event)
+        }
+      }
+    }, [_vm._v(" " + _vm._s(type) + " ")])
+  })), _vm._v(" "), _c('a', {
+    staticClass: "color-blue button-fill button",
+    attrs: {
+      "href": "#"
     },
     on: {
       "click": _vm.submit
     }
-  }, [_vm._v("Send")]), _vm._v(" "), _c('f7-button', {
-    on: {
-      "click": function($event) {
-        _vm.campturePhoto()
-      }
-    }
-  }, [_vm._v("Take a Picture")]), _vm._v(" "), _c('f7-button', {
-    on: {
-      "click": function($event) {
-        _vm.getPhoto()
-      }
-    }
-  }, [_vm._v("PHOTOLIBRARY")]), _vm._v(" "), _c('img', {
-    staticStyle: {
-      "display": "none",
-      "width": "60px",
-      "height": "60px"
-    },
-    attrs: {
-      "id": "smallImage",
-      "src": "null"
-    }
-  }), _vm._v(" "), _c('img', {
-    staticStyle: {
-      "display": "none"
-    },
-    attrs: {
-      "id": "largeImage",
-      "src": ""
-    }
-  })], 1), _vm._v(" "), _c('div', {
+  }, [_vm._v("CREATE")])], 1)])], 1), _vm._v(" "), _c('div', {
     staticClass: "popup popup-marker tablet-fullscreen"
   }, [_c('div', {
-    staticClass: "content-block"
-  }, [_c('p', [_c('a', {
+    attrs: {
+      "id": "popup-title"
+    }
+  }, [_c('h1', {
+    staticClass: "popup-header"
+  }, [_vm._v(_vm._s(_vm.timeStamp))]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "#"
     },
@@ -65896,14 +66060,50 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.close
     }
   }, [_c('i', {
-    staticClass: "fa fa-arrow-left fa-3x",
+    staticClass: "close fa fa-times fa-3x",
     attrs: {
       "aria-hidden": "true"
     }
-  })])]), _vm._v(" "), _c('h1', [_vm._v(" " + _vm._s(_vm.viewComment) + " ")]), _vm._v(" "), _c('div', {
+  })])]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "background": "rgb(46, 47, 56)"
+    },
+    attrs: {
+      "id": "insert-photo"
+    }
+  }, [_c('h1', {
+    attrs: {
+      "id": "quote"
+    }
+  }, [_vm._v(" " + _vm._s(_vm.viewComment) + " ")]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "in-quote"
+    }
+  }), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "out-quote"
+    }
+  })]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "popup-content"
+    }
+  }, [_c('h2', {
+    attrs: {
+      "id": "body-header"
+    }
+  }, [_vm._v("Tagged with")]), _vm._v(" "), _vm._l((_vm.viewTypes), function(type) {
+    return _c('div', {
+      staticClass: "chip"
+    }, [_c('div', {
+      staticClass: "chip-label"
+    }, [_vm._v(" " + _vm._s(type) + " ")])])
+  }), _vm._v(" "), _c('div', {
     staticClass: "photo",
     staticStyle: {
       "display": "block"
+    },
+    attrs: {
+      "id": "view-photo"
     }
   }, [_c('img', {
     staticClass: "lazy lazy-fadeIn",
@@ -65917,13 +66117,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": _vm.getUrl,
       "alt": "no image"
     }
-  })]), _vm._v(" "), _vm._l((_vm.viewTypes), function(type) {
-    return _c('div', {
-      staticClass: "chip"
-    }, [_c('div', {
-      staticClass: "chip-label"
-    }, [_vm._v(" " + _vm._s(type) + " ")])])
-  })], 2)]), _vm._v(" "), _c('a', {
+  })])], 2)]), _vm._v(" "), _c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [(!this.$data.track) ? _c('f7-button', {
+    attrs: {
+      "active": "",
+      "fill": "",
+      "color": "blue",
+      "id": "center-button"
+    },
+    on: {
+      "click": function($event) {
+        _vm.snap()
+      }
+    }
+  }, [_vm._v("Center")]) : _vm._e()], 1), _vm._v(" "), _c('a', {
     staticClass: " floating-button color-blue",
     attrs: {
       "href": "#",
@@ -65947,6 +66157,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "zoom": _vm.zoom,
       "options": {
         zoomControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false,
         streetViewControl: false,
         disableDoubleClickZoom: true
       }
@@ -65958,12 +66170,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "zoom_changed": function($event) {
         _vm.zoomUpdate($event)
       },
-      "idle": function($event) {
-        _vm.recenter()
-      },
       "center_changed": function($event) {
         _vm.cen($event)
-      }
+      },
+      "idle": _vm.recenter,
+      "drag": _vm.drag
     }
   }, [_c('GmapMarker', {
     attrs: {
@@ -65973,9 +66184,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "icon": _vm.curr
     }
   }), _vm._v(" "), _c('Gmap-cluster', {
+    ref: "myCluster",
     attrs: {
-      "gridSize": 10,
-      "imagePath": _vm.imagePath
+      "gridSize": 15,
+      "icon": _vm.imagePath
     },
     on: {
       "click": _vm.viewCluster
@@ -65985,7 +66197,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "position": m.position,
         "info": m.info,
-        "clickable": true
+        "clickable": true,
+        "icon": _vm.customMarker
       },
       on: {
         "click": function($event) {
@@ -66004,7 +66217,7 @@ if (false) {
 }
 
 /***/ }),
-/* 182 */
+/* 184 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************!*\
@@ -66030,7 +66243,7 @@ if (false) {
 }
 
 /***/ }),
-/* 183 */
+/* 185 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************************************************************************************************************************************************!*\
@@ -66055,7 +66268,7 @@ if (false) {
 }
 
 /***/ }),
-/* 184 */
+/* 186 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************************************************************************************************************************!*\
@@ -66089,7 +66302,7 @@ if (false) {
 }
 
 /***/ }),
-/* 185 */
+/* 187 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************!*\
@@ -66116,7 +66329,7 @@ if (false) {
 }
 
 /***/ }),
-/* 186 */
+/* 188 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************!*\
@@ -66147,7 +66360,7 @@ if (false) {
 }
 
 /***/ }),
-/* 187 */
+/* 189 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************!*\
@@ -66176,7 +66389,7 @@ if (false) {
 }
 
 /***/ }),
-/* 188 */
+/* 190 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -66207,7 +66420,7 @@ if(false) {
 }
 
 /***/ }),
-/* 189 */
+/* 191 */
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
@@ -66238,7 +66451,7 @@ if(false) {
 }
 
 /***/ }),
-/* 190 */
+/* 192 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
@@ -66276,7 +66489,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 191 */
+/* 193 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
@@ -66300,7 +66513,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(/*! ./listToStyles */ 192)
+var listToStyles = __webpack_require__(/*! ./listToStyles */ 194)
 
 /*
 type StyleObject = {
@@ -66502,7 +66715,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************!*\
@@ -66540,7 +66753,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 193 */
+/* 195 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
@@ -66649,7 +66862,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 194 */
+/* 196 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
@@ -66758,7 +66971,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 195 */
+/* 197 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -66793,7 +67006,7 @@ var _getPropsValuesMixin = __webpack_require__(/*! ../utils/getPropsValuesMixin.
 
 var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
 
-var _markerClustererPlus = __webpack_require__(/*! marker-clusterer-plus */ 164);
+var _markerClustererPlus = __webpack_require__(/*! marker-clusterer-plus */ 166);
 
 var _markerClustererPlus2 = _interopRequireDefault(_markerClustererPlus);
 
@@ -66866,7 +67079,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 196 */
+/* 198 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
@@ -66993,7 +67206,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 197 */
+/* 199 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -67122,6 +67335,8 @@ exports.default = {
     });
 
     var updateCenter = function updateCenter() {
+      if (!_this.$mapObject) return;
+
       _this.$mapObject.setCenter({
         lat: _this.finalLat,
         lng: _this.finalLng
@@ -67192,7 +67407,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 198 */
+/* 200 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
@@ -67353,7 +67568,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 199 */
+/* 201 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
@@ -67468,7 +67683,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 200 */
+/* 202 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -67647,7 +67862,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 201 */
+/* 203 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
@@ -67776,7 +67991,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 202 */
+/* 204 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -67864,7 +68079,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 203 */
+/* 205 */
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************************!*\
@@ -67973,6 +68188,8 @@ exports.default = {
     });
 
     var updateCenter = function updateCenter() {
+      if (!_this.panoObject) return;
+
       _this.$panoObject.setPosition({
         lat: _this.finalLat,
         lng: _this.finalLng
@@ -68028,7 +68245,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 204 */
+/* 206 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************!*\
@@ -68061,7 +68278,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 205 */
+/* 207 */
 /* exports provided: config */
 /* exports used: config */
 /*!****************************!*\
@@ -68083,7 +68300,7 @@ const config = {
 
 
 /***/ }),
-/* 206 */
+/* 208 */
 /* no static exports found */
 /* all exports used */
 /*!*********************!*\
@@ -68153,26 +68370,26 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue2
     key: 'AIzaSyAahrq97Y4diRkkbXM6_7uxSVs-7S59AtQ'
   }
 });
-//Testing
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10, 10, {
+/* Testing
+loadInfo(10, 10, {
   "timestamp": "3:14",
   "comment": "foo",
   "photo-url": "ex.url",
   "category": "murder"
 });
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10.02, 10, {
+loadInfo(10.02, 10, {
   "timestamp": "3:14",
   "comment": "bar",
   "photo-url": "ex.url",
   "category": "theft"
 });
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["a" /* loadInfo */])(10.03, 10, {
+loadInfo(10.03, 10, {
   "timestamp": "3:14",
   "comment": "baz",
   "photo-url": "ex.url",
   "category": "blah"
 });
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__backend_js__["b" /* Nearby */])(10, 10, 100);
+Nearby(10, 10, 100);*/
 //console.log(Nearby(10,10,100));
 // Init App
 var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
@@ -68189,6 +68406,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     app: __WEBPACK_IMPORTED_MODULE_10__main_vue___default.a
   },
 });
+
 console.log(vm.center);
 console.log(vm.markers);
 
