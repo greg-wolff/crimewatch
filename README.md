@@ -1,7 +1,7 @@
 ![Crimewatch](http://imgur.com/724Vw4K.png "Crimewatch")
 ___
 
-#### In our surveillance society, advancement of technologies have allowed vario
+In our surveillance society, advancement of technologies have allowed vario
 us digital techniques to be used as tools for evidence-based legislation. is has
  prompted major shifts in the information technology landscape to focus on tools
  for solving crimes and preparing court cases. Police body-worn cameras, a relat
